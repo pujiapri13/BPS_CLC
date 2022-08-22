@@ -20,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void OnTabTapped(int index) {
     setState(() {});
   }
+
 //
 //
 //
@@ -99,60 +100,96 @@ class _HomeScreenState extends State<HomeScreen> {
       //
       //
       //bottom navigation bar
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: ontap,
-        currentIndex: currentIndex,
-        iconSize: 40,
-        items: const [
-          //Home
-          BottomNavigationBarItem(
-              backgroundColor: Colors.cyan,
-              icon: Icon(
-                Icons.home,
-                color: Colors.white,
-              ),
-              label: 'Home',
-              activeIcon: Icon(
-                Icons.home,
-                color: Colors.lightBlue,
-              )),
-          //PDRB
-          BottomNavigationBarItem(
-              backgroundColor: Colors.cyan,
-              icon: Icon(
-                Icons.pie_chart,
-                color: Colors.white,
-              ),
-              label: 'PDRB',
-              activeIcon: Icon(
-                Icons.pie_chart,
-                color: Colors.lightBlue,
-              )),
-          //IPM
-          BottomNavigationBarItem(
-              backgroundColor: Colors.cyan,
-              icon: Icon(
-                Icons.nature_people,
-                color: Colors.white,
-              ),
-              label: 'IPM',
-              activeIcon: Icon(
-                Icons.nature_people,
-                color: Colors.lightBlue,
-              )),
-          //Exit APP
-          BottomNavigationBarItem(
-              backgroundColor: Colors.cyan,
-              icon: Icon(
-                Icons.exit_to_app,
-                color: Colors.white,
-              ),
-              label: 'BACK',
-              activeIcon: Icon(
-                Icons.exit_to_app,
-                color: Colors.lightBlue,
-              )),
-        ],
+      bottomNavigationBar: Container(
+        height: 60,
+        decoration: BoxDecoration(
+          color: Theme.of(context).primaryColor,
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(
+              enableFeedback: false,
+              onPressed: () {
+                setState(() {
+                  currentIndex = 0;
+                });
+              },
+              icon: currentIndex == 0
+                  ? const Icon(
+                      Icons.home_filled,
+                      color: Colors.white,
+                      size: 35,
+                    )
+                  : const Icon(
+                      Icons.home_outlined,
+                      color: Colors.white,
+                      size: 35,
+                    ),
+            ),
+            IconButton(
+              enableFeedback: false,
+              onPressed: () {
+                setState(() {
+                  currentIndex = 1;
+                });
+              },
+              icon: currentIndex == 1
+                  ? const Icon(
+                      Icons.work_outlined,
+                      color: Colors.white,
+                      size: 35,
+                    )
+                  : const Icon(
+                      Icons.work_outline_outlined,
+                      color: Colors.white,
+                      size: 35,
+                    ),
+            ),
+            IconButton(
+              enableFeedback: false,
+              onPressed: () {
+                setState(() {
+                  currentIndex = 2;
+                });
+              },
+              icon: currentIndex == 2
+                  ? const Icon(
+                      Icons.widgets_rounded,
+                      color: Colors.white,
+                      size: 35,
+                    )
+                  : const Icon(
+                      Icons.widgets_outlined,
+                      color: Colors.white,
+                      size: 35,
+                    ),
+            ),
+            IconButton(
+              enableFeedback: false,
+              onPressed: () {
+                setState(() {
+                  currentIndex = 3;
+                });
+              },
+              icon: currentIndex == 3
+                  ? const Icon(
+                      Icons.person,
+                      color: Colors.white,
+                      size: 35,
+                    )
+                  : const Icon(
+                      Icons.person_outline,
+                      color: Colors.white,
+                      size: 35,
+                    ),
+            ),
+          ],
+        ),
       ),
     );
   }
