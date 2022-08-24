@@ -7,6 +7,7 @@ void main() {
   runApp(const MaterialApp(
     title: "BPS Cilacap",
     home: Home(),
+    debugShowCheckedModeBanner: false,
   ));
 }
 

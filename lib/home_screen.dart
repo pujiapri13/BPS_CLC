@@ -110,66 +110,58 @@ class _HomeScreenState extends State<HomeScreen> {
       //
       //
       //bottom navigation bar
-
       bottomNavigationBar: BottomNavigationBar(
         onTap: ontap,
         currentIndex: currentIndex,
         iconSize: 40,
-        backgroundColor: Colors.amber,
         items: const [
           //Home
           BottomNavigationBarItem(
+              backgroundColor: Colors.cyan,
               icon: Icon(
-                BottNavIcons.home,
-                size: 24,
-                color: Colors.grey,
+                Icons.home,
+                color: Colors.white,
               ),
               label: 'Home',
-              backgroundColor: Colors.black,
               activeIcon: Icon(
-                BottNavIcons.home,
-                size: 24,
-                color: Colors.white,
+                Icons.home,
+                color: Colors.lightBlue,
               )),
           //PDRB
           BottomNavigationBarItem(
+              backgroundColor: Colors.cyan,
               icon: Icon(
-                Icons.bar_chart_outlined,
-                size: 24,
-                color: Colors.grey,
+                Icons.pie_chart,
+                color: Colors.white,
               ),
               label: 'PDRB',
-              backgroundColor: Colors.black,
-              activeIcon: Icon(Icons.bar_chart_outlined,
-                  size: 24, color: Colors.white)),
+              activeIcon: Icon(
+                Icons.pie_chart,
+                color: Colors.lightBlue,
+              )),
           //IPM
           BottomNavigationBarItem(
-            icon: Icon(
-              BottNavIcons.positive_dynamics,
-              size: 24,
-              color: Colors.grey,
-            ),
-            label: 'IPM',
-            backgroundColor: Colors.black,
-            activeIcon: Icon(
-              BottNavIcons.positive_dynamics,
-              size: 24,
-              color: Colors.white,
-            ),
-          ),
+              backgroundColor: Colors.cyan,
+              icon: Icon(
+                Icons.nature_people,
+                color: Colors.white,
+              ),
+              label: 'IPM',
+              activeIcon: Icon(
+                Icons.nature_people,
+                color: Colors.lightBlue,
+              )),
           //Exit APP
           BottomNavigationBarItem(
+              backgroundColor: Colors.cyan,
               icon: Icon(
-                BottNavIcons.user_group,
-                size: 24,
-                color: Colors.grey,
+                Icons.exit_to_app,
+                color: Colors.white,
               ),
               label: 'BACK',
-              backgroundColor: Colors.black,
               activeIcon: Icon(
-                BottNavIcons.user_group,
-                size: 24,
-                color: Colors.white,
+                Icons.exit_to_app,
+                color: Colors.lightBlue,
               )),
         ],
       ),
