@@ -86,7 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 //buttton 1
                 child: Column(
                   children: <Widget>[
-                    Container(
+                    SizedBox(
                       width: DrawerWidth,
                       height: DrawerHeight * 0.05,
                     ),
@@ -94,84 +94,107 @@ class _HomeScreenState extends State<HomeScreen> {
                       width: DrawerWidth * 0.8,
                       height: DrawerHeight * 0.05,
                       color: Colors.white,
-                      child: Text('Menu1'),
+                      child: const Text('Menu1'),
                     )
                   ],
                 )),
           ],
         ),
       ),
-      //
-      //
-      //
       //body
       body: body[currentIndex],
-      //
-      //
-      //
-      //bottom navigation bar
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: ontap,
-        currentIndex: currentIndex,
-        iconSize: 40,
-        items: const [
-          //Home
-          BottomNavigationBarItem(
-              backgroundColor: Colors.cyan,
-              icon: Icon(
-                Icons.home,
-                color: Colors.white,
-              ),
-              label: 'Home',
-              activeIcon: Icon(
-                Icons.home,
-                color: Colors.lightBlue,
-              )),
-          //PDRB
-          BottomNavigationBarItem(
-              backgroundColor: Colors.cyan,
-              icon: Icon(
-                Icons.pie_chart,
-                color: Colors.white,
-              ),
-              label: 'PDRB',
-              activeIcon: Icon(
-                Icons.pie_chart,
-                color: Colors.lightBlue,
-              )),
-          //IPM
-          BottomNavigationBarItem(
-              backgroundColor: Colors.cyan,
-              icon: Icon(
-                Icons.nature_people,
-                color: Colors.white,
-              ),
-              label: 'IPM',
-              activeIcon: Icon(
-                Icons.nature_people,
-                color: Colors.lightBlue,
-              )),
-          //Exit APP
-          BottomNavigationBarItem(
-              backgroundColor: Colors.cyan,
-              icon: Icon(
-                Icons.exit_to_app,
-                color: Colors.white,
-              ),
-              label: 'BACK',
-              activeIcon: Icon(
-                Icons.exit_to_app,
-                color: Colors.lightBlue,
-              )),
-        ],
+
+      bottomNavigationBar: Container(
+        height: 56.16,
+        decoration: const BoxDecoration(
+          color: Colors.black,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            //Button 1
+            IconButton(
+              enableFeedback: false,
+              onPressed: () {
+                setState(() {
+                  currentIndex = 0;
+                });
+              },
+              icon: currentIndex == 0
+                  ? const Icon(
+                      BottNavIcons.home,
+                      color: Colors.white,
+                      size: 35,
+                    )
+                  : const Icon(
+                      BottNavIcons.home,
+                      color: Colors.white,
+                      size: 35,
+                    ),
+            ),
+            // Button 2
+            IconButton(
+              enableFeedback: false,
+              onPressed: () {
+                setState(() {
+                  currentIndex = 1;
+                });
+              },
+              icon: currentIndex == 1
+                  ? const Icon(
+                      Icons.bar_chart,
+                      color: Colors.white,
+                      size: 35,
+                    )
+                  : const Icon(
+                      Icons.bar_chart,
+                      color: Colors.white,
+                      size: 35,
+                    ),
+            ),
+            // button 3
+            IconButton(
+              enableFeedback: false,
+              onPressed: () {
+                setState(() {
+                  currentIndex = 2;
+                });
+              },
+              icon: currentIndex == 2
+                  ? const Icon(
+                      Icons.widgets_rounded,
+                      color: Colors.white,
+                      size: 35,
+                    )
+                  : const Icon(
+                      Icons.widgets_outlined,
+                      color: Colors.white,
+                      size: 35,
+                    ),
+            ),
+            // button 4
+            IconButton(
+              enableFeedback: false,
+              onPressed: () {
+                setState(() {
+                  currentIndex = 3;
+                });
+              },
+              icon: currentIndex == 3
+                  ? const Icon(
+                      BottNavIcons.user_group,
+                      color: Colors.white,
+                      size: 35,
+                    )
+                  : const Icon(
+                      BottNavIcons.user_group,
+                      color: Colors.white,
+                      size: 35,
+                    ),
+            ),
+          ],
+        ),
       ),
     );
-  }
-
-//state untuk bottom nav bar
-  void ontap(int index) {
-    setState(() {
-      currentIndex = index;
-    });
   }
 }
