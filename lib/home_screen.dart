@@ -1,5 +1,5 @@
 // ignore_for_file: non_constant_identifier_names, library_private_types_in_public_api
-
+import 'package:bps_cilacap/bott_nav_icons_icons.dart';
 import 'package:flutter/material.dart';
 import 'bottomnavbar_content/home_content.dart';
 import 'bottomnavbar_content/pdrb_content.dart';
@@ -20,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void OnTabTapped(int index) {
     setState(() {});
   }
+
 //
 //
 //
@@ -37,56 +38,66 @@ class _HomeScreenState extends State<HomeScreen> {
 //tampilan utama
   @override
   Widget build(BuildContext context) {
+    final DrawerHeight = MediaQuery.of(context).size.height;
+    final DrawerWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Nama Aplikasi',
-          style: TextStyle(fontSize: 18),
-        ),
-        backgroundColor: Colors.cyan,
-        actions: const [
-          Image(
-            image: AssetImage(
-              'assets/images/logo.png',
+        title: Row(
+          children: <Widget>[
+            SizedBox(
+              width: 50,
+              height: 50,
+              child: Image.asset('assets/images/logo.png'),
             ),
-            height: 50,
-            width: 50,
-          )
-        ],
+            SizedBox(
+                width: 222,
+                height: 50,
+                child: Container(
+                  alignment: Alignment.centerLeft,
+                  child: const Text(
+                    'PUSDACAP',
+                    style: TextStyle(fontSize: 24),
+                  ),
+                )),
+          ],
+        ),
+        backgroundColor: Colors.black,
       ),
 //
 //
 //
+
 //sidebar drawer
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
-            const UserAccountsDrawerHeader(
-              accountName: Text('BPS Cilacap'),
-              accountEmail: Text('https://cilacapkab.bps.go.id'),
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: NetworkImage(
-                          "https://lh3.googleusercontent.com/p/AF1QipOcBuatGK6FJxRjZQ2gjjzz2ZAHe6uZL7sADewA=s1600-w400"),
-                      fit: BoxFit.fill)),
+            SizedBox(
+              width: DrawerWidth,
+              height: DrawerHeight * 0.25,
+              child: Image.network(
+                'https://lh3.googleusercontent.com/p/AF1QipOcBuatGK6FJxRjZQ2gjjzz2ZAHe6uZL7sADewA=s1600-w400',
+                fit: BoxFit.fill,
+              ),
             ),
-            //Divider = Garis Batas
-            //Menu Drawer1
-            const ListTile(
-              title: Text("Menu1"),
-              trailing: Icon(Icons.adb),
-            ),
-            const Divider(),
-            //Menu Drawer2
-            const ListTile(
-              title: Text("Menu2"),
-            ),
-            const Divider(),
-            ListTile(
-              title: const Text("Cancel"),
-              trailing: const Icon(Icons.cancel),
-              onTap: () => Navigator.pop(context),
-            ),
+            Container(
+                width: DrawerWidth,
+                height: DrawerHeight * 0.75,
+                color: Colors.black,
+                //buttton 1
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      width: DrawerWidth,
+                      height: DrawerHeight * 0.05,
+                    ),
+                    Container(
+                      width: DrawerWidth * 0.8,
+                      height: DrawerHeight * 0.05,
+                      color: Colors.white,
+                      child: Text('Menu1'),
+                    )
+                  ],
+                )),
           ],
         ),
       ),
@@ -99,58 +110,66 @@ class _HomeScreenState extends State<HomeScreen> {
       //
       //
       //bottom navigation bar
+
       bottomNavigationBar: BottomNavigationBar(
         onTap: ontap,
         currentIndex: currentIndex,
         iconSize: 40,
+        backgroundColor: Colors.amber,
         items: const [
           //Home
           BottomNavigationBarItem(
-              backgroundColor: Colors.cyan,
               icon: Icon(
-                Icons.home,
-                color: Colors.white,
+                BottNavIcons.home,
+                size: 24,
+                color: Colors.grey,
               ),
               label: 'Home',
+              backgroundColor: Colors.black,
               activeIcon: Icon(
-                Icons.home,
-                color: Colors.lightBlue,
+                BottNavIcons.home,
+                size: 24,
+                color: Colors.white,
               )),
           //PDRB
           BottomNavigationBarItem(
-              backgroundColor: Colors.cyan,
               icon: Icon(
-                Icons.pie_chart,
-                color: Colors.white,
+                Icons.bar_chart_outlined,
+                size: 24,
+                color: Colors.grey,
               ),
               label: 'PDRB',
-              activeIcon: Icon(
-                Icons.pie_chart,
-                color: Colors.lightBlue,
-              )),
+              backgroundColor: Colors.black,
+              activeIcon: Icon(Icons.bar_chart_outlined,
+                  size: 24, color: Colors.white)),
           //IPM
           BottomNavigationBarItem(
-              backgroundColor: Colors.cyan,
-              icon: Icon(
-                Icons.nature_people,
-                color: Colors.white,
-              ),
-              label: 'IPM',
-              activeIcon: Icon(
-                Icons.nature_people,
-                color: Colors.lightBlue,
-              )),
+            icon: Icon(
+              BottNavIcons.positive_dynamics,
+              size: 24,
+              color: Colors.grey,
+            ),
+            label: 'IPM',
+            backgroundColor: Colors.black,
+            activeIcon: Icon(
+              BottNavIcons.positive_dynamics,
+              size: 24,
+              color: Colors.white,
+            ),
+          ),
           //Exit APP
           BottomNavigationBarItem(
-              backgroundColor: Colors.cyan,
               icon: Icon(
-                Icons.exit_to_app,
-                color: Colors.white,
+                BottNavIcons.user_group,
+                size: 24,
+                color: Colors.grey,
               ),
               label: 'BACK',
+              backgroundColor: Colors.black,
               activeIcon: Icon(
-                Icons.exit_to_app,
-                color: Colors.lightBlue,
+                BottNavIcons.user_group,
+                size: 24,
+                color: Colors.white,
               )),
         ],
       ),
