@@ -61,7 +61,7 @@ class _HomeContentState extends State<HomeContent> {
               Container(
                 width: screenWidth * 0.60,
                 height: screenHeight * 0.14,
-                color: Color.fromRGBO(45, 192, 201, 1),
+                color: const Color.fromRGBO(45, 192, 201, 1),
                 child: const Center(
                   child: Text('INFLASI'),
                 ),
@@ -70,7 +70,7 @@ class _HomeContentState extends State<HomeContent> {
               Container(
                 width: screenWidth * 0.40,
                 height: screenHeight * 0.14,
-                color: Color.fromRGBO(45, 192, 201, 0.65),
+                color: const Color.fromRGBO(45, 192, 201, 0.65),
                 child: const Center(
                   child: Text('KETIMPANGAN'),
                 ),
@@ -84,7 +84,7 @@ class _HomeContentState extends State<HomeContent> {
               Container(
                 width: screenWidth * 0.38,
                 height: screenHeight * 0.14,
-                color: Color.fromRGBO(45, 192, 201, 0.65),
+                color: const Color.fromRGBO(45, 192, 201, 0.65),
                 child: const Center(
                   child: Text('PENGANGGURAN'),
                 ),
@@ -93,7 +93,7 @@ class _HomeContentState extends State<HomeContent> {
               Container(
                 width: screenWidth * 0.62,
                 height: screenHeight * 0.14,
-                color: Color.fromRGBO(45, 192, 201, 1),
+                color: const Color.fromRGBO(45, 192, 201, 1),
                 child: const Center(
                   child: Text('PERTUMBUHAN EKONOMI'),
                 ),
@@ -107,7 +107,7 @@ class _HomeContentState extends State<HomeContent> {
               Container(
                 width: screenWidth * 0.70,
                 height: screenHeight * 0.14,
-                color: Color.fromRGBO(45, 192, 201, 1),
+                color: const Color.fromRGBO(45, 192, 201, 1),
                 child: const Center(
                   child: Text('TENAGA KERJA'),
                 ),
@@ -116,7 +116,7 @@ class _HomeContentState extends State<HomeContent> {
               Container(
                 width: screenWidth * 0.30,
                 height: screenHeight * 0.14,
-                color: Color.fromRGBO(45, 192, 201, 0.65),
+                color: const Color.fromRGBO(45, 192, 201, 0.65),
                 child: const Center(
                   child: Text('KEMISKINAN'),
                 ),

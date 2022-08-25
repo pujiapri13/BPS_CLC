@@ -5,6 +5,7 @@ import 'bottomnavbar_content/home_content.dart';
 import 'bottomnavbar_content/pdrb_content.dart';
 import 'bottomnavbar_content/ipm_content.dart';
 import 'bottomnavbar_content/exit_button.dart';
+import 'package:bps_cilacap/drawer_page.dart';
 
 void main() => runApp(const HomeScreen());
 
@@ -38,8 +39,6 @@ class _HomeScreenState extends State<HomeScreen> {
 //tampilan utama
   @override
   Widget build(BuildContext context) {
-    final DrawerHeight = MediaQuery.of(context).size.height;
-    final DrawerWidth = MediaQuery.of(context).size.width;
     final ScreenHeight = MediaQuery.of(context).size.height;
     final ScreenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -49,90 +48,31 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: Colors.black,
           title: Row(
             children: <Widget>[
+              // icon
               Container(
-                alignment: Alignment.center,
-                margin: EdgeInsets.fromLTRB(0, ScreenHeight * 0.05, 0, 0),
-                width: ScreenWidth * 0.1,
-                height: 55,
+                width: ScreenWidth * 0.2,
+                height: ScreenHeight * 0.10,
                 child: Image.asset(
                   'assets/images/logo.png',
                   alignment: Alignment.center,
                 ),
               ),
+              //text
               Container(
-                  width: ScreenWidth * 0.6,
-                  height: 50,
-                  margin: EdgeInsets.fromLTRB(10, ScreenHeight * 0.05, 0, 0),
-                  child: Container(
-                    alignment: Alignment.centerLeft,
-                    child: const Text(
-                      'PUSDACAP',
-                      style: TextStyle(fontSize: 24),
-                    ),
-                  )),
+                alignment: Alignment.center,
+                height: ScreenHeight * 0.10,
+                child: const Text(
+                  'PUSDACAP',
+                  style: TextStyle(fontSize: 24, color: Colors.white),
+                ),
+              ),
             ],
           ),
         ),
       ),
-//
-//
-//
-//sidebar drawer
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            SizedBox(
-              width: DrawerWidth,
-              height: DrawerHeight * 0.25,
-              child: Image.network(
-                'https://lh3.googleusercontent.com/p/AF1QipOcBuatGK6FJxRjZQ2gjjzz2ZAHe6uZL7sADewA=s1600-w400',
-                fit: BoxFit.fill,
-              ),
-            ),
-            Container(
-                width: DrawerWidth,
-                height: DrawerHeight * 0.75,
-                color: Colors.black,
-                //buttton 1
-                child: Column(
-                  children: <Widget>[
-                    SizedBox(
-                      width: DrawerWidth,
-                      height: DrawerHeight * 0.05,
-                    ),
-                    Container(
-                      width: DrawerWidth * 0.8,
-                      height: DrawerHeight * 0.05,
-                      color: Colors.white,
-                      child: const Text('Menu1'),
-                    )
-                  ],
-                )),
-            Container(
-                width: DrawerWidth,
-                height: DrawerHeight * 0.75,
-                margin: EdgeInsets.all(5),
-                color: Colors.black,
-                //buttton 1
-                child: Column(
-                  children: <Widget>[
-                    SizedBox(
-                      width: DrawerWidth,
-                      height: DrawerHeight * 0.05,
-                    ),
-                    Container(
-                      width: DrawerWidth * 0.8,
-                      height: DrawerHeight * 0.05,
-                      color: Colors.white,
-                      child: const Text('Menu2'),
-                    )
-                  ],
-                )),
-          ],
-        ),
-      ),
+      drawer: Drawer(child: DrawerPage()),
       //body
-      body: Container(
+      body: SizedBox(
           width: ScreenWidth,
           height: ScreenHeight * 0.8,
           child: Scaffold(
