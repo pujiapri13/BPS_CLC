@@ -15,17 +15,16 @@ class HomeContent extends StatefulWidget {
 
 class _HomeContentState extends State<HomeContent> {
   final List<String> carouselList = ["Satu", "Dua", "Tiga"];
-
   @override
   Widget build(BuildContext context) {
-    const screenHeight = 633.5;
-    final screenWidth = MediaQuery.of(context).size.width;
+    var screenWidth = MediaQuery.of(context).size.width;
+    var screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Column(
         children: <Widget>[
           //animasi atas
           SizedBox(
-            height: screenHeight * 0.24,
+            height: screenHeight * 0.19,
             width: double.infinity,
             child: ListView(
               shrinkWrap: true,
@@ -38,7 +37,7 @@ class _HomeContentState extends State<HomeContent> {
                           duration: const Duration(milliseconds: 1000),
                           curve: Curves.easeOutBack,
                           decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 6, 107, 133),
+                            color: Colors.grey,
                             borderRadius: BorderRadius.circular(10),
                           ),
                         );
@@ -46,8 +45,7 @@ class _HomeContentState extends State<HomeContent> {
                     );
                   }).toList(),
                   options: CarouselOptions(
-                    height: screenHeight * 0.24,
-                    viewportFraction: 0.98,
+                    height: screenHeight * 0.19,
                     enlargeCenterPage: true,
                     autoPlay: true,
                     reverse: false,
@@ -61,18 +59,18 @@ class _HomeContentState extends State<HomeContent> {
             children: <Widget>[
               //satu
               Container(
-                width: screenWidth * 0.55,
-                height: screenHeight * 0.19,
-                color: Colors.redAccent,
+                width: screenWidth * 0.60,
+                height: screenHeight * 0.14,
+                color: Color.fromRGBO(45, 192, 201, 1),
                 child: const Center(
                   child: Text('INFLASI'),
                 ),
               ),
               //dua
               Container(
-                width: screenWidth * 0.45,
-                height: screenHeight * 0.19,
-                color: Colors.red,
+                width: screenWidth * 0.40,
+                height: screenHeight * 0.14,
+                color: Color.fromRGBO(45, 192, 201, 0.65),
                 child: const Center(
                   child: Text('KETIMPANGAN'),
                 ),
@@ -84,18 +82,18 @@ class _HomeContentState extends State<HomeContent> {
             children: <Widget>[
               //tiga
               Container(
-                width: screenWidth * 0.45,
-                height: screenHeight * 0.19,
-                color: Colors.red,
+                width: screenWidth * 0.38,
+                height: screenHeight * 0.14,
+                color: Color.fromRGBO(45, 192, 201, 0.65),
                 child: const Center(
                   child: Text('PENGANGGURAN'),
                 ),
               ),
               //empat
               Container(
-                width: screenWidth * 0.55,
-                height: screenHeight * 0.19,
-                color: Colors.redAccent,
+                width: screenWidth * 0.62,
+                height: screenHeight * 0.14,
+                color: Color.fromRGBO(45, 192, 201, 1),
                 child: const Center(
                   child: Text('PERTUMBUHAN EKONOMI'),
                 ),
@@ -107,18 +105,18 @@ class _HomeContentState extends State<HomeContent> {
             children: <Widget>[
               //lima
               Container(
-                width: screenWidth * 0.55,
-                height: screenHeight * 0.19,
-                color: Colors.redAccent,
+                width: screenWidth * 0.70,
+                height: screenHeight * 0.14,
+                color: Color.fromRGBO(45, 192, 201, 1),
                 child: const Center(
                   child: Text('TENAGA KERJA'),
                 ),
               ),
               //enam
               Container(
-                width: screenWidth * 0.45,
-                height: screenHeight * 0.19,
-                color: Colors.red,
+                width: screenWidth * 0.30,
+                height: screenHeight * 0.14,
+                color: Color.fromRGBO(45, 192, 201, 0.65),
                 child: const Center(
                   child: Text('KEMISKINAN'),
                 ),
@@ -128,8 +126,8 @@ class _HomeContentState extends State<HomeContent> {
           //tujuh
           Container(
             width: screenWidth,
-            height: screenHeight * 0.19,
-            color: const Color.fromARGB(255, 114, 19, 12),
+            height: screenHeight * 0.14,
+            color: const Color.fromRGBO(45, 149, 201, 1),
             child: const Center(
               child: Text('JUMLAH PENDUDUK'),
             ),

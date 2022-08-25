@@ -40,33 +40,43 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final DrawerHeight = MediaQuery.of(context).size.height;
     final DrawerWidth = MediaQuery.of(context).size.width;
+    final ScreenHeight = MediaQuery.of(context).size.height;
+    final ScreenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          children: <Widget>[
-            SizedBox(
-              width: 50,
-              height: 50,
-              child: Image.asset('assets/images/logo.png'),
-            ),
-            SizedBox(
-                width: 222,
-                height: 50,
-                child: Container(
-                  alignment: Alignment.centerLeft,
-                  child: const Text(
-                    'PUSDACAP',
-                    style: TextStyle(fontSize: 24),
-                  ),
-                )),
-          ],
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(ScreenHeight * 0.1),
+        child: AppBar(
+          backgroundColor: Colors.black,
+          title: Row(
+            children: <Widget>[
+              Container(
+                alignment: Alignment.center,
+                margin: EdgeInsets.fromLTRB(0, ScreenHeight * 0.05, 0, 0),
+                width: ScreenWidth * 0.1,
+                height: 55,
+                child: Image.asset(
+                  'assets/images/logo.png',
+                  alignment: Alignment.center,
+                ),
+              ),
+              Container(
+                  width: ScreenWidth * 0.6,
+                  height: 50,
+                  margin: EdgeInsets.fromLTRB(10, ScreenHeight * 0.05, 0, 0),
+                  child: Container(
+                    alignment: Alignment.centerLeft,
+                    child: const Text(
+                      'PUSDACAP',
+                      style: TextStyle(fontSize: 24),
+                    ),
+                  )),
+            ],
+          ),
         ),
-        backgroundColor: Colors.black,
       ),
 //
 //
 //
-
 //sidebar drawer
       drawer: Drawer(
         child: ListView(
@@ -98,14 +108,39 @@ class _HomeScreenState extends State<HomeScreen> {
                     )
                   ],
                 )),
+            Container(
+                width: DrawerWidth,
+                height: DrawerHeight * 0.75,
+                margin: EdgeInsets.all(5),
+                color: Colors.black,
+                //buttton 1
+                child: Column(
+                  children: <Widget>[
+                    SizedBox(
+                      width: DrawerWidth,
+                      height: DrawerHeight * 0.05,
+                    ),
+                    Container(
+                      width: DrawerWidth * 0.8,
+                      height: DrawerHeight * 0.05,
+                      color: Colors.white,
+                      child: const Text('Menu2'),
+                    )
+                  ],
+                )),
           ],
         ),
       ),
       //body
-      body: body[currentIndex],
+      body: Container(
+          width: ScreenWidth,
+          height: ScreenHeight * 0.8,
+          child: Scaffold(
+            body: body[currentIndex],
+          )),
 
       bottomNavigationBar: Container(
-        height: 56.16,
+        height: ScreenHeight * 0.1,
         decoration: const BoxDecoration(
           color: Colors.black,
         ),
@@ -124,12 +159,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   ? const Icon(
                       BottNavIcons.home,
                       color: Colors.white,
-                      size: 35,
+                      size: 30,
                     )
                   : const Icon(
                       BottNavIcons.home,
                       color: Colors.white,
-                      size: 35,
+                      size: 30,
                     ),
             ),
             // Button 2
@@ -144,12 +179,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   ? const Icon(
                       Icons.bar_chart,
                       color: Colors.white,
-                      size: 35,
+                      size: 30,
                     )
                   : const Icon(
                       Icons.bar_chart,
                       color: Colors.white,
-                      size: 35,
+                      size: 30,
                     ),
             ),
             // button 3
@@ -162,14 +197,14 @@ class _HomeScreenState extends State<HomeScreen> {
               },
               icon: currentIndex == 2
                   ? const Icon(
-                      Icons.widgets_rounded,
+                      BottNavIcons.positive_dynamics,
                       color: Colors.white,
-                      size: 35,
+                      size: 30,
                     )
                   : const Icon(
-                      Icons.widgets_outlined,
+                      BottNavIcons.positive_dynamics,
                       color: Colors.white,
-                      size: 35,
+                      size: 30,
                     ),
             ),
             // button 4
@@ -184,12 +219,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   ? const Icon(
                       BottNavIcons.user_group,
                       color: Colors.white,
-                      size: 35,
+                      size: 30,
                     )
                   : const Icon(
                       BottNavIcons.user_group,
                       color: Colors.white,
-                      size: 35,
+                      size: 30,
                     ),
             ),
           ],
