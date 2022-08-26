@@ -17,13 +17,13 @@ class _DrawerPageState extends State<DrawerPage> {
               content: const Text('Apakah yakin ingin keluar ?'),
               actions: [
                 TextButton(
-                  child: Text('YES'),
+                  child: const Text('YES'),
                   onPressed: () {
                     SystemNavigator.pop();
                   },
                 ),
                 TextButton(
-                  child: Text('NO'),
+                  child: const Text('NO'),
                   onPressed: () {
                     Navigator.of(context).pop(false);
                   },
@@ -266,10 +266,10 @@ class _DrawerPageState extends State<DrawerPage> {
                   height: DrawerHeight / 20,
                   margin: EdgeInsets.fromLTRB(
                       10, DrawerHeight * 0.20, DrawerWidth * 0.5, 10),
-                  decoration: BoxDecoration(color: Colors.white),
+                  decoration: const BoxDecoration(color: Colors.white),
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(primary: Colors.white),
-                      child: Text(
+                      child: const Text(
                         'KELUAR',
                         style: TextStyle(color: Colors.black, fontSize: 18),
                       ),

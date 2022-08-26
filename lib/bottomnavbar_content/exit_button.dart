@@ -14,7 +14,7 @@ class _ExitButtonState extends State<ExitButton> {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text('Tombol Keluar ESIH RUNGKAD URUNG FUNGSI'),
+      child: Text('ISI 4'),
     );
   }
 }

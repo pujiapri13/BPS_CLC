@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:bps_cilacap/inflasi_content.dart';
 
 void main() => runApp(const MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -62,8 +63,18 @@ class _HomeContentState extends State<HomeContent> {
                 width: screenWidth * 0.60,
                 height: screenHeight * 0.14,
                 color: const Color.fromRGBO(45, 192, 201, 1),
-                child: const Center(
-                  child: Text('INFLASI'),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return inflasiContent();
+                      },
+                    ));
+                  },
+                  child: Text(
+                    'INFLASI',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
               //dua

@@ -70,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-      drawer: Drawer(child: DrawerPage()),
+      drawer: const Drawer(child: DrawerPage()),
       //body
       body: SizedBox(
           width: ScreenWidth,
@@ -86,7 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
+          children: <Widget>[
             //Button 1
             IconButton(
               enableFeedback: false,
@@ -98,13 +98,13 @@ class _HomeScreenState extends State<HomeScreen> {
               icon: currentIndex == 0
                   ? const Icon(
                       BottNavIcons.home,
-                      color: Colors.white,
-                      size: 30,
+                      color: Colors.cyan,
+                      size: 35,
                     )
                   : const Icon(
                       BottNavIcons.home,
                       color: Colors.white,
-                      size: 30,
+                      size: 25,
                     ),
             ),
             // Button 2
@@ -117,36 +117,35 @@ class _HomeScreenState extends State<HomeScreen> {
               },
               icon: currentIndex == 1
                   ? const Icon(
-                      Icons.bar_chart,
-                      color: Colors.white,
-                      size: 30,
+                      Icons.bar_chart_outlined,
+                      color: Colors.cyan,
+                      size: 35,
                     )
                   : const Icon(
-                      Icons.bar_chart,
+                      Icons.bar_chart_outlined,
                       color: Colors.white,
-                      size: 30,
+                      size: 25,
                     ),
             ),
             // button 3
             IconButton(
-              enableFeedback: false,
-              onPressed: () {
-                setState(() {
-                  currentIndex = 2;
-                });
-              },
-              icon: currentIndex == 2
-                  ? const Icon(
-                      BottNavIcons.positive_dynamics,
-                      color: Colors.white,
-                      size: 30,
-                    )
-                  : const Icon(
-                      BottNavIcons.positive_dynamics,
-                      color: Colors.white,
-                      size: 30,
-                    ),
-            ),
+                enableFeedback: false,
+                onPressed: () {
+                  setState(() {
+                    currentIndex = 2;
+                  });
+                },
+                icon: currentIndex == 2
+                    ? const Icon(
+                        Icons.stacked_line_chart_outlined,
+                        color: Colors.cyan,
+                        size: 35,
+                      )
+                    : const Icon(
+                        Icons.stacked_line_chart_outlined,
+                        color: Colors.white,
+                        size: 25,
+                      )),
             // button 4
             IconButton(
               enableFeedback: false,
@@ -158,13 +157,13 @@ class _HomeScreenState extends State<HomeScreen> {
               icon: currentIndex == 3
                   ? const Icon(
                       BottNavIcons.user_group,
-                      color: Colors.white,
-                      size: 30,
+                      color: Colors.cyan,
+                      size: 35,
                     )
                   : const Icon(
                       BottNavIcons.user_group,
                       color: Colors.white,
-                      size: 30,
+                      size: 25,
                     ),
             ),
           ],
