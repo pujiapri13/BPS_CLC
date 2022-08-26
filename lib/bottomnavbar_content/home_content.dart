@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:bps_cilacap/inflasi_content.dart';
@@ -67,13 +69,13 @@ class _HomeContentState extends State<HomeContent> {
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return inflasiContent();
+                        return const inflasiContent();
                       },
                     ));
                   },
-                  child: Text(
+                  child: const Text(
                     'INFLASI',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.black),
                   ),
                 ),
               ),

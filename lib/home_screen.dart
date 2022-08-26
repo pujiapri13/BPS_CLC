@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
           title: Row(
             children: <Widget>[
               // icon
-              Container(
+              SizedBox(
                 width: ScreenWidth * 0.2,
                 height: ScreenHeight * 0.10,
                 child: Image.asset(

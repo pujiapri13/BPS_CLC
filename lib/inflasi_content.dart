@@ -1,7 +1,6 @@
+// ignore_for_file: unused_local_variable, camel_case_types, non_constant_identifier_names
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:bps_cilacap/bottomnavbar_content/home_content.dart';
 
 class inflasiContent extends StatefulWidget {
   const inflasiContent({Key? key}) : super(key: key);
@@ -30,7 +29,7 @@ class _inflasiContentState extends State<inflasiContent> {
           ),
         ),
       ),
-      body: Text('isi inflasi'),
+      body: const Text('isi inflasi'),
     );
   }
 }

@@ -26,18 +26,14 @@ class _SplashScreenState extends State<SplashScreen> {
         alignment: Alignment.center,
         color: const Color.fromARGB(240, 240, 240, 240),
         width: MediaQuery.of(context).size.width,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Center(
+        child: Container(
+            margin: const EdgeInsets.all(50),
+            child: Center(
                 child: Image.asset(
               './assets/images/splash1.jpeg',
               width: 600,
               height: 400,
-            ))
-          ],
-        ),
+            ))),
       ),
     );
   }
