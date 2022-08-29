@@ -10,7 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'drawer_menu/informasi_grafis.dart';
 
-
 class DrawerPage extends StatefulWidget {
   const DrawerPage({Key? key}) : super(key: key);
 
@@ -44,7 +43,9 @@ class _DrawerPageState extends State<DrawerPage> {
 
   @override
   Widget build(BuildContext context) {
-    final DrawerHeight = MediaQuery.of(context).size.height;
+    final DrawerHeight = MediaQuery.of(context).size.height -
+        MediaQuery.of(context).padding.top -
+        MediaQuery.of(context).padding.bottom;
     final DrawerWidth = MediaQuery.of(context).size.width;
     return WillPopScope(
       onWillPop: () {
@@ -53,19 +54,22 @@ class _DrawerPageState extends State<DrawerPage> {
       },
       child: Material(
         color: Colors.black,
-        child: ListView(
-          children: <Widget>[
-            SizedBox(
-              width: DrawerWidth,
+        child: Column(
+          children: [
+            //satu
+            Container(
               height: DrawerHeight * 0.20,
+              width: DrawerWidth,
+              color: Colors.blue,
               child: Image.asset(
                 './assets/images/gedung.jpg',
                 fit: BoxFit.fill,
               ),
             ),
+            //dua
             Container(
+              height: DrawerHeight * 0.70,
               width: DrawerWidth,
-              height: DrawerHeight * 0.6,
               color: Colors.black,
               child: ListView(
                 children: <Widget>[
@@ -96,7 +100,8 @@ class _DrawerPageState extends State<DrawerPage> {
                       Icons.blinds_closed_outlined,
                       color: Colors.white,
                     ),
-                    title: const Text('Tabel', style: TextStyle(color: Colors.white)),
+                    title: const Text('Tabel',
+                        style: TextStyle(color: Colors.white)),
                   ),
                   ListTile(
                     onTap: () {
@@ -176,11 +181,11 @@ class _DrawerPageState extends State<DrawerPage> {
                 ],
               ),
             ),
-            SizedBox(
-              height: DrawerHeight * 0.1,
+            //tiga
+            Expanded(
               child: Container(
-                margin: EdgeInsets.fromLTRB(
-                    5, (DrawerHeight * 0.1) * 2 / 3, DrawerWidth * 0.5, 0),
+                alignment: Alignment.centerLeft,
+                color: Colors.black,
                 child: ElevatedButton.icon(
                   style: ElevatedButton.styleFrom(
                       primary: Colors.white,
@@ -197,234 +202,6 @@ class _DrawerPageState extends State<DrawerPage> {
           ],
         ),
       ),
-
-      //       Container(
-      //         height: DrawerHeight * 0.03,
-      //         margin: const EdgeInsets.fromLTRB(10, 20, 10, 0),
-      //         alignment: Alignment.center,
-      //         color: Colors.white,
-      //         child: Row(
-      //           children: <Widget>[
-      //             const SizedBox(
-      //               width: 60,
-      //               height: 60,
-      //               child: Icon(
-      //                 Icons.map_outlined,
-      //                 color: Colors.black,
-      //               ),
-      //             ),
-      //             Container(
-      //               alignment: Alignment.centerLeft,
-      //               width: 200,
-      //               height: 60,
-      //               child: const Text(
-      //                 'Informasi Grafis',
-      //                 style: TextStyle(
-      //                     fontWeight: FontWeight.bold, fontSize: 18),
-      //               ),
-      //             ),
-      //           ],
-      //         ),
-      //       ),
-      //       //loro
-      //       Container(
-      //         height: DrawerHeight * 0.03,
-      //         margin: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-      //         alignment: Alignment.center,
-      //         color: Colors.white,
-      //         child: Row(
-      //           children: <Widget>[
-      //             const SizedBox(
-      //               width: 60,
-      //               height: 60,
-      //               child: Icon(
-      //                 Icons.blinds_closed_outlined,
-      //                 color: Colors.black,
-      //               ),
-      //             ),
-      //             Container(
-      //               alignment: Alignment.centerLeft,
-      //               width: 200,
-      //               height: 60,
-      //               child: const Text(
-      //                 'Tabel',
-      //                 style: TextStyle(
-      //                     fontWeight: FontWeight.bold, fontSize: 18),
-      //               ),
-      //             ),
-      //           ],
-      //         ),
-      //       ),
-
-      //       //telu
-      //       Container(
-      //         height: DrawerHeight * 0.03,
-      //         margin: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-      //         alignment: Alignment.center,
-      //         color: Colors.white,
-      //         child: Row(
-      //           children: <Widget>[
-      //             const SizedBox(
-      //               width: 60,
-      //               height: 60,
-      //               child: Icon(
-      //                 Icons.newspaper_outlined,
-      //                 color: Colors.black,
-      //               ),
-      //             ),
-      //             Container(
-      //               alignment: Alignment.centerLeft,
-      //               width: 200,
-      //               height: 60,
-      //               child: const Text(
-      //                 'Publikasi',
-      //                 style: TextStyle(
-      //                     fontWeight: FontWeight.bold, fontSize: 18),
-      //               ),
-      //             ),
-      //           ],
-      //         ),
-      //       ),
-
-      //       //papat
-      //       Container(
-      //         height: DrawerHeight * 0.03,
-      //         margin: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-      //         alignment: Alignment.center,
-      //         color: Colors.white,
-      //         child: Row(
-      //           children: <Widget>[
-      //             const SizedBox(
-      //               width: 60,
-      //               height: 60,
-      //               child: Icon(
-      //                 Icons.add_chart_outlined,
-      //                 color: Colors.black,
-      //               ),
-      //             ),
-      //             Container(
-      //               alignment: Alignment.centerLeft,
-      //               width: 200,
-      //               height: 60,
-      //               child: const Text(
-      //                 'Berita Resmi Statistik',
-      //                 style: TextStyle(
-      //                     fontWeight: FontWeight.bold, fontSize: 18),
-      //               ),
-      //             ),
-      //           ],
-      //         ),
-      //       ),
-
-      //       //lima
-      //       Container(
-      //         height: DrawerHeight * 0.03,
-      //         margin: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-      //         alignment: Alignment.center,
-      //         color: Colors.white,
-      //         child: Row(
-      //           children: <Widget>[
-      //             const SizedBox(
-      //               width: 60,
-      //               height: 60,
-      //               child: Icon(
-      //                 Icons.storage_outlined,
-      //                 color: Colors.black,
-      //               ),
-      //             ),
-      //             Container(
-      //               alignment: Alignment.centerLeft,
-      //               width: 200,
-      //               height: 60,
-      //               child: const Text(
-      //                 'Senarai Rencana Terbit',
-      //                 style: TextStyle(
-      //                     fontWeight: FontWeight.bold, fontSize: 18),
-      //               ),
-      //             ),
-      //           ],
-      //         ),
-      //       ),
-      //       //enem
-
-      //       Container(
-      //         height: DrawerHeight * 0.03,
-      //         margin: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-      //         alignment: Alignment.center,
-      //         color: Colors.white,
-      //         child: Row(
-      //           children: <Widget>[
-      //             const SizedBox(
-      //               width: 60,
-      //               height: 60,
-      //               child: Icon(
-      //                 Icons.solar_power_outlined,
-      //                 color: Colors.black,
-      //               ),
-      //             ),
-      //             Container(
-      //               alignment: Alignment.centerLeft,
-      //               width: 200,
-      //               height: 60,
-      //               child: const Text(
-      //                 'Konsep & Definisi',
-      //                 style: TextStyle(
-      //                     fontWeight: FontWeight.bold, fontSize: 18),
-      //               ),
-      //             ),
-      //           ],
-      //         ),
-      //       ),
-      //       //pitu
-      //       Container(
-      //         height: DrawerHeight * 0.03,
-      //         margin: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-      //         alignment: Alignment.center,
-      //         color: Colors.white,
-      //         child: Row(
-      //           children: <Widget>[
-      //             const SizedBox(
-      //               width: 60,
-      //               height: 60,
-      //               child: Icon(
-      //                 Icons.info_outline,
-      //                 color: Colors.black,
-      //               ),
-      //             ),
-      //             Container(
-      //               alignment: Alignment.centerLeft,
-      //               width: 200,
-      //               height: 60,
-      //               child: const Text(
-      //                 'Tentang Aplikasi',
-      //                 style: TextStyle(
-      //                     fontWeight: FontWeight.bold, fontSize: 18),
-      //               ),
-      //             ),
-      //           ],
-      //         ),
-      //       ),
-      //       //exit
-
-      //       Container(
-      //           height: DrawerHeight / 20,
-      //           margin: EdgeInsets.fromLTRB(
-      //               10, DrawerHeight * 0.20, DrawerWidth * 0.5, 10),
-      //           decoration: const BoxDecoration(color: Colors.white),
-      //           child: ElevatedButton(
-      //               style: ElevatedButton.styleFrom(primary: Colors.white),
-      //               child: const Text(
-      //                 'KELUAR',
-      //                 style: TextStyle(color: Colors.black, fontSize: 18),
-      //               ),
-      //               onPressed: () {
-      //                 showexitpesan();
-      //               }))
-      // akhirrrrr
-      // ],
-      // ),
-      // ),
-      // ),
     );
   }
 }
