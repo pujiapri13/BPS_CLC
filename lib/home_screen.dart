@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'bottomnavbar_content/home_content.dart';
 import 'bottomnavbar_content/pdrb_content.dart';
 import 'bottomnavbar_content/ipm_content.dart';
-import 'bottomnavbar_content/exit_button.dart';
+import 'bottomnavbar_content/sensus_content.dart';
 import 'package:bps_cilacap/drawer_page.dart';
 
 void main() => runApp(const HomeScreen());
@@ -26,13 +26,6 @@ class _HomeScreenState extends State<HomeScreen> {
 //
 //
 // variabel buat bottom navigation bar
-  int currentIndex = 0;
-  final List<Widget> body = [
-    const HomeContent(),
-    const PdrbContent(),
-    const IpmContent(),
-    const ExitButton(),
-  ];
 //
 //
 //
@@ -74,8 +67,8 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         drawer: const Drawer(child: DrawerPage()),
         //body
-        body: Scaffold(
-          body: body[currentIndex],
+        body: const Scaffold(
+          body: HomeContent(),
         ),
 
         bottomNavigationBar: Container(
@@ -88,82 +81,56 @@ class _HomeScreenState extends State<HomeScreen> {
             children: <Widget>[
               //Button 1
               IconButton(
-                enableFeedback: false,
-                onPressed: () {
-                  setState(() {
-                    currentIndex = 0;
-                  });
-                },
-                icon: currentIndex == 0
-                    ? const Icon(
-                        BottNavIcons.home,
-                        color: Colors.cyan,
-                        size: 35,
-                      )
-                    : const Icon(
-                        BottNavIcons.home,
-                        color: Colors.white,
-                        size: 25,
-                      ),
-              ),
+                  onPressed: () {},
+                  icon: const Icon(
+                    BottNavIcons.home,
+                    color: Colors.cyan,
+                    size: 35,
+                  )),
               // Button 2
               IconButton(
-                enableFeedback: false,
                 onPressed: () {
-                  setState(() {
-                    currentIndex = 1;
-                  });
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) {
+                      return const PdrbContent();
+                    },
+                  ));
                 },
-                icon: currentIndex == 1
-                    ? const Icon(
-                        Icons.bar_chart_outlined,
-                        color: Colors.cyan,
-                        size: 35,
-                      )
-                    : const Icon(
-                        Icons.bar_chart_outlined,
-                        color: Colors.white,
-                        size: 25,
-                      ),
+                icon: const Icon(
+                  Icons.bar_chart_outlined,
+                  color: Colors.white,
+                  size: 25,
+                ),
               ),
               // button 3
               IconButton(
-                  enableFeedback: false,
-                  onPressed: () {
-                    setState(() {
-                      currentIndex = 2;
-                    });
-                  },
-                  icon: currentIndex == 2
-                      ? const Icon(
-                          Icons.stacked_line_chart_outlined,
-                          color: Colors.cyan,
-                          size: 35,
-                        )
-                      : const Icon(
-                          Icons.stacked_line_chart_outlined,
-                          color: Colors.white,
-                          size: 25,
-                        )),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) {
+                      return const IpmContent();
+                    },
+                  ));
+                },
+                icon: const Icon(
+                  Icons.stacked_line_chart_outlined,
+                  color: Colors.white,
+                  size: 25,
+                ),
+              ),
               // button 4
               IconButton(
-                enableFeedback: false,
                 onPressed: () {
-                  setState(() {
-                    currentIndex = 3;
-                  });
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) {
+                      return const Sensus();
+                    },
+                  ));
                 },
-                icon: currentIndex == 3
-                    ? const Icon(
-                        BottNavIcons.user_group,
-                        color: Colors.cyan,
-                        size: 35,
-                      )
-                    : const Icon(
-                        BottNavIcons.user_group,
-                        color: Colors.white,
-                        size: 25,
-                      ),
+                icon: const Icon(
+                  BottNavIcons.user_group,
+                  color: Colors.white,
+                  size: 25,
+                ),
               ),
             ],
           ),

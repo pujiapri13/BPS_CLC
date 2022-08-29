@@ -71,112 +71,126 @@ class _DrawerPageState extends State<DrawerPage> {
               height: DrawerHeight * 0.70,
               width: DrawerWidth,
               color: Colors.black,
-              child: ListView(
+              child: Column(
                 children: <Widget>[
-                  ListTile(
-                    onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(
                         builder: (context) {
                           return const informasiGrafis();
                         },
                       ));
                     },
-                    leading: const Icon(
-                      Icons.map_outlined,
-                      color: Colors.white,
+                    child: const ListTile(
+                      leading: Icon(
+                        Icons.map_outlined,
+                        color: Colors.white,
+                      ),
+                      title: Text('Informasi Grafis',
+                          style: TextStyle(color: Colors.white)),
                     ),
-                    title: const Text('Informasi Grafis',
-                        style: TextStyle(color: Colors.white)),
                   ),
-                  ListTile(
-                    onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(
                         builder: (context) {
                           return const Tabel();
                         },
                       ));
                     },
-                    leading: const Icon(
-                      Icons.blinds_closed_outlined,
-                      color: Colors.white,
+                    child: const ListTile(
+                      leading: Icon(
+                        Icons.blinds_closed_outlined,
+                        color: Colors.white,
+                      ),
+                      title:
+                          Text('Tabel', style: TextStyle(color: Colors.white)),
                     ),
-                    title: const Text('Tabel',
-                        style: TextStyle(color: Colors.white)),
                   ),
-                  ListTile(
-                    onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(
                         builder: (context) {
                           return const Publikasi();
                         },
                       ));
                     },
-                    leading: const Icon(
-                      Icons.newspaper_outlined,
-                      color: Colors.white,
+                    child: const ListTile(
+                      leading: Icon(
+                        Icons.newspaper_outlined,
+                        color: Colors.white,
+                      ),
+                      title: Text('Publikasi',
+                          style: TextStyle(color: Colors.white)),
                     ),
-                    title: const Text('Publikasi',
-                        style: TextStyle(color: Colors.white)),
                   ),
-                  ListTile(
-                    onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(
                         builder: (context) {
                           return const BeritaResmiStatistik();
                         },
                       ));
                     },
-                    leading: const Icon(
-                      Icons.add_chart_outlined,
-                      color: Colors.white,
+                    child: const ListTile(
+                      leading: Icon(
+                        Icons.add_chart_outlined,
+                        color: Colors.white,
+                      ),
+                      title: Text('Berita Resmi Statistik',
+                          style: TextStyle(color: Colors.white)),
                     ),
-                    title: const Text('Berita Resmi Statistik',
-                        style: TextStyle(color: Colors.white)),
                   ),
-                  ListTile(
-                    onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(
                         builder: (context) {
                           return const SenaraiRencanaTerbit();
                         },
                       ));
                     },
-                    leading: const Icon(
-                      Icons.storage_outlined,
-                      color: Colors.white,
+                    child: const ListTile(
+                      leading: Icon(
+                        Icons.storage_outlined,
+                        color: Colors.white,
+                      ),
+                      title: Text('Senarai Rencana Terbit',
+                          style: TextStyle(color: Colors.white)),
                     ),
-                    title: const Text('Senarai Rencana Terbit',
-                        style: TextStyle(color: Colors.white)),
                   ),
-                  ListTile(
-                    onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(
                         builder: (context) {
                           return const KonsepDefinisi();
                         },
                       ));
                     },
-                    leading: const Icon(
-                      Icons.solar_power_outlined,
-                      color: Colors.white,
+                    child: const ListTile(
+                      leading: Icon(
+                        Icons.solar_power_outlined,
+                        color: Colors.white,
+                      ),
+                      title: Text('Konsep & Definisi',
+                          style: TextStyle(color: Colors.white)),
                     ),
-                    title: const Text('Konsep & Definisi',
-                        style: TextStyle(color: Colors.white)),
                   ),
-                  ListTile(
-                    onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(
                         builder: (context) {
                           return const TentangAplikasi();
                         },
                       ));
                     },
-                    leading: const Icon(
-                      Icons.info_outlined,
-                      color: Colors.white,
+                    child: const ListTile(
+                      leading: Icon(
+                        Icons.info_outlined,
+                        color: Colors.white,
+                      ),
+                      title: Text('Tentang Aplikasi',
+                          style: TextStyle(color: Colors.white)),
                     ),
-                    title: const Text('Tentang Aplikasi',
-                        style: TextStyle(color: Colors.white)),
                   ),
                 ],
               ),

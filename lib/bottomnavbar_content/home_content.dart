@@ -2,7 +2,7 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import '../inflasi_content.dart';
+import '../homescreen_menu/inflasi_content.dart';
 
 void main() => runApp(const MaterialApp(
       debugShowCheckedModeBanner: false,

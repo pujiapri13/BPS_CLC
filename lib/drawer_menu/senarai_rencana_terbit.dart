@@ -13,6 +13,7 @@ class _SenaraiRencanaTerbitState extends State<SenaraiRencanaTerbit> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Senarai Rencana Terbit'),
+        backgroundColor: Colors.black,
       ),
     );
   }

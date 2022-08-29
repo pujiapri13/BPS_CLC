@@ -13,6 +13,7 @@ class _TabelState extends State<Tabel> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Tabel'),
+        backgroundColor: Colors.black,
       ),
     );
   }

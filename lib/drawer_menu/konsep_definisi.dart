@@ -13,6 +13,7 @@ class _KonsepDefinisiState extends State<KonsepDefinisi> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Konsep & Definisi'),
+        backgroundColor: Colors.black,
       ),
     );
   }

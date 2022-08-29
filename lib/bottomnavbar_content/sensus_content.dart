@@ -1,20 +1,21 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:bps_cilacap/bottomnavbar_content/sensus_content.dart';
+import 'package:bps_cilacap/bottomnavbar_content/ipm_content.dart';
 import 'package:bps_cilacap/bottomnavbar_content/pdrb_content.dart';
 import 'package:flutter/material.dart';
 
 import '../bott_nav_icons_icons.dart';
 import '../home_screen.dart';
 
-class IpmContent extends StatefulWidget {
-  const IpmContent({Key? key}) : super(key: key);
+class Sensus extends StatefulWidget {
+  const Sensus({Key? key}) : super(key: key);
 
   @override
-  _IpmContentState createState() => _IpmContentState();
+  _SensusState createState() => _SensusState();
 }
 
-class _IpmContentState extends State<IpmContent> {
+class _SensusState extends State<Sensus> {
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height -
@@ -23,7 +24,7 @@ class _IpmContentState extends State<IpmContent> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('IPM'),
+          title: const Text('SENSUS PENDUDUK'),
           backgroundColor: Colors.black,
         ),
         bottomNavigationBar: Container(
@@ -65,28 +66,28 @@ class _IpmContentState extends State<IpmContent> {
                   )),
               // Button IPM
               IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.stacked_line_chart_outlined,
-                    color: Colors.cyan,
-                    size: 35,
-                  )),
-              // button 4
-              IconButton(
                   onPressed: () {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return const Sensus();
+                          return const IpmContent();
                         },
                       ),
                     );
                   },
                   icon: const Icon(
-                    BottNavIcons.user_group,
+                    Icons.stacked_line_chart_outlined,
                     color: Colors.white,
                     size: 25,
+                  )),
+              // button 4
+              IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    BottNavIcons.user_group,
+                    color: Colors.cyan,
+                    size: 35,
                   )),
             ],
           ),

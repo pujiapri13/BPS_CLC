@@ -13,6 +13,7 @@ class _PublikasiState extends State<Publikasi> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Publikasi'),
+        backgroundColor: Colors.black,
       ),
     );
   }

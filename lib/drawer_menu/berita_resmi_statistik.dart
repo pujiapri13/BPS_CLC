@@ -13,6 +13,7 @@ class _BeritaResmiStatistikState extends State<BeritaResmiStatistik> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Berita Resmi Statistik'),
+        backgroundColor: Colors.black,
       ),
     );
   }

@@ -13,6 +13,7 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Tentang Aplikasi'),
+        backgroundColor: Colors.black,
       ),
     );
   }
