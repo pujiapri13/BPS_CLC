@@ -28,10 +28,11 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   carousel_slider: ^4.1.1
+  circle_bottom_navigation_bar: ^1.0.0
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
-  persistent_bottom_nav_bar_v2: ^4.2.5
+  url_launcher: ^6.1.5
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -81,6 +82,10 @@ flutter:
     - family: BottNavIcons
       fonts:
         - asset: fonts/BottNavIcons.ttf
+    - family:  AboutIcons
+      fonts:
+       - asset: fonts/AboutIcons.ttf
+        
         
   #   - family: Trajan Pro
   #     fonts:

@@ -1,5 +1,4 @@
 // ignore_for_file: library_private_types_in_public_api
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import '../homescreen_menu/inflasi_content.dart';
@@ -32,7 +31,8 @@ class _HomeContentState extends State<HomeContent> {
             Flexible(
               fit: FlexFit.tight,
               flex: 20,
-              child: SizedBox(
+              child: Container(
+                margin: const EdgeInsets.only(top: 0),
                 height: screenHeight * 0.20,
                 width: double.infinity,
                 child: ListView(
@@ -64,108 +64,126 @@ class _HomeContentState extends State<HomeContent> {
                 ),
               ),
             ),
-
             Flexible(
+              flex: 60,
               fit: FlexFit.tight,
-              flex: 15,
-              child: Row(
-                children: <Widget>[
-                  //satu
-                  Flexible(
-                    child: Container(
-                      width: screenWidth * 0.60,
+              child: SizedBox(
+                width: screenWidth,
+                height: screenHeight * 0.6,
+                child: Column(
+                  children: [
+                    SizedBox(
+                      width: screenWidth,
                       height: screenHeight * 0.15,
-                      color: const Color.fromRGBO(45, 192, 201, 1),
-                      child: TextButton(
-                        onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(
-                            builder: (context) {
-                              return const inflasiContent();
-                            },
-                          ));
-                        },
-                        child: const Text(
-                          'INFLASI',
-                          style: TextStyle(color: Colors.black),
+                      child: Row(
+                        children: <Widget>[
+                          //satu
+                          Container(
+                            width: screenWidth * 0.60,
+                            height: screenHeight * 0.15,
+                            color: const Color.fromRGBO(45, 192, 201, 1),
+                            child: TextButton(
+                              onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(
+                                  builder: (context) {
+                                    return const inflasiContent();
+                                  },
+                                ));
+                              },
+                              child: const Text(
+                                'INFLASI',
+                                style: TextStyle(color: Colors.black),
+                              ),
+                            ),
+                          ),
+                          //dua
+                          Flexible(
+                            child: Container(
+                              margin: const EdgeInsets.only(left: 1),
+                              width: screenWidth * 0.40,
+                              height: screenHeight * 0.15,
+                              color: const Color.fromRGBO(45, 192, 201, 0.65),
+                              child: const Center(
+                                child: Text('KETIMPANGAN'),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      width: screenWidth,
+                      height: screenHeight * 0.15,
+                      child: Row(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(top: 1),
+                            width: screenWidth * 0.38,
+                            height: screenHeight * 0.15,
+                            color: const Color.fromRGBO(45, 192, 201, 0.65),
+                            child: const Center(
+                              child: Text('PENGANGGURAN'),
+                            ),
+                          ),
+                          //empat
+                          Flexible(
+                            child: Container(
+                              margin: const EdgeInsets.only(left: 1, top: 1),
+                              width: screenWidth * 0.62,
+                              height: screenHeight * 0.15,
+                              color: const Color.fromRGBO(45, 192, 201, 1),
+                              child: const Center(
+                                child: Text('PERTUMBUHAN EKONOMI'),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      width: screenWidth,
+                      height: screenHeight * 0.15,
+                      child: Row(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(top: 1),
+                            width: screenWidth * 0.70,
+                            height: screenHeight * 0.15,
+                            color: const Color.fromRGBO(45, 192, 201, 1),
+                            child: const Center(
+                              child: Text('TENAGA KERJA'),
+                            ),
+                          ),
+                          //empat
+                          Flexible(
+                            child: Container(
+                              margin: const EdgeInsets.only(left: 1, top: 1),
+                              width: screenWidth * 0.30,
+                              height: screenHeight * 0.15,
+                              color: const Color.fromRGBO(45, 192, 201, 0.65),
+                              child: const Center(
+                                child: Text('KEMISKINAN'),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Flexible(
+                      child: Container(
+                        margin: const EdgeInsets.only(top: 1),
+                        width: screenWidth,
+                        height: screenHeight * 0.5,
+                        child: Container(
+                          height: screenHeight * 0.5,
+                          color: const Color.fromRGBO(45, 149, 201, 1),
+                          child: const Center(
+                            child: Text('JUMLAH PENDUDUK'),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  //dua
-                  Container(
-                    width: screenWidth * 0.40,
-                    height: screenHeight * 0.15,
-                    color: const Color.fromRGBO(45, 192, 201, 0.65),
-                    child: const Center(
-                      child: Text('KETIMPANGAN'),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-
-            Flexible(
-              fit: FlexFit.tight,
-              flex: 15,
-              child: Row(
-                children: <Widget>[
-                  //tiga
-                  Container(
-                    width: screenWidth * 0.38,
-                    height: screenHeight * 0.15,
-                    color: const Color.fromRGBO(45, 192, 201, 0.65),
-                    child: const Center(
-                      child: Text('PENGANGGURAN'),
-                    ),
-                  ),
-                  //empat
-                  Container(
-                    width: screenWidth * 0.62,
-                    height: screenHeight * 0.15,
-                    color: const Color.fromRGBO(45, 192, 201, 1),
-                    child: const Center(
-                      child: Text('PERTUMBUHAN EKONOMI'),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-
-            Flexible(
-              fit: FlexFit.tight,
-              flex: 15,
-              child: Row(
-                children: <Widget>[
-                  //lima
-                  Container(
-                    width: screenWidth * 0.70,
-                    height: screenHeight * 0.15,
-                    color: const Color.fromRGBO(45, 192, 201, 1),
-                    child: const Center(
-                      child: Text('TENAGA KERJA'),
-                    ),
-                  ),
-                  //enam
-                  Container(
-                    width: screenWidth * 0.30,
-                    height: screenHeight * 0.15,
-                    color: const Color.fromRGBO(45, 192, 201, 0.65),
-                    child: const Center(
-                      child: Text('KEMISKINAN'),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            //tujuh
-            Flexible(
-              fit: FlexFit.tight,
-              flex: 15,
-              child: Container(
-                height: screenHeight * 0.15,
-                color: const Color.fromRGBO(45, 149, 201, 1),
-                child: const Center(
-                  child: Text('JUMLAH PENDUDUK'),
+                  ],
                 ),
               ),
             ),

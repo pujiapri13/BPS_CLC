@@ -1,5 +1,7 @@
 // ignore_for_file: non_constant_identifier_names, library_private_types_in_public_api
 import 'package:bps_cilacap/bott_nav_icons_icons.dart';
+import 'package:circle_bottom_navigation_bar/circle_bottom_navigation_bar.dart';
+import 'package:circle_bottom_navigation_bar/widgets/tab_data.dart';
 import 'package:flutter/material.dart';
 import 'bottomnavbar_content/home_content.dart';
 import 'bottomnavbar_content/pdrb_content.dart';
@@ -18,10 +20,13 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 //function
-  void OnTabTapped(int index) {
-    setState(() {});
-  }
-
+  int currentPage = 0;
+  final List<Widget> _pages = [
+    const HomeContent(),
+    const PdrbContent(),
+    const IpmContent(),
+    const Sensus(),
+  ];
 //
 //
 //
@@ -32,10 +37,25 @@ class _HomeScreenState extends State<HomeScreen> {
 //tampilan utama
   @override
   Widget build(BuildContext context) {
-    final ScreenHeight = MediaQuery.of(context).size.height -
-        MediaQuery.of(context).padding.top -
-        MediaQuery.of(context).padding.bottom;
-    final ScreenWidth = MediaQuery.of(context).size.width;
+    //nav
+    final ScreenHeight = MediaQuery.of(context).size.height;
+    final size = MediaQuery.of(context).size;
+    final viewPadding = MediaQuery.of(context).viewPadding;
+    double barHeight;
+    double barHeightWithNotch = 67;
+    double arcHeightWithNotch = 67;
+
+    if (size.height > 700) {
+      barHeight = 70;
+    } else {
+      barHeight = size.height * 0.1;
+    }
+
+    if (viewPadding.bottom > 0) {
+      barHeightWithNotch = (size.height * 0.07) + viewPadding.bottom;
+      arcHeightWithNotch = (size.height * 0.075) + viewPadding.bottom;
+    }
+//
     return SafeArea(
       top: true,
       bottom: true,
@@ -46,8 +66,8 @@ class _HomeScreenState extends State<HomeScreen> {
             children: <Widget>[
               // icon
               SizedBox(
-                width: ScreenWidth * 0.2,
-                height: ScreenHeight * 0.10,
+                width: 50,
+                height: 41.45,
                 child: Image.asset(
                   'assets/images/logo.png',
                   alignment: Alignment.center,
@@ -66,76 +86,59 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         drawer: const Drawer(child: DrawerPage()),
-        //body
-        body: const Scaffold(
-          body: HomeContent(),
-        ),
-
-        bottomNavigationBar: Container(
-          height: ScreenHeight * 0.1,
-          decoration: const BoxDecoration(
-            color: Colors.black,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              //Button 1
-              IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    BottNavIcons.home,
-                    color: Colors.cyan,
-                    size: 35,
-                  )),
-              // Button 2
-              IconButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) {
-                      return const PdrbContent();
-                    },
-                  ));
-                },
-                icon: const Icon(
-                  Icons.bar_chart_outlined,
-                  color: Colors.white,
-                  size: 25,
-                ),
-              ),
-              // button 3
-              IconButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) {
-                      return const IpmContent();
-                    },
-                  ));
-                },
-                icon: const Icon(
-                  Icons.stacked_line_chart_outlined,
-                  color: Colors.white,
-                  size: 25,
-                ),
-              ),
-              // button 4
-              IconButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) {
-                      return const Sensus();
-                    },
-                  ));
-                },
-                icon: const Icon(
-                  BottNavIcons.user_group,
-                  color: Colors.white,
-                  size: 25,
-                ),
-              ),
-            ],
-          ),
+        body: _pages[currentPage],
+        bottomNavigationBar: CircleBottomNavigationBar(
+          initialSelection: currentPage,
+          barHeight: viewPadding.bottom > 0 ? barHeightWithNotch : barHeight,
+          arcHeight: viewPadding.bottom > 0 ? arcHeightWithNotch : barHeight,
+          itemTextOff: viewPadding.bottom > 0 ? 0 : 1,
+          itemTextOn: viewPadding.bottom > 0 ? 0 : 1,
+          circleOutline: 15.0,
+          shadowAllowance: 0.0,
+          circleSize: 50.0,
+          blurShadowRadius: 50.0,
+          barBackgroundColor: Colors.black,
+          circleColor: Colors.cyan[100],
+          activeIconColor: Colors.black,
+          inactiveIconColor: Colors.grey,
+          textColor: Colors.grey,
+          tabs: getTabsData(),
+          onTabChangedListener: (index) => setState(() => currentPage = index),
         ),
       ),
     );
   }
+}
+
+List<TabData> getTabsData() {
+  return [
+    TabData(
+      icon: Icons.home,
+      iconSize: 25.0,
+      title: 'HOME',
+      fontSize: 12,
+      fontWeight: FontWeight.bold,
+    ),
+    TabData(
+      icon: Icons.bar_chart_outlined,
+      iconSize: 25,
+      title: 'PDRB',
+      fontSize: 12,
+      fontWeight: FontWeight.bold,
+    ),
+    TabData(
+      icon: Icons.stacked_line_chart_outlined,
+      iconSize: 25,
+      title: 'IPM',
+      fontSize: 12,
+      fontWeight: FontWeight.bold,
+    ),
+    TabData(
+      icon: BottNavIcons.user_group,
+      iconSize: 25,
+      title: 'SENSUS',
+      fontSize: 12,
+      fontWeight: FontWeight.bold,
+    ),
+  ];
 }
