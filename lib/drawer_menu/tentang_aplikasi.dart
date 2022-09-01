@@ -1,4 +1,5 @@
-import 'package:bps_cilacap/about_icons_icons.dart';
+import 'package:bps_cilacap/Icons/about_icons_icons.dart';
+import 'package:bps_cilacap/Icons/back_icons_icons.dart';
 import 'package:flutter/material.dart';
 
 class TentangAplikasi extends StatefulWidget {
@@ -19,6 +20,17 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
       appBar: AppBar(
         title: const Text('Tentang Aplikasi'),
         backgroundColor: Colors.black,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Center(
+            child: Icon(
+              BackIcons.circle_arrow,
+              size: 40,
+            ),
+          ),
+        ),
       ),
       body: Center(
         child: Container(
@@ -28,7 +40,7 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
           child: Column(
             children: <Widget>[
               Container(
-                margin: const EdgeInsets.only(top: 80),
+                margin: const EdgeInsets.only(top: 30),
                 child: const Text(
                   'PUSDACAP',
                   style: TextStyle(
@@ -80,36 +92,39 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
                   ],
                 ),
               ),
-              const Text(
-                'MAJENANG',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w800,
-                    fontSize: 30),
+              Container(
+                margin: const EdgeInsets.only(bottom: 30),
+                child: const Text(
+                  'MAJENANG',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w800,
+                      fontSize: 30),
+                ),
               ),
               SizedBox(
-                  height: screenHeight * 0.3,
+                  height: screenHeight * 0.15,
                   width: screenWidth * 0.6,
                   child: Column(
                     children: [
                       SizedBox(
-                        height: screenHeight * 0.1,
+                        height: screenHeight * 0.05,
                         width: screenWidth,
                         child: Row(
                           children: <Widget>[
                             Container(
                               width: screenWidth * 0.2,
-                              height: screenHeight * 0.1,
+                              height: screenHeight * 0.05,
                               alignment: Alignment.centerRight,
                               child: const Icon(
-                                AboutIcons.frame,
+                                AboutIcons.github_icon,
                                 color: Colors.white,
                               ),
                             ),
                             Container(
                               width: screenWidth * 0.4,
-                              height: screenHeight * 0.1,
+                              height: screenHeight * 0.05,
                               alignment: Alignment.centerLeft,
                               child: const Text(
                                 '   Work with Us',
@@ -120,25 +135,25 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
                         ),
                       ),
                       SizedBox(
-                        height: screenHeight * 0.1,
+                        height: screenHeight * 0.05,
                         width: screenWidth,
                         child: Row(
                           children: <Widget>[
                             Container(
                               width: screenWidth * 0.2,
-                              height: screenHeight * 0.1,
+                              height: screenHeight * 0.05,
                               alignment: Alignment.centerRight,
                               child: const Icon(
-                                AboutIcons.framebrowser,
+                                AboutIcons.browser_icon,
                                 color: Colors.white,
                               ),
                             ),
                             Container(
                               width: screenWidth * 0.4,
-                              height: screenHeight * 0.1,
+                              height: screenHeight * 0.05,
                               alignment: Alignment.centerLeft,
                               child: const Text(
-                                '   cilacapkab.go.id',
+                                '   bps.cilacapkab.go.id',
                                 style: TextStyle(color: Colors.white),
                               ),
                             ),
@@ -146,22 +161,22 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
                         ),
                       ),
                       SizedBox(
-                        height: screenHeight * 0.1,
+                        height: screenHeight * 0.05,
                         width: screenWidth,
                         child: Row(
                           children: <Widget>[
                             Container(
                               width: screenWidth * 0.2,
-                              height: screenHeight * 0.1,
+                              height: screenHeight * 0.05,
                               alignment: Alignment.centerRight,
                               child: const Icon(
-                                AboutIcons.framecube,
+                                AboutIcons.cube_outline,
                                 color: Colors.white,
                               ),
                             ),
                             Container(
                               width: screenWidth * 0.4,
-                              height: screenHeight * 0.1,
+                              height: screenHeight * 0.05,
                               alignment: Alignment.centerLeft,
                               child: const Text(
                                 '   Version 0.1.0',
@@ -180,3 +195,12 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
     );
   }
 }
+
+// _githubURL() async {
+//   const url = 'https://flutter.io';
+//   if (await canLaunchUrl(url)) {
+//     await launchUrl(url);
+//   } else {
+//     throw 'Could not launch $url';
+//   }
+// }
