@@ -1,6 +1,7 @@
 import 'package:bps_cilacap/Icons/about_icons_icons.dart';
 import 'package:bps_cilacap/Icons/back_icons_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TentangAplikasi extends StatefulWidget {
   const TentangAplikasi({Key? key}) : super(key: key);
@@ -9,6 +10,9 @@ class TentangAplikasi extends StatefulWidget {
   State<TentangAplikasi> createState() => _TentangAplikasiState();
 }
 
+final Uri _url1 = Uri.parse('https://cilacapkab.bps.go.id/');
+final Uri _url2 = Uri.parse('https://github.com/pujiapri13/BPS_CLC');
+
 class _TentangAplikasiState extends State<TentangAplikasi> {
   @override
   Widget build(BuildContext context) {
@@ -16,6 +20,7 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom;
     final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Tentang Aplikasi'),
@@ -114,7 +119,7 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
                         child: Row(
                           children: <Widget>[
                             Container(
-                              width: screenWidth * 0.2,
+                              width: screenWidth * 0.1,
                               height: screenHeight * 0.05,
                               alignment: Alignment.centerRight,
                               child: const Icon(
@@ -123,12 +128,18 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
                               ),
                             ),
                             Container(
-                              width: screenWidth * 0.4,
+                              width: screenWidth * 0.5,
                               height: screenHeight * 0.05,
                               alignment: Alignment.centerLeft,
-                              child: const Text(
-                                '   Work with Us',
-                                style: TextStyle(color: Colors.white),
+                              child: const TextButton(
+                                onPressed: _launchUrlGithub,
+                                child: Text(
+                                  'Work with Us',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
                               ),
                             ),
                           ],
@@ -140,7 +151,7 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
                         child: Row(
                           children: <Widget>[
                             Container(
-                              width: screenWidth * 0.2,
+                              width: screenWidth * 0.1,
                               height: screenHeight * 0.05,
                               alignment: Alignment.centerRight,
                               child: const Icon(
@@ -149,13 +160,22 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
                               ),
                             ),
                             Container(
-                              width: screenWidth * 0.4,
+                              width: screenWidth * 0.5,
                               height: screenHeight * 0.05,
                               alignment: Alignment.centerLeft,
-                              child: const Text(
-                                '   bps.cilacapkab.go.id',
-                                style: TextStyle(color: Colors.white),
+                              child: const TextButton(
+                                onPressed: _launchUrlBPS,
+                                child: Text(
+                                  'bps.cilacapkab.go.id',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w500),
+                                ),
                               ),
+                              // child: const Text(
+                              //   '   bps.cilacapkab.go.id',
+                              //   style: TextStyle(color: Colors.white),
+                              // ),
                             ),
                           ],
                         ),
@@ -166,7 +186,7 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
                         child: Row(
                           children: <Widget>[
                             Container(
-                              width: screenWidth * 0.2,
+                              width: screenWidth * 0.1,
                               height: screenHeight * 0.05,
                               alignment: Alignment.centerRight,
                               child: const Icon(
@@ -175,12 +195,14 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
                               ),
                             ),
                             Container(
-                              width: screenWidth * 0.4,
+                              width: screenWidth * 0.5,
                               height: screenHeight * 0.05,
                               alignment: Alignment.centerLeft,
                               child: const Text(
-                                '   Version 0.1.0',
-                                style: TextStyle(color: Colors.white),
+                                '  Version 0.1.0',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500),
                               ),
                             ),
                           ],
@@ -196,6 +218,17 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
   }
 }
 
+Future<void> _launchUrlBPS() async {
+  if (!await launchUrl(_url1)) {
+    throw 'Could not launch $_url1';
+  }
+}
+
+Future<void> _launchUrlGithub() async {
+  if (!await launchUrl(_url2)) {
+    throw 'Could not launch $_url2';
+  }
+}
 // _githubURL() async {
 //   const url = 'https://flutter.io';
 //   if (await canLaunchUrl(url)) {
