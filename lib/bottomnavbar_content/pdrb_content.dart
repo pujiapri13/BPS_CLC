@@ -9,6 +9,13 @@ class PdrbContent extends StatefulWidget {
 }
 
 class _PdrbContentState extends State<PdrbContent> {
+  List<String> nilai_pdrb = [
+    "PDRB AHB Menurut Lapangan Usaha",
+    "Distribusi PDRB AHB",
+    "Laju Pertumbuhan PDRB",
+    "Sumber Pertumbuhan PDRB",
+  ];
+
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height -
@@ -34,9 +41,10 @@ class _PdrbContentState extends State<PdrbContent> {
                 child: Column(
                   children: <Widget>[
                     Flexible(
-                        fit: FlexFit.tight,
-                        flex: 1,
-                        child: Container(color: Colors.blue)),
+                      fit: FlexFit.tight,
+                      flex: 1,
+                      child: Container(),
+                    ),
                     Flexible(
                       fit: FlexFit.tight,
                       flex: 1,
