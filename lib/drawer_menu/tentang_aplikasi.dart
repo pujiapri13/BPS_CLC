@@ -10,17 +10,20 @@ class TentangAplikasi extends StatefulWidget {
   State<TentangAplikasi> createState() => _TentangAplikasiState();
 }
 
+//<<<<< target url hyperlink
 final Uri _url1 = Uri.parse('https://cilacapkab.bps.go.id/');
 final Uri _url2 = Uri.parse('https://github.com/pujiapri13/BPS_CLC');
 
+//>>>>>
 class _TentangAplikasiState extends State<TentangAplikasi> {
   @override
   Widget build(BuildContext context) {
+    //<<<<< ukuran layar
     final screenHeight = MediaQuery.of(context).size.height -
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom;
     final screenWidth = MediaQuery.of(context).size.width;
-
+    //>>>>>
     return Scaffold(
       appBar: AppBar(
         title: const Text('Tentang Aplikasi'),
@@ -65,9 +68,10 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
                       child: Text(
                         'Made with',
                         style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18),
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
                       ),
                     ),
                     const Flexible(
@@ -103,113 +107,113 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
                   'MAJENANG',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w800,
-                      fontSize: 30),
+                    color: Colors.white,
+                    fontWeight: FontWeight.w800,
+                    fontSize: 30,
+                  ),
                 ),
               ),
               SizedBox(
-                  height: screenHeight * 0.15,
-                  width: screenWidth * 0.6,
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: screenHeight * 0.05,
-                        width: screenWidth,
-                        child: Row(
-                          children: <Widget>[
-                            Container(
-                              width: screenWidth * 0.1,
-                              height: screenHeight * 0.05,
-                              alignment: Alignment.centerRight,
-                              child: const Icon(
-                                AboutIcons.github_icon,
-                                color: Colors.white,
-                              ),
+                height: screenHeight * 0.15,
+                width: screenWidth * 0.6,
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: screenHeight * 0.05,
+                      width: screenWidth,
+                      child: Row(
+                        children: <Widget>[
+                          Container(
+                            width: screenWidth * 0.1,
+                            height: screenHeight * 0.05,
+                            alignment: Alignment.centerRight,
+                            child: const Icon(
+                              AboutIcons.github_icon,
+                              color: Colors.white,
                             ),
-                            Container(
-                              width: screenWidth * 0.5,
-                              height: screenHeight * 0.05,
-                              alignment: Alignment.centerLeft,
-                              child: const TextButton(
-                                onPressed: _launchUrlGithub,
-                                child: Text(
-                                  'Work with Us',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: screenHeight * 0.05,
-                        width: screenWidth,
-                        child: Row(
-                          children: <Widget>[
-                            Container(
-                              width: screenWidth * 0.1,
-                              height: screenHeight * 0.05,
-                              alignment: Alignment.centerRight,
-                              child: const Icon(
-                                AboutIcons.browser_icon,
-                                color: Colors.white,
-                              ),
-                            ),
-                            Container(
-                              width: screenWidth * 0.5,
-                              height: screenHeight * 0.05,
-                              alignment: Alignment.centerLeft,
-                              child: const TextButton(
-                                onPressed: _launchUrlBPS,
-                                child: Text(
-                                  'bps.cilacapkab.go.id',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              ),
-                              // child: const Text(
-                              //   '   bps.cilacapkab.go.id',
-                              //   style: TextStyle(color: Colors.white),
-                              // ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: screenHeight * 0.05,
-                        width: screenWidth,
-                        child: Row(
-                          children: <Widget>[
-                            Container(
-                              width: screenWidth * 0.1,
-                              height: screenHeight * 0.05,
-                              alignment: Alignment.centerRight,
-                              child: const Icon(
-                                AboutIcons.cube_outline,
-                                color: Colors.white,
-                              ),
-                            ),
-                            Container(
-                              width: screenWidth * 0.5,
-                              height: screenHeight * 0.05,
-                              alignment: Alignment.centerLeft,
-                              child: const Text(
-                                '  Version 0.1.0',
+                          ),
+                          Container(
+                            width: screenWidth * 0.5,
+                            height: screenHeight * 0.05,
+                            alignment: Alignment.centerLeft,
+                            child: const TextButton(
+                              onPressed: _launchUrlGithub,
+                              child: Text(
+                                'Work with Us',
                                 style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500),
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                    ],
-                  )),
+                    ),
+                    SizedBox(
+                      height: screenHeight * 0.05,
+                      width: screenWidth,
+                      child: Row(
+                        children: <Widget>[
+                          Container(
+                            width: screenWidth * 0.1,
+                            height: screenHeight * 0.05,
+                            alignment: Alignment.centerRight,
+                            child: const Icon(
+                              AboutIcons.browser_icon,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Container(
+                            width: screenWidth * 0.5,
+                            height: screenHeight * 0.05,
+                            alignment: Alignment.centerLeft,
+                            child: const TextButton(
+                              onPressed: _launchUrlBPS,
+                              child: Text(
+                                'cilacapkab.bps.go.id',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: screenHeight * 0.05,
+                      width: screenWidth,
+                      child: Row(
+                        children: <Widget>[
+                          Container(
+                            width: screenWidth * 0.1,
+                            height: screenHeight * 0.05,
+                            alignment: Alignment.centerRight,
+                            child: const Icon(
+                              AboutIcons.cube_outline,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Container(
+                            width: screenWidth * 0.5,
+                            height: screenHeight * 0.05,
+                            alignment: Alignment.centerLeft,
+                            child: const Text(
+                              '  Version 0.1.0',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
@@ -218,22 +222,18 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
   }
 }
 
-Future<void> _launchUrlBPS() async {
-  if (!await launchUrl(_url1)) {
-    throw 'Could not launch $_url1';
-  }
-}
-
+//<<<<< proses url github/pujiapri13/BPS_CLC
 Future<void> _launchUrlGithub() async {
   if (!await launchUrl(_url2)) {
     throw 'Could not launch $_url2';
   }
 }
-// _githubURL() async {
-//   const url = 'https://flutter.io';
-//   if (await canLaunchUrl(url)) {
-//     await launchUrl(url);
-//   } else {
-//     throw 'Could not launch $url';
-//   }
-// }
+//>>>>>
+
+//<<<<< proses url cilacapkab.bps.go.id
+Future<void> _launchUrlBPS() async {
+  if (!await launchUrl(_url1)) {
+    throw 'Could not launch $_url1';
+  }
+}
+//>>>>>

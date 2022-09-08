@@ -202,8 +202,8 @@ class _DrawerPageState extends State<DrawerPage> {
                 color: Colors.black,
                 child: ElevatedButton.icon(
                   style: ElevatedButton.styleFrom(
-                      primary: Colors.white,
-                      onPrimary: Colors.black,
+                      foregroundColor: Colors.black,
+                      backgroundColor: Colors.white,
                       maximumSize: Size(DrawerWidth, DrawerHeight)),
                   icon: const Icon(Icons.arrow_back_ios),
                   label: const Text('KELUAR'),
