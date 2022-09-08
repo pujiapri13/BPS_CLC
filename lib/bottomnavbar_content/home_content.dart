@@ -90,21 +90,45 @@ class _HomeContentState extends State<HomeContent> {
                                   },
                                 ));
                               },
-                              child: const Text(
-                                'INFLASI',
-                                style: TextStyle(color: Colors.black),
+                              child: Column(
+                                children: [
+                                  Image.asset(
+                                    'assets/images/inflasi.png',
+                                  ),
+                                  const Text(
+                                    'INFLASI',
+                                    style: TextStyle(color: Colors.black),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
-                          //dua
+                          // //dua
                           Flexible(
                             child: Container(
                               margin: const EdgeInsets.only(left: 1),
                               width: screenWidth * 0.40,
                               height: screenHeight * 0.15,
                               color: const Color.fromRGBO(45, 192, 201, 0.65),
-                              child: const Center(
-                                child: Text('KETIMPANGAN'),
+                              child: TextButton(
+                                onPressed: () {
+                                  Navigator.push(context, MaterialPageRoute(
+                                    builder: (context) {
+                                      return const inflasiContent();
+                                    },
+                                  ));
+                                },
+                                child: Column(
+                                  children: const [
+                                    // Image.asset(
+                                    //   'assets/images/pengangguran.png',
+                                    // ),
+                                    Text(
+                                      'KETIMPANGAN',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -121,8 +145,16 @@ class _HomeContentState extends State<HomeContent> {
                             width: screenWidth * 0.38,
                             height: screenHeight * 0.15,
                             color: const Color.fromRGBO(45, 192, 201, 0.65),
-                            child: const Center(
-                              child: Text('PENGANGGURAN'),
+                            child: Column(
+                              children: [
+                                Image.asset(
+                                  'assets/images/pengangguran.png',
+                                ),
+                                const Text(
+                                  'PENGANGGURAN',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ],
                             ),
                           ),
                           //empat
@@ -132,8 +164,16 @@ class _HomeContentState extends State<HomeContent> {
                               width: screenWidth * 0.62,
                               height: screenHeight * 0.15,
                               color: const Color.fromRGBO(45, 192, 201, 1),
-                              child: const Center(
-                                child: Text('PERTUMBUHAN EKONOMI'),
+                              child: Column(
+                                children: [
+                                  Image.asset(
+                                    'assets/images/pertumbuhan_ekonomi.png',
+                                  ),
+                                  const Text(
+                                    'PERTUMBUHAN EKONOMI',
+                                    style: TextStyle(color: Colors.black),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
@@ -150,8 +190,16 @@ class _HomeContentState extends State<HomeContent> {
                             width: screenWidth * 0.70,
                             height: screenHeight * 0.15,
                             color: const Color.fromRGBO(45, 192, 201, 1),
-                            child: const Center(
-                              child: Text('TENAGA KERJA'),
+                            child: Column(
+                              children: [
+                                Image.asset(
+                                  'assets/images/tenaga_kerja.png',
+                                ),
+                                const Text(
+                                  'TENAGA KERJA',
+                                  style: TextStyle(color: Colors.black),
+                                ),
+                              ],
                             ),
                           ),
                           //empat

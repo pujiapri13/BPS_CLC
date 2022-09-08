@@ -28,12 +28,19 @@ class _SplashScreenState extends State<SplashScreen> {
         width: MediaQuery.of(context).size.width,
         child: Container(
             margin: const EdgeInsets.all(50),
-            child: Center(
-                child: Image.asset(
-              './assets/images/splash1.jpeg',
-              width: 600,
-              height: 400,
-            ))),
+            child: const Text(
+              'PUSDACAP',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            )
+            // Center(
+            //   child: Image.asset(
+            //     './assets/images/splash1.jpeg',
+            //     width: 600,
+            //     height: 400,
+            //   ),
+            // ),
+            ),
       ),
     );
   }

@@ -1,5 +1,6 @@
 // ignore_for_file: unused_local_variable, camel_case_types, non_constant_identifier_names
 
+import 'package:bps_cilacap/Icons/back_icons_icons.dart';
 import 'package:flutter/material.dart';
 
 class inflasiContent extends StatefulWidget {
@@ -18,17 +19,20 @@ class _inflasiContentState extends State<inflasiContent> {
     final ScreenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
+        title: const Text('INFLASI'),
         backgroundColor: Colors.black,
-        title: Container(
-          alignment: Alignment.centerLeft,
-          height: ScreenHeight * 0.10,
-          child: const Text(
-            'INFLASI',
-            style: TextStyle(fontSize: 24, color: Colors.white),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Center(
+            child: Icon(
+              BackIcons.circle_arrow,
+              size: 40,
+            ),
           ),
         ),
       ),
-      body: const Text('isi inflasi'),
     );
   }
 }
