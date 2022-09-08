@@ -30,9 +30,9 @@ class _IpmContentState extends State<IpmContent> {
             children: <Widget>[
               Container(
                 height: screenHeight * 0.1,
-                margin: EdgeInsets.only(bottom: 2),
+                margin: const EdgeInsets.only(bottom: 2),
                 color: Colors.black,
-                child: Center(
+                child: const Center(
                   child: Text(
                     'Perkembangan IPM beserta Komponennya Kabupaten Cilacap, 2017 - 2021',
                     textAlign: TextAlign.center,
@@ -55,7 +55,7 @@ class _IpmContentState extends State<IpmContent> {
                         child: Container(
                           width: screenWeight,
                           color: Colors.cyan,
-                          child: Center(child: Text('Tabel')),
+                          child: const Center(child: Text('Tabel')),
                         ),
                       ),
                       Flexible(
@@ -64,7 +64,7 @@ class _IpmContentState extends State<IpmContent> {
                         child: Container(
                           width: screenWeight,
                           color: Colors.cyan[100],
-                          child: Center(child: Text('Grafik')),
+                          child: const Center(child: Text('Grafik')),
                         ),
                       ),
                     ],
