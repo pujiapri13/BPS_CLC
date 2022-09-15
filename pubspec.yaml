@@ -74,7 +74,7 @@ flutter:
      - assets/images/pengangguran.png
      - assets/images/pertumbuhan_ekonomi.png
      - assets/images/tenaga_kerja.png
-     
+     - assets/images/gis.png     
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
