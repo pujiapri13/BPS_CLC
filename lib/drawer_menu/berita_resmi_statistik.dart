@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bps_cilacap/Icons/back_icons_icons.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class BeritaResmiStatistik extends StatefulWidget {
   const BeritaResmiStatistik({Key? key}) : super(key: key);
@@ -26,6 +27,10 @@ class _BeritaResmiStatistikState extends State<BeritaResmiStatistik> {
             ),
           ),
         ),
+      ),
+      body: const WebView(
+        initialUrl: "https://cilacapkab.bps.go.id/brs.html",
+        javascriptMode: JavascriptMode.unrestricted,
       ),
     );
   }

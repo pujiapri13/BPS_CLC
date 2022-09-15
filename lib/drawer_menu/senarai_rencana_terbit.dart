@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bps_cilacap/Icons/back_icons_icons.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class SenaraiRencanaTerbit extends StatefulWidget {
   const SenaraiRencanaTerbit({Key? key}) : super(key: key);
@@ -26,6 +27,10 @@ class _SenaraiRencanaTerbitState extends State<SenaraiRencanaTerbit> {
             ),
           ),
         ),
+      ),
+      body: const WebView(
+        initialUrl: "https://cilacapkab.bps.go.id/publication/arc#arcTab1.html",
+        javascriptMode: JavascriptMode.unrestricted,
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bps_cilacap/Icons/back_icons_icons.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class Publikasi extends StatefulWidget {
   const Publikasi({Key? key}) : super(key: key);
@@ -26,6 +27,10 @@ class _PublikasiState extends State<Publikasi> {
             ),
           ),
         ),
+      ),
+      body: const WebView(
+        initialUrl: "https://cilacapkab.bps.go.id/publication.html",
+        javascriptMode: JavascriptMode.unrestricted,
       ),
     );
   }
