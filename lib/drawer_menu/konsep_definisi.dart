@@ -1018,7 +1018,7 @@ class _KonsepDefinisiState extends State<KonsepDefinisi> {
                           ),
                         ), // >>> /cardH
                         //<<< Selengkapnya
-                        Container(
+                        SizedBox(
                           height: screenHeight * 0.07,
                           child: Expanded(
                             child: Flexible(

@@ -308,13 +308,79 @@ class _PdrbContentState extends State<PdrbContent> {
                   margin: const EdgeInsets.only(top: 2),
                   width: double.infinity,
                   height: screenHeight * 0.2,
-                  color: Colors.grey,
                   // <<< Tabel
-                  child: const Center(
-                    child: Text(
-                      'Tabel',
-                      style: TextStyle(color: Colors.white),
-                    ),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: DataTable(
+                        headingRowHeight: screenHeight * 0.1,
+                        columns: const [
+                          DataColumn(
+                            label: Flexible(
+                              child: Text(
+                                'Tahun',
+                                style: TextStyle(
+                                    color: Colors.blue,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ),
+                          ),
+                          DataColumn(
+                            label: Text(
+                              'PDRB Atas Dasar Harga Berlaku (Juta Rupiah)',
+                              style: TextStyle(
+                                  color: Colors.blue,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                          DataColumn(
+                            label: Text(
+                              'PDRB Atas Dasar Harga Konstant (Juta Rupiah)',
+                              style: TextStyle(
+                                  color: Colors.blue,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                        ],
+                        rows: const [
+                          DataRow(
+                            cells: [
+                              DataCell(
+                                Text(
+                                  '2021',
+                                ),
+                              ),
+                              DataCell(
+                                Text(
+                                  '110.262.462,97',
+                                ),
+                              ),
+                              DataCell(
+                                Text(
+                                  '100.112.422,37',
+                                ),
+                              ),
+                            ],
+                          ),
+                          DataRow(
+                            cells: [
+                              DataCell(
+                                Text(
+                                  '2020',
+                                ),
+                              ),
+                              DataCell(
+                                Text(
+                                  '100.122.124,32',
+                                ),
+                              ),
+                              DataCell(
+                                Text(
+                                  '110.162.162,97',
+                                ),
+                              ),
+                            ],
+                          ),
+                        ]),
                   ),
                   // >>> /Tabel
                 ),

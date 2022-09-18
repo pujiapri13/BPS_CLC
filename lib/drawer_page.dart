@@ -80,7 +80,9 @@ class _DrawerPageState extends State<DrawerPage> {
               child: Column(
                 children: <Widget>[
                   Flexible(
-                    child: TextButton(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black),
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -91,12 +93,13 @@ class _DrawerPageState extends State<DrawerPage> {
                           ),
                         );
                       },
-                      child: const ListTile(
-                        leading: Icon(
+                      child: ListTile(
+                        minLeadingWidth: DrawerWidth * 0.05,
+                        leading: const Icon(
                           Icons.map_outlined,
                           color: Colors.white,
                         ),
-                        title: Text(
+                        title: const Text(
                           'Informasi Grafis',
                           style: TextStyle(
                             color: Colors.white,
@@ -106,7 +109,9 @@ class _DrawerPageState extends State<DrawerPage> {
                     ),
                   ),
                   Flexible(
-                    child: TextButton(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black),
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -118,11 +123,12 @@ class _DrawerPageState extends State<DrawerPage> {
                         );
                       },
                       child: ListTile(
+                        minLeadingWidth: DrawerWidth * 0.05,
                         leading: Image.asset(
                           "assets/images/gis.png",
                           color: Colors.white,
                         ),
-                        title: Text(
+                        title: const Text(
                           'Web GIS',
                           style: TextStyle(
                             color: Colors.white,
@@ -132,7 +138,9 @@ class _DrawerPageState extends State<DrawerPage> {
                     ),
                   ),
                   Flexible(
-                    child: TextButton(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black),
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -143,12 +151,13 @@ class _DrawerPageState extends State<DrawerPage> {
                           ),
                         );
                       },
-                      child: const ListTile(
-                        leading: Icon(
+                      child: ListTile(
+                        minLeadingWidth: DrawerWidth * 0.05,
+                        leading: const Icon(
                           Icons.blinds_closed_outlined,
                           color: Colors.white,
                         ),
-                        title: Text(
+                        title: const Text(
                           'Tabel',
                           style: TextStyle(
                             color: Colors.white,
@@ -158,7 +167,9 @@ class _DrawerPageState extends State<DrawerPage> {
                     ),
                   ),
                   Flexible(
-                    child: TextButton(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black),
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -169,12 +180,13 @@ class _DrawerPageState extends State<DrawerPage> {
                           ),
                         );
                       },
-                      child: const ListTile(
-                        leading: Icon(
+                      child: ListTile(
+                        minLeadingWidth: DrawerWidth * 0.05,
+                        leading: const Icon(
                           Icons.newspaper_outlined,
                           color: Colors.white,
                         ),
-                        title: Text(
+                        title: const Text(
                           'Publikasi',
                           style: TextStyle(
                             color: Colors.white,
@@ -184,7 +196,9 @@ class _DrawerPageState extends State<DrawerPage> {
                     ),
                   ),
                   Flexible(
-                    child: TextButton(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black),
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -195,12 +209,13 @@ class _DrawerPageState extends State<DrawerPage> {
                           ),
                         );
                       },
-                      child: const ListTile(
-                        leading: Icon(
+                      child: ListTile(
+                        minLeadingWidth: DrawerWidth * 0.05,
+                        leading: const Icon(
                           Icons.add_chart_outlined,
                           color: Colors.white,
                         ),
-                        title: Text(
+                        title: const Text(
                           'Berita Resmi Statistik',
                           style: TextStyle(
                             color: Colors.white,
@@ -210,7 +225,9 @@ class _DrawerPageState extends State<DrawerPage> {
                     ),
                   ),
                   Flexible(
-                    child: TextButton(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black),
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -221,12 +238,13 @@ class _DrawerPageState extends State<DrawerPage> {
                           ),
                         );
                       },
-                      child: const ListTile(
-                        leading: Icon(
+                      child: ListTile(
+                        minLeadingWidth: DrawerWidth * 0.05,
+                        leading: const Icon(
                           Icons.storage_outlined,
                           color: Colors.white,
                         ),
-                        title: Text(
+                        title: const Text(
                           'Senarai Rencana Terbit',
                           style: TextStyle(
                             color: Colors.white,
@@ -236,7 +254,9 @@ class _DrawerPageState extends State<DrawerPage> {
                     ),
                   ),
                   Flexible(
-                    child: TextButton(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black),
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -247,12 +267,13 @@ class _DrawerPageState extends State<DrawerPage> {
                           ),
                         );
                       },
-                      child: const ListTile(
-                        leading: Icon(
+                      child: ListTile(
+                        minLeadingWidth: DrawerWidth * 0.05,
+                        leading: const Icon(
                           Icons.solar_power_outlined,
                           color: Colors.white,
                         ),
-                        title: Text(
+                        title: const Text(
                           'Konsep & Definisi',
                           style: TextStyle(
                             color: Colors.white,
@@ -262,7 +283,9 @@ class _DrawerPageState extends State<DrawerPage> {
                     ),
                   ),
                   Flexible(
-                    child: TextButton(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black),
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -273,12 +296,13 @@ class _DrawerPageState extends State<DrawerPage> {
                           ),
                         );
                       },
-                      child: const ListTile(
-                        leading: Icon(
+                      child: ListTile(
+                        minLeadingWidth: DrawerWidth * 0.05,
+                        leading: const Icon(
                           Icons.info_outlined,
                           color: Colors.white,
                         ),
-                        title: Text(
+                        title: const Text(
                           'Tentang Aplikasi',
                           style: TextStyle(
                             color: Colors.white,
@@ -287,9 +311,6 @@ class _DrawerPageState extends State<DrawerPage> {
                       ),
                     ),
                   ),
-                  Container(
-                    height: DrawerHeight * 0.15,
-                  )
                 ],
               ),
             ),

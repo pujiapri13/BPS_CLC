@@ -1,22 +1,21 @@
 // ignore_for_file: camel_case_types
 
-import 'package:flutter/material.dart';
 import 'package:bps_cilacap/Icons/back_icons_icons.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+import 'package:flutter/material.dart';
 
-class webGis extends StatefulWidget {
-  const webGis({Key? key}) : super(key: key);
+class pertumbuhanEkonomi extends StatefulWidget {
+  const pertumbuhanEkonomi({Key? key}) : super(key: key);
 
   @override
-  State<webGis> createState() => _webGisState();
+  State<pertumbuhanEkonomi> createState() => _pertumbuhanEkonomiState();
 }
 
-class _webGisState extends State<webGis> {
+class _pertumbuhanEkonomiState extends State<pertumbuhanEkonomi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('WEB GIS'),
+        title: const Text('PERTUMBUHAN EKONOMI'),
         backgroundColor: Colors.black,
         leading: IconButton(
           onPressed: () {
@@ -29,10 +28,6 @@ class _webGisState extends State<webGis> {
             ),
           ),
         ),
-      ),
-      body: const WebView(
-        initialUrl: "https://s.bps.go.id/gissp_3301",
-        javascriptMode: JavascriptMode.unrestricted,
       ),
     );
   }
