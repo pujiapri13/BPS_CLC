@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 class kemiskinanContent extends StatefulWidget {
   const kemiskinanContent({Key? key}) : super(key: key);
 
+
   @override
   State<kemiskinanContent> createState() => _kemiskinanContentState();
 }

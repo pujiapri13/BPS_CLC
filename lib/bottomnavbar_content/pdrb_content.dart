@@ -1,6 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api, non_constant_identifier_names
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:fl_chart/fl_chart.dart';
 
 class PdrbContent extends StatefulWidget {
   const PdrbContent({Key? key}) : super(key: key);
@@ -310,77 +311,129 @@ class _PdrbContentState extends State<PdrbContent> {
                   height: screenHeight * 0.2,
                   // <<< Tabel
                   child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: DataTable(
-                        headingRowHeight: screenHeight * 0.1,
-                        columns: const [
-                          DataColumn(
-                            label: Flexible(
-                              child: Text(
-                                'Tahun',
-                                style: TextStyle(
-                                    color: Colors.blue,
-                                    fontWeight: FontWeight.w400),
-                              ),
+                    scrollDirection: Axis.vertical,
+                    child: DataTable(columnSpacing: 5, columns: const [
+                      DataColumn(
+                        label: Flexible(
+                          child: Text(
+                            'Tahun',
+                            style: TextStyle(
+                                color: Colors.blue,
+                                fontWeight: FontWeight.w400),
+                          ),
+                        ),
+                      ),
+                      DataColumn(
+                        label: Text(
+                          'PDRB ADHB',
+                          style: TextStyle(
+                              color: Colors.blue, fontWeight: FontWeight.w400),
+                        ),
+                      ),
+                      DataColumn(
+                        label: Text(
+                          'PDRB ADHK',
+                          style: TextStyle(
+                              color: Colors.blue, fontWeight: FontWeight.w400),
+                        ),
+                      ),
+                    ], rows: const [
+                      DataRow(
+                        cells: [
+                          DataCell(
+                            Text(
+                              '2021',
                             ),
                           ),
-                          DataColumn(
-                            label: Text(
-                              'PDRB Atas Dasar Harga Berlaku (Juta Rupiah)',
-                              style: TextStyle(
-                                  color: Colors.blue,
-                                  fontWeight: FontWeight.w400),
+                          DataCell(
+                            Text(
+                              '110.262.462,97',
                             ),
                           ),
-                          DataColumn(
-                            label: Text(
-                              'PDRB Atas Dasar Harga Konstant (Juta Rupiah)',
-                              style: TextStyle(
-                                  color: Colors.blue,
-                                  fontWeight: FontWeight.w400),
+                          DataCell(
+                            Text(
+                              '100.112.422,37',
                             ),
                           ),
                         ],
-                        rows: const [
-                          DataRow(
-                            cells: [
-                              DataCell(
-                                Text(
-                                  '2021',
-                                ),
-                              ),
-                              DataCell(
-                                Text(
-                                  '110.262.462,97',
-                                ),
-                              ),
-                              DataCell(
-                                Text(
-                                  '100.112.422,37',
-                                ),
-                              ),
-                            ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(
+                            Text(
+                              '2020',
+                            ),
                           ),
-                          DataRow(
-                            cells: [
-                              DataCell(
-                                Text(
-                                  '2020',
-                                ),
-                              ),
-                              DataCell(
-                                Text(
-                                  '100.122.124,32',
-                                ),
-                              ),
-                              DataCell(
-                                Text(
-                                  '110.162.162,97',
-                                ),
-                              ),
-                            ],
+                          DataCell(
+                            Text(
+                              '100.122.124,32',
+                            ),
                           ),
-                        ]),
+                          DataCell(
+                            Text(
+                              '110.162.162,97',
+                            ),
+                          ),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(
+                            Text(
+                              '2019',
+                            ),
+                          ),
+                          DataCell(
+                            Text(
+                              '97.132.442,17',
+                            ),
+                          ),
+                          DataCell(
+                            Text(
+                              '100.442.562,21',
+                            ),
+                          ),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(
+                            Text(
+                              '2018',
+                            ),
+                          ),
+                          DataCell(
+                            Text(
+                              '96.362.562,57',
+                            ),
+                          ),
+                          DataCell(
+                            Text(
+                              '95.165.762,91',
+                            ),
+                          ),
+                        ],
+                      ),
+                      DataRow(
+                        cells: [
+                          DataCell(
+                            Text(
+                              '2017',
+                            ),
+                          ),
+                          DataCell(
+                            Text(
+                              '95.122.312,27',
+                            ),
+                          ),
+                          DataCell(
+                            Text(
+                              '97.412.216,55',
+                            ),
+                          ),
+                        ],
+                      ),
+                    ]),
                   ),
                   // >>> /Tabel
                 ),
@@ -389,19 +442,66 @@ class _PdrbContentState extends State<PdrbContent> {
                 fit: FlexFit.tight,
                 flex: 40,
                 child: Container(
-                  margin: const EdgeInsets.only(top: 2),
-                  width: double.infinity,
-                  height: screenHeight * 0.2,
-                  color: Colors.grey,
-                  //<<< Grafik
-                  child: const Center(
-                    child: Text(
-                      'Grafik',
-                      style: TextStyle(color: Colors.white),
+                    margin: const EdgeInsets.only(top: 2),
+                    width: double.infinity,
+                    height: screenHeight * 0.2,
+                    //<<< Grafik
+                    child: LineChart(
+                      LineChartData(
+                        backgroundColor: Colors.transparent,
+                        minX: 0,
+                        maxX: 7,
+                        minY: 0,
+                        maxY: 5,
+                        lineBarsData: [
+                          LineChartBarData(
+                            // a
+                            spots: [
+                              const FlSpot(0, 0),
+                              const FlSpot(1, 1),
+                              const FlSpot(2, 2),
+                              const FlSpot(3, 2),
+                              const FlSpot(4, 3),
+                              const FlSpot(5, 2),
+                              const FlSpot(6, 0),
+                              const FlSpot(7, 3),
+                            ],
+
+                            // b
+                            isCurved: false,
+
+                            // c
+                            gradient: const LinearGradient(
+                              colors: [
+                                Colors.blue,
+                                Colors.blue,
+                              ],
+                            ),
+
+                            // d
+                            barWidth: 3,
+
+                            // e
+                            belowBarData: BarAreaData(
+                              show: true,
+                              gradient: LinearGradient(
+                                colors: [
+                                  Colors.transparent,
+                                  Colors.transparent,
+                                ],
+                              ),
+                            ),
+
+                            // f
+                            dotData: FlDotData(
+                              show: false,
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                    // >>> /Grafik
                     ),
-                  ),
-                  // >>> /Grafik
-                ),
               ),
             ],
           ),

@@ -89,10 +89,11 @@ class _HomeContentState extends State<HomeContent> {
                             height: screenHeight * 0.15,
                             child: ElevatedButton(
                               style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all(
-                                  const Color.fromRGBO(45, 192, 201, 1),
-                                ),
-                              ),
+                                  backgroundColor: MaterialStateProperty.all(
+                                    const Color.fromRGBO(45, 192, 201, 1),
+                                  ),
+                                  shadowColor: MaterialStateProperty.all(
+                                      Colors.transparent)),
                               onPressed: () {
                                 Navigator.push(
                                   context,
@@ -186,14 +187,24 @@ class _HomeContentState extends State<HomeContent> {
                             margin: const EdgeInsets.only(top: 1),
                             width: screenWidth * 0.38,
                             height: screenHeight * 0.15,
-                            color: const Color.fromRGBO(45, 192, 201, 0.65),
                             child: ElevatedButton(
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(
+                                  const Color.fromRGBO(45, 192, 201, 0.65),
+                                ),
+                                shadowColor: MaterialStateProperty.all(
+                                  Colors.transparent,
+                                ),
+                              ),
                               onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(
-                                  builder: (context) {
-                                    return const pengangguranContent();
-                                  },
-                                ));
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return const pengangguranContent();
+                                    },
+                                  ),
+                                );
                               },
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -226,23 +237,44 @@ class _HomeContentState extends State<HomeContent> {
                               margin: const EdgeInsets.only(left: 1, top: 1),
                               width: screenWidth * 0.62,
                               height: screenHeight * 0.15,
-                              color: const Color.fromRGBO(45, 192, 201, 1),
-                              child: TextButton(
+                              child: ElevatedButton(
+                                style: ButtonStyle(
+                                  backgroundColor: MaterialStateProperty.all(
+                                    const Color.fromRGBO(45, 192, 201, 1),
+                                  ),
+                                  shadowColor: MaterialStateProperty.all(
+                                    Colors.transparent,
+                                  ),
+                                ),
                                 onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) {
-                                        return const pertumbuhanEkonomi();
-                                      },
-                                    ),
-                                  );
+                                  Navigator.push(context, MaterialPageRoute(
+                                    builder: (context) {
+                                      return const pertumbuhanEkonomi();
+                                    },
+                                  ));
                                 },
-                                child: const Text(
-                                  'PERTUMBUHAN EKONOMI',
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: 13),
-                                  textAlign: TextAlign.center,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Flexible(
+                                      child: Image.asset(
+                                        'assets/images/inflasi.png',
+                                        width: 50,
+                                        height: 50,
+                                      ),
+                                    ),
+                                    const Divider(
+                                      color: Colors.transparent,
+                                    ),
+                                    const Flexible(
+                                      child: Text(
+                                        'PERTUMBUHAN EKONOMI',
+                                        style: TextStyle(
+                                            color: Colors.black, fontSize: 13),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -257,25 +289,46 @@ class _HomeContentState extends State<HomeContent> {
                         children: [
                           Container(
                             margin: const EdgeInsets.only(top: 1),
-                            width: screenWidth * 0.70,
+                            width: screenWidth * 0.65,
                             height: screenHeight * 0.15,
-                            color: const Color.fromRGBO(45, 192, 201, 1),
-                            child: TextButton(
+                            child: ElevatedButton(
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(
+                                  const Color.fromRGBO(45, 192, 201, 1),
+                                ),
+                                shadowColor: MaterialStateProperty.all(
+                                  Colors.transparent,
+                                ),
+                              ),
                               onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) {
-                                      return const tenagaKerja();
-                                    },
-                                  ),
-                                );
+                                Navigator.push(context, MaterialPageRoute(
+                                  builder: (context) {
+                                    return const tenagaKerja();
+                                  },
+                                ));
                               },
-                              child: const Text(
-                                'TENAGA KERJA',
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 13),
-                                textAlign: TextAlign.center,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Flexible(
+                                    child: Image.asset(
+                                      'assets/images/inflasi.png',
+                                      width: 50,
+                                      height: 50,
+                                    ),
+                                  ),
+                                  const Divider(
+                                    color: Colors.transparent,
+                                  ),
+                                  const Flexible(
+                                    child: Text(
+                                      'TENAGA KERJA',
+                                      style: TextStyle(
+                                          color: Colors.black, fontSize: 13),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
@@ -283,27 +336,44 @@ class _HomeContentState extends State<HomeContent> {
                           Flexible(
                             child: Container(
                               margin: const EdgeInsets.only(left: 1, top: 1),
-                              width: screenWidth * 0.30,
+                              width: screenWidth * 0.35,
                               height: screenHeight * 0.15,
-                              color: const Color.fromRGBO(45, 192, 201, 0.65),
-                              child: Center(
-                                child: TextButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) {
-                                          return const kemiskinanContent();
-                                        },
-                                      ),
-                                    );
-                                  },
-                                  child: const Text(
-                                    'KEMISKINAN',
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 13),
-                                    textAlign: TextAlign.center,
+                              child: ElevatedButton(
+                                style: ButtonStyle(
+                                  backgroundColor: MaterialStateProperty.all(
+                                    const Color.fromRGBO(45, 192, 201, 0.65),
                                   ),
+                                  shadowColor: MaterialStateProperty.all(
+                                    Colors.transparent,
+                                  ),
+                                ),
+                                onPressed: () {
+                                  Navigator.push(context, MaterialPageRoute(
+                                    builder: (context) {
+                                      return const kemiskinanContent();
+                                    },
+                                  ));
+                                },
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Flexible(
+                                      child: Image.asset(
+                                        'assets/images/inflasi.png',
+                                        width: 50,
+                                        height: 50,
+                                      ),
+                                    ),
+                                    const Divider(
+                                      color: Colors.transparent,
+                                    ),
+                                    const Text(
+                                      'KEMISKINAN',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 13),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -318,25 +388,42 @@ class _HomeContentState extends State<HomeContent> {
                         height: screenHeight * 0.5,
                         child: Container(
                           height: screenHeight * 0.5,
-                          color: const Color.fromRGBO(45, 149, 201, 1),
-                          child: Center(
-                            child: TextButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) {
-                                      return const jumlahPenduduk();
-                                    },
-                                  ),
-                                );
-                              },
-                              child: const Text(
-                                'JUMLAH PENDUDUK',
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 13),
-                                textAlign: TextAlign.center,
+                          color: Color.fromRGBO(45, 149, 201, 1),
+                          child: ElevatedButton(
+                            style: ButtonStyle(
+                              shadowColor: MaterialStateProperty.all(
+                                Colors.transparent,
                               ),
+                            ),
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(
+                                builder: (context) {
+                                  return const jumlahPenduduk();
+                                },
+                              ));
+                            },
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Flexible(
+                                  child: Image.asset(
+                                    'assets/images/inflasi.png',
+                                    width: 50,
+                                    height: 50,
+                                  ),
+                                ),
+                                const Divider(
+                                  color: Colors.transparent,
+                                ),
+                                const Flexible(
+                                  child: Text(
+                                    'JUMLAH PENDUDUK',
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 13),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ),

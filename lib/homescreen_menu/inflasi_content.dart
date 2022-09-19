@@ -13,17 +13,17 @@ class inflasiContent extends StatefulWidget {
 }
 
 class _inflasiContentState extends State<inflasiContent> {
-  List<Blog> listBlog = [];
+  List listBlog = [];
   Repository repository = Repository();
 
-  getData() async {
-    listBlog = await repository.getData();
-    setState(() {});
-  }
+  // getData() async {
+  //   listBlog = await repository.getData();
+  //   return listBlog;
+  // }
 
   @override
   void initState() {
-    getData();
+    // getData();
     super.initState();
   }
 
@@ -49,19 +49,29 @@ class _inflasiContentState extends State<inflasiContent> {
           ),
         ),
       ),
-      body: ListView.separated(
-          itemBuilder: (context, index) {
-            return Container(
-              color: Colors.blue,
-              width: ScreenWidth,
-              height: ScreenHeight,
-              child: Text(listBlog[index].tanggal),
+      body: FutureBuilder(
+        future: repository.getData(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            List blog = snapshot.data as List;
+            return ListView.builder(
+              itemCount: listBlog.hashCode,
+              itemBuilder: (context, index) {
+                return Container(
+                  color: Colors.blue,
+                  width: ScreenWidth,
+                  height: ScreenHeight,
+                  child: Text(blog[index].tanggal),
+                );
+              },
             );
-          },
-          separatorBuilder: (context, index) {
-            return const Divider();
-          },
-          itemCount: listBlog.hashCode),
+          }
+          if (snapshot.hasError) {
+            return Text('error');
+          }
+          return Center(child: CircularProgressIndicator());
+        },
+      ),
     );
   }
 }
