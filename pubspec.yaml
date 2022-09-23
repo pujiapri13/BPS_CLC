@@ -39,6 +39,7 @@ dependencies:
   webview_flutter: ^3.0.4
   http: ^0.13.5
   fl_chart: ^0.55.1
+  d_chart: ^0.0.4
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -70,12 +71,32 @@ flutter:
   assets:
      - assets/images/logo.png
      - assets/images/gedung.jpg
+    #  Drawer
+     - assets/images/drawer/infografis_icon.png
+     - assets/images/drawer/gis_icon.png
+     - assets/images/drawer/tabel_icon.png
+     - assets/images/drawer/publikasi_icon.png
+     - assets/images/drawer/brs_icon.png
+     - assets/images/drawer/srt_icon.png
+     - assets/images/drawer/konsepdefinisi_icon.png
+     - assets/images/drawer/about_icon.png
+     - assets/images/drawer/keluar_icon.png
+     
     # homescreen menu
-     - assets/images/inflasi.png
-     - assets/images/pengangguran.png
-     - assets/images/pertumbuhan_ekonomi.png
-     - assets/images/tenaga_kerja.png
-     - assets/images/gis.png     
+     - assets/images/homecontent/inflasi_icon.png
+     - assets/images/homecontent/jumlah_penduduk_icon.png
+     - assets/images/homecontent/kemiskinan_icon.png
+     - assets/images/homecontent/ketenagakerjaan_icon.png
+     - assets/images/homecontent/ketimpangan_icon.png
+     - assets/images/homecontent/pengangguran_icon.png
+     - assets/images/homecontent/pertumbuhan_ekonomi_icon.png
+
+    #  Carousel
+     - assets/images/carousel/inflasi_bulanan_icon.png
+     - assets/images/carousel/ipm_carousel_icon.png
+     - assets/images/carousel/hasil_sp_icon.png
+     
+    
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -89,9 +110,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: BottNavIcons
+    - family: BottNavIcon
       fonts:
-       - asset: fonts/BottNavIcons.ttf
+       - asset: fonts/BottNavIcon.ttf
     - family:  BackIcons
       fonts:
        - asset: fonts/BackIcons.ttf
@@ -101,6 +122,9 @@ flutter:
     - family:  MoreIcons
       fonts:
        - asset: fonts/MoreIcons.ttf
+    - family: SuezOne
+      fonts :
+       - asset: fonts/SuezOne-Regular.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

@@ -1,6 +1,6 @@
 // ignore_for_file: non_constant_identifier_names
 
-class Blog {
+class Pdrb {
   final int id;
   final double a;
   final double b;
@@ -23,7 +23,7 @@ class Blog {
   final String tanggal;
   final int kategori;
 
-  const Blog({
+  const Pdrb({
     required this.id,
     required this.a,
     required this.b,
@@ -47,8 +47,8 @@ class Blog {
     required this.kategori,
   });
 
-  factory Blog.fromJson(Map<String, dynamic> json) {
-    return Blog(
+  factory Pdrb.fromJson(Map<String, dynamic> json) {
+    return Pdrb(
       id: json['id'],
       a: json['a'],
       b: json['b'],

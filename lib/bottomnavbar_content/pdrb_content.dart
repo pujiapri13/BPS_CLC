@@ -1,4 +1,5 @@
 // ignore_for_file: library_private_types_in_public_api, non_constant_identifier_names
+import 'package:bps_cilacap/tabel/tabelPdrb.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
@@ -310,134 +311,10 @@ class _PdrbContentState extends State<PdrbContent> {
                   width: double.infinity,
                   height: screenHeight * 0.2,
                   // <<< Tabel
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.vertical,
-                    child: DataTable(columnSpacing: 5, columns: const [
-                      DataColumn(
-                        label: Flexible(
-                          child: Text(
-                            'Tahun',
-                            style: TextStyle(
-                                color: Colors.blue,
-                                fontWeight: FontWeight.w400),
-                          ),
-                        ),
-                      ),
-                      DataColumn(
-                        label: Text(
-                          'PDRB ADHB',
-                          style: TextStyle(
-                              color: Colors.blue, fontWeight: FontWeight.w400),
-                        ),
-                      ),
-                      DataColumn(
-                        label: Text(
-                          'PDRB ADHK',
-                          style: TextStyle(
-                              color: Colors.blue, fontWeight: FontWeight.w400),
-                        ),
-                      ),
-                    ], rows: const [
-                      DataRow(
-                        cells: [
-                          DataCell(
-                            Text(
-                              '2021',
-                            ),
-                          ),
-                          DataCell(
-                            Text(
-                              '110.262.462,97',
-                            ),
-                          ),
-                          DataCell(
-                            Text(
-                              '100.112.422,37',
-                            ),
-                          ),
-                        ],
-                      ),
-                      DataRow(
-                        cells: [
-                          DataCell(
-                            Text(
-                              '2020',
-                            ),
-                          ),
-                          DataCell(
-                            Text(
-                              '100.122.124,32',
-                            ),
-                          ),
-                          DataCell(
-                            Text(
-                              '110.162.162,97',
-                            ),
-                          ),
-                        ],
-                      ),
-                      DataRow(
-                        cells: [
-                          DataCell(
-                            Text(
-                              '2019',
-                            ),
-                          ),
-                          DataCell(
-                            Text(
-                              '97.132.442,17',
-                            ),
-                          ),
-                          DataCell(
-                            Text(
-                              '100.442.562,21',
-                            ),
-                          ),
-                        ],
-                      ),
-                      DataRow(
-                        cells: [
-                          DataCell(
-                            Text(
-                              '2018',
-                            ),
-                          ),
-                          DataCell(
-                            Text(
-                              '96.362.562,57',
-                            ),
-                          ),
-                          DataCell(
-                            Text(
-                              '95.165.762,91',
-                            ),
-                          ),
-                        ],
-                      ),
-                      DataRow(
-                        cells: [
-                          DataCell(
-                            Text(
-                              '2017',
-                            ),
-                          ),
-                          DataCell(
-                            Text(
-                              '95.122.312,27',
-                            ),
-                          ),
-                          DataCell(
-                            Text(
-                              '97.412.216,55',
-                            ),
-                          ),
-                        ],
-                      ),
-                    ]),
-                  ),
+                  child: const tabelPdrb(),),),
                   // >>> /Tabel
-                ),
-              ),
+                
+              
               Flexible(
                 fit: FlexFit.tight,
                 flex: 40,
@@ -484,7 +361,7 @@ class _PdrbContentState extends State<PdrbContent> {
                             // e
                             belowBarData: BarAreaData(
                               show: true,
-                              gradient: LinearGradient(
+                              gradient: const LinearGradient(
                                 colors: [
                                   Colors.transparent,
                                   Colors.transparent,

@@ -1,8 +1,8 @@
 import 'dart:convert';
-import 'package:bps_cilacap/model.dart';
+import 'package:bps_cilacap/model_pdrb.dart';
 import 'package:http/http.dart' as http;
 
-class Repository {
+class RepositoryPdrb {
   final _baseURL = 'https://bps-oss.herokuapp.com/bps-api/pdrb/';
 
   Future getData() async {
@@ -11,10 +11,13 @@ class Repository {
 
       if (response.statusCode == 200) {
         var cokk = jsonDecode(response.body);
-        return (cokk['PDRB'] as List).map((e) => Blog.fromJson(e)).toList();
+        return (cokk['PDRB'] as List)
+            .map((isipdrb) => Pdrb.fromJson(isipdrb))
+            .toList();
       }
-    } catch (e) {
-      print(e.toString());
+    } catch (isipdrb) {
+      // ignore: avoid_print
+      print(isipdrb.toString());
     }
   }
 }

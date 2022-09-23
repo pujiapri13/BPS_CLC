@@ -11,17 +11,6 @@ class jumlahPenduduk extends StatefulWidget {
 }
 
 class _jumlahPendudukState extends State<jumlahPenduduk> {
-  final List<String> _ipmList = [
-    "1",
-    "2",
-    "3",
-  ];
-
-  final List<String> _pdrbList = [
-    "4",
-    "5",
-    "6",
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,10 +28,6 @@ class _jumlahPendudukState extends State<jumlahPenduduk> {
             ),
           ),
         ),
-      ),
-      body: Container(
-        child: Text("ini adalah pdrb" + " " + _pdrbList[0].toString()),
-        
       ),
     );
   }

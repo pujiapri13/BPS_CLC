@@ -1,5 +1,5 @@
 // ignore_for_file: non_constant_identifier_names, library_private_types_in_public_api
-import 'package:bps_cilacap/Icons/bott_nav_icons_icons.dart';
+import 'package:bps_cilacap/Icons/bott_nav_icon_icons.dart';
 import 'package:circle_bottom_navigation_bar/circle_bottom_navigation_bar.dart';
 import 'package:circle_bottom_navigation_bar/widgets/tab_data.dart';
 import 'package:flutter/material.dart';
@@ -113,28 +113,28 @@ class _HomeScreenState extends State<HomeScreen> {
 List<TabData> getTabsData() {
   return [
     TabData(
-      icon: Icons.home,
+      icon: BottNavIcon.home_bottnav_icon_2,
       iconSize: 25.0,
       title: 'HOME',
       fontSize: 12,
       fontWeight: FontWeight.bold,
     ),
     TabData(
-      icon: Icons.bar_chart_outlined,
+      icon: BottNavIcon.pdrb_bottnav_icon,
       iconSize: 25,
       title: 'PDRB',
       fontSize: 12,
       fontWeight: FontWeight.bold,
     ),
     TabData(
-      icon: Icons.stacked_line_chart_outlined,
+      icon: BottNavIcon.ipm_bottnav_icon,
       iconSize: 25,
       title: 'IPM',
       fontSize: 12,
       fontWeight: FontWeight.bold,
     ),
     TabData(
-      icon: BottNavIcons.user_group,
+      icon: BottNavIcon.sensus_bottnav_icon,
       iconSize: 25,
       title: 'SENSUS',
       fontSize: 12,

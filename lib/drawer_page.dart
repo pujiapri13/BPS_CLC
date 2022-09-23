@@ -95,12 +95,12 @@ class _DrawerPageState extends State<DrawerPage> {
                       },
                       child: ListTile(
                         minLeadingWidth: DrawerWidth * 0.05,
-                        leading: const Icon(
-                          Icons.map_outlined,
+                        leading: Image.asset(
+                          "assets/images/drawer/infografis_icon.png",
                           color: Colors.white,
                         ),
                         title: const Text(
-                          'Informasi Grafis',
+                          'Infografis',
                           style: TextStyle(
                             color: Colors.white,
                           ),
@@ -125,7 +125,7 @@ class _DrawerPageState extends State<DrawerPage> {
                       child: ListTile(
                         minLeadingWidth: DrawerWidth * 0.05,
                         leading: Image.asset(
-                          "assets/images/gis.png",
+                          "assets/images/drawer/gis_icon.png",
                           color: Colors.white,
                         ),
                         title: const Text(
@@ -153,8 +153,8 @@ class _DrawerPageState extends State<DrawerPage> {
                       },
                       child: ListTile(
                         minLeadingWidth: DrawerWidth * 0.05,
-                        leading: const Icon(
-                          Icons.blinds_closed_outlined,
+                        leading: Image.asset(
+                          "assets/images/drawer/tabel_icon.png",
                           color: Colors.white,
                         ),
                         title: const Text(
@@ -182,8 +182,8 @@ class _DrawerPageState extends State<DrawerPage> {
                       },
                       child: ListTile(
                         minLeadingWidth: DrawerWidth * 0.05,
-                        leading: const Icon(
-                          Icons.newspaper_outlined,
+                        leading: Image.asset(
+                          "assets/images/drawer/publikasi_icon.png",
                           color: Colors.white,
                         ),
                         title: const Text(
@@ -211,8 +211,8 @@ class _DrawerPageState extends State<DrawerPage> {
                       },
                       child: ListTile(
                         minLeadingWidth: DrawerWidth * 0.05,
-                        leading: const Icon(
-                          Icons.add_chart_outlined,
+                        leading: Image.asset(
+                          "assets/images/drawer/brs_icon.png",
                           color: Colors.white,
                         ),
                         title: const Text(
@@ -240,8 +240,8 @@ class _DrawerPageState extends State<DrawerPage> {
                       },
                       child: ListTile(
                         minLeadingWidth: DrawerWidth * 0.05,
-                        leading: const Icon(
-                          Icons.storage_outlined,
+                        leading: Image.asset(
+                          "assets/images/drawer/srt_icon.png",
                           color: Colors.white,
                         ),
                         title: const Text(
@@ -269,8 +269,8 @@ class _DrawerPageState extends State<DrawerPage> {
                       },
                       child: ListTile(
                         minLeadingWidth: DrawerWidth * 0.05,
-                        leading: const Icon(
-                          Icons.solar_power_outlined,
+                        leading: Image.asset(
+                          "assets/images/drawer/konsepdefinisi_icon.png",
                           color: Colors.white,
                         ),
                         title: const Text(
@@ -298,8 +298,8 @@ class _DrawerPageState extends State<DrawerPage> {
                       },
                       child: ListTile(
                         minLeadingWidth: DrawerWidth * 0.05,
-                        leading: const Icon(
-                          Icons.info_outlined,
+                        leading: Image.asset(
+                          "assets/images/drawer/about_icon.png",
                           color: Colors.white,
                         ),
                         title: const Text(
@@ -319,17 +319,29 @@ class _DrawerPageState extends State<DrawerPage> {
               child: Container(
                 alignment: Alignment.centerLeft,
                 color: Colors.black,
-                child: ElevatedButton.icon(
+                child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.black,
                     backgroundColor: Colors.white,
-                    maximumSize: Size(
-                      DrawerWidth,
+                    fixedSize: Size(
+                      DrawerWidth * 0.35,
                       DrawerHeight,
                     ),
                   ),
-                  icon: const Icon(Icons.arrow_back_ios),
-                  label: const Text('KELUAR'),
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        "assets/images/drawer/keluar_icon.png",
+                        width: 25,
+                        color: Colors.black,
+                      ),
+                      const Flexible(
+                          child: Text(
+                        " KELUAR",
+                        textAlign: TextAlign.center,
+                      ))
+                    ],
+                  ),
                   onPressed: () {
                     showexitpesan();
                   },

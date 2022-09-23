@@ -23,7 +23,7 @@ class _TabelState extends State<Tabel> {
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Konsep & Definisi'),
+        title: const Text('Tabel'),
         backgroundColor: Colors.black,
         leading: IconButton(
           onPressed: () {
