@@ -1,6 +1,6 @@
 // ignore_for_file: file_names
 
-import 'package:bps_cilacap/repository_ipm.dart';
+import 'package:bps_cilacap/restAPI/repository_ipm.dart';
 import 'package:flutter/material.dart';
 
 class tabelIpm extends StatefulWidget {
@@ -25,7 +25,7 @@ class _tabelIpmState extends State<tabelIpm> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             List isiIpm = snapshot.data as List;
-            return ListView.builder(
+            return PageView.builder(
               itemCount: 1,
               itemBuilder: (context, index) {
                 return Container(

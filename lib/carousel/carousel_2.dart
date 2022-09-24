@@ -28,7 +28,7 @@ class _carouselSlider2State extends State<carouselSlider2> {
             Flexible(
               fit: FlexFit.tight,
               flex: 3,
-              child: Container(
+              child: SizedBox(
                 width: 60,
                 height: 60,
                 child: Image.asset(

@@ -1,6 +1,6 @@
-// ignore_for_file: camel_case_types
+// ignore_for_file: camel_case_types, prefer_interpolation_to_compose_strings
 
-import 'package:bps_cilacap/repository_ipm.dart';
+import 'package:bps_cilacap/restAPI/repository_ipm.dart';
 import 'package:flutter/material.dart';
 
 class carouselSlider3 extends StatefulWidget {
@@ -33,7 +33,7 @@ class _carouselSlider3State extends State<carouselSlider3> {
             Flexible(
               fit: FlexFit.tight,
               flex: 3,
-              child: Container(
+              child: SizedBox(
                 width: 60,
                 height: 60,
                 child: Image.asset(
@@ -68,7 +68,7 @@ class _carouselSlider3State extends State<carouselSlider3> {
                                         isiipm[index = 0].tanggal[2] +
                                         isiipm[index = 0].tanggal[3],
                                     style:
-                                        TextStyle(fontWeight: FontWeight.bold),
+                                        const TextStyle(fontWeight: FontWeight.bold),
                                   ),
                                 ),
                               );

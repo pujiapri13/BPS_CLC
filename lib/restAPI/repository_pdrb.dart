@@ -1,9 +1,9 @@
 import 'dart:convert';
-import 'package:bps_cilacap/model_pdrb.dart';
+import 'model_pdrb.dart';
 import 'package:http/http.dart' as http;
 
 class RepositoryPdrb {
-  final _baseURL = 'https://bps-oss.herokuapp.com/bps-api/pdrb/';
+  final _baseURL = 'https://bps-oss.herokuapp.com/bps-api/pdrbmigas/';
 
   Future getData() async {
     try {

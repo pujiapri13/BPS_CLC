@@ -1,8 +1,6 @@
 // ignore_for_file: unused_local_variable, camel_case_types, non_constant_identifier_names
 
 import 'package:bps_cilacap/Icons/back_icons_icons.dart';
-import 'package:bps_cilacap/model_pdrb.dart';
-import 'package:bps_cilacap/repository_pdrb.dart';
 import 'package:flutter/material.dart';
 
 class inflasiContent extends StatefulWidget {
@@ -13,20 +11,6 @@ class inflasiContent extends StatefulWidget {
 }
 
 class _inflasiContentState extends State<inflasiContent> {
-  List listBlog = [];
-  RepositoryPdrb repository = RepositoryPdrb();
-
-  // getData() async {
-  //   listBlog = await repository.getData();
-  //   return listBlog;
-  // }
-
-  @override
-  void initState() {
-    // getData();
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     final ScreenHeight = MediaQuery.of(context).size.height -
@@ -48,34 +32,6 @@ class _inflasiContentState extends State<inflasiContent> {
             ),
           ),
         ),
-      ),
-      body: FutureBuilder(
-        future: repository.getData(),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            List blog = snapshot.data as List;
-            return ListView.builder(
-              itemCount: listBlog.hashCode,
-              itemBuilder: (context, index) {
-                return Container(
-                  color: Colors.blue,
-                  width: ScreenWidth,
-                  height: ScreenHeight,
-                  child: Column(
-                    children: [
-                      Text(blog[index = 0].id.toString()),
-                      Text(blog[index = 1].id.toString()),
-                    ],
-                  ),
-                );
-              },
-            );
-          }
-          if (snapshot.hasError) {
-            return const Text('error');
-          }
-          return const Center(child: CircularProgressIndicator());
-        },
       ),
     );
   }

@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'package:bps_cilacap/model_ipm.dart';
 import 'package:http/http.dart' as http;
+import 'model_ipm.dart';
 
 class RepositoryIpm {
   final _baseURL = 'https://bps-oss.herokuapp.com/bps-api/ipm/';

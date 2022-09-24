@@ -1,6 +1,6 @@
 import 'package:bps_cilacap/grafik/grafik_ipm.dart';
-import 'package:bps_cilacap/repository_ipm.dart';
-import 'package:bps_cilacap/tabel/tabelPdrb.dart';
+import 'package:bps_cilacap/restAPI/repository_ipm.dart';
+
 import 'package:flutter/material.dart';
 import 'package:bps_cilacap/tabel/tabelIpm.dart';
 
@@ -13,6 +13,24 @@ class IpmContent extends StatefulWidget {
 
 class _IpmContentState extends State<IpmContent> {
   RepositoryIpm repositoryipm = RepositoryIpm();
+
+  List<Color> gradientColorsUhh = [
+    const Color(0xff23b6e6),
+    const Color.fromARGB(255, 30, 31, 30),
+  ];
+  List<Color> gradientColorsRls = [
+    const Color.fromARGB(255, 35, 87, 230),
+    const Color.fromARGB(255, 211, 2, 148),
+  ];
+  List<Color> gradientColorsHls = [
+    const Color.fromARGB(255, 11, 211, 28),
+    const Color.fromARGB(255, 43, 10, 133),
+  ];
+  List<Color> gradientColorsPpp = [
+    const Color.fromARGB(255, 155, 230, 35),
+    const Color.fromARGB(255, 211, 2, 2),
+  ];
+
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height -
@@ -41,6 +59,7 @@ class _IpmContentState extends State<IpmContent> {
                     if (snapshot.hasData) {
                       List isiipm = snapshot.data as List;
                       return PageView.builder(
+                        itemCount: 1,
                         itemBuilder: (context, index) {
                           return Center(
                             child: Text(
@@ -78,7 +97,7 @@ class _IpmContentState extends State<IpmContent> {
                     children: <Widget>[
                       Flexible(
                         fit: FlexFit.tight,
-                        flex: 1,
+                        flex: 6,
                         child: Container(
                           width: screenWeight,
                           color: Colors.cyan,
@@ -88,7 +107,7 @@ class _IpmContentState extends State<IpmContent> {
                         ),
                       ),
                       Flexible(
-                        flex: 1,
+                        flex: 6,
                         fit: FlexFit.tight,
                         child: Container(
                             width: screenWeight,
@@ -97,6 +116,77 @@ class _IpmContentState extends State<IpmContent> {
                               child: grafikIpm(),
                             )),
                       ),
+                      Flexible(
+                        fit: FlexFit.tight,
+                        flex: 1,
+                        child: Container(
+                          color: const Color(0xff37434d),
+                          child: Row(
+                            children: [
+                              const Divider(
+                                color: Colors.transparent,
+                                endIndent: 20,
+                              ),
+                              Container(
+                                width: 10,
+                                height: 10,
+                                decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                        colors: gradientColorsUhh)),
+                              ),
+                              const Text(
+                                " UHH",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              const Divider(
+                                color: Colors.transparent,
+                                endIndent: 20,
+                              ),
+                              Container(
+                                width: 10,
+                                height: 10,
+                                decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                        colors: gradientColorsRls)),
+                              ),
+                              const Text(
+                                " RLS",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              const Divider(
+                                color: Colors.transparent,
+                                endIndent: 20,
+                              ),
+                              Container(
+                                width: 10,
+                                height: 10,
+                                decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                        colors: gradientColorsHls)),
+                              ),
+                              const Text(
+                                " HLS",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              const Divider(
+                                color: Colors.transparent,
+                                endIndent: 20,
+                              ),
+                              Container(
+                                width: 10,
+                                height: 10,
+                                decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                        colors: gradientColorsPpp)),
+                              ),
+                              const Text(
+                                " PPP",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
                     ],
                   ),
                 ),

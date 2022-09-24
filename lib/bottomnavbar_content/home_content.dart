@@ -33,7 +33,9 @@ class _HomeContentState extends State<HomeContent> {
   final CarouselController _controller = CarouselController();
   @override
   Widget build(BuildContext context) {
-    var screenWidth = MediaQuery.of(context).size.width;
+    var screenWidth = MediaQuery.of(context).size.width -
+        MediaQuery.of(context).padding.left -
+        MediaQuery.of(context).padding.right;
     var screenHeight = MediaQuery.of(context).size.height -
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom;
@@ -83,8 +85,8 @@ class _HomeContentState extends State<HomeContent> {
                       height: screenHeight * 0.15,
                       child: Row(
                         children: <Widget>[
-                          //satu
-                          SizedBox(
+                          Container(
+                            padding: EdgeInsets.only(right: 2),
                             width: screenWidth * 0.60,
                             height: screenHeight * 0.15,
                             child: ElevatedButton(
@@ -112,23 +114,19 @@ class _HomeContentState extends State<HomeContent> {
                                 children: [
                                   Flexible(
                                     fit: FlexFit.tight,
-                                    flex: 4,
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(top: 4),
-                                      child: SizedBox(
-                                        width: 100,
-                                        height: 100,
-                                        child: Image.asset(
-                                          'assets/images/homecontent/inflasi_icon.png',
-                                        ),
+                                    flex: 5,
+                                    child: SizedBox(
+                                      width: 100,
+                                      height: 100,
+                                      child: Image.asset(
+                                        'assets/images/homecontent/inflasi_icon.png',
                                       ),
                                     ),
                                   ),
-                                  const Divider(color: Colors.transparent),
-                                  Flexible(
+                                  const Flexible(
                                     fit: FlexFit.tight,
                                     flex: 1,
-                                    child: const Text(
+                                    child: Text(
                                       'INFLASI',
                                       style: TextStyle(
                                           fontFamily: 'SuezOne',
@@ -143,65 +141,56 @@ class _HomeContentState extends State<HomeContent> {
                             ),
                           ),
                           // //dua
-                          Flexible(
-                            child: Container(
-                              margin: const EdgeInsets.only(left: 1),
-                              width: screenWidth * 0.40,
-                              height: screenHeight * 0.15,
-                              child: ElevatedButton(
-                                style: ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.all(
-                                    const Color.fromRGBO(45, 192, 201, 0.65),
-                                  ),
-                                  shadowColor: MaterialStateProperty.all(
-                                    Colors.transparent,
-                                  ),
-                                  padding: MaterialStateProperty.all(
-                                      const EdgeInsets.all(0)),
+                          Container(
+                            width: screenWidth * 0.40,
+                            height: screenHeight * 0.15,
+                            child: ElevatedButton(
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(
+                                  const Color.fromRGBO(45, 192, 201, 0.65),
                                 ),
-                                onPressed: () {
-                                  Navigator.push(context, MaterialPageRoute(
-                                    builder: (context) {
-                                      return const ketimpanganContent();
-                                    },
-                                  ));
-                                },
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Flexible(
-                                      fit: FlexFit.tight,
-                                      flex: 4,
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(top: 4),
-                                        child: SizedBox(
-                                          height: 100,
-                                          width: 100,
-                                          child: Image.asset(
-                                            'assets/images/homecontent/ketimpangan_icon.png',
-                                          ),
-                                        ),
+                                shadowColor: MaterialStateProperty.all(
+                                  Colors.transparent,
+                                ),
+                                padding: MaterialStateProperty.all(
+                                    const EdgeInsets.all(0)),
+                              ),
+                              onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(
+                                  builder: (context) {
+                                    return const ketimpanganContent();
+                                  },
+                                ));
+                              },
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Flexible(
+                                    fit: FlexFit.tight,
+                                    flex: 5,
+                                    child: SizedBox(
+                                      height: 100,
+                                      width: 100,
+                                      child: Image.asset(
+                                        'assets/images/homecontent/ketimpangan_icon.png',
                                       ),
                                     ),
-                                    const Divider(
-                                      color: Colors.transparent,
+                                  ),
+                                  const Flexible(
+                                    fit: FlexFit.tight,
+                                    flex: 1,
+                                    child: Text(
+                                      'KETIMPANGAN',
+                                      style: TextStyle(
+                                          fontFamily: 'SuezOne',
+                                          fontWeight: FontWeight.w400,
+                                          color: Color.fromRGBO(
+                                              255, 255, 255, 0.6),
+                                          fontSize: 14),
+                                      textAlign: TextAlign.center,
                                     ),
-                                    Flexible(
-                                      fit: FlexFit.tight,
-                                      flex: 1,
-                                      child: const Text(
-                                        'KETIMPANGAN',
-                                        style: TextStyle(
-                                            fontFamily: 'SuezOne',
-                                            fontWeight: FontWeight.w400,
-                                            color: Color.fromRGBO(
-                                                255, 255, 255, 0.6),
-                                            fontSize: 14),
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
@@ -214,7 +203,7 @@ class _HomeContentState extends State<HomeContent> {
                       child: Row(
                         children: [
                           Container(
-                            margin: const EdgeInsets.only(top: 1),
+                            padding: const EdgeInsets.only(top: 2),
                             width: screenWidth * 0.38,
                             height: screenHeight * 0.15,
                             child: ElevatedButton(
@@ -243,7 +232,7 @@ class _HomeContentState extends State<HomeContent> {
                                 children: [
                                   Flexible(
                                     fit: FlexFit.tight,
-                                    flex: 4,
+                                    flex: 5,
                                     child: SizedBox(
                                       height: 100,
                                       width: 100,
@@ -252,13 +241,10 @@ class _HomeContentState extends State<HomeContent> {
                                       ),
                                     ),
                                   ),
-                                  const Divider(
-                                    color: Colors.transparent,
-                                  ),
-                                  Flexible(
+                                  const Flexible(
                                     flex: 1,
                                     fit: FlexFit.tight,
-                                    child: const Text(
+                                    child: Text(
                                       'PENGANGGURAN',
                                       style: TextStyle(
                                           fontFamily: 'SuezOne',
@@ -276,7 +262,7 @@ class _HomeContentState extends State<HomeContent> {
                           //empat
                           Flexible(
                             child: Container(
-                              margin: const EdgeInsets.only(left: 1, top: 1),
+                              padding: const EdgeInsets.only(left: 2, top: 2),
                               width: screenWidth * 0.62,
                               height: screenHeight * 0.15,
                               child: ElevatedButton(
@@ -302,7 +288,7 @@ class _HomeContentState extends State<HomeContent> {
                                   children: [
                                     Flexible(
                                       fit: FlexFit.tight,
-                                      flex: 4,
+                                      flex: 5,
                                       child: SizedBox(
                                         width: 100,
                                         height: 100,
@@ -311,13 +297,10 @@ class _HomeContentState extends State<HomeContent> {
                                         ),
                                       ),
                                     ),
-                                    const Divider(
-                                      color: Colors.transparent,
-                                    ),
-                                    Flexible(
+                                    const Flexible(
                                       fit: FlexFit.tight,
                                       flex: 1,
-                                      child: const Text(
+                                      child: Text(
                                         'PERTUMBUHAN EKONOMI',
                                         style: TextStyle(
                                             color: Color.fromRGBO(1, 1, 1, 0.6),
@@ -340,7 +323,7 @@ class _HomeContentState extends State<HomeContent> {
                       child: Row(
                         children: [
                           Container(
-                            margin: const EdgeInsets.only(top: 1),
+                            padding: const EdgeInsets.only(top: 2, right: 2),
                             width: screenWidth * 0.70,
                             height: screenHeight * 0.15,
                             child: ElevatedButton(
@@ -365,7 +348,7 @@ class _HomeContentState extends State<HomeContent> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Flexible(
-                                    flex: 4,
+                                    flex: 5,
                                     fit: FlexFit.tight,
                                     child: SizedBox(
                                       width: 100,
@@ -377,13 +360,10 @@ class _HomeContentState extends State<HomeContent> {
                                       ),
                                     ),
                                   ),
-                                  const Divider(
-                                    color: Colors.transparent,
-                                  ),
-                                  Flexible(
+                                  const Flexible(
                                     fit: FlexFit.tight,
                                     flex: 1,
-                                    child: const Text(
+                                    child: Text(
                                       'KETENAGAKERJAAN',
                                       style: TextStyle(
                                           color: Color.fromRGBO(1, 1, 1, 0.6),
@@ -399,7 +379,7 @@ class _HomeContentState extends State<HomeContent> {
                           //empat
                           Flexible(
                             child: Container(
-                              margin: const EdgeInsets.only(left: 1, top: 1),
+                              padding: const EdgeInsets.only(top: 2),
                               width: screenWidth * 0.30,
                               height: screenHeight * 0.15,
                               child: ElevatedButton(
@@ -435,12 +415,9 @@ class _HomeContentState extends State<HomeContent> {
                                         ),
                                       ),
                                     ),
-                                    const Divider(
-                                      color: Colors.transparent,
-                                    ),
-                                    Flexible(
+                                    const Flexible(
                                       flex: 1,
-                                      child: const Text(
+                                      child: Text(
                                         'KEMISKINAN',
                                         style: TextStyle(
                                             color: Color.fromRGBO(
@@ -460,7 +437,7 @@ class _HomeContentState extends State<HomeContent> {
                     ),
                     Flexible(
                       child: Container(
-                        margin: const EdgeInsets.only(top: 1),
+                        padding: const EdgeInsets.only(top: 2),
                         width: screenWidth,
                         height: screenHeight * 0.5,
                         child: Container(
@@ -485,18 +462,17 @@ class _HomeContentState extends State<HomeContent> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Flexible(
-                                  flex: 4,
+                                  flex: 5,
                                   fit: FlexFit.tight,
                                   child: SizedBox(
                                     width: 100,
-                                    height: 2000,
+                                    height: 100,
                                     child: Image.asset(
                                       'assets/images/homecontent/jumlah_penduduk_icon.png',
+                                      width: 50,
+                                      height: 50,
                                     ),
                                   ),
-                                ),
-                                const Divider(
-                                  color: Colors.transparent,
                                 ),
                                 const Flexible(
                                   flex: 1,
