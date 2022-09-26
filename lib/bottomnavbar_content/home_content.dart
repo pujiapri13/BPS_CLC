@@ -86,7 +86,7 @@ class _HomeContentState extends State<HomeContent> {
                       child: Row(
                         children: <Widget>[
                           Container(
-                            padding: EdgeInsets.only(right: 2),
+                            padding: const EdgeInsets.only(right: 2),
                             width: screenWidth * 0.60,
                             height: screenHeight * 0.15,
                             child: ElevatedButton(
@@ -141,7 +141,7 @@ class _HomeContentState extends State<HomeContent> {
                             ),
                           ),
                           // //dua
-                          Container(
+                          SizedBox(
                             width: screenWidth * 0.40,
                             height: screenHeight * 0.15,
                             child: ElevatedButton(

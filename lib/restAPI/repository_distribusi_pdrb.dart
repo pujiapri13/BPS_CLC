@@ -1,9 +1,9 @@
 import 'dart:convert';
-import 'model_pdrb.dart';
+import 'model_distribusi_pdrb.dart';
 import 'package:http/http.dart' as http;
 
-class RepositoryPdrb {
-  final _baseURL = 'https://bps-oss.herokuapp.com/bps-api/pdrb/';
+class RepositoryDistPdrb {
+  final _baseURL = 'https://bps-oss.herokuapp.com/bps-api/distpdrb/';
 
   Future getData() async {
     try {
@@ -12,7 +12,7 @@ class RepositoryPdrb {
       if (response.statusCode == 200) {
         var cokk = jsonDecode(response.body);
         return (cokk['PDRB'] as List)
-            .map((isipdrb) => Pdrb.fromJson(isipdrb))
+            .map((isipdrb) => DistPdrb.fromJson(isipdrb))
             .toList();
       }
     } catch (isipdrb) {

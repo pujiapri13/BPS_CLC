@@ -61,7 +61,7 @@ class _DrawerPageState extends State<DrawerPage> {
       child: Material(
         color: Colors.black,
         child: Column(
-          children: [
+          children: <Widget>[
             //satu
             Container(
               height: DrawerHeight * 0.20,

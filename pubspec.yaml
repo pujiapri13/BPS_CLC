@@ -81,7 +81,11 @@ flutter:
      - assets/images/drawer/konsepdefinisi_icon.png
      - assets/images/drawer/about_icon.png
      - assets/images/drawer/keluar_icon.png
-     
+     - assets/images/drawer/selengkapnya_icon.png
+
+    #  Sensus
+     - assets/images/sensus/sensus.png
+
     # homescreen menu
      - assets/images/homecontent/inflasi_icon.png
      - assets/images/homecontent/jumlah_penduduk_icon.png

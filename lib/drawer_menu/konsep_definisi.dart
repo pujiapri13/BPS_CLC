@@ -1,9 +1,8 @@
+import 'package:bps_cilacap/drawer_menu/web_sirusa.dart';
 import 'package:bulleted_list/bulleted_list.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
 import 'package:flutter/material.dart';
 import 'package:bps_cilacap/Icons/back_icons_icons.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:bps_cilacap/Icons/more_icons_icons.dart';
 
 class KonsepDefinisi extends StatefulWidget {
   const KonsepDefinisi({Key? key, this.title}) : super(key: key);
@@ -13,8 +12,6 @@ class KonsepDefinisi extends StatefulWidget {
   @override
   State<KonsepDefinisi> createState() => _KonsepDefinisiState();
 }
-
-final Uri _urlSirusa = Uri.parse('https://sirusa.bps.go.id/sirusa/');
 
 class _KonsepDefinisiState extends State<KonsepDefinisi> {
   final GlobalKey<ExpansionTileCardState> cardA = GlobalKey();
@@ -51,12 +48,14 @@ class _KonsepDefinisiState extends State<KonsepDefinisi> {
         children: <Widget>[
           //<<< Konten
           Flexible(
+            flex: 1,
+            fit: FlexFit.tight,
             child: Container(
               height: screenHeight,
               width: screenWidth,
               color: Colors.black87,
               child: Column(
-                children: <Widget>[
+                children: [
                   Flexible(
                     child: ListView(
                       children: <Widget>[
@@ -1026,21 +1025,25 @@ class _KonsepDefinisiState extends State<KonsepDefinisi> {
                               child: Container(
                                 alignment: Alignment.centerRight,
                                 child: TextButton(
-                                  onPressed: _launchUrlSirusa,
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        CustomPageRoute(
+                                            child: const WebSirusa(),
+                                            direction: AxisDirection.up));
+                                  },
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
-                                    children: const [
-                                      Text(
+                                    children: [
+                                      const Text(
                                         'Selengkapnya  ',
                                         style: TextStyle(
                                           color: Colors.white,
                                           fontSize: 18,
                                         ),
                                       ),
-                                      Icon(
-                                        MoreIcons.more,
-                                        color: Colors.white,
-                                      )
+                                      Image.asset(
+                                          './assets/images/drawer/selengkapnya_icon.png')
                                     ],
                                   ),
                                 ),
@@ -1062,8 +1065,34 @@ class _KonsepDefinisiState extends State<KonsepDefinisi> {
   }
 }
 
-Future<void> _launchUrlSirusa() async {
-  if (!await launchUrl(_urlSirusa)) {
-    throw 'Could not launch $_urlSirusa';
+class CustomPageRoute extends PageRouteBuilder {
+  final Widget child;
+  final AxisDirection direction;
+
+  CustomPageRoute({required this.child, this.direction = AxisDirection.left})
+      : super(
+            transitionDuration: const Duration(milliseconds: 200),
+            reverseTransitionDuration: const Duration(milliseconds: 200),
+            pageBuilder: (context, animation, secondaryAnimation) => child);
+
+  @override
+  Widget buildTransitions(BuildContext context, Animation<double> animation,
+          Animation<double> secondaryAnimation, Widget child) =>
+      SlideTransition(
+        position: Tween<Offset>(begin: getBeginOffset(), end: Offset.zero)
+            .animate(animation),
+        child: child,
+      );
+  Offset getBeginOffset() {
+    switch (direction) {
+      case AxisDirection.up:
+        return const Offset(0, 1);
+      case AxisDirection.down:
+        return const Offset(0, -1);
+      case AxisDirection.right:
+        return const Offset(-1, 0);
+      case AxisDirection.left:
+        return const Offset(1, 0);
+    }
   }
 }

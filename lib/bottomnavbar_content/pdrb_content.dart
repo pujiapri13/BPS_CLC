@@ -46,7 +46,8 @@ class _PdrbContentState extends State<PdrbContent> {
                     Navigator.push(
                         context,
                         CustomPageRoute(
-                            child: const PdrbLapUs(), direction: AxisDirection.left));
+                            child: const PdrbLapUs(),
+                            direction: AxisDirection.left));
                   },
                   child: SizedBox(
                       width: screenWidth,
@@ -87,7 +88,8 @@ class _PdrbContentState extends State<PdrbContent> {
                     Navigator.push(
                         context,
                         CustomPageRoute(
-                            child: const DistribusiPdrb(), direction: AxisDirection.left));
+                            child: const DistribusiPdrb(),
+                            direction: AxisDirection.left));
                   },
                   child: SizedBox(
                       width: screenWidth,
@@ -128,7 +130,8 @@ class _PdrbContentState extends State<PdrbContent> {
                     Navigator.push(
                         context,
                         CustomPageRoute(
-                            child: const LajuPertumbuhanPdrb(), direction: AxisDirection.left));
+                            child: const LajuPertumbuhanPdrb(),
+                            direction: AxisDirection.left));
                   },
                   child: SizedBox(
                       width: screenWidth,
