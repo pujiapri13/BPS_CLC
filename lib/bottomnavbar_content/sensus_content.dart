@@ -36,15 +36,47 @@ class _SensusState extends State<Sensus> {
                 height: screenHeight * 0.1,
                 margin: const EdgeInsets.only(bottom: 2),
                 color: Colors.black,
-                child: const Center(
-                  child: Text(
-                    'Sensus Penduduk 2021 (SP2021) mencatat jumlah penduduk Kabupaten Cilacap',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold),
-                  ),
+                child: FutureBuilder(
+                  future: repositorysensus.getData(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      List isisensus = snapshot.data as List;
+                      return PageView.builder(
+                        itemCount: 1,
+                        itemBuilder: (context, index) {
+                          return Container(
+                            child: Center(
+                              child: Text(
+                                'Sensus Penduduk ' +
+                                    isisensus[index = 0].tanggal[0] +
+                                    isisensus[index = 0].tanggal[1] +
+                                    isisensus[index = 0].tanggal[2] +
+                                    isisensus[index = 0].tanggal[3] +
+                                    '(SP' +
+                                    isisensus[index = 0].tanggal[0] +
+                                    isisensus[index = 0].tanggal[1] +
+                                    isisensus[index = 0].tanggal[2] +
+                                    isisensus[index = 0].tanggal[3] +
+                                    ') mencatat jumlah penduduk Kabupaten Cilacap',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          );
+                        },
+                      );
+                    }
+                    if (snapshot.hasError) {
+                      return const Text("Database Error");
+                    }
+                    return const Center(
+                        child: CircularProgressIndicator(
+                      strokeWidth: 1,
+                    ));
+                  },
                 ),
               ),
               Flexible(
@@ -204,7 +236,9 @@ class _SensusState extends State<Sensus> {
                                   return const Text("Database Error");
                                 }
                                 return const Center(
-                                    child: CircularProgressIndicator());
+                                    child: CircularProgressIndicator(
+                                  strokeWidth: 1,
+                                ));
                               },
                             )),
                       ),
