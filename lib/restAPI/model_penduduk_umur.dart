@@ -1,4 +1,6 @@
-class SensusPenduduk {
+// ignore_for_file: non_constant_identifier_names
+
+class PendudukUmur {
   final int id;
   final String jenis_kelamin;
   final int a;
@@ -20,7 +22,7 @@ class SensusPenduduk {
   final int total;
   final String tanggal;
 
-  const SensusPenduduk({
+  const PendudukUmur({
     required this.id,
     required this.jenis_kelamin,
     required this.a,
@@ -43,8 +45,8 @@ class SensusPenduduk {
     required this.tanggal,
   });
 
-  factory SensusPenduduk.fromJson(Map<String, dynamic> json) {
-    return SensusPenduduk(
+  factory PendudukUmur.fromJson(Map<String, dynamic> json) {
+    return PendudukUmur(
       id: json['id'],
       jenis_kelamin: json['jenis_kelamin'],
       a: json['a'],

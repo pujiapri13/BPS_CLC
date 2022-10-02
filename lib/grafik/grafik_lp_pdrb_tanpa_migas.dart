@@ -1,4 +1,5 @@
-import 'package:bps_cilacap/restAPI/repository_distribusi_pdrb.dart';
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:bps_cilacap/restAPI/repository_laju_pertunbuhan_pdrb.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class _GrafikLPPdrbTanpaMigasState extends State<GrafikLPPdrbTanpaMigas> {
 
   List<Color> gradientColors = [
     const Color(0xff23b6e6),
-    Color.fromARGB(255, 19, 224, 19)
+    const Color.fromARGB(255, 19, 224, 19)
   ];
   @override
   Widget build(BuildContext context) {

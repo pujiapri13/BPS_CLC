@@ -22,7 +22,10 @@ class _tenagaKerjaState extends State<tenagaKerja> {
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('KETENAGAKERJAAN'),
+        title: const Text(
+          'KETENAGAKERJAAN',
+          style: TextStyle(fontSize: 17),
+        ),
         backgroundColor: Colors.black,
         leading: IconButton(
           onPressed: () {
@@ -41,12 +44,42 @@ class _tenagaKerjaState extends State<tenagaKerja> {
         child: Column(
           children: [
             Flexible(
-              flex: 1,
-              fit: FlexFit.tight,
-              child: Container(
-                color: Colors.transparent,
-              ),
-            ),
+                flex: 1,
+                fit: FlexFit.tight,
+                child: Column(
+                  children: [
+                    Flexible(
+                      flex: 3,
+                      fit: FlexFit.tight,
+                      child: Container(
+                        height: 100,
+                        color: Colors.black,
+                        child: const Center(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              vertical: 2,
+                              horizontal: 5,
+                            ),
+                            child: Text(
+                              "Kondisi Ketenagakerjaan Kabupaten Cilacap",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 22),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Flexible(
+                      fit: FlexFit.tight,
+                      flex: 1,
+                      child: Container(
+                        height: 100,
+                        color: Colors.transparent,
+                      ),
+                    )
+                  ],
+                )),
             Flexible(
               flex: 1,
               fit: FlexFit.tight,

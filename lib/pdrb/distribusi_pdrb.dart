@@ -1,7 +1,6 @@
 import 'package:bps_cilacap/Icons/back_icons_icons.dart';
 import 'package:bps_cilacap/grafik/grafik_distpdrb_migas.dart';
 import 'package:bps_cilacap/grafik/grafik_distpdrb_tanpa_migas.dart';
-import 'package:bps_cilacap/restAPI/repository_distribusi_pdrb.dart';
 import 'package:bps_cilacap/tabel/tabel_distpdrb_migas.dart';
 import 'package:bps_cilacap/tabel/tabel_distpdrb_tanpa_migas.dart';
 import 'package:flutter/material.dart';
@@ -55,11 +54,11 @@ class _DistribusiPdrbState extends State<DistribusiPdrb> {
                     style: TextStyle(color: Colors.white),
                   )),
                 ),
-                Container(
+                SizedBox(
                   height: screenHeight * 0.8,
                   width: screenWidth,
                   child: Column(
-                    children: [
+                    children: const [
                       Flexible(
                         child: TabelDistPdrbMigas(),
                       ),
@@ -77,11 +76,11 @@ class _DistribusiPdrbState extends State<DistribusiPdrb> {
                     style: TextStyle(color: Colors.white),
                   )),
                 ),
-                Container(
+                SizedBox(
                   height: screenHeight * 0.8,
                   width: screenWidth,
                   child: Column(
-                    children: [
+                    children: const [
                       Flexible(
                         child: TabelDistPdrbTanpaMigas(),
                       ),

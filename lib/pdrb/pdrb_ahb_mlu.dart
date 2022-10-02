@@ -1,7 +1,6 @@
 import 'package:bps_cilacap/Icons/back_icons_icons.dart';
 import 'package:bps_cilacap/grafik/grafik_pdrb_lu_migas.dart';
 import 'package:bps_cilacap/grafik/grafik_pdrb_lu_tanpa_migas.dart';
-import 'package:bps_cilacap/restAPI/repository_pdrb.dart';
 import 'package:bps_cilacap/tabel/tabel_pdrblu_migas.dart';
 import 'package:bps_cilacap/tabel/tabel_pdrblu_tanpa_migas.dart';
 import 'package:flutter/material.dart';
@@ -55,12 +54,12 @@ class _PdrbLapUsState extends State<PdrbLapUs> {
                     style: TextStyle(color: Colors.white),
                   )),
                 ),
-                Container(
+                SizedBox(
                   height: screenHeight * 0.8,
                   width: screenWidth,
                   child: Column(
-                    children: [
-                      const Flexible(
+                    children: const [
+                      Flexible(
                         child: TabelPdrbLUMigas(),
                       ),
                       Flexible(
@@ -79,11 +78,11 @@ class _PdrbLapUsState extends State<PdrbLapUs> {
                     style: TextStyle(color: Colors.white),
                   )),
                 ),
-                Container(
+                SizedBox(
                   height: screenHeight * 0.8,
                   width: screenWidth,
                   child: Column(
-                    children: [
+                    children: const [
                       Flexible(
                         child: TabelPdrbLUTanpaMigas(),
                       ),

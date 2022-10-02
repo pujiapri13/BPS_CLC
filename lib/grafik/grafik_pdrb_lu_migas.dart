@@ -1,6 +1,5 @@
 // ignore_for_file: camel_case_types, library_private_types_in_public_api
 
-import 'package:bps_cilacap/carousel/carousel_3.dart';
 import 'package:bps_cilacap/restAPI/repository_pdrb.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +16,7 @@ class _grafikPdrbLUMigasState extends State<grafikPdrbLUMigas> {
 
   List<Color> gradientColors = [
     const Color(0xff23b6e6),
-    Color.fromARGB(255, 19, 224, 19)
+    const Color.fromARGB(255, 19, 224, 19)
   ];
   @override
   Widget build(BuildContext context) {
