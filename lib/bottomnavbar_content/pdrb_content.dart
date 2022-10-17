@@ -23,6 +23,159 @@ class _PdrbContentState extends State<PdrbContent> {
         appBar: AppBar(
           backgroundColor: Colors.black87,
           title: const Center(child: Text('PDRB')),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  showModalBottomSheet(
+                    backgroundColor: Colors.white,
+                    constraints: BoxConstraints.tight(
+                      Size(screenWidth, screenHeight),
+                    ),
+                    context: context,
+                    builder: (context) {
+                      return ListView(children: [
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "PDRB",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                              "   PDRB (Produk Domestik Regional Bruto) adalah nilai tambah produksi yang diciptakan oleh sektor-sektor ekonomi.",
+                              textAlign: TextAlign.justify),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                              "   Nilai tambah merupakan nilai yang ditambahkan atas nilai barang dan jasa sebagai biaya antara agar menjadi output.",
+                              textAlign: TextAlign.justify),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                              "   Oleh karenanya secara matematis nilai tersebut dapat dihitung menggunakan formula sederhana sebagai berikut :",
+                              textAlign: TextAlign.justify),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              top: 5, bottom: 5, left: 20, right: 5),
+                          alignment: Alignment.center,
+                          child: const Text(
+                            "Nilai Tambah Bruto (NTB) = Output - Input antara",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                              "   NTB merupakan balas jasa faktor produksi, yang terdiri dari komponen :",
+                              textAlign: TextAlign.justify),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              top: 5, bottom: 5, left: 20, right: 5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "1) Pendapatan faktor",
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              top: 5, bottom: 5, left: 20, right: 5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "2) Penyusutan barang modal tetap",
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              top: 5, bottom: 5, left: 20, right: 5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "3) pajak tak langsung neto",
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                              "   Apabila penyusutan dikeluarka dari NTB maka akan diperoleh Nilai Tambah Neto.",
+                              textAlign: TextAlign.justify),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                              "   Pendapatan faktor merupakan nilai tambah produsen atas penggunaan faktor-faktor produksi dalam proses produksi, yang terdiri dari unsur-unsur :",
+                              textAlign: TextAlign.justify),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              top: 5, bottom: 5, left: 20, right: 5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "1) Upah dan gaji sebagai balas jasa pegawai",
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              top: 5, bottom: 5, left: 20, right: 5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "2) Sewa tanah sebagai balas jasa tanah",
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              top: 5, bottom: 5, left: 20, right: 5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "3) Bunga sebagai balas jasa modal",
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              top: 5, bottom: 5, left: 20, right: 5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "4) Keuntungan sebagai balas jasa kewiraswastaan",
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                              "   Penghitungan PDRB mempertimbangkan produksi domestik tanpa mempertimbangan kepemilikan faktor produksi.",
+                              textAlign: TextAlign.justify),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                              "   Nilai PDRB disajikan melalui dua jenis harga, yaitu Atas Dasar Harga Berlaku (ADHB)/at current market prices, dan Atas Dasar Harga Konstan (ADHK)/constant prices.",
+                              textAlign: TextAlign.justify),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                              "   Konsep atas dasar harga kosntan merupakan PDRB atas dasar harga berlaku yang telah 'dihilangkan' pengaruh perubahan harga.",
+                              textAlign: TextAlign.justify),
+                        ),
+                      ]);
+                    },
+                  );
+                },
+                icon: const Icon(Icons.info_outlined))
+          ],
         ),
         body: Container(
           padding: const EdgeInsets.all(2),

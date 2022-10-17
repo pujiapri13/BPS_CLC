@@ -11,6 +11,9 @@ class TenagaKerja {
   final double lainnya;
   final String gender;
   final String tanggal;
+  final double tpak;
+  final double tkk;
+  final double tpt;
 
   const TenagaKerja({
     required this.id,
@@ -23,20 +26,25 @@ class TenagaKerja {
     required this.lainnya,
     required this.gender,
     required this.tanggal,
+    required this.tpak,
+    required this.tkk,
+    required this.tpt,
   });
 
   factory TenagaKerja.fromJson(Map<String, dynamic> json) {
     return TenagaKerja(
-      id: json['id'],
-      angkatan_kerja: json['angkatan_kerja'],
-      bekerja: json['bekerja'],
-      bkn_angkatan_kerja: json['bkn_angkatan_kerja'],
-      sekolah: json['sekolah'],
-      pengangguran: json['pengangguran'],
-      urus_ruta: json['urur_ruta'],
-      lainnya: json['lainnya'],
-      gender: json['gender'],
-      tanggal: json['tanggal'],
-    );
+        id: json['id'],
+        angkatan_kerja: json['angkatan_kerja'],
+        bekerja: json['bekerja'],
+        bkn_angkatan_kerja: json['bkn_angkatan_kerja'],
+        sekolah: json['sekolah'],
+        pengangguran: json['pengangguran'],
+        urus_ruta: json['urur_ruta'],
+        lainnya: json['lainnya'],
+        gender: json['gender'],
+        tanggal: json['tanggal'],
+        tpak: json['tpak'],
+        tkk: json['tkk'],
+        tpt: json['tpt']);
   }
 }

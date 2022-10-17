@@ -36,6 +36,122 @@ class _AngkatanKerjaState extends State<AngkatanKerja> {
             ),
           ),
         ),
+        actions: [
+          IconButton(
+              onPressed: () {
+                showModalBottomSheet(
+                  backgroundColor: Colors.white,
+                  constraints: BoxConstraints.tight(
+                    Size(screenWidth, screenHeight),
+                  ),
+                  context: context,
+                  builder: (context) {
+                    return ListView(children: [
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                          "Bekerja",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                          "   Adalah kegiatan ekonomi yang dilakukan seseorang dengan maksud memperoleh atau membantu memperoleh pendapatan atau keuntungan paling sedikit 1 (satu) jam secar tidak terputus selama seminggu yang lalu. Kegiatan ini mencakup, baik yang sedang bekerja maupun yang punya pekerjaan tetapi dalam seminggu yang lalu sementara tidak bekerja, misalnya karena cuti, sakit, dan sejenisnya.",
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                          "Tingkat Kesempatan Kerja (TKK)",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                          "   TKK diukur sebagai persentase jumlah penduduk yang berkeja terhadap jumlah penduduk yang termasuk angkatan kerja. Penganggur",
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                          "Penganggur",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                          "  Angkatan kerja yang tergolong dalam penganggur adalah mereka yang : ",
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.only(
+                            top: 5, left: 25, right: 5, bottom: 5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                          "  - Sedang mencari pekerjaan.",
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.only(
+                            top: 5, left: 25, right: 5, bottom: 5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                          "  - Mempersiapkan usaha.",
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.only(
+                            top: 5, left: 25, right: 5, bottom: 5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                          "  - Tidak mencari pekerjaan karena merasa tidak mungkin mendapatkan pekerjaan.",
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.only(
+                            top: 5, left: 25, right: 5, bottom: 5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                          "  - Sudah punya pekerjaan tetapi belum mulai bekerja, dan pada waktu yang bersamaan mereka tidak bekerja (Jobless).",
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                          "  Penganggur dengan konsep/definisi tersebut biasanya disebut dengan penganggur terbuka (open unemployment).",
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                          "Tingkat Pengangguran Terbuka (TPT)",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                          "   TPT dihitung berdasarkan perbandingan antara jumlah penganggur dengan jumlah angkatan kerja dan dinyatakan dalam persentase.",
+                        ),
+                      ),
+                    ]);
+                  },
+                );
+              },
+              icon: const Icon(Icons.info_outlined))
+        ],
       ),
       body: Container(
         padding: const EdgeInsets.all(2),
@@ -256,8 +372,7 @@ class _AngkatanKerjaState extends State<AngkatanKerja> {
                   Navigator.push(
                       context,
                       CustomPageRoute(
-                          child: const AkTKK(),
-                          direction: AxisDirection.left));
+                          child: const AkTKK(), direction: AxisDirection.left));
                 },
                 child: SizedBox(
                     width: screenWidth,

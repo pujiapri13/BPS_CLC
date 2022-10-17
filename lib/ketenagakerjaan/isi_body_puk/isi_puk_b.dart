@@ -23,9 +23,30 @@ class _IsiPukBState extends State<IsiPukB> {
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           List isitenagakerja = snapshot.data as List;
-          return ListView.builder(
+          return PageView.builder(
             itemCount: 1,
             itemBuilder: (context, index) {
+              double akPr = isitenagakerja[index = 7].angkatan_kerja;
+              double bkjPr = isitenagakerja[index = 7].bekerja;
+              double pgrPr = isitenagakerja[index = 7].pengangguran;
+              double bakPr = isitenagakerja[index = 7].bkn_angkatan_kerja;
+              double sklPr = isitenagakerja[index = 7].sekolah;
+              double rutaPr = isitenagakerja[index = 7].urus_ruta;
+              double lainPr = isitenagakerja[index = 7].lainnya;
+              double tpakPr = isitenagakerja[index = 7].tpak;
+              double tkkPr = isitenagakerja[index = 7].tkk;
+              double tptPr = isitenagakerja[index = 7].tpt;
+
+              double akLk = isitenagakerja[index = 6].angkatan_kerja;
+              double bkjLk = isitenagakerja[index = 6].bekerja;
+              double pgrLk = isitenagakerja[index = 6].pengangguran;
+              double bakLk = isitenagakerja[index = 6].bkn_angkatan_kerja;
+              double sklLk = isitenagakerja[index = 6].sekolah;
+              double rutaLk = isitenagakerja[index = 6].urus_ruta;
+              double lainLk = isitenagakerja[index = 6].lainnya;
+              double tpakLk = isitenagakerja[index = 6].tpak;
+              double tkkLk = isitenagakerja[index = 6].tkk;
+              double tptLk = isitenagakerja[index = 6].tpt;
               return SizedBox(
                 height: 2000,
                 child: Column(
@@ -37,12 +58,12 @@ class _IsiPukBState extends State<IsiPukB> {
                           fit: FlexFit.tight,
                           child: Container(
                             height: screenHeight * 0.05,
-                            color: Colors.grey,
+                            color: Colors.cyan,
                             child: const Center(
                               child: Text(
                                 "Jenis Kegiatan",
                                 style: TextStyle(
-                                    color: Colors.black,
+                                    color: Colors.white,
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
@@ -52,13 +73,13 @@ class _IsiPukBState extends State<IsiPukB> {
                           flex: 1,
                           fit: FlexFit.tight,
                           child: Container(
-                            color: Colors.grey,
+                            color: Colors.cyan,
                             height: screenHeight * 0.05,
                             child: const Center(
                               child: Text(
                                 "Lk",
                                 style: TextStyle(
-                                    color: Colors.black,
+                                    color: Colors.white,
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
@@ -68,13 +89,13 @@ class _IsiPukBState extends State<IsiPukB> {
                           flex: 1,
                           fit: FlexFit.tight,
                           child: Container(
-                            color: Colors.grey,
+                            color: Colors.cyan,
                             height: screenHeight * 0.05,
                             child: const Center(
                               child: Text(
                                 "Pr",
                                 style: TextStyle(
-                                    color: Colors.black,
+                                    color: Colors.white,
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
@@ -84,13 +105,13 @@ class _IsiPukBState extends State<IsiPukB> {
                           flex: 1,
                           fit: FlexFit.tight,
                           child: Container(
-                            color: Colors.grey,
+                            color: Colors.cyan,
                             height: screenHeight * 0.05,
                             child: const Center(
                               child: Text(
                                 "Jml",
                                 style: TextStyle(
-                                    color: Colors.black,
+                                    color: Colors.white,
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
@@ -104,8 +125,8 @@ class _IsiPukBState extends State<IsiPukB> {
                           flex: 4,
                           fit: FlexFit.tight,
                           child: Container(
-                            padding:
-                                const EdgeInsets.only(top: 10, left: 5, right: 5),
+                            padding: const EdgeInsets.only(
+                                top: 10, left: 5, right: 5),
                             height: screenHeight * 0.05,
                             child: const Text(
                               "Angkatan Kerja",
@@ -121,9 +142,7 @@ class _IsiPukBState extends State<IsiPukB> {
                             height: screenHeight * 0.05,
                             child: Center(
                               child: Text(
-                                (isitenagakerja[index = 0].angkatan_kerja /
-                                        10000)
-                                    .toString(),
+                                akLk.toStringAsFixed(2),
                                 style: const TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold),
@@ -138,9 +157,7 @@ class _IsiPukBState extends State<IsiPukB> {
                             height: screenHeight * 0.05,
                             child: Center(
                               child: Text(
-                                (isitenagakerja[index = 1].angkatan_kerja /
-                                        10000)
-                                    .toString(),
+                                akPr.toStringAsFixed(2),
                                 style: const TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold),
@@ -155,12 +172,7 @@ class _IsiPukBState extends State<IsiPukB> {
                             height: screenHeight * 0.05,
                             child: Center(
                               child: Text(
-                                ((isitenagakerja[index = 0].angkatan_kerja /
-                                            10000) +
-                                        (isitenagakerja[index = 1]
-                                                .angkatan_kerja /
-                                            10000))
-                                    .toString(),
+                                (akLk + akPr).toStringAsFixed(2),
                                 style: const TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold),
@@ -176,8 +188,8 @@ class _IsiPukBState extends State<IsiPukB> {
                           flex: 4,
                           fit: FlexFit.tight,
                           child: Container(
-                            padding:
-                                const EdgeInsets.only(top: 10, left: 5, right: 5),
+                            padding: const EdgeInsets.only(
+                                top: 10, left: 5, right: 5),
                             height: screenHeight * 0.05,
                             child: const Text(
                               "   - Bekerja",
@@ -192,8 +204,7 @@ class _IsiPukBState extends State<IsiPukB> {
                             height: screenHeight * 0.05,
                             child: Center(
                               child: Text(
-                                (isitenagakerja[index = 0].bekerja / 10000)
-                                    .toString(),
+                                bkjLk.toStringAsFixed(2),
                               ),
                             ),
                           ),
@@ -204,9 +215,7 @@ class _IsiPukBState extends State<IsiPukB> {
                           child: SizedBox(
                             height: screenHeight * 0.05,
                             child: Center(
-                              child: Text(
-                                  (isitenagakerja[index = 1].bekerja / 10000)
-                                      .toString()),
+                              child: Text(bkjPr.toStringAsFixed(2)),
                             ),
                           ),
                         ),
@@ -217,10 +226,7 @@ class _IsiPukBState extends State<IsiPukB> {
                             height: screenHeight * 0.05,
                             child: Center(
                               child: Text(
-                                ((isitenagakerja[index = 0].bekerja / 10000) +
-                                        (isitenagakerja[index = 1].bekerja /
-                                            10000))
-                                    .toString(),
+                                (bkjLk + bkjPr).toStringAsFixed(2),
                               ),
                             ),
                           ),
@@ -233,8 +239,8 @@ class _IsiPukBState extends State<IsiPukB> {
                           flex: 4,
                           fit: FlexFit.tight,
                           child: Container(
-                            padding:
-                                const EdgeInsets.only(top: 10, left: 5, right: 5),
+                            padding: const EdgeInsets.only(
+                                top: 10, left: 5, right: 5),
                             height: screenHeight * 0.05,
                             child: const Text(
                               "   - Penganggur",
@@ -248,10 +254,7 @@ class _IsiPukBState extends State<IsiPukB> {
                           child: SizedBox(
                             height: screenHeight * 0.05,
                             child: Center(
-                              child: Text(
-                                  (isitenagakerja[index = 0].pengangguran /
-                                          10000)
-                                      .toString()),
+                              child: Text(pgrLk.toStringAsFixed(2)),
                             ),
                           ),
                         ),
@@ -262,8 +265,7 @@ class _IsiPukBState extends State<IsiPukB> {
                             height: screenHeight * 0.05,
                             child: Center(
                               child: Text(
-                                (isitenagakerja[index = 1].pengangguran / 10000)
-                                    .toString(),
+                                pgrPr.toStringAsFixed(2),
                               ),
                             ),
                           ),
@@ -275,12 +277,7 @@ class _IsiPukBState extends State<IsiPukB> {
                             height: screenHeight * 0.05,
                             child: Center(
                               child: Text(
-                                ((isitenagakerja[index = 0].pengangguran /
-                                            10000) +
-                                        (isitenagakerja[index = 1]
-                                                .pengangguran /
-                                            10000))
-                                    .toString(),
+                                (pgrLk + pgrPr).toStringAsFixed(2),
                               ),
                             ),
                           ),
@@ -293,8 +290,8 @@ class _IsiPukBState extends State<IsiPukB> {
                           flex: 4,
                           fit: FlexFit.tight,
                           child: Container(
-                            padding:
-                                const EdgeInsets.only(top: 10, left: 5, right: 5),
+                            padding: const EdgeInsets.only(
+                                top: 10, left: 5, right: 5),
                             height: screenHeight * 0.05,
                             child: const Text(
                               "Bukan Angkatan Kerja",
@@ -310,9 +307,7 @@ class _IsiPukBState extends State<IsiPukB> {
                             height: screenHeight * 0.05,
                             child: Center(
                               child: Text(
-                                (isitenagakerja[index = 0].bkn_angkatan_kerja /
-                                        10000)
-                                    .toString(),
+                                bakLk.toStringAsFixed(2),
                                 style: const TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold),
@@ -327,9 +322,7 @@ class _IsiPukBState extends State<IsiPukB> {
                             height: screenHeight * 0.05,
                             child: Center(
                               child: Text(
-                                (isitenagakerja[index = 1].bkn_angkatan_kerja /
-                                        10000)
-                                    .toString(),
+                                bakPr.toStringAsFixed(2),
                                 style: const TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold),
@@ -344,12 +337,7 @@ class _IsiPukBState extends State<IsiPukB> {
                             height: screenHeight * 0.05,
                             child: Center(
                               child: Text(
-                                ((isitenagakerja[index = 0].bkn_angkatan_kerja /
-                                            10000) +
-                                        (isitenagakerja[index = 1]
-                                                .angkatan_kerja /
-                                            10000))
-                                    .toString(),
+                                (bakLk + bakPr).toStringAsFixed(2),
                                 style: const TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold),
@@ -365,8 +353,8 @@ class _IsiPukBState extends State<IsiPukB> {
                           flex: 4,
                           fit: FlexFit.tight,
                           child: Container(
-                            padding:
-                                const EdgeInsets.only(top: 10, left: 5, right: 5),
+                            padding: const EdgeInsets.only(
+                                top: 10, left: 5, right: 5),
                             height: screenHeight * 0.05,
                             child: const Text(
                               "   - Sekolah",
@@ -380,9 +368,7 @@ class _IsiPukBState extends State<IsiPukB> {
                           child: SizedBox(
                             height: screenHeight * 0.05,
                             child: Center(
-                              child: Text(
-                                  (isitenagakerja[index = 0].sekolah / 10000)
-                                      .toString()),
+                              child: Text(sklLk.toStringAsFixed(2)),
                             ),
                           ),
                         ),
@@ -393,8 +379,7 @@ class _IsiPukBState extends State<IsiPukB> {
                             height: screenHeight * 0.05,
                             child: Center(
                               child: Text(
-                                (isitenagakerja[index = 1].sekolah / 10000)
-                                    .toString(),
+                                sklPr.toStringAsFixed(2),
                               ),
                             ),
                           ),
@@ -406,10 +391,7 @@ class _IsiPukBState extends State<IsiPukB> {
                             height: screenHeight * 0.05,
                             child: Center(
                               child: Text(
-                                ((isitenagakerja[index = 0].sekolah / 10000) +
-                                        (isitenagakerja[index = 1].sekolah /
-                                            10000))
-                                    .toString(),
+                                (sklLk + sklPr).toStringAsFixed(2),
                               ),
                             ),
                           ),
@@ -422,8 +404,8 @@ class _IsiPukBState extends State<IsiPukB> {
                           flex: 4,
                           fit: FlexFit.tight,
                           child: Container(
-                            padding:
-                                const EdgeInsets.only(top: 10, left: 5, right: 5),
+                            padding: const EdgeInsets.only(
+                                top: 10, left: 5, right: 5),
                             height: screenHeight * 0.05,
                             child: const Text(
                               "   - Mengurus Rumah Tangga",
@@ -438,8 +420,7 @@ class _IsiPukBState extends State<IsiPukB> {
                             height: screenHeight * 0.05,
                             child: Center(
                               child: Text(
-                                (isitenagakerja[index = 0].urus_ruta / 10000)
-                                    .toString(),
+                                rutaLk.toStringAsFixed(2),
                               ),
                             ),
                           ),
@@ -451,8 +432,7 @@ class _IsiPukBState extends State<IsiPukB> {
                             height: screenHeight * 0.05,
                             child: Center(
                               child: Text(
-                                (isitenagakerja[index = 1].urus_ruta / 10000)
-                                    .toString(),
+                                rutaPr.toStringAsFixed(2),
                               ),
                             ),
                           ),
@@ -464,10 +444,7 @@ class _IsiPukBState extends State<IsiPukB> {
                             height: screenHeight * 0.05,
                             child: Center(
                               child: Text(
-                                ((isitenagakerja[index = 0].urus_ruta / 10000) +
-                                        (isitenagakerja[index = 1].urus_ruta /
-                                            10000))
-                                    .toString(),
+                                (rutaLk + rutaPr).toStringAsFixed(2),
                               ),
                             ),
                           ),
@@ -480,8 +457,8 @@ class _IsiPukBState extends State<IsiPukB> {
                           flex: 4,
                           fit: FlexFit.tight,
                           child: Container(
-                            padding:
-                                const EdgeInsets.only(top: 10, left: 5, right: 5),
+                            padding: const EdgeInsets.only(
+                                top: 10, left: 5, right: 5),
                             height: screenHeight * 0.05,
                             child: const Text(
                               "   - Lainnya",
@@ -496,8 +473,7 @@ class _IsiPukBState extends State<IsiPukB> {
                             height: screenHeight * 0.05,
                             child: Center(
                               child: Text(
-                                (isitenagakerja[index = 0].lainnya / 10000)
-                                    .toString(),
+                                lainLk.toStringAsFixed(2),
                               ),
                             ),
                           ),
@@ -509,8 +485,7 @@ class _IsiPukBState extends State<IsiPukB> {
                             height: screenHeight * 0.05,
                             child: Center(
                               child: Text(
-                                (isitenagakerja[index = 1].lainnya / 10000)
-                                    .toString(),
+                                lainPr.toStringAsFixed(2),
                               ),
                             ),
                           ),
@@ -522,10 +497,7 @@ class _IsiPukBState extends State<IsiPukB> {
                             height: screenHeight * 0.05,
                             child: Center(
                               child: Text(
-                                ((isitenagakerja[index = 0].lainnya / 10000) +
-                                        (isitenagakerja[index = 1].lainnya /
-                                            10000))
-                                    .toString(),
+                                (lainLk + lainPr).toStringAsFixed(2),
                               ),
                             ),
                           ),
@@ -539,13 +511,13 @@ class _IsiPukBState extends State<IsiPukB> {
                           fit: FlexFit.tight,
                           child: Container(
                             height: screenHeight * 0.05,
-                            color: Colors.grey,
-                            padding:
-                                const EdgeInsets.only(top: 10, left: 5, right: 5),
+                            color: Colors.cyan,
+                            padding: const EdgeInsets.only(
+                                top: 10, left: 5, right: 5),
                             child: const Text(
                               "Total Penduduk Usia Kerja",
                               style: TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.white,
                                   fontWeight: FontWeight.bold),
                             ),
                           ),
@@ -554,17 +526,13 @@ class _IsiPukBState extends State<IsiPukB> {
                           flex: 1,
                           fit: FlexFit.tight,
                           child: Container(
-                            color: Colors.grey,
+                            color: Colors.cyan,
                             height: screenHeight * 0.05,
                             child: Center(
                               child: Text(
-                                ((isitenagakerja[index = 0].angkatan_kerja +
-                                            isitenagakerja[index = 0]
-                                                .bkn_angkatan_kerja) /
-                                        10000)
-                                    .toString(),
+                                (akLk + bakLk).toStringAsFixed(2),
                                 style: const TextStyle(
-                                    color: Colors.black,
+                                    color: Colors.white,
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
@@ -574,17 +542,13 @@ class _IsiPukBState extends State<IsiPukB> {
                           flex: 1,
                           fit: FlexFit.tight,
                           child: Container(
-                            color: Colors.grey,
+                            color: Colors.cyan,
                             height: screenHeight * 0.05,
                             child: Center(
                               child: Text(
-                                ((isitenagakerja[index = 1].angkatan_kerja +
-                                            isitenagakerja[index = 1]
-                                                .bkn_angkatan_kerja) /
-                                        10000)
-                                    .toString(),
+                                (akPr + bakPr).toStringAsFixed(2),
                                 style: const TextStyle(
-                                    color: Colors.black,
+                                    color: Colors.white,
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
@@ -594,22 +558,14 @@ class _IsiPukBState extends State<IsiPukB> {
                           flex: 1,
                           fit: FlexFit.tight,
                           child: Container(
-                            color: Colors.grey,
+                            color: Colors.cyan,
                             height: screenHeight * 0.05,
                             child: Center(
                               child: Text(
-                                (((isitenagakerja[index = 0].angkatan_kerja +
-                                                isitenagakerja[index = 0]
-                                                    .bkn_angkatan_kerja) /
-                                            10000) +
-                                        ((isitenagakerja[index = 1]
-                                                    .angkatan_kerja +
-                                                isitenagakerja[index = 1]
-                                                    .bkn_angkatan_kerja)) /
-                                            10000)
-                                    .toString(),
+                                (akLk + akPr + bakLk + bakPr)
+                                    .toStringAsFixed(2),
                                 style: const TextStyle(
-                                    color: Colors.black,
+                                    color: Colors.white,
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
@@ -623,8 +579,8 @@ class _IsiPukBState extends State<IsiPukB> {
                           flex: 4,
                           fit: FlexFit.tight,
                           child: Container(
-                            padding:
-                                const EdgeInsets.only(top: 10, left: 5, right: 5),
+                            padding: const EdgeInsets.only(
+                                top: 10, left: 5, right: 5),
                             height: screenHeight * 0.05,
                             child: const Text(
                               "TPAK",
@@ -638,25 +594,10 @@ class _IsiPukBState extends State<IsiPukB> {
                           fit: FlexFit.tight,
                           child: SizedBox(
                             height: screenHeight * 0.05,
-                            child: const Center(
+                            child: Center(
                               child: Text(
-                                "78.9",
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 1,
-                          fit: FlexFit.tight,
-                          child: SizedBox(
-                            height: screenHeight * 0.05,
-                            child: const Center(
-                              child: Text(
-                                "46.99",
-                                style: TextStyle(
+                                tpakLk.toStringAsFixed(2),
+                                style: const TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold),
                               ),
@@ -670,13 +611,23 @@ class _IsiPukBState extends State<IsiPukB> {
                             height: screenHeight * 0.05,
                             child: Center(
                               child: Text(
-                                ((isitenagakerja[index = 0].angkatan_kerja /
-                                            10000) +
-                                        (isitenagakerja[index = 1]
-                                                .angkatan_kerja /
-                                            10000))
-                                    .toString(),
+                                tpakPr.toStringAsFixed(2),
                                 style: const TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Flexible(
+                          flex: 1,
+                          fit: FlexFit.tight,
+                          child: SizedBox(
+                            height: screenHeight * 0.05,
+                            child: const Center(
+                              child: Text(
+                                "",
+                                style: TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold),
                               ),
@@ -691,8 +642,8 @@ class _IsiPukBState extends State<IsiPukB> {
                           flex: 4,
                           fit: FlexFit.tight,
                           child: Container(
-                            padding:
-                                const EdgeInsets.only(top: 10, left: 5, right: 5),
+                            padding: const EdgeInsets.only(
+                                top: 10, left: 5, right: 5),
                             height: screenHeight * 0.05,
                             child: const Text(
                               "TKK",
@@ -706,10 +657,25 @@ class _IsiPukBState extends State<IsiPukB> {
                           fit: FlexFit.tight,
                           child: SizedBox(
                             height: screenHeight * 0.05,
-                            child: const Center(
+                            child: Center(
                               child: Text(
-                                "87.95",
-                                style: TextStyle(
+                                tkkLk.toStringAsFixed(2),
+                                style: const TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Flexible(
+                          flex: 1,
+                          fit: FlexFit.tight,
+                          child: SizedBox(
+                            height: screenHeight * 0.05,
+                            child: Center(
+                              child: Text(
+                                tkkPr.toStringAsFixed(2),
+                                style: const TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold),
                               ),
@@ -723,22 +689,7 @@ class _IsiPukBState extends State<IsiPukB> {
                             height: screenHeight * 0.05,
                             child: const Center(
                               child: Text(
-                                "93.52",
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 1,
-                          fit: FlexFit.tight,
-                          child: SizedBox(
-                            height: screenHeight * 0.05,
-                            child: const Center(
-                              child: Text(
-                                "90.03",
+                                "",
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold),
@@ -754,8 +705,8 @@ class _IsiPukBState extends State<IsiPukB> {
                           flex: 4,
                           fit: FlexFit.tight,
                           child: Container(
-                            padding:
-                                const EdgeInsets.only(top: 10, left: 5, right: 5),
+                            padding: const EdgeInsets.only(
+                                top: 10, left: 5, right: 5),
                             height: screenHeight * 0.05,
                             child: const Text(
                               "TPT",
@@ -769,10 +720,25 @@ class _IsiPukBState extends State<IsiPukB> {
                           fit: FlexFit.tight,
                           child: SizedBox(
                             height: screenHeight * 0.05,
-                            child: const Center(
+                            child: Center(
                               child: Text(
-                                "12.05",
-                                style: TextStyle(
+                                tptLk.toStringAsFixed(2),
+                                style: const TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Flexible(
+                          flex: 1,
+                          fit: FlexFit.tight,
+                          child: SizedBox(
+                            height: screenHeight * 0.05,
+                            child: Center(
+                              child: Text(
+                                tptPr.toStringAsFixed(2),
+                                style: const TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold),
                               ),
@@ -786,22 +752,7 @@ class _IsiPukBState extends State<IsiPukB> {
                             height: screenHeight * 0.05,
                             child: const Center(
                               child: Text(
-                                "6.48",
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 1,
-                          fit: FlexFit.tight,
-                          child: SizedBox(
-                            height: screenHeight * 0.05,
-                            child: const Center(
-                              child: Text(
-                                "9.97",
+                                "",
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold),

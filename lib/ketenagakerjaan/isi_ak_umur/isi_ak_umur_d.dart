@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:bps_cilacap/restAPI/repository_tenaga_kerja.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
@@ -21,13 +23,24 @@ class _IsiAkUmurDState extends State<IsiAkUmurD> {
     final screenHeight = MediaQuery.of(context).size.height -
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom;
+    // ignore: unused_local_variable
+    final screenWidth = MediaQuery.of(context).size.width;
     return FutureBuilder(
       future: repositorytenagakerja.getData(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
+          // ignore: unused_local_variable
+          List isitenagakerja = snapshot.data as List;
           return PageView.builder(
             itemCount: 1,
             itemBuilder: (context, index) {
+              double bocahLk = 8.48;
+              double mudaLk = 65.93;
+              double tuaLk = 25.59;
+
+              double bocahPr = 9.27;
+              double mudaPr = 63.89;
+              double tuaPr = 26.84;
               return Column(
                 children: [
                   Flexible(
@@ -42,12 +55,12 @@ class _IsiAkUmurDState extends State<IsiAkUmurD> {
                               fit: FlexFit.tight,
                               child: Container(
                                 height: screenHeight * 0.05,
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 child: const Center(
                                   child: Text(
                                     "Kelompok Umur",
                                     style: TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
@@ -57,13 +70,13 @@ class _IsiAkUmurDState extends State<IsiAkUmurD> {
                               flex: 2,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
                                 child: const Center(
                                   child: Text(
                                     "Laki-laki",
                                     style: TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
@@ -73,13 +86,13 @@ class _IsiAkUmurDState extends State<IsiAkUmurD> {
                               flex: 2,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
                                 child: const Center(
                                   child: Text(
                                     "Perempuan",
                                     style: TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
@@ -89,13 +102,13 @@ class _IsiAkUmurDState extends State<IsiAkUmurD> {
                               flex: 2,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
                                 child: const Center(
                                   child: Text(
                                     "Jumlah",
                                     style: TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
@@ -109,8 +122,8 @@ class _IsiAkUmurDState extends State<IsiAkUmurD> {
                               flex: 3,
                               fit: FlexFit.tight,
                               child: Container(
-                                padding:
-                                    const EdgeInsets.only(top: 10, left: 5, right: 5),
+                                padding: const EdgeInsets.only(
+                                    top: 10, left: 5, right: 5),
                                 height: screenHeight * 0.05,
                                 child: const Center(
                                   child: Text(
@@ -125,8 +138,8 @@ class _IsiAkUmurDState extends State<IsiAkUmurD> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
-                                  child: Text("8.48"),
+                                child: Center(
+                                  child: Text(bocahLk.toStringAsFixed(2)),
                                 ),
                               ),
                             ),
@@ -135,9 +148,9 @@ class _IsiAkUmurDState extends State<IsiAkUmurD> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "9.27",
+                                    bocahPr.toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -147,9 +160,10 @@ class _IsiAkUmurDState extends State<IsiAkUmurD> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "8.78",
+                                    ((bocahLk + bocahPr) / 2)
+                                        .toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -162,8 +176,8 @@ class _IsiAkUmurDState extends State<IsiAkUmurD> {
                               flex: 3,
                               fit: FlexFit.tight,
                               child: Container(
-                                padding:
-                                    const EdgeInsets.only(top: 10, left: 5, right: 5),
+                                padding: const EdgeInsets.only(
+                                    top: 10, left: 5, right: 5),
                                 height: screenHeight * 0.05,
                                 child: const Center(
                                   child: Text(
@@ -178,9 +192,9 @@ class _IsiAkUmurDState extends State<IsiAkUmurD> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "65.93",
+                                    mudaLk.toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -190,9 +204,9 @@ class _IsiAkUmurDState extends State<IsiAkUmurD> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "63.89",
+                                    mudaPr.toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -202,9 +216,10 @@ class _IsiAkUmurDState extends State<IsiAkUmurD> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "65.14",
+                                    ((mudaPr + mudaLk) / 2)
+                                        .toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -217,8 +232,8 @@ class _IsiAkUmurDState extends State<IsiAkUmurD> {
                               flex: 3,
                               fit: FlexFit.tight,
                               child: Container(
-                                padding:
-                                    const EdgeInsets.only(top: 10, left: 5, right: 5),
+                                padding: const EdgeInsets.only(
+                                    top: 10, left: 5, right: 5),
                                 height: screenHeight * 0.05,
                                 child: const Center(
                                   child: Text(
@@ -233,9 +248,9 @@ class _IsiAkUmurDState extends State<IsiAkUmurD> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "25.59",
+                                    tuaLk.toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -245,9 +260,9 @@ class _IsiAkUmurDState extends State<IsiAkUmurD> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "26.84",
+                                    tuaPr.toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -257,9 +272,9 @@ class _IsiAkUmurDState extends State<IsiAkUmurD> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "26.08",
+                                    ((tuaLk + tuaPr) / 2).toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -272,14 +287,16 @@ class _IsiAkUmurDState extends State<IsiAkUmurD> {
                               flex: 3,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
-                                padding:
-                                    const EdgeInsets.only(top: 10, left: 5, right: 5),
+                                color: Colors.cyan,
+                                padding: const EdgeInsets.only(
+                                    top: 10, left: 5, right: 5),
                                 height: screenHeight * 0.05,
                                 child: const Center(
                                   child: Text(
                                     "Total Penduduk",
-                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
                                   ),
                                 ),
                               ),
@@ -288,11 +305,15 @@ class _IsiAkUmurDState extends State<IsiAkUmurD> {
                               flex: 2,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "100.00",
+                                    (bocahLk + mudaLk + tuaLk)
+                                        .toStringAsFixed(2),
+                                    style: const TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
                                   ),
                                 ),
                               ),
@@ -301,11 +322,15 @@ class _IsiAkUmurDState extends State<IsiAkUmurD> {
                               flex: 2,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "100.00",
+                                    (bocahPr + mudaPr + tuaPr)
+                                        .toStringAsFixed(2),
+                                    style: const TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
                                   ),
                                 ),
                               ),
@@ -314,11 +339,21 @@ class _IsiAkUmurDState extends State<IsiAkUmurD> {
                               flex: 2,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "100.00",
+                                    ((bocahPr +
+                                                mudaPr +
+                                                tuaPr +
+                                                bocahLk +
+                                                mudaLk +
+                                                tuaLk) /
+                                            2)
+                                        .toStringAsFixed(2),
+                                    style: const TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
                                   ),
                                 ),
                               ),
@@ -333,19 +368,19 @@ class _IsiAkUmurDState extends State<IsiAkUmurD> {
                     fit: FlexFit.tight,
                     child: PieChart(
                       key: ValueKey(key),
-                      dataMap: const <String, double>{
-                        "55 +": 26.08,
-                        "25-54": 65.14,
-                        "15-24": 8.78,
+                      dataMap: <String, double>{
+                        "55 +": (tuaLk + tuaPr),
+                        "25-54": (mudaLk + mudaPr),
+                        "15-24": (bocahLk + bocahPr),
                       },
                       animationDuration: const Duration(milliseconds: 800),
                       chartLegendSpacing: 50,
                       chartRadius: math.min(
                           MediaQuery.of(context).size.width / 2.5, 300),
                       colorList: const <Color>[
-                        Color(0xfffdcb6e),
-                        Color(0xff0984e3),
-                        Color(0xff6c5ce7),
+                        Colors.orange,
+                        Colors.cyan,
+                        Colors.grey,
                       ],
                       initialAngleInDegree: 90,
                       chartType: ChartType.ring,
@@ -369,11 +404,6 @@ class _IsiAkUmurDState extends State<IsiAkUmurD> {
                         showChartValuesOutside: true,
                       ),
                       ringStrokeWidth: 50,
-                      emptyColor: Colors.grey,
-                      emptyColorGradient: const [
-                        Color(0xff6c5ce7),
-                        Colors.blue,
-                      ],
                       baseChartColor: Colors.transparent,
                     ),
                   ),

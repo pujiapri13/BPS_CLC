@@ -23,7 +23,7 @@ class _pertumbuhanEkonomiState extends State<pertumbuhanEkonomi> {
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom;
     // ignore: unused_local_variable
-    final screenWeight = MediaQuery.of(context).size.width;
+    final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -42,6 +42,43 @@ class _pertumbuhanEkonomiState extends State<pertumbuhanEkonomi> {
             ),
           ),
         ),
+        actions: [
+          IconButton(
+              onPressed: () {
+                showModalBottomSheet(
+                  backgroundColor: Colors.white,
+                  context: context,
+                  builder: (context) {
+                    return ListView(children: [
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                          "PDRB",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                            "   PDRB (Produk Domestik Regional Bruto) adalah nilai tambah produksi yang diciptakan oleh sektor-sektor ekonomi.",
+                            textAlign: TextAlign.justify),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                          "PDRB ADHB = Produk Domestik Regional Bruto Atas Dasar Harga Berlaku",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ]);
+                  },
+                );
+              },
+              icon: const Icon(Icons.info_outlined))
+        ],
       ),
       body: Container(
           padding: const EdgeInsets.all(2),
@@ -115,7 +152,6 @@ class _pertumbuhanEkonomiState extends State<pertumbuhanEkonomi> {
                       ];
                       late List<BarChartGroupData> rawBarGroups;
                       late List<BarChartGroupData> showingBarGroups;
-
 
                       rawBarGroups = items;
                       showingBarGroups = rawBarGroups;

@@ -102,6 +102,13 @@ flutter:
      - assets/images/carousel/ipm_carousel_icon.png
      - assets/images/carousel/hasil_sp_icon.png
      
+    #  Modal
+     - assets/images/modal/inflasi_modal_1.jpeg
+     - assets/images/modal/inflasi_modal_2.jpeg
+     - assets/images/modal/inflasi_modal_3.jpeg
+     - assets/images/modal/inflasi_modal_4.jpeg
+     - assets/images/modal/ketimpangan_modal.jpeg
+     
     
 
   # An image asset can refer to one or more resolution-specific "variants", see

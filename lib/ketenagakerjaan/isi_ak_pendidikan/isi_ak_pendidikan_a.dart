@@ -48,7 +48,7 @@ class _IsiAkPendidikanAState extends State<IsiAkPendidikanA> {
                               fit: FlexFit.tight,
                               child: Container(
                                 height: screenHeight * 0.05,
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 child: const Center(
                                   child: Text(
                                     "Tingkat Pendidikan",
@@ -64,7 +64,7 @@ class _IsiAkPendidikanAState extends State<IsiAkPendidikanA> {
                               flex: 2,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
                                 child: const Center(
                                   child: Text(
@@ -80,7 +80,7 @@ class _IsiAkPendidikanAState extends State<IsiAkPendidikanA> {
                               flex: 2,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
                                 child: const Center(
                                   child: Text(
@@ -96,7 +96,7 @@ class _IsiAkPendidikanAState extends State<IsiAkPendidikanA> {
                               flex: 2,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
                                 child: const Center(
                                   child: Text(
@@ -334,7 +334,7 @@ class _IsiAkPendidikanAState extends State<IsiAkPendidikanA> {
                               flex: 3,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 padding: const EdgeInsets.only(
                                     top: 10, left: 5, right: 5),
                                 height: screenHeight * 0.05,
@@ -350,7 +350,7 @@ class _IsiAkPendidikanAState extends State<IsiAkPendidikanA> {
                               flex: 2,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
                                 child: const Center(
                                   child: Text(
@@ -363,7 +363,7 @@ class _IsiAkPendidikanAState extends State<IsiAkPendidikanA> {
                               flex: 2,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
                                 child: const Center(
                                   child: Text(
@@ -376,7 +376,7 @@ class _IsiAkPendidikanAState extends State<IsiAkPendidikanA> {
                               flex: 2,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
                                 child: const Center(
                                   child: Text(
@@ -433,7 +433,7 @@ class _IsiAkPendidikanAState extends State<IsiAkPendidikanA> {
                         showChartValuesOutside: true,
                       ),
                       ringStrokeWidth: 50,
-                      emptyColor: Colors.grey,
+                      emptyColor: Colors.cyan,
                       emptyColorGradient: const [
                         Color(0xff6c5ce7),
                         Colors.blue,

@@ -15,9 +15,7 @@ class RepositoryTenagaKerja {
             .map((isitenagakerja) => TenagaKerja.fromJson(isitenagakerja))
             .toList();
       }
-    } catch (isitenagakerja) {
-      // ignore: avoid_print
-      print(isitenagakerja.toString());
-    }
+      // ignore: empty_catches
+    } catch (isitenagakerja) {}
   }
 }

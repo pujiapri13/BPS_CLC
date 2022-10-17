@@ -88,6 +88,95 @@ class _ketimpanganContentState extends State<ketimpanganContent> {
             ),
           ),
         ),
+        actions: [
+          IconButton(
+              onPressed: () {
+                showModalBottomSheet(
+                  backgroundColor: Colors.white,
+                  // constraints: BoxConstraints.loose(
+                  //   Size(screenWidth, screenHeight * 0.9),
+                  // ),
+                  context: context,
+                  builder: (context) {
+                    return ListView(children: [
+                      Column(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(5),
+                            alignment: Alignment.centerLeft,
+                            child: Column(
+                              children: const [
+                                Text(
+                                  "   Selain Gini Ratio, salah satu ukuran untuk melihat ketimpangan pendapatan diantara penduduk adalah dengan menggunakan Kriteria Bank Dunia. Pada prinsipnya Kriteria Bank Dunia membagi penduduk ke dalam 3 (tiga) kelompok pendapatan yaitu: 1) 40 persen kelompok penduduk berpendapatan rendah, 2) 40 persen kelompok penduduk berpendapatan sedang, dan 3) 20 persen kelompok berpendapatan tinggi.",
+                                  textAlign: TextAlign.justify,
+                                ),
+                                Text(
+                                  "   Pengelompokan seperti ini pada dasarnya sama dengan menggunakan cara desil (decile) yaitu 40 persen pertama sama dengan desil ke-4; 40 persen kedua sama dengan desil ke-8 dan 20 persen terakhir adalah desil ke-10. Dalam menentukan besarnya desil ke-i digunakan rumus :",
+                                ),
+                                Text(
+                                  "   Ketimpangan pendapatan ditentukan berdasarkan besarnya jumlah pendapatan yang diterima oleh kelompok 40 persen penduduk berpendapatan rendah, dengan kriteria sebagai berikut:",
+                                ),
+                              ],
+                            ),
+                          ),
+                          Image.asset(
+                              './assets/images/modal/ketimpangan_modal.jpeg'),
+                          Container(
+                            padding: const EdgeInsets.all(5),
+                            alignment: Alignment.centerLeft,
+                            child: const Text(
+                              "A. Ketimpangan Tinggi",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.all(5),
+                            alignment: Alignment.centerLeft,
+                            child: const Text(
+                              "   Bila persentase pendapatan yang diterima oleh kelompok 40 persen penduduk berpendapatan rendah lebih kecil dari 12 persen.",
+                              textAlign: TextAlign.justify,
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.all(5),
+                            alignment: Alignment.centerLeft,
+                            child: const Text(
+                              "B. Ketimpangan Sedang/Moderat",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.all(5),
+                            alignment: Alignment.centerLeft,
+                            child: const Text(
+                              "   Bila persentase pendapatan yang diterima oleh kelompok 40 persen penduduk berpendapatan rendah antara 12 persen sampai dengan 17 persen.",
+                              textAlign: TextAlign.justify,
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.all(5),
+                            alignment: Alignment.centerLeft,
+                            child: const Text(
+                              "C. Ketimpangan Rendah",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.all(5),
+                            alignment: Alignment.centerLeft,
+                            child: const Text(
+                              "   Bila persentase pendapatan yang diterima oleh kelompok 40 persen penduduk berpendapatan rendah lebih besar dari 17 persen.",
+                              textAlign: TextAlign.justify,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ]);
+                  },
+                );
+              },
+              icon: const Icon(Icons.info_outlined))
+        ],
       ),
       body: Container(
         padding: const EdgeInsets.all(2),

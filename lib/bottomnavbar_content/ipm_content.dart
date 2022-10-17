@@ -36,7 +36,7 @@ class _IpmContentState extends State<IpmContent> {
     var screenHeight = MediaQuery.of(context).size.height -
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom;
-    var screenWeight = MediaQuery.of(context).size.width;
+    var screenWidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -44,6 +44,138 @@ class _IpmContentState extends State<IpmContent> {
           title: const Center(
             child: Text('Perkembangan IPM'),
           ),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  showModalBottomSheet(
+                    backgroundColor: Colors.white,
+                    constraints: BoxConstraints.tight(
+                      Size(screenWidth, screenHeight),
+                    ),
+                    context: context,
+                    builder: (context) {
+                      return ListView(children: [
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "Pembangunan Manusia",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                              "   Pembangunan Manusia didefinisikan sebagai perluasan pilihan bagi penduduk untuk hidup lebih panjang, lebih sehat, dan hidup lebih bermakna membangun hidupnya yang dianggap berharga (UNDP, HDR 1990).",
+                              textAlign: TextAlign.justify),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "Indeks Pembangunan Manusia",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                              "   UNDP memperkenalkan suatu indikator yang dapat menggambarkan perkembangan pembangunan manusia secara terukur dan representatif, yang dinamakan Human Development Index (HDI) atau Indeks Pembangunan Manusia (IPM).",
+                              textAlign: TextAlign.justify),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                              "   IPM dikembangkan oleh Amartya Sen (pemenang nobel berkebangsaan India) dan seorang ekonom Pakistan Mahbub ul Haq, serta dibantu oleh Gustav Ranis dari Universitas Yale dan Lord Meghnad Desai dari London School of Economics. Sejak it indeks ini dipakai oleh Program pembangunan PBB pada lapora IPM tahunannya.",
+                              textAlign: TextAlign.justify),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "Dimensi Dasar IPM",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                              "   Indeks Pembangunan Manusia (IPM) memiliki tiga dimensi yang digunakan sebagai dasar perhitungannya :",
+                              textAlign: TextAlign.justify),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              top: 5, bottom: 5, left: 20, right: 5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "1) Umur panjang dan hidup sehat yang diukur dengan Umur Harapan Hidup (UHH) saat kelahiran.",
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              top: 5, bottom: 5, left: 20, right: 5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "2) Pengetahuan yang dihitung dari angka Harapan Lama Sekolah/HLS (penduduk berusia 7 tahun ke atas) dan angka Rata-rata Lama Sekolah/RLS (penduduk berusia 25 tahun ke atas).",
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              top: 5, bottom: 5, left: 20, right: 5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "3) Standar hidup layak yang di tingkat nasional dihitung dari Produk Domestik Bruto/PDB (keseimbangan kemampuan berbelanja) per kapita, sedangkan di tingkat daerah dihitung dari pengeluaran per kapita per tahun.",
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "Manfaat IPM",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                              "   Indeks Pembangunan Manusia (IPM) memiliki beberapa manfaat antara lain :",
+                              textAlign: TextAlign.justify),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              top: 5, bottom: 5, left: 20, right: 5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "1) IPM merupakan indikator penting untuk mengukur keberhasilan dalam upaya membangun kualitas hidup manusia (masyarakat/penduduk).",
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              top: 5, bottom: 5, left: 20, right: 5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "2) IPM dapat menentukan peringkat atau level pembangunan suatu wilayah/negara.",
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              top: 5, bottom: 5, left: 20, right: 5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "3) Bagi Indonesia, IPM merupakan data strategis karena selain sebagai ukuran kinerja Pemerintah, IPM juga digunakan sebagai salah satu alokator penentuan Dana Alokasi Umum (DAU).",
+                          ),
+                        ),
+                      ]);
+                    },
+                  );
+                },
+                icon: const Icon(Icons.info_outlined))
+          ],
         ),
         body: Container(
           margin: const EdgeInsets.all(2),
@@ -99,7 +231,7 @@ class _IpmContentState extends State<IpmContent> {
                         fit: FlexFit.tight,
                         flex: 6,
                         child: Container(
-                          width: screenWeight,
+                          width: screenWidth,
                           color: Colors.cyan,
                           child: const Flexible(
                             child: tabelIpm(),
@@ -110,7 +242,7 @@ class _IpmContentState extends State<IpmContent> {
                         flex: 6,
                         fit: FlexFit.tight,
                         child: Container(
-                            width: screenWeight,
+                            width: screenWidth,
                             color: Colors.transparent,
                             child: const Flexible(
                               child: grafikIpm(),

@@ -40,6 +40,201 @@ class _kemiskinanContentState extends State<kemiskinanContent> {
               ),
             ),
           ),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  showModalBottomSheet(
+                    backgroundColor: Colors.white,
+                    context: context,
+                    builder: (context) {
+                      return ListView(children: [
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "Kemiskinan",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                              "   Kemiskinan adalah ketidakmampuan dari sisi ekonomi untuk memenuhi kebutuhan dasar makanan dan bukan makanan yang diukur dari sisi pengeluaran.",
+                              textAlign: TextAlign.justify),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "Penduduk Miskin",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                              "   Penduduk miskin adalah penduduk yang memiliki rata-rata pengeluaran per kapita per bulan di bawah Garis Kemiskinan.",
+                              textAlign: TextAlign.justify),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "Garis Kemiskinan",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "   Garis Kemiskinan (GK) terdiri dari dua komponen, yaitu Garis Kemiskinan Makanan (GKM) dan Garis Kemiskinan Non Makanan (GKNM).",
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              top: 5, left: 25, bottom: 5, right: 5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "   GK = GKM + GKNM",
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "   Penghitungan Garis Kemiskinan dilakukan secara terpisah untuk daerah perkotaan dan perdesaan.",
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "Garis Kemiskinan Makanan (GKM)",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "   GKM merupakan nilai pengeluaran kebutuhan minimum makanan yang disetarakan dengan 2.100 kkalori per kapita per hari. Patokan ini mengacu pada hasil Widyakarya Pangan dan Gizi 1978.",
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "   Paket komoditi kebutuhan dasar makanan diwakili oleh 52 jenis komoditi. Ke 52 jenis komoditi ini merupakan komoditi-komodit yang paling banyak dikonsumsi orang miskin. Jumlah pengeluaran untuk 52 komoditi ini sekitar 70 persen dari total pengeluaran orang miskin.",
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "Garis Kemiskinan Non Makanan (GKNM)",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "   GKNM merupakan nilai pengeluaran kebutuhan minimum untuk perumahan, sandang, pendidikan, dan kesehatan. Paket komoditi kebutuhan dasar non makanan diwakili oleh 51 jenis komoditi untuk daerah perkotaan dan 47 jenis komoditi untuk daerah perdesaan.",
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "Sumber Data",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "   Sumber data utama yang dipakai untuk menghitung tingkat kemiskinan pada level kabupaten/kota adala data Susenas (Survei Sosial Ekonomi Nasional) Maret pada setiap tahunnya.",
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "Ukuran Kemiskinan",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              top: 5, left: 10, right: 5, bottom: 5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "a. Head Count Index (HCI - P0)",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              top: 5, left: 15, right: 5, bottom: 5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "   Adalah persentase penduduk yang berada di bawah Garis Kemiskinan (GK)",
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              top: 5, left: 10, right: 5, bottom: 5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "b. Indeks Kedalaman Kemiskinan (Poverty Gap Index - P1)",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              top: 5, left: 15, right: 5, bottom: 5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "   Adalah ukuran rata-rata kesenjangan pengeluaran masing masing penduduk miskin terhadap Garis Kemiskinan. Semakin tinggi nilai indeks, semakin jauh rata-rata pengeluaran penduduk dari Garis Kemiskinan.",
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              top: 5, left: 10, right: 5, bottom: 5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "c. Indeks Keparahan Kemiskinan (Poverty Severity Index - P2)",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              top: 5, left: 15, right: 5, bottom: 5),
+                          alignment: Alignment.centerLeft,
+                          child: const Text(
+                            "   Adalah ukuran yang memberikan gambaran mengenai penyebaran pengeluaran di antara penduduk miskin. Semakin tinggi nilai indeks, semakin tinggi ketimpangan pengeluaran di antara penduduk miskin.",
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                      ]);
+                    },
+                  );
+                },
+                icon: const Icon(Icons.info_outlined))
+          ],
         ),
         body: FutureBuilder(
           future: repositorykemiskinan.getData(),

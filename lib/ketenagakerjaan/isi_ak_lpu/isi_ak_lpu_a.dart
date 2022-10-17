@@ -34,6 +34,13 @@ class _IsiAkLpuAState extends State<IsiAkLpuA> {
           return PageView.builder(
             itemCount: 1,
             itemBuilder: (context, index) {
+              double taniLk = 27.75;
+              double industriLk = 35.35;
+              double jaslainLk = 36.90;
+
+              double taniPr = 21.60;
+              double industriPr = 23.44;
+              double jaslainPr = 54.96;
               return Column(
                 children: [
                   Flexible(
@@ -48,12 +55,12 @@ class _IsiAkLpuAState extends State<IsiAkLpuA> {
                               fit: FlexFit.tight,
                               child: Container(
                                 height: screenHeight * 0.05,
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 child: const Center(
                                   child: Text(
                                     "Lapangan Pekerjaan Utama",
                                     style: TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.bold),
                                     textAlign: TextAlign.center,
                                   ),
@@ -64,13 +71,13 @@ class _IsiAkLpuAState extends State<IsiAkLpuA> {
                               flex: 2,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
                                 child: const Center(
                                   child: Text(
                                     "Laki-laki",
                                     style: TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
@@ -80,29 +87,13 @@ class _IsiAkLpuAState extends State<IsiAkLpuA> {
                               flex: 2,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
                                 child: const Center(
                                   child: Text(
                                     "Perempuan",
                                     style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Flexible(
-                              flex: 2,
-                              fit: FlexFit.tight,
-                              child: Container(
-                                color: Colors.grey,
-                                height: screenHeight * 0.05,
-                                child: const Center(
-                                  child: Text(
-                                    "Jumlah",
-                                    style: TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
@@ -132,8 +123,8 @@ class _IsiAkLpuAState extends State<IsiAkLpuA> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
-                                  child: Text("27.75"),
+                                child: Center(
+                                  child: Text(taniLk.toStringAsFixed(2)),
                                 ),
                               ),
                             ),
@@ -142,21 +133,9 @@ class _IsiAkLpuAState extends State<IsiAkLpuA> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "21.60",
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Flexible(
-                              flex: 2,
-                              fit: FlexFit.tight,
-                              child: SizedBox(
-                                height: screenHeight * 0.05,
-                                child: const Center(
-                                  child: Text(
-                                    "25.36",
+                                    taniPr.toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -185,9 +164,9 @@ class _IsiAkLpuAState extends State<IsiAkLpuA> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "35.35",
+                                    industriLk.toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -197,21 +176,9 @@ class _IsiAkLpuAState extends State<IsiAkLpuA> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "23.44",
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Flexible(
-                              flex: 2,
-                              fit: FlexFit.tight,
-                              child: SizedBox(
-                                height: screenHeight * 0.05,
-                                child: const Center(
-                                  child: Text(
-                                    "30.72",
+                                    industriPr.toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -240,9 +207,9 @@ class _IsiAkLpuAState extends State<IsiAkLpuA> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "36.90",
+                                    jaslainLk.toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -252,21 +219,9 @@ class _IsiAkLpuAState extends State<IsiAkLpuA> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "54.96",
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Flexible(
-                              flex: 2,
-                              fit: FlexFit.tight,
-                              child: SizedBox(
-                                height: screenHeight * 0.05,
-                                child: const Center(
-                                  child: Text(
-                                    "43.92",
+                                    jaslainPr.toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -279,13 +234,16 @@ class _IsiAkLpuAState extends State<IsiAkLpuA> {
                               flex: 3,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 padding: const EdgeInsets.only(
                                     top: 10, left: 5, right: 5),
                                 height: screenHeight * 0.05,
                                 child: const Center(
                                   child: Text(
                                     "Total Penduduk",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
                                     textAlign: TextAlign.left,
                                   ),
                                 ),
@@ -295,11 +253,15 @@ class _IsiAkLpuAState extends State<IsiAkLpuA> {
                               flex: 2,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "100.00",
+                                    (taniLk + industriLk + jaslainLk)
+                                        .toStringAsFixed(2),
+                                    style: const TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
                                   ),
                                 ),
                               ),
@@ -308,24 +270,15 @@ class _IsiAkLpuAState extends State<IsiAkLpuA> {
                               flex: 2,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "100.00",
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Flexible(
-                              flex: 2,
-                              fit: FlexFit.tight,
-                              child: Container(
-                                color: Colors.grey,
-                                height: screenHeight * 0.05,
-                                child: const Center(
-                                  child: Text(
-                                    "100.00",
+                                    (taniPr + industriPr + jaslainPr)
+                                        .toStringAsFixed(2),
+                                    style: const TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
                                   ),
                                 ),
                               ),
@@ -340,19 +293,19 @@ class _IsiAkLpuAState extends State<IsiAkLpuA> {
                     fit: FlexFit.tight,
                     child: PieChart(
                       key: ValueKey(key),
-                      dataMap: const <String, double>{
-                        "Pertanian": 25.36,
-                        "Industri": 30.72,
-                        "Jasa/Lainnya": 43.92,
+                      dataMap: <String, double>{
+                        "Pertanian": ((taniLk + taniPr) / 2),
+                        "Industri": ((industriLk + industriPr) / 2),
+                        "Jasa/Lainnya": ((jaslainLk + jaslainPr) / 2),
                       },
                       animationDuration: const Duration(milliseconds: 800),
                       chartLegendSpacing: 50,
                       chartRadius: math.min(
                           MediaQuery.of(context).size.width / 2.5, 300),
                       colorList: const <Color>[
-                        Colors.green,
-                        Color(0xff0984e3),
-                        Color(0xff6c5ce7),
+                        Colors.grey,
+                        Colors.orange,
+                        Colors.cyan,
                       ],
                       initialAngleInDegree: 90,
                       chartType: ChartType.ring,
@@ -376,7 +329,7 @@ class _IsiAkLpuAState extends State<IsiAkLpuA> {
                         showChartValuesOutside: true,
                       ),
                       ringStrokeWidth: 50,
-                      emptyColor: Colors.grey,
+                      emptyColor: Colors.cyan,
                       emptyColorGradient: const [
                         Color(0xff6c5ce7),
                         Colors.blue,

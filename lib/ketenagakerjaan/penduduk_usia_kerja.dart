@@ -37,87 +37,81 @@ class _PendudukUsiaKerjaState extends State<PendudukUsiaKerja> {
                 showModalBottomSheet(
                   backgroundColor: Colors.white,
                   constraints: BoxConstraints.tight(
-                    Size(screenWidth, screenHeight * 0.3),
+                    Size(screenWidth, screenHeight),
                   ),
                   context: context,
                   builder: (context) {
-                    return Column(
-                      children: [
-                        Flexible(
-                          fit: FlexFit.tight,
-                          flex: 1,
-                          child: Container(
-                            alignment: Alignment.centerLeft,
-                            child: const Text(
-                              "Tingkat Partisipasi Angkatan Kerja (TPAK)",
-                              style: TextStyle(
-                                  fontSize: 12, fontWeight: FontWeight.bold),
-                            ),
-                          ),
+                    return ListView(children: [
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                          "   Konsep/definisi ketenagakerjaan yang digunakan BPS merujuk pada rekomendasi International Labor Organization (ILO) sebagaimana tercantum dalam buku ' Surveys of economically Active Population, employment, Unemployment and Underemployment' An ILO Manual on Concept and Methods, ILO 1992.",
                         ),
-                        Flexible(
-                          fit: FlexFit.tight,
-                          flex: 3,
-                          child: Container(
-                            alignment: Alignment.centerLeft,
-                            child: const Text(
-                              "Tingkat partisipasi angkatan kerja (TPAK) mengindikasikan besarnya penduduk usia kerja yang aktif secara ekonomi."
-                              "TPAP diukur sebagai presentase jumlah angkatan kerja (bekerja dan belum bekerja) terhadap jumlah penduduk usia kerja.",
-                              style: TextStyle(fontSize: 10),
-                            ),
-                          ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                          "   Hal ini dimaksudkan terutama agar data ketenagakerjaan yang dihasilkan dari berbagai survey di Indonesia dapat dibandingkar secara internasional, tanpa mengesampingkan kondisi ketenagakerjaan spesifik Indonesia.",
                         ),
-                        Flexible(
-                          fit: FlexFit.tight,
-                          flex: 1,
-                          child: Container(
-                            alignment: Alignment.centerLeft,
-                            child: const Text(
-                              "Tingkat Kesempatan Kerja (TKK)",
-                              style: TextStyle(
-                                  fontSize: 12, fontWeight: FontWeight.bold),
-                            ),
-                          ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                          "Tingkat Partisipasi Angkatan Kerja (TPAK)",
                         ),
-                        Flexible(
-                          fit: FlexFit.tight,
-                          flex: 3,
-                          child: Container(
-                            alignment: Alignment.centerLeft,
-                            child: const Text(
-                              "Tingkat kesempatan kerja (TKK) mengindikasikan besarnya penduduk usia kerja yang bekerja atau sementara tidak bekerja."
-                              "TKK diukur sebagai presentase jumlah penduduk yang bekerja terhadap jumlah penduduk yang termasuk angkatan kerja.",
-                              style: TextStyle(fontSize: 10),
-                            ),
-                          ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                          "   Menurut konsep Labor Force Framework, penduduk dibagi ke dalam dua kelompok, yaitu : Usia Kerja dan Bukan Usia Kerja",
                         ),
-                        Flexible(
-                          fit: FlexFit.tight,
-                          flex: 1,
-                          child: Container(
-                            alignment: Alignment.centerLeft,
-                            child: const Text(
-                              "Tingkat Pengangguran Terbuka (TPT)",
-                              style: TextStyle(
-                                  fontSize: 12, fontWeight: FontWeight.bold),
-                            ),
-                          ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                          "Penduduk Usia Kerja",
+                          style: TextStyle(fontWeight: FontWeight.bold),
                         ),
-                        Flexible(
-                          fit: FlexFit.tight,
-                          flex: 3,
-                          child: Container(
-                            alignment: Alignment.centerLeft,
-                            child: const Text(
-                              "Tingkat pengangguran terbuka (TPT) memberikan indikasi tentang penduduk usia kerja yang termasuk dalam pengangguran."
-                              "TPT dihitung berdasarkan perbandingan antara jumlah pengangguran (mencari kerja) dengan jumlah angkatan kerja"
-                              "dan dinyatakan dalam presentase.",
-                              style: TextStyle(fontSize: 10),
-                            ),
-                          ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                          "   Indonesia menggunakan batas bawah usia kerja 15 tahun dan tanpa batas atas usia kerja. Penduduk Usia Kerja dibagi ke dala dua kelompok, yaitu:",
                         ),
-                      ],
-                    );
+                      ),
+                      Container(
+                        padding: const EdgeInsets.only(left: 15, right: 5),
+                        child: const Text(
+                          "1. Angkatan Kerja",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.only(left: 25, right: 5),
+                        child: const Text(
+                          "   Konsep angkatan kerja merujuk pada kegiatan utama yang dilakukan oleh penduduk usia kerja selama periode tertentu Angkatan kerja adalah penduduk usia kerja yang bekerja atau punya pekerjaan namun sementara tidak bekerja dan penganggur.",
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.only(left: 15, right: 5),
+                        child: const Text(
+                          "2. Bukan Angkatan Kerja",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.only(left: 25, right: 5),
+                        child: const Text(
+                          "   Penduduk usia kerja termasuk dalam bukan angkatan kerja mencakup: penduduk yang bersekolah, mengurus rumah tangga, dan melakukan kegiatan lainnya.",
+                        ),
+                      ),
+                    ]);
                   },
                 );
               },

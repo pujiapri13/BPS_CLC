@@ -23,7 +23,7 @@ class _pengangguranContentState extends State<pengangguranContent> {
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom;
     // ignore: unused_local_variable
-    final screenWeight = MediaQuery.of(context).size.width;
+    final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -42,6 +42,56 @@ class _pengangguranContentState extends State<pengangguranContent> {
             ),
           ),
         ),
+        actions: [
+          IconButton(
+              onPressed: () {
+                showModalBottomSheet(
+                  backgroundColor: Colors.white,
+                  constraints: BoxConstraints.tight(
+                    Size(screenWidth, screenHeight),
+                  ),
+                  context: context,
+                  builder: (context) {
+                    return ListView(children: [
+                      Container(
+                        alignment: Alignment.centerLeft,
+                        padding: const EdgeInsets.all(5),
+                        child: const Text(
+                          "Tingkat Partisipasi Angkatan Kerja (TPAK)",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                          "   Tingkat partisipasi angkatan kerja (TPAK) mengindikasikan besarnya penduduk usia kerja yang aktif secara ekonomi."
+                          "TPAP diukur sebagai presentase jumlah angkatan kerja (bekerja dan belum bekerja) terhadap jumlah penduduk usia kerja.",
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                          "Tingkat Pengangguran Terbuka (TPT)",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        alignment: Alignment.centerLeft,
+                        child: const Text(
+                          "   Tingkat pengangguran terbuka (TPT) memberikan indikasi tentang penduduk usia kerja yang termasuk dalam pengangguran."
+                          "TPT dihitung berdasarkan perbandingan antara jumlah pengangguran (mencari kerja) dengan jumlah angkatan kerja"
+                          "dan dinyatakan dalam presentase.",
+                        ),
+                      ),
+                    ]);
+                  },
+                );
+              },
+              icon: const Icon(Icons.info_outlined))
+        ],
       ),
       body: Container(
           padding: const EdgeInsets.all(2),
@@ -112,7 +162,6 @@ class _pengangguranContentState extends State<pengangguranContent> {
                       ];
                       late List<BarChartGroupData> rawBarGroups;
                       late List<BarChartGroupData> showingBarGroups;
-
 
                       rawBarGroups = items;
                       showingBarGroups = rawBarGroups;

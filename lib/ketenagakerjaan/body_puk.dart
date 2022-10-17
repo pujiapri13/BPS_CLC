@@ -3,7 +3,7 @@ import 'package:bps_cilacap/ketenagakerjaan/isi_body_puk/isi_puk_b.dart';
 import 'package:bps_cilacap/ketenagakerjaan/isi_body_puk/isi_puk_c.dart';
 import 'package:bps_cilacap/ketenagakerjaan/isi_body_puk/isi_puk_d.dart';
 import 'package:bps_cilacap/ketenagakerjaan/isi_body_puk/isi_puk_e.dart';
-import 'package:bps_cilacap/restAPI/repository_ipm.dart';
+import 'package:bps_cilacap/restAPI/repository_tenaga_kerja.dart';
 import 'package:flutter/material.dart';
 
 class BodyPuk extends StatefulWidget {
@@ -14,7 +14,7 @@ class BodyPuk extends StatefulWidget {
 }
 
 class _BodyPukState extends State<BodyPuk> {
-  RepositoryIpm repositorytenagakerja = RepositoryIpm();
+  RepositoryTenagaKerja repositorytenagakerja = RepositoryTenagaKerja();
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +31,26 @@ class _BodyPukState extends State<BodyPuk> {
           return PageView.builder(
             itemCount: 1,
             itemBuilder: (context, index) {
+              String th1 = isitenagakerja[index = 9].tanggal[0] +
+                  isitenagakerja[index = 9].tanggal[1] +
+                  isitenagakerja[index = 9].tanggal[2] +
+                  isitenagakerja[index = 9].tanggal[3];
+              String th2 = isitenagakerja[index = 7].tanggal[0] +
+                  isitenagakerja[index = 7].tanggal[1] +
+                  isitenagakerja[index = 7].tanggal[2] +
+                  isitenagakerja[index = 7].tanggal[3];
+              String th3 = isitenagakerja[index = 5].tanggal[0] +
+                  isitenagakerja[index = 5].tanggal[1] +
+                  isitenagakerja[index = 5].tanggal[2] +
+                  isitenagakerja[index = 5].tanggal[3];
+              String th4 = isitenagakerja[index = 3].tanggal[0] +
+                  isitenagakerja[index = 3].tanggal[1] +
+                  isitenagakerja[index = 3].tanggal[2] +
+                  isitenagakerja[index = 3].tanggal[3];
+              String th5 = isitenagakerja[index = 1].tanggal[0] +
+                  isitenagakerja[index = 1].tanggal[1] +
+                  isitenagakerja[index = 1].tanggal[2] +
+                  isitenagakerja[index = 1].tanggal[3];
               return DefaultTabController(
                 length: 5,
                 child: Scaffold(
@@ -45,34 +65,19 @@ class _BodyPukState extends State<BodyPuk> {
                       indicatorColor: Colors.white,
                       tabs: [
                         Tab(
-                          text: isitenagakerja[index = 4].tanggal[0] +
-                              isitenagakerja[index = 4].tanggal[1] +
-                              isitenagakerja[index = 4].tanggal[2] +
-                              isitenagakerja[index = 4].tanggal[3],
+                          text: th1,
                         ),
                         Tab(
-                          text: isitenagakerja[index = 3].tanggal[0] +
-                              isitenagakerja[index = 3].tanggal[1] +
-                              isitenagakerja[index = 3].tanggal[2] +
-                              isitenagakerja[index = 3].tanggal[3],
+                          text: th2,
                         ),
                         Tab(
-                          text: isitenagakerja[index = 2].tanggal[0] +
-                              isitenagakerja[index = 2].tanggal[1] +
-                              isitenagakerja[index = 2].tanggal[2] +
-                              isitenagakerja[index = 2].tanggal[3],
+                          text: th3,
                         ),
                         Tab(
-                          text: isitenagakerja[index = 1].tanggal[0] +
-                              isitenagakerja[index = 1].tanggal[1] +
-                              isitenagakerja[index = 1].tanggal[2] +
-                              isitenagakerja[index = 1].tanggal[3],
+                          text: th4,
                         ),
                         Tab(
-                          text: isitenagakerja[index = 0].tanggal[0] +
-                              isitenagakerja[index = 0].tanggal[1] +
-                              isitenagakerja[index = 0].tanggal[2] +
-                              isitenagakerja[index = 0].tanggal[3],
+                          text: th5.toString(),
                         ),
                       ],
                     ),
