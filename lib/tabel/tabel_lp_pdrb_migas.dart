@@ -1153,7 +1153,8 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
           if (snapshot.hasError) {
             return const Text('error');
           }
-          return const Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator(
+            strokeWidth: 1,));
         },
       ),
     );

@@ -1,18 +1,18 @@
 import 'package:bps_cilacap/Icons/back_icons_icons.dart';
-import 'package:bps_cilacap/grafik/grafik_lp_pdrb_migas.dart';
-import 'package:bps_cilacap/grafik/grafik_lp_pdrb_tanpa_migas.dart';
-import 'package:bps_cilacap/tabel/tabel_lp_pdrb_migas.dart';
-import 'package:bps_cilacap/tabel/tabel_lp_pdrb_tanpa_migas.dart';
+import 'package:bps_cilacap/grafik/grafik_pdrb_lu_migas.dart';
+import 'package:bps_cilacap/grafik/grafik_pdrb_lu_tanpa_migas.dart';
+import 'package:bps_cilacap/tabel/tabel_pdrblu_migas.dart';
+import 'package:bps_cilacap/tabel/tabel_pdrblu_tanpa_migas.dart';
 import 'package:flutter/material.dart';
 
-class LajuPertumbuhanPdrb extends StatefulWidget {
-  const LajuPertumbuhanPdrb({super.key});
+class PdrbLapUs extends StatefulWidget {
+  const PdrbLapUs({super.key});
 
   @override
-  State<LajuPertumbuhanPdrb> createState() => _LajuPertumbuhanPdrbState();
+  State<PdrbLapUs> createState() => _PdrbLapUsState();
 }
 
-class _LajuPertumbuhanPdrbState extends State<LajuPertumbuhanPdrb> {
+class _PdrbLapUsState extends State<PdrbLapUs> {
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height -
@@ -23,7 +23,7 @@ class _LajuPertumbuhanPdrbState extends State<LajuPertumbuhanPdrb> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text(
-            'Laju Pertumbuhan PDRB ADHK',
+            'PDRB ADHB Menurut Lapangan Usaha',
             style: TextStyle(fontSize: 16),
           ),
           backgroundColor: Colors.black,
@@ -59,9 +59,11 @@ class _LajuPertumbuhanPdrbState extends State<LajuPertumbuhanPdrb> {
                   child: Column(
                     children: const [
                       Flexible(
-                        child: TabelLPPdrbMigas(),
+                        child: TabelPdrbLUMigas(),
                       ),
-                      Flexible(child: GrafikLPPdrbMigas()),
+                      Flexible(
+                        child: grafikPdrbLUMigas(),
+                      ),
                     ],
                   ),
                 ),
@@ -81,10 +83,10 @@ class _LajuPertumbuhanPdrbState extends State<LajuPertumbuhanPdrb> {
                   child: Column(
                     children: const [
                       Flexible(
-                        child: TabelLPPdrbTanpaMigas(),
+                        child: TabelPdrbLUTanpaMigas(),
                       ),
                       Flexible(
-                        child: GrafikLPPdrbTanpaMigas(),
+                        child: grafikPdrbLUTanpaMigas(),
                       ),
                     ],
                   ),

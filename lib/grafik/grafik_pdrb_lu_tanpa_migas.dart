@@ -206,7 +206,10 @@ class _grafikPdrbLUTanpaMigasState extends State<grafikPdrbLUTanpaMigas> {
         if (snapshot.hasError) {
           return const Text("Database Error");
         }
-        return const Center(child: CircularProgressIndicator());
+        return const Center(
+            child: CircularProgressIndicator(
+          strokeWidth: 1,
+        ));
       },
     );
   }

@@ -13,7 +13,6 @@ class DistribusiPdrb extends StatefulWidget {
 }
 
 class _DistribusiPdrbState extends State<DistribusiPdrb> {
-
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height -
@@ -24,7 +23,7 @@ class _DistribusiPdrbState extends State<DistribusiPdrb> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text(
-            'Distribusi PDRB AHB',
+            'Distribusi PDRB ADHB',
             style: TextStyle(fontSize: 16),
           ),
           backgroundColor: Colors.black,

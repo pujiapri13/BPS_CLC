@@ -1,6 +1,5 @@
 // ignore_for_file: library_private_types_in_public_api
 
-import 'package:bps_cilacap/restAPI/repository_penduduk_umur.dart';
 import 'package:bps_cilacap/sensus_tab/sensus_a.dart';
 import 'package:bps_cilacap/sensus_tab/sensus_b.dart';
 import 'package:bps_cilacap/sensus_tab/sensus_c.dart';
@@ -12,9 +11,6 @@ class Sensus extends StatefulWidget {
   @override
   _SensusState createState() => _SensusState();
 }
-
-RepositoryPendudukUmur repositorypendudukumur = RepositoryPendudukUmur();
-
 class _SensusState extends State<Sensus> {
   @override
   Widget build(BuildContext context) {

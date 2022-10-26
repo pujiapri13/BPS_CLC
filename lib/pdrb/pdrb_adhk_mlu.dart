@@ -5,14 +5,14 @@ import 'package:bps_cilacap/tabel/tabel_pdrblu_migas.dart';
 import 'package:bps_cilacap/tabel/tabel_pdrblu_tanpa_migas.dart';
 import 'package:flutter/material.dart';
 
-class PdrbLapUs extends StatefulWidget {
-  const PdrbLapUs({super.key});
+class PdrbAdhkLapUs extends StatefulWidget {
+  const PdrbAdhkLapUs({super.key});
 
   @override
-  State<PdrbLapUs> createState() => _PdrbLapUsState();
+  State<PdrbAdhkLapUs> createState() => _PdrbAdhkLapUsState();
 }
 
-class _PdrbLapUsState extends State<PdrbLapUs> {
+class _PdrbAdhkLapUsState extends State<PdrbAdhkLapUs> {
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class _PdrbLapUsState extends State<PdrbLapUs> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text(
-            'PDRB AHB Menurut Lapangan Usaha',
+            'PDRB ADHK Menurut Lapangan Usaha',
             style: TextStyle(fontSize: 16),
           ),
           backgroundColor: Colors.black,

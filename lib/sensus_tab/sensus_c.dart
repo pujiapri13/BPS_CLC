@@ -1,5 +1,3 @@
-// ignore_for_file: unused_local_variable, prefer_interpolation_to_compose_strings
-
 import 'package:bps_cilacap/restAPI/repository_penduduk_umur.dart';
 import 'package:flutter/material.dart';
 
@@ -27,58 +25,23 @@ class _SensusCState extends State<SensusC> {
           return ListView.builder(
             itemCount: 1,
             itemBuilder: (context, index) {
+
+              //isi data
               String thn = isipenduduk[index = 0].tanggal[0] +
                   isipenduduk[index = 0].tanggal[1] +
                   isipenduduk[index = 0].tanggal[2] +
                   isipenduduk[index = 0].tanggal[3];
-
-              int lk1 = isipenduduk[index = 0].a;
-              int lk2 = isipenduduk[index = 0].b;
-              int lk3 = isipenduduk[index = 0].c;
-              int lk4 = isipenduduk[index = 0].d;
-              int lk5 = isipenduduk[index = 0].e;
-              int lk6 = isipenduduk[index = 0].f;
-              int lk7 = isipenduduk[index = 0].g;
-              int lk8 = isipenduduk[index = 0].h;
-              int lk9 = isipenduduk[index = 0].i;
-              int lk10 = isipenduduk[index = 0].j;
-              int lk11 = isipenduduk[index = 0].k;
-              int lk12 = isipenduduk[index = 0].l;
-              int lk13 = isipenduduk[index = 0].m;
-              int lk14 = isipenduduk[index = 0].n;
-              int lk15 = isipenduduk[index = 0].o;
-              int lk16 = isipenduduk[index = 0].p;
-              int lkTotal = isipenduduk[index = 0].total;
-
-              int pr1 = isipenduduk[index = 1].a;
-              int pr2 = isipenduduk[index = 1].b;
-              int pr3 = isipenduduk[index = 1].c;
-              int pr4 = isipenduduk[index = 1].d;
-              int pr5 = isipenduduk[index = 1].e;
-              int pr6 = isipenduduk[index = 1].f;
-              int pr7 = isipenduduk[index = 1].g;
-              int pr8 = isipenduduk[index = 1].h;
-              int pr9 = isipenduduk[index = 1].i;
-              int pr10 = isipenduduk[index = 1].j;
-              int pr11 = isipenduduk[index = 1].k;
-              int pr12 = isipenduduk[index = 1].l;
-              int pr13 = isipenduduk[index = 1].m;
-              int pr14 = isipenduduk[index = 1].n;
-              int pr15 = isipenduduk[index = 1].o;
-              int pr16 = isipenduduk[index = 1].p;
-              int prTotal = isipenduduk[index = 1].total;
-
               double totalNasional = 270.20;
               double lkNasional = 136.66;
               double prNasional = 133.54;
               double rasioNasional = 102;
-
               double persenPostGenZ = 10.88;
               double persenGenZ = 27.94;
               double persenMilenial = 25.87;
               double persenGenX = 21.88;
               double persenBabyBoomer = 11.56;
               double persenPreBoomer = 1.87;
+              
               return Container(
                 margin: const EdgeInsets.all(2),
                 child: Column(
@@ -89,11 +52,7 @@ class _SensusCState extends State<SensusC> {
                       color: Colors.transparent,
                       child: Center(
                         child: Text(
-                          'Sensus Penduduk ' +
-                              thn +
-                              " (SP" +
-                              thn +
-                              ") mencatat jumlah penduduk Indonesia sebanyak :",
+                          "Sensus Penduduk $thn (SP$thn) mencatat jumlah penduduk Indonesia sebanyak :",
                           textAlign: TextAlign.center,
                           style: const TextStyle(
                               fontSize: 16, fontWeight: FontWeight.bold),
@@ -104,7 +63,7 @@ class _SensusCState extends State<SensusC> {
                       color: Colors.transparent,
                       child: Center(
                           child: Text(
-                        totalNasional.toString() + " juta",
+                        "$totalNasional juta",
                         style: const TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.w800,
@@ -122,7 +81,7 @@ class _SensusCState extends State<SensusC> {
                             child: Column(
                               children: [
                                 Text(
-                                  lkNasional.toString() + " juta",
+                                  "$lkNasional juta",
                                   style: const TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.w800,
@@ -158,7 +117,7 @@ class _SensusCState extends State<SensusC> {
                             child: Column(
                               children: [
                                 Text(
-                                  prNasional.toString() + " juta",
+                                  "$prNasional juta",
                                   style: const TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.w800,
@@ -198,9 +157,7 @@ class _SensusCState extends State<SensusC> {
                             SizedBox(
                               width: screenWeight * 0.7,
                               child: Text(
-                                "Post Generasi Z : " +
-                                    persenPostGenZ.toStringAsFixed(2) +
-                                    "%",
+                                "Post Generasi Z : ${persenPostGenZ.toStringAsFixed(2)}%",
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
                                 textAlign: TextAlign.left,
@@ -228,9 +185,7 @@ class _SensusCState extends State<SensusC> {
                             SizedBox(
                               width: screenWeight * 0.7,
                               child: Text(
-                                "Generasi Z : " +
-                                    persenGenZ.toStringAsFixed(2) +
-                                    "%",
+                                "Generasi Z : ${persenGenZ.toStringAsFixed(2)}%",
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
                                 textAlign: TextAlign.left,
@@ -258,9 +213,7 @@ class _SensusCState extends State<SensusC> {
                             SizedBox(
                               width: screenWeight * 0.7,
                               child: Text(
-                                "Milenial : " +
-                                    persenMilenial.toStringAsFixed(2) +
-                                    "%",
+                                "Milenial : ${persenMilenial.toStringAsFixed(2)}%",
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
                                 textAlign: TextAlign.left,
@@ -288,9 +241,7 @@ class _SensusCState extends State<SensusC> {
                             SizedBox(
                               width: screenWeight * 0.7,
                               child: Text(
-                                "Generasi X : " +
-                                    persenGenX.toStringAsFixed(2) +
-                                    "%",
+                                "Generasi X : ${persenGenX.toStringAsFixed(2)}%",
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
                                 textAlign: TextAlign.left,
@@ -318,9 +269,7 @@ class _SensusCState extends State<SensusC> {
                             SizedBox(
                               width: screenWeight * 0.7,
                               child: Text(
-                                "Baby Boomer : " +
-                                    persenBabyBoomer.toStringAsFixed(2) +
-                                    "%",
+                                "Baby Boomer : ${persenBabyBoomer.toStringAsFixed(2)}%",
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
                                 textAlign: TextAlign.left,
@@ -348,9 +297,7 @@ class _SensusCState extends State<SensusC> {
                             SizedBox(
                               width: screenWeight * 0.7,
                               child: Text(
-                                "Pre-Boomer : " +
-                                    persenPreBoomer.toStringAsFixed(2) +
-                                    "%",
+                                "Pre-Boomer : ${persenPreBoomer.toStringAsFixed(2)}%",
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
                                 textAlign: TextAlign.left,
@@ -373,13 +320,35 @@ class _SensusCState extends State<SensusC> {
             },
           );
         }
-        if (snapshot.hasError) {
-          return const Text("Database Error");
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                width: screenWeight * 0.5,
+                child: const LinearProgressIndicator(
+                  color: Colors.cyan,
+                  minHeight: 1,
+                ),
+              ),
+              const Text("Memuat Data"),
+            ],
+          );
+        }
+        if (snapshot.connectionState == ConnectionState.none) {
+          return Center(
+              child: Column(
+            children: const [
+              Icon(Icons.error_outline),
+              Text("Data Kosong"),
+            ],
+          ));
         } else {
-          return const Center(
-            child: CircularProgressIndicator(
-              strokeWidth: 1,
-            ),
+          return Column(
+            children: const [
+              Icon(Icons.error_outline),
+              Text("DATABASE ERROR"),
+            ],
           );
         }
       },

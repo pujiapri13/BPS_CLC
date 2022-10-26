@@ -1,8 +1,6 @@
-import 'package:bps_cilacap/grafik/grafik_ipm.dart';
 import 'package:bps_cilacap/restAPI/repository_ipm.dart';
-
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:bps_cilacap/tabel/tabelIpm.dart';
 
 class IpmContent extends StatefulWidget {
   const IpmContent({Key? key}) : super(key: key);
@@ -13,23 +11,6 @@ class IpmContent extends StatefulWidget {
 
 class _IpmContentState extends State<IpmContent> {
   RepositoryIpm repositoryipm = RepositoryIpm();
-
-  List<Color> gradientColorsUhh = [
-    const Color(0xff23b6e6),
-    const Color.fromARGB(255, 30, 31, 30),
-  ];
-  List<Color> gradientColorsRls = [
-    const Color.fromARGB(255, 35, 87, 230),
-    const Color.fromARGB(255, 211, 2, 148),
-  ];
-  List<Color> gradientColorsHls = [
-    const Color.fromARGB(255, 11, 211, 28),
-    const Color.fromARGB(255, 43, 10, 133),
-  ];
-  List<Color> gradientColorsPpp = [
-    const Color.fromARGB(255, 155, 230, 35),
-    const Color.fromARGB(255, 211, 2, 2),
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -178,153 +159,1138 @@ class _IpmContentState extends State<IpmContent> {
           ],
         ),
         body: Container(
+          height: screenHeight,
           margin: const EdgeInsets.all(2),
-          child: Column(
-            children: <Widget>[
-              Container(
-                height: screenHeight * 0.1,
-                margin: const EdgeInsets.only(bottom: 2),
-                color: Colors.black,
-                child: FutureBuilder(
-                  future: repositoryipm.getData(),
-                  builder: (context, snapshot) {
-                    if (snapshot.hasData) {
-                      List isiipm = snapshot.data as List;
-                      return PageView.builder(
-                        itemCount: 1,
-                        itemBuilder: (context, index) {
-                          return Center(
-                            child: Text(
-                              "Perkembangan IPM beserta Komponennya Kabupaten Cilacap, " +
-                                  isiipm[index = 4].tanggal[0] +
-                                  isiipm[index = 4].tanggal[1] +
-                                  isiipm[index = 4].tanggal[2] +
-                                  isiipm[index = 4].tanggal[3] +
-                                  " - " +
-                                  isiipm[index = 0].tanggal[0] +
-                                  isiipm[index = 0].tanggal[1] +
-                                  isiipm[index = 0].tanggal[2] +
-                                  isiipm[index = 0].tanggal[3],
-                              textAlign: TextAlign.center,
-                              style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold),
+          color: Colors.black,
+          child: FutureBuilder(
+              future: repositoryipm.getData(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  BarChartGroupData makeGroupData(int x, double y1) {
+                    return BarChartGroupData(barsSpace: 4, x: x, barRods: [
+                      BarChartRodData(
+                        toY: y1,
+                        color: const Color.fromRGBO(47, 182, 224, 0.9),
+                        width: 10,
+                      ),
+                    ]);
+                  }
+
+                  List isiipm = snapshot.data as List;
+                  return PageView.builder(
+                    itemCount: 1,
+                    itemBuilder: (context, index) {
+                      String tahun1 = isiipm[index = 4].tanggal[0] +
+                          isiipm[index = 4].tanggal[1] +
+                          isiipm[index = 4].tanggal[2] +
+                          isiipm[index = 4].tanggal[3];
+                      String tahun2 = isiipm[index = 3].tanggal[0] +
+                          isiipm[index = 3].tanggal[1] +
+                          isiipm[index = 3].tanggal[2] +
+                          isiipm[index = 3].tanggal[3];
+                      String tahun3 = isiipm[index = 2].tanggal[0] +
+                          isiipm[index = 2].tanggal[1] +
+                          isiipm[index = 2].tanggal[2] +
+                          isiipm[index = 2].tanggal[3];
+                      String tahun4 = isiipm[index = 1].tanggal[0] +
+                          isiipm[index = 1].tanggal[1] +
+                          isiipm[index = 1].tanggal[2] +
+                          isiipm[index = 1].tanggal[3];
+                      String tahun5 = isiipm[index = 0].tanggal[0] +
+                          isiipm[index = 0].tanggal[1] +
+                          isiipm[index = 0].tanggal[2] +
+                          isiipm[index = 0].tanggal[3];
+                      double uhh1 = isiipm[index = 4].uhh;
+                      double uhh2 = isiipm[index = 3].uhh;
+                      double uhh3 = isiipm[index = 2].uhh;
+                      double uhh4 = isiipm[index = 1].uhh;
+                      double uhh5 = isiipm[index = 0].uhh;
+
+                      double rls1 = isiipm[index = 4].rls;
+                      double rls2 = isiipm[index = 3].rls;
+                      double rls3 = isiipm[index = 2].rls;
+                      double rls4 = isiipm[index = 1].rls;
+                      double rls5 = isiipm[index = 0].rls;
+
+                      double hls1 = isiipm[index = 4].hls;
+                      double hls2 = isiipm[index = 3].hls;
+                      double hls3 = isiipm[index = 2].hls;
+                      double hls4 = isiipm[index = 1].hls;
+                      double hls5 = isiipm[index = 0].hls;
+
+                      double ppp1 = isiipm[index = 4].ppp;
+                      double ppp2 = isiipm[index = 3].ppp;
+                      double ppp3 = isiipm[index = 2].ppp;
+                      double ppp4 = isiipm[index = 1].ppp;
+                      double ppp5 = isiipm[index = 0].ppp;
+
+                      double ipm1 = 70.42;
+                      double ipm2 = 69.95;
+                      double ipm3 = 86.21;
+                      double ipm4 = 75.43;
+                      double ipm5 = 92.64;
+
+                      late List<BarChartGroupData> rawBarGroups;
+                      late List<BarChartGroupData> showingBarGroups;
+
+                      final barGroup1 = makeGroupData(1, ipm1);
+                      final barGroup2 = makeGroupData(2, ipm2);
+                      final barGroup3 = makeGroupData(3, ipm3);
+                      final barGroup4 = makeGroupData(4, ipm4);
+                      final barGroup5 = makeGroupData(5, ipm5);
+
+                      final items = [
+                        barGroup1,
+                        barGroup2,
+                        barGroup3,
+                        barGroup4,
+                        barGroup5,
+                      ];
+                      rawBarGroups = items;
+                      showingBarGroups = rawBarGroups;
+
+                      return Column(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(10),
+                            child: Center(
+                              child: Text(
+                                "Perkembangan IPM beserta Komponennya Kabupaten Cilacap, $tahun1 - $tahun5",
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
-                          );
-                        },
+                          ),
+                          const Divider(
+                            color: Colors.white,
+                            height: 5,
+                            thickness: 5,
+                          ),
+                          Flexible(
+                            fit: FlexFit.tight,
+                            flex: 4,
+                            child: SizedBox(
+                              height: screenHeight * 0.7,
+                              child: Column(
+                                children: <Widget>[
+                                  Flexible(
+                                    fit: FlexFit.tight,
+                                    flex: 6,
+                                    child: Container(
+                                      width: screenWidth,
+                                      color: Colors.white,
+                                      child: Flexible(
+                                        child: Container(
+                                          color: Colors.transparent,
+                                          child: Column(
+                                            children: [
+                                              Container(
+                                                color: const Color.fromRGBO(
+                                                    47, 182, 224, 0.9),
+                                                width: screenWidth,
+                                                height: screenHeight * 0.06,
+                                                child: Row(
+                                                  children: [
+                                                    const Flexible(
+                                                      flex: 3,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "IPM & Komponen",
+                                                        style: TextStyle(
+                                                            color:
+                                                                Colors.white),
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        tahun1,
+                                                        style: const TextStyle(
+                                                            color:
+                                                                Colors.white),
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        tahun2,
+                                                        style: const TextStyle(
+                                                            color:
+                                                                Colors.white),
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        tahun3,
+                                                        style: const TextStyle(
+                                                            color:
+                                                                Colors.white),
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        tahun4,
+                                                        style: const TextStyle(
+                                                            color:
+                                                                Colors.white),
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        tahun5,
+                                                        style: const TextStyle(
+                                                            color:
+                                                                Colors.white),
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Container(
+                                                color: Colors.transparent,
+                                                width: screenWidth,
+                                                height: screenHeight * 0.04,
+                                                child: Row(
+                                                  children: [
+                                                    const Flexible(
+                                                      flex: 3,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "UHH",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$uhh1",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$uhh2",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$uhh3",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$uhh4",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$uhh5",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              const Divider(),
+                                              Container(
+                                                color: Colors.transparent,
+                                                width: screenWidth,
+                                                height: screenHeight * 0.04,
+                                                child: Row(
+                                                  children: [
+                                                    const Flexible(
+                                                      flex: 3,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "RLS",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$rls1",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$rls2",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$rls3",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$rls4",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$rls5",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              const Divider(),
+                                              Container(
+                                                color: Colors.transparent,
+                                                width: screenWidth,
+                                                height: screenHeight * 0.04,
+                                                child: Row(
+                                                  children: [
+                                                    const Flexible(
+                                                      flex: 3,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "HLS",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$hls1",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$hls2",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$hls3",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$hls4",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$hls5",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              const Divider(),
+                                              Container(
+                                                color: Colors.transparent,
+                                                width: screenWidth,
+                                                height: screenHeight * 0.04,
+                                                child: Row(
+                                                  children: [
+                                                    const Flexible(
+                                                      flex: 3,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "PPP",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$ppp1",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$ppp2",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$ppp3",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$ppp4",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$ppp5",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              const Divider(
+                                                color: Colors.transparent,
+                                              ),
+                                              Container(
+                                                color: const Color.fromRGBO(
+                                                    47, 182, 224, 0.9),
+                                                width: screenWidth,
+                                                height: screenHeight * 0.04,
+                                                child: Row(
+                                                  children: [
+                                                    const Flexible(
+                                                      flex: 3,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "IPM",
+                                                        style: TextStyle(
+                                                            color:
+                                                                Colors.white),
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$ipm1",
+                                                        style: const TextStyle(
+                                                            color:
+                                                                Colors.white),
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$ipm2",
+                                                        style: const TextStyle(
+                                                            color:
+                                                                Colors.white),
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$ipm3",
+                                                        style: const TextStyle(
+                                                            color:
+                                                                Colors.white),
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$ipm4",
+                                                        style: const TextStyle(
+                                                            color:
+                                                                Colors.white),
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      flex: 2,
+                                                      fit: FlexFit.tight,
+                                                      child: Text(
+                                                        "$ipm5",
+                                                        style: const TextStyle(
+                                                            color:
+                                                                Colors.white),
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Flexible(
+                            flex: 3,
+                            fit: FlexFit.tight,
+                            child: Container(
+                              color: const Color.fromRGBO(47, 182, 224, 0.9),
+                              child: Card(
+                                elevation: 0,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(4)),
+                                color: const Color(0xff2c4260),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(15),
+                                  child: Expanded(
+                                    child: BarChart(
+                                      BarChartData(
+                                        maxY: 130,
+                                        minY: 25,
+                                        titlesData: FlTitlesData(
+                                          show: true,
+                                          rightTitles: AxisTitles(
+                                            sideTitles:
+                                                SideTitles(showTitles: false),
+                                          ),
+                                          topTitles: AxisTitles(
+                                            sideTitles: SideTitles(
+                                              showTitles: false,
+                                            ),
+                                          ),
+                                          bottomTitles: AxisTitles(
+                                            sideTitles: SideTitles(
+                                              showTitles: true,
+                                              getTitlesWidget: (double value,
+                                                  TitleMeta meta) {
+                                                List<String> titles = [
+                                                  "",
+                                                  tahun1,
+                                                  tahun2,
+                                                  tahun3,
+                                                  tahun4,
+                                                  tahun5,
+                                                ];
+
+                                                Widget text = Text(
+                                                  titles[value.toInt()],
+                                                  style: const TextStyle(
+                                                    color: Color(0xff7589a2),
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 14,
+                                                  ),
+                                                );
+
+                                                return SideTitleWidget(
+                                                    axisSide: meta.axisSide,
+                                                    space: 5, //margin top
+                                                    child: text);
+                                              },
+                                              reservedSize: 50,
+                                            ),
+                                          ),
+                                          leftTitles: AxisTitles(
+                                            sideTitles: SideTitles(
+                                              showTitles: true,
+                                              reservedSize: 28,
+                                              interval: 1,
+                                              getTitlesWidget: (double value,
+                                                  TitleMeta meta) {
+                                                const style = TextStyle(
+                                                  color: Color(0xff7589a2),
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 14,
+                                                );
+                                                String text;
+                                                if (value == 25) {
+                                                  text = '25';
+                                                } else if (value == 50) {
+                                                  text = '50';
+                                                } else if (value == 75) {
+                                                  text = '75';
+                                                } else if (value == 100) {
+                                                  text = '100';
+                                                } else if (value == 125) {
+                                                  text = '125';
+                                                } else {
+                                                  return Container();
+                                                }
+                                                return SideTitleWidget(
+                                                  axisSide: meta.axisSide,
+                                                  space: 0,
+                                                  child:
+                                                      Text(text, style: style),
+                                                );
+                                              },
+                                            ),
+                                          ),
+                                        ),
+                                        borderData: FlBorderData(
+                                          show: false,
+                                        ),
+                                        barGroups: showingBarGroups,
+                                        gridData: FlGridData(show: false),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       );
-                    }
-                    if (snapshot.hasError) {
-                      return const Text("Database Error");
-                    }
-                    return const Center(child: CircularProgressIndicator());
-                  },
-                ),
-              ),
-              Flexible(
-                child: SizedBox(
-                  height: screenHeight * 0.7,
-                  child: Column(
-                    children: <Widget>[
-                      Flexible(
-                        fit: FlexFit.tight,
-                        flex: 6,
-                        child: Container(
-                          width: screenWidth,
-                          color: Colors.cyan,
-                          child: const Flexible(
-                            child: tabelIpm(),
+                    },
+                  );
+                }
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return Column(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(10),
+                        child: const Center(
+                          child: Text(
+                            "Perkembangan IPM beserta Komponennya Kabupaten Cilacap,  - ",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),
-                      Flexible(
-                        flex: 6,
-                        fit: FlexFit.tight,
-                        child: Container(
-                            width: screenWidth,
-                            color: Colors.transparent,
-                            child: const Flexible(
-                              child: grafikIpm(),
-                            )),
+                      const Divider(
+                        color: Colors.white,
+                        height: 5,
+                        thickness: 5,
                       ),
                       Flexible(
+                        flex: 4,
                         fit: FlexFit.tight,
-                        flex: 1,
-                        child: Container(
-                          color: const Color(0xff37434d),
-                          child: Row(
-                            children: [
-                              const Divider(
-                                color: Colors.transparent,
-                                endIndent: 20,
-                              ),
-                              Container(
-                                width: 10,
-                                height: 10,
-                                decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                        colors: gradientColorsUhh)),
-                              ),
-                              const Text(
-                                " UHH",
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              const Divider(
-                                color: Colors.transparent,
-                                endIndent: 20,
-                              ),
-                              Container(
-                                width: 10,
-                                height: 10,
-                                decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                        colors: gradientColorsRls)),
-                              ),
-                              const Text(
-                                " RLS",
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              const Divider(
-                                color: Colors.transparent,
-                                endIndent: 20,
-                              ),
-                              Container(
-                                width: 10,
-                                height: 10,
-                                decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                        colors: gradientColorsHls)),
-                              ),
-                              const Text(
-                                " HLS",
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              const Divider(
-                                color: Colors.transparent,
-                                endIndent: 20,
-                              ),
-                              Container(
-                                width: 10,
-                                height: 10,
-                                decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                        colors: gradientColorsPpp)),
-                              ),
-                              const Text(
-                                " PPP",
-                                style: TextStyle(color: Colors.white),
+                        child: SizedBox(
+                          height: screenHeight * 0.7,
+                          child: Column(
+                            children: <Widget>[
+                              Flexible(
+                                fit: FlexFit.tight,
+                                flex: 6,
+                                child: Container(
+                                  width: screenWidth,
+                                  color: Colors.white,
+                                  child: Flexible(
+                                    child: Container(
+                                      color: Colors.transparent,
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                            color: const Color.fromRGBO(
+                                                47, 182, 224, 0.9),
+                                            width: screenWidth,
+                                            height: screenHeight * 0.06,
+                                            child: Row(
+                                              children: const [
+                                                Flexible(
+                                                  flex: 3,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "IPM & Komponen",
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Container(
+                                            color: Colors.transparent,
+                                            width: screenWidth,
+                                            height: screenHeight * 0.04,
+                                            child: Row(
+                                              children: const [
+                                                Flexible(
+                                                  flex: 3,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "UHH",
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          const Divider(),
+                                          Container(
+                                            color: Colors.transparent,
+                                            width: screenWidth,
+                                            height: screenHeight * 0.04,
+                                            child: Row(
+                                              children: const [
+                                                Flexible(
+                                                  flex: 3,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "RLS",
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          const Divider(),
+                                          Container(
+                                            color: Colors.transparent,
+                                            width: screenWidth,
+                                            height: screenHeight * 0.04,
+                                            child: Row(
+                                              children: const [
+                                                Flexible(
+                                                  flex: 3,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "HLS",
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          const Divider(),
+                                          Container(
+                                            color: Colors.transparent,
+                                            width: screenWidth,
+                                            height: screenHeight * 0.04,
+                                            child: Row(
+                                              children: const [
+                                                Flexible(
+                                                  flex: 3,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "PPP",
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          const Divider(
+                                            color: Colors.transparent,
+                                          ),
+                                          Container(
+                                            color: const Color.fromRGBO(
+                                                47, 182, 224, 0.9),
+                                            width: screenWidth,
+                                            height: screenHeight * 0.04,
+                                            child: Row(
+                                              children: const [
+                                                Flexible(
+                                                  flex: 3,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "IPM",
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 2,
+                                                  fit: FlexFit.tight,
+                                                  child: Text(
+                                                    "",
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ),
                             ],
                           ),
                         ),
-                      )
+                      ),
+                      Flexible(
+                        flex: 3,
+                        fit: FlexFit.tight,
+                        child: Container(
+                          color: const Color.fromRGBO(47, 182, 224, 0.9),
+                          width: screenWidth,
+                          child: Card(
+                            elevation: 0,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(4)),
+                            color: const Color(0xff2c4260),
+                            child: const Padding(
+                              padding: EdgeInsets.all(15),
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
-                  ),
-                ),
-              ),
-            ],
-          ),
+                  );
+                }
+                if (snapshot.connectionState == ConnectionState.none) {
+                  return Center(
+                      child: Column(
+                    children: const [
+                      Icon(Icons.error_outline),
+                      Text("Data Kosong"),
+                    ],
+                  ));
+                } else {
+                  return Column(
+                    children: const [
+                      Icon(Icons.error_outline),
+                      Text("DATABASE ERROR"),
+                    ],
+                  );
+                }
+              }),
         ),
       ),
     );

@@ -1,7 +1,9 @@
 // ignore_for_file: library_private_types_in_public_api, non_constant_identifier_names
-import 'package:bps_cilacap/pdrb/distribusi_pdrb.dart';
+import 'package:bps_cilacap/pdrb/distribusi_pdrb_adhb.dart';
+import 'package:bps_cilacap/pdrb/distribusi_pdrb_adhk.dart';
 import 'package:bps_cilacap/pdrb/laju_pertumbuhan_pdrb.dart';
-import 'package:bps_cilacap/pdrb/pdrb_ahb_mlu.dart';
+import 'package:bps_cilacap/pdrb/pdrb_adhb_mlu.dart';
+import 'package:bps_cilacap/pdrb/pdrb_adhk_mlu.dart';
 import 'package:flutter/material.dart';
 
 class PdrbContent extends StatefulWidget {
@@ -181,12 +183,9 @@ class _PdrbContentState extends State<PdrbContent> {
           padding: const EdgeInsets.all(2),
           child: Column(
             children: [
-              Flexible(
-                flex: 1,
-                fit: FlexFit.tight,
-                child: Container(
-                  color: Colors.transparent,
-                ),
+              const Divider(
+                height: 5,
+                color: Colors.transparent,
               ),
               Flexible(
                 flex: 1,
@@ -211,7 +210,49 @@ class _PdrbContentState extends State<PdrbContent> {
                             flex: 8,
                             fit: FlexFit.tight,
                             child: Text(
-                              "PDRB AHB Menurut Lapangan Usaha",
+                              "PDRB ADHB Menurut Lapangan Usaha",
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          Flexible(
+                            flex: 2,
+                            fit: FlexFit.tight,
+                            child: Icon(
+                              Icons.arrow_forward_ios,
+                            ),
+                          ),
+                        ],
+                      )),
+                ),
+              ),
+              const Divider(
+                height: 5,
+                color: Colors.transparent,
+              ),
+              Flexible(
+                flex: 1,
+                fit: FlexFit.tight,
+                child: ElevatedButton(
+                  style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll<Color>(
+                          Color.fromRGBO(47, 182, 224, 0.9))),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        CustomPageRoute(
+                            child: const PdrbAdhkLapUs(),
+                            direction: AxisDirection.left));
+                  },
+                  child: SizedBox(
+                      width: screenWidth,
+                      height: screenHeight * 0.1,
+                      child: Row(
+                        children: const [
+                          Flexible(
+                            flex: 8,
+                            fit: FlexFit.tight,
+                            child: Text(
+                              "PDRB ADHK Menurut Lapangan Usaha",
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -253,7 +294,49 @@ class _PdrbContentState extends State<PdrbContent> {
                             flex: 8,
                             fit: FlexFit.tight,
                             child: Text(
-                              "Distribusi PDRB AHB",
+                              "Distribusi PDRB ADHB",
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          Flexible(
+                            flex: 2,
+                            fit: FlexFit.tight,
+                            child: Icon(
+                              Icons.arrow_forward_ios,
+                            ),
+                          ),
+                        ],
+                      )),
+                ),
+              ),
+              const Divider(
+                height: 5,
+                color: Colors.transparent,
+              ),
+              Flexible(
+                flex: 1,
+                fit: FlexFit.tight,
+                child: ElevatedButton(
+                  style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll<Color>(
+                          Color.fromRGBO(47, 182, 224, 0.9))),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        CustomPageRoute(
+                            child: const DistribusiPdrbAdhk(),
+                            direction: AxisDirection.left));
+                  },
+                  child: SizedBox(
+                      width: screenWidth,
+                      height: screenHeight * 0.1,
+                      child: Row(
+                        children: const [
+                          Flexible(
+                            flex: 8,
+                            fit: FlexFit.tight,
+                            child: Text(
+                              "Distribusi PDRB ADHK",
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -295,7 +378,7 @@ class _PdrbContentState extends State<PdrbContent> {
                             flex: 8,
                             fit: FlexFit.tight,
                             child: Text(
-                              "Laju Pertumbuhan PDRB",
+                              "Laju Pertumbuhan PDRB ADHK",
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -311,10 +394,32 @@ class _PdrbContentState extends State<PdrbContent> {
                 ),
               ),
               Flexible(
-                flex: 1,
+                flex: 3,
                 fit: FlexFit.tight,
                 child: Container(
                   color: Colors.transparent,
+                  child: Column(
+                    children: [
+                      Container(
+                        width: screenWidth * 0.95,
+                        margin: const EdgeInsets.only(top: 20),
+                        child: const Text(
+                          "Catatan",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      const Divider(color: Colors.transparent, height: 5),
+                      SizedBox(
+                          width: screenWidth * 0.93,
+                          child: const Text(
+                              "- PDRB ADHB : Produk Domestik Regional Bruto Atas Dasar Harga Berlaku")),
+                      SizedBox(
+                        width: screenWidth * 0.93,
+                        child: const Text(
+                            "- PDRB ADHK : Produk Domestik Regional Bruto Atas Dasar Harga Konstan"),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],

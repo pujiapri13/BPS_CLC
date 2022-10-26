@@ -27,11 +27,12 @@ class _SensusAState extends State<SensusA> {
           return ListView.builder(
             itemCount: 1,
             itemBuilder: (context, index) {
+              
+              // isi data
               String thn = isipenduduk[index = 0].tanggal[0] +
                   isipenduduk[index = 0].tanggal[1] +
                   isipenduduk[index = 0].tanggal[2] +
                   isipenduduk[index = 0].tanggal[3];
-
               int lk1 = isipenduduk[index = 0].a;
               int lk2 = isipenduduk[index = 0].b;
               int lk3 = isipenduduk[index = 0].c;
@@ -49,7 +50,6 @@ class _SensusAState extends State<SensusA> {
               int lk15 = isipenduduk[index = 0].o;
               int lk16 = isipenduduk[index = 0].p;
               int lkTotal = isipenduduk[index = 0].total;
-
               int pr1 = isipenduduk[index = 1].a;
               int pr2 = isipenduduk[index = 1].b;
               int pr3 = isipenduduk[index = 1].c;
@@ -67,24 +67,19 @@ class _SensusAState extends State<SensusA> {
               int pr15 = isipenduduk[index = 1].o;
               int pr16 = isipenduduk[index = 1].p;
               int prTotal = isipenduduk[index = 1].total;
-
               double persenPostGenZ = 11.61;
               double totalPostGenZ = 225713;
-
               double persenGenZ = 24.95;
               double totalGenZ = 485335;
-
               double persenMilenial = 25.16;
               double totalMilenial = 489226;
-
               double persenGenX = 21.72;
               double totalGenX = 422338;
-
               double persenBabyBoomer = 14.49;
               double totalBabyBoomer = 281899;
-
               double persenPreBoomer = 2.07;
               double totalPreBoomer = 40306;
+              
               return Container(
                 margin: const EdgeInsets.all(2),
                 child: Column(
@@ -95,11 +90,7 @@ class _SensusAState extends State<SensusA> {
                       color: Colors.transparent,
                       child: Center(
                         child: Text(
-                          'Sensus Penduduk ' +
-                              thn +
-                              " (SP" +
-                              thn +
-                              ") mencatat jumlah penduduk Kabupaten Cilacap sebanyak :",
+                          'Sensus Penduduk $thn (SP$thn) mencatat jumlah penduduk Kabupaten Cilacap sebanyak : ',
                           textAlign: TextAlign.center,
                           style: const TextStyle(
                               fontSize: 16, fontWeight: FontWeight.bold),
@@ -128,7 +119,7 @@ class _SensusAState extends State<SensusA> {
                             child: Column(
                               children: [
                                 Text(
-                                  lkTotal.toString(),
+                                  "$lkTotal",
                                   style: const TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.w800,
@@ -164,7 +155,7 @@ class _SensusAState extends State<SensusA> {
                             child: Column(
                               children: [
                                 Text(
-                                  prTotal.toString(),
+                                  "$prTotal",
                                   style: const TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.w800,
@@ -204,10 +195,7 @@ class _SensusAState extends State<SensusA> {
                             SizedBox(
                               width: screenWeight * 0.7,
                               child: Text(
-                                "Post Generasi Z : " +
-                                    persenPostGenZ.toStringAsFixed(2) +
-                                    "%/" +
-                                    totalPostGenZ.toStringAsFixed(0),
+                                "Post Generasi Z : ${persenPostGenZ.toStringAsFixed(2)}%/${totalPostGenZ.toStringAsFixed(0)}",
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
                                 textAlign: TextAlign.left,
@@ -235,10 +223,7 @@ class _SensusAState extends State<SensusA> {
                             SizedBox(
                               width: screenWeight * 0.7,
                               child: Text(
-                                "Generasi Z : " +
-                                    persenGenZ.toStringAsFixed(2) +
-                                    "%/" +
-                                    totalGenZ.toStringAsFixed(0),
+                                "Generasi Z : ${persenGenZ.toStringAsFixed(2)}%/${totalGenZ.toStringAsFixed(0)}",
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
                                 textAlign: TextAlign.left,
@@ -266,10 +251,7 @@ class _SensusAState extends State<SensusA> {
                             SizedBox(
                               width: screenWeight * 0.7,
                               child: Text(
-                                "Milenial : " +
-                                    persenMilenial.toStringAsFixed(2) +
-                                    "%/" +
-                                    totalMilenial.toStringAsFixed(0),
+                                "Milenial : ${persenMilenial.toStringAsFixed(2)}%/${totalMilenial.toStringAsFixed(0)}",
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
                                 textAlign: TextAlign.left,
@@ -297,10 +279,7 @@ class _SensusAState extends State<SensusA> {
                             SizedBox(
                               width: screenWeight * 0.7,
                               child: Text(
-                                "Generasi X : " +
-                                    persenGenX.toStringAsFixed(2) +
-                                    "%/" +
-                                    totalGenX.toStringAsFixed(0),
+                                "Generasi X : ${persenGenX.toStringAsFixed(2)}%/${totalGenX.toStringAsFixed(0)}",
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
                                 textAlign: TextAlign.left,
@@ -328,10 +307,7 @@ class _SensusAState extends State<SensusA> {
                             SizedBox(
                               width: screenWeight * 0.7,
                               child: Text(
-                                "Baby Boomer : " +
-                                    persenBabyBoomer.toStringAsFixed(2) +
-                                    "%/" +
-                                    totalBabyBoomer.toStringAsFixed(0),
+                                "Baby Boomer : ${persenBabyBoomer.toStringAsFixed(2)}%/${totalBabyBoomer.toStringAsFixed(0)}",
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
                                 textAlign: TextAlign.left,
@@ -359,10 +335,7 @@ class _SensusAState extends State<SensusA> {
                             SizedBox(
                               width: screenWeight * 0.7,
                               child: Text(
-                                "Pre-Boomer : " +
-                                    persenPreBoomer.toStringAsFixed(2) +
-                                    "%/" +
-                                    totalPreBoomer.toStringAsFixed(0),
+                                "Pre-Boomer : ${persenPreBoomer.toStringAsFixed(2)}%/${totalPreBoomer.toStringAsFixed(0)}",
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
                                 textAlign: TextAlign.left,
@@ -385,13 +358,35 @@ class _SensusAState extends State<SensusA> {
             },
           );
         }
-        if (snapshot.hasError) {
-          return const Text("Database Error");
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                width: screenWeight * 0.5,
+                child: const LinearProgressIndicator(
+                  color: Colors.cyan,
+                  minHeight: 1,
+                ),
+              ),
+              const Text("Memuat Data"),
+            ],
+          );
+        }
+        if (snapshot.connectionState == ConnectionState.none) {
+          return Center(
+              child: Column(
+            children: const [
+              Icon(Icons.error_outline),
+              Text("Data Kosong"),
+            ],
+          ));
         } else {
-          return const Center(
-            child: CircularProgressIndicator(
-              strokeWidth: 1,
-            ),
+          return Column(
+            children: const [
+              Icon(Icons.error_outline),
+              Text("DATABASE ERROR"),
+            ],
           );
         }
       },
