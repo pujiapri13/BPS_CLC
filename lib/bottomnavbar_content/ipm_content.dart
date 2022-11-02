@@ -23,7 +23,7 @@ class _IpmContentState extends State<IpmContent> {
         appBar: AppBar(
           backgroundColor: Colors.black87,
           title: const Center(
-            child: Text('Perkembangan IPM'),
+            child: Text('Indeks Pembangunan Manusia'),
           ),
           actions: [
             IconButton(

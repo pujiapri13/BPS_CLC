@@ -1,6 +1,7 @@
 import 'dart:async';
+
+import 'package:bps_cilacap/home_screen.dart';
 import 'package:flutter/material.dart';
-import './home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -21,26 +22,35 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        alignment: Alignment.center,
-        color: const Color.fromARGB(240, 240, 240, 240),
-        width: MediaQuery.of(context).size.width,
-        child: Container(
-            margin: const EdgeInsets.all(50),
-            child: const Text(
-              'PUSDACAP',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-            )
-            // Center(
-            //   child: Image.asset(
-            //     './assets/images/splash1.jpeg',
-            //     width: 600,
-            //     height: 400,
-            //   ),
-            // ),
+    return Card(
+      child: Column(
+        children: [
+          Expanded(
+            flex: 20,
+            child: Container(
+              alignment: Alignment.center,
+              color: Colors.transparent,
+              child: Image.asset(
+                './assets/images/SplashscreenASAP.png',
+                fit: BoxFit.fitHeight,
+              ),
             ),
+          ),
+          const Expanded(
+            flex: 1,
+            child: CircularProgressIndicator(
+              strokeWidth: 1,
+            ),
+          ),
+          const Divider(
+            color: Colors.transparent,
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+                color: Colors.white, child: const Text("versi 1.0.0")),
+          )
+        ],
       ),
     );
   }
