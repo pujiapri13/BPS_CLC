@@ -1,6 +1,7 @@
 // ignore_for_file: camel_case_types, prefer_interpolation_to_compose_strings
 
 import 'package:bps_cilacap/Icons/back_icons_icons.dart';
+import 'package:bps_cilacap/homescreen_menu/inflasi_kota.dart';
 import 'package:bps_cilacap/restAPI/repository_inflasi.dart';
 import 'package:flutter/material.dart';
 
@@ -148,59 +149,61 @@ class _inflasiContentState extends State<inflasiContent> {
             return ListView.builder(
               itemCount: 1,
               itemBuilder: (context, index) {
-                String thn = (isiinflasi[index = 0].tanggal[0] +
-                        isiinflasi[index = 0].tanggal[1] +
-                        isiinflasi[index = 0].tanggal[2] +
-                        isiinflasi[index = 0].tanggal[3])
+                String thn = (isiinflasi[index = 0].created_at[0] +
+                        isiinflasi[index = 0].created_at[1] +
+                        isiinflasi[index = 0].created_at[2] +
+                        isiinflasi[index = 0].created_at[3])
                     .toString();
 
-                double tkif1 = 3.59;
-                double tkif2 = 1.24;
-                double tkif3 = 1.22;
-                double tkif4 = 3.73;
-                double tkif5 = 1.92;
-                double tkif6 = -0.35;
-                double tkif7 = 0.53;
-                double tkif8 = -0.48;
-                double tkif9 = 2.28;
-                double tkif10 = 2.29;
-                double tkif11 = -0.12;
+                String tkif1 = isiinflasi[index = 1].sembako;
+                String tkif2 = isiinflasi[index = 1].sandang;
+                String tkif3 = isiinflasi[index = 1].perumahan;
+                String tkif4 = isiinflasi[index = 1].perlengkapan;
+                String tkif5 = isiinflasi[index = 1].kesehatan;
+                String tkif6 = isiinflasi[index = 1].transportasi;
+                String tkif7 = isiinflasi[index = 1].informasi;
+                String tkif8 = isiinflasi[index = 1].rekreasi;
+                String tkif9 = isiinflasi[index = 1].pendidikan;
+                String tkif10 = isiinflasi[index = 1].penyedia_pangan;
+                String tkif11 = isiinflasi[index = 1].perawatan_pribadi;
+                String totaltingkat = isiinflasi[index = 1].total;
 
-                double anif1 = 1.08;
-                double anif2 = 0.07;
-                double anif3 = 0.19;
-                double anif4 = 0.18;
-                double anif5 = 0.08;
-                double anif6 = -0.04;
-                double anif7 = 0.03;
-                double anif8 = -0.01;
-                double anif9 = 0.12;
-                double anif10 = 0.20;
-                double anif11 = -0.01;
+                String anif1 = isiinflasi[index = 0].sembako;
+                String anif2 = isiinflasi[index = 0].sandang;
+                String anif3 = isiinflasi[index = 0].perumahan;
+                String anif4 = isiinflasi[index = 0].perlengkapan;
+                String anif5 = isiinflasi[index = 0].kesehatan;
+                String anif6 = isiinflasi[index = 0].transportasi;
+                String anif7 = isiinflasi[index = 0].informasi;
+                String anif8 = isiinflasi[index = 0].rekreasi;
+                String anif9 = isiinflasi[index = 0].pendidikan;
+                String anif10 = isiinflasi[index = 0].penyedia_pangan;
+                String anif11 = isiinflasi[index = 0].perawatan_pribadi;
+                String totalandil = isiinflasi[index = 0].total;
 
-                double mtom1 = 0.71;
-                double mtom2 = 0.59;
-                double mtom3 = 0.66;
-                double mtom4 = 0.89;
-                double mtom5 = 0.93;
-                double mtom6 = 0.63;
-                double mtom7 = 0.61;
+                String mtom1 = "0.71";
+                String mtom2 = "0.59";
+                String mtom3 = "0.66";
+                String mtom4 = "0.89";
+                String mtom5 = "0.93";
+                String mtom6 = "0.63";
+                String mtom7 = "0.61";
 
-                double ytod1 = 5.00;
-                double ytod2 = 4.46;
-                double ytod3 = 4.02;
-                double ytod4 = 4.82;
-                double ytod5 = 3.24;
-                double ytod6 = 4.43;
-                double ytod7 = 3.19;
+                String ytod1 = "5.00";
+                String ytod2 = "4.46";
+                String ytod3 = "4.02";
+                String ytod4 = "4.82";
+                String ytod5 = "3.24";
+                String ytod6 = "4.43";
+                String ytod7 = "3.19";
 
-                double yony1 = 6.47;
-                double yony2 = 6.11;
-                double yony3 = 5.03;
-                double yony4 = 6.51;
-                double yony5 = 4.30;
-                double yony6 = 6.01;
-                double yony7 = 4.35;
+                String yony1 = "6.47";
+                String yony2 = "6.11";
+                String yony3 = "5.03";
+                String yony4 = "6.51";
+                String yony5 = "4.30";
+                String yony6 = "6.01";
+                String yony7 = "4.35";
 
                 return Container(
                   padding: const EdgeInsets.all(2),
@@ -297,7 +300,7 @@ class _inflasiContentState extends State<inflasiContent> {
                                   flex: 2,
                                   child: Center(
                                     child: Text(
-                                      tkif1.toString(),
+                                      tkif1,
                                     ),
                                   ),
                                 ),
@@ -306,7 +309,7 @@ class _inflasiContentState extends State<inflasiContent> {
                                   flex: 2,
                                   child: Center(
                                     child: Text(
-                                      anif1.toString(),
+                                      anif1,
                                     ),
                                   ),
                                 ),
@@ -334,7 +337,7 @@ class _inflasiContentState extends State<inflasiContent> {
                                   flex: 2,
                                   child: Center(
                                     child: Text(
-                                      tkif2.toString(),
+                                      tkif2,
                                     ),
                                   ),
                                 ),
@@ -343,7 +346,7 @@ class _inflasiContentState extends State<inflasiContent> {
                                   flex: 2,
                                   child: Center(
                                     child: Text(
-                                      anif2.toString(),
+                                      anif2,
                                     ),
                                   ),
                                 ),
@@ -371,7 +374,7 @@ class _inflasiContentState extends State<inflasiContent> {
                                   flex: 2,
                                   child: Center(
                                     child: Text(
-                                      tkif3.toString(),
+                                      tkif3,
                                     ),
                                   ),
                                 ),
@@ -380,7 +383,7 @@ class _inflasiContentState extends State<inflasiContent> {
                                   flex: 2,
                                   child: Center(
                                     child: Text(
-                                      anif3.toString(),
+                                      anif3,
                                     ),
                                   ),
                                 ),
@@ -408,7 +411,7 @@ class _inflasiContentState extends State<inflasiContent> {
                                   flex: 2,
                                   child: Center(
                                     child: Text(
-                                      tkif4.toString(),
+                                      tkif4,
                                     ),
                                   ),
                                 ),
@@ -417,7 +420,7 @@ class _inflasiContentState extends State<inflasiContent> {
                                   flex: 2,
                                   child: Center(
                                     child: Text(
-                                      anif4.toString(),
+                                      anif4,
                                     ),
                                   ),
                                 ),
@@ -445,7 +448,7 @@ class _inflasiContentState extends State<inflasiContent> {
                                   flex: 2,
                                   child: Center(
                                     child: Text(
-                                      tkif5.toString(),
+                                      tkif5,
                                     ),
                                   ),
                                 ),
@@ -454,7 +457,7 @@ class _inflasiContentState extends State<inflasiContent> {
                                   flex: 2,
                                   child: Center(
                                     child: Text(
-                                      anif5.toString(),
+                                      anif5,
                                     ),
                                   ),
                                 ),
@@ -482,7 +485,7 @@ class _inflasiContentState extends State<inflasiContent> {
                                   flex: 2,
                                   child: Center(
                                     child: Text(
-                                      tkif6.toString(),
+                                      tkif6,
                                     ),
                                   ),
                                 ),
@@ -491,7 +494,7 @@ class _inflasiContentState extends State<inflasiContent> {
                                   flex: 2,
                                   child: Center(
                                     child: Text(
-                                      anif6.toString(),
+                                      anif6,
                                     ),
                                   ),
                                 ),
@@ -519,7 +522,7 @@ class _inflasiContentState extends State<inflasiContent> {
                                   flex: 2,
                                   child: Center(
                                     child: Text(
-                                      tkif7.toString(),
+                                      tkif7,
                                     ),
                                   ),
                                 ),
@@ -528,7 +531,7 @@ class _inflasiContentState extends State<inflasiContent> {
                                   flex: 2,
                                   child: Center(
                                     child: Text(
-                                      anif7.toString(),
+                                      anif7,
                                     ),
                                   ),
                                 ),
@@ -556,7 +559,7 @@ class _inflasiContentState extends State<inflasiContent> {
                                   flex: 2,
                                   child: Center(
                                     child: Text(
-                                      tkif8.toString(),
+                                      tkif8,
                                     ),
                                   ),
                                 ),
@@ -565,7 +568,7 @@ class _inflasiContentState extends State<inflasiContent> {
                                   flex: 2,
                                   child: Center(
                                     child: Text(
-                                      anif8.toString(),
+                                      anif8,
                                     ),
                                   ),
                                 ),
@@ -593,7 +596,7 @@ class _inflasiContentState extends State<inflasiContent> {
                                   flex: 2,
                                   child: Center(
                                     child: Text(
-                                      tkif9.toString(),
+                                      tkif9,
                                     ),
                                   ),
                                 ),
@@ -602,7 +605,7 @@ class _inflasiContentState extends State<inflasiContent> {
                                   flex: 2,
                                   child: Center(
                                     child: Text(
-                                      anif9.toString(),
+                                      anif9,
                                     ),
                                   ),
                                 ),
@@ -630,7 +633,7 @@ class _inflasiContentState extends State<inflasiContent> {
                                   flex: 2,
                                   child: Center(
                                     child: Text(
-                                      tkif10.toString(),
+                                      tkif10,
                                     ),
                                   ),
                                 ),
@@ -639,7 +642,7 @@ class _inflasiContentState extends State<inflasiContent> {
                                   flex: 2,
                                   child: Center(
                                     child: Text(
-                                      anif10.toString(),
+                                      anif10,
                                     ),
                                   ),
                                 ),
@@ -667,7 +670,7 @@ class _inflasiContentState extends State<inflasiContent> {
                                   flex: 2,
                                   child: Center(
                                     child: Text(
-                                      tkif11.toString(),
+                                      tkif11,
                                     ),
                                   ),
                                 ),
@@ -676,7 +679,61 @@ class _inflasiContentState extends State<inflasiContent> {
                                   flex: 2,
                                   child: Center(
                                     child: Text(
-                                      anif11.toString(),
+                                      anif11,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            // Total
+                            Row(
+                              children: [
+                                Flexible(
+                                  fit: FlexFit.tight,
+                                  flex: 3,
+                                  child: Container(
+                                    height: screenHeight * 0.07,
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 2, vertical: 10),
+                                    color: Colors.cyan,
+                                    child: const Center(
+                                      child: Text(
+                                        "Inflasi Total",
+                                        style: TextStyle(color: Colors.white),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Flexible(
+                                  fit: FlexFit.tight,
+                                  flex: 2,
+                                  child: Container(
+                                    height: screenHeight * 0.07,
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 2, vertical: 10),
+                                    color: Colors.cyan,
+                                    child: Center(
+                                      child: Text(
+                                        totaltingkat,
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Flexible(
+                                  fit: FlexFit.tight,
+                                  flex: 2,
+                                  child: Container(
+                                    height: screenHeight * 0.07,
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 2, vertical: 10),
+                                    color: Colors.cyan,
+                                    child: Center(
+                                      child: Text(
+                                        totalandil,
+                                        style: TextStyle(color: Colors.white),
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -689,456 +746,467 @@ class _inflasiContentState extends State<inflasiContent> {
                         ),
                       ),
                       Container(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 10, horizontal: 2),
-                          child: Center(
-                            child: Text(
-                              "Perkembangan Inflasi Enam Kota Jawa Tengah (Persen) " +
-                                  isiinflasi[index = 0].tanggal,
-                              style:
-                                  const TextStyle(fontWeight: FontWeight.bold),
-                              textAlign: TextAlign.center,
-                            ),
-                          )),
-                      SizedBox(
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 3,
-                                  child: Container(
-                                    height: screenHeight * 0.07,
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 2, vertical: 10),
-                                    color: Colors.cyan,
-                                    child: const Center(
-                                      child: Text(
-                                        "Kota Inflasi",
-                                        style: TextStyle(color: Colors.white),
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 2,
-                                  child: Container(
-                                    height: screenHeight * 0.07,
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 2, vertical: 10),
-                                    color: Colors.cyan,
-                                    child: const Center(
-                                      child: Text(
-                                        "M to M",
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 2,
-                                  child: Container(
-                                    height: screenHeight * 0.07,
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 2, vertical: 10),
-                                    color: Colors.cyan,
-                                    child: const Center(
-                                      child: Text(
-                                        "Y to D",
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 2,
-                                  child: Container(
-                                    height: screenHeight * 0.07,
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 2, vertical: 10),
-                                    color: Colors.cyan,
-                                    child: const Center(
-                                      child: Text(
-                                        "Y on Y",
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            // Cilacap
-                            Row(
-                              children: [
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 3,
-                                  child: Container(
-                                    margin:
-                                        const EdgeInsets.symmetric(vertical: 8),
-                                    child: const Center(
-                                      child: Text(
-                                        "Cilacap",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            color: Colors.cyan,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 2,
-                                  child: Center(
-                                    child: Text(
-                                      mtom1.toString(),
-                                      style: const TextStyle(
-                                          color: Colors.cyan,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 2,
-                                  child: Center(
-                                    child: Text(
-                                      ytod1.toString(),
-                                      style: const TextStyle(
-                                          color: Colors.cyan,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 2,
-                                  child: Center(
-                                    child: Text(
-                                      yony1.toString(),
-                                      style: const TextStyle(
-                                          color: Colors.cyan,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            // Purwokerto
-                            Row(
-                              children: [
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 3,
-                                  child: Container(
-                                    margin:
-                                        const EdgeInsets.symmetric(vertical: 8),
-                                    child: const Center(
-                                      child: Text(
-                                        "Purwokerto",
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 2,
-                                  child: Center(
-                                    child: Text(
-                                      mtom2.toString(),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 2,
-                                  child: Center(
-                                    child: Text(
-                                      ytod2.toString(),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 2,
-                                  child: Center(
-                                    child: Text(
-                                      yony2.toString(),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            // Kudus
-                            Row(
-                              children: [
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 3,
-                                  child: Container(
-                                    margin:
-                                        const EdgeInsets.symmetric(vertical: 8),
-                                    child: const Center(
-                                      child: Text(
-                                        "Kudus",
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 2,
-                                  child: Center(
-                                    child: Text(
-                                      mtom3.toString(),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 2,
-                                  child: Center(
-                                    child: Text(
-                                      ytod3.toString(),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 2,
-                                  child: Center(
-                                    child: Text(
-                                      yony3.toString(),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            // Surakarta
-                            Row(
-                              children: [
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 3,
-                                  child: Container(
-                                    margin:
-                                        const EdgeInsets.symmetric(vertical: 8),
-                                    child: const Center(
-                                      child: Text(
-                                        "Surakarta",
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 2,
-                                  child: Center(
-                                    child: Text(
-                                      mtom4.toString(),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 2,
-                                  child: Center(
-                                    child: Text(
-                                      ytod4.toString(),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 2,
-                                  child: Center(
-                                    child: Text(
-                                      yony4.toString(),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            // Semarang
-                            Row(
-                              children: [
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 3,
-                                  child: Container(
-                                    margin:
-                                        const EdgeInsets.symmetric(vertical: 8),
-                                    child: const Center(
-                                      child: Text(
-                                        "Semarang",
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 2,
-                                  child: Center(
-                                    child: Text(
-                                      mtom5.toString(),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 2,
-                                  child: Center(
-                                    child: Text(
-                                      ytod5.toString(),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 2,
-                                  child: Center(
-                                    child: Text(
-                                      yony5.toString(),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            // Tegal
-                            Row(
-                              children: [
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 3,
-                                  child: Container(
-                                    margin:
-                                        const EdgeInsets.symmetric(vertical: 8),
-                                    child: const Center(
-                                      child: Text(
-                                        "Tegal",
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 2,
-                                  child: Center(
-                                    child: Text(
-                                      mtom6.toString(),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 2,
-                                  child: Center(
-                                    child: Text(
-                                      ytod6.toString(),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 2,
-                                  child: Center(
-                                    child: Text(
-                                      yony6.toString(),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            // Nasional
-                            Row(
-                              children: [
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 3,
-                                  child: Container(
-                                    height: screenHeight * 0.05,
-                                    color: Colors.cyan,
-                                    margin:
-                                        const EdgeInsets.symmetric(vertical: 8),
-                                    child: const Center(
-                                      child: Text(
-                                        "Nasional",
-                                        style: TextStyle(color: Colors.white),
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 2,
-                                  child: Container(
-                                    height: screenHeight * 0.05,
-                                    color: Colors.cyan,
-                                    margin:
-                                        const EdgeInsets.symmetric(vertical: 8),
-                                    child: Center(
-                                      child: Text(
-                                        mtom7.toString(),
-                                        style: const TextStyle(
-                                            color: Colors.white),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 2,
-                                  child: Container(
-                                    height: screenHeight * 0.05,
-                                    color: Colors.cyan,
-                                    margin:
-                                        const EdgeInsets.symmetric(vertical: 8),
-                                    child: Center(
-                                      child: Text(
-                                        ytod7.toString(),
-                                        style: const TextStyle(
-                                            color: Colors.white),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                  fit: FlexFit.tight,
-                                  flex: 2,
-                                  child: Container(
-                                    height: screenHeight * 0.05,
-                                    color: Colors.cyan,
-                                    margin:
-                                        const EdgeInsets.symmetric(vertical: 8),
-                                    child: Center(
-                                      child: Text(
-                                        yony7.toString(),
-                                        style: const TextStyle(
-                                            color: Colors.white),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const Divider(
-                              thickness: 3,
-                            ),
-                          ],
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 2),
+                        child: Center(
+                          child: Text(
+                            "Perkembangan Inflasi Enam Kota Jawa Tengah (Persen) Tahun " +
+                                isiinflasi[index = 0].created_at[0] +
+                                isiinflasi[index = 0].created_at[1] +
+                                isiinflasi[index = 0].created_at[2] +
+                                isiinflasi[index = 0].created_at[3],
+                            style: const TextStyle(fontWeight: FontWeight.bold),
+                            textAlign: TextAlign.center,
+                          ),
                         ),
                       ),
+                      SizedBox(
+                        child: Container(
+                          height: 400,
+                          width: screenWidth,
+                          color: Colors.amber,
+                          child: InflasiKota(),
+                        ),
+                      )
+                      // SizedBox(
+                      //   child: Column(
+                      //     children: [
+                      //       Row(
+                      //         children: [
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 3,
+                      //             child: Container(
+                      //               height: screenHeight * 0.07,
+                      //               padding: const EdgeInsets.symmetric(
+                      //                   horizontal: 2, vertical: 10),
+                      //               color: Colors.cyan,
+                      //               child: const Center(
+                      //                 child: Text(
+                      //                   "Kota Inflasi",
+                      //                   style: TextStyle(color: Colors.white),
+                      //                   textAlign: TextAlign.center,
+                      //                 ),
+                      //               ),
+                      //             ),
+                      //           ),
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 2,
+                      //             child: Container(
+                      //               height: screenHeight * 0.07,
+                      //               padding: const EdgeInsets.symmetric(
+                      //                   horizontal: 2, vertical: 10),
+                      //               color: Colors.cyan,
+                      //               child: const Center(
+                      //                 child: Text(
+                      //                   "M to M",
+                      //                   style: TextStyle(color: Colors.white),
+                      //                 ),
+                      //               ),
+                      //             ),
+                      //           ),
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 2,
+                      //             child: Container(
+                      //               height: screenHeight * 0.07,
+                      //               padding: const EdgeInsets.symmetric(
+                      //                   horizontal: 2, vertical: 10),
+                      //               color: Colors.cyan,
+                      //               child: const Center(
+                      //                 child: Text(
+                      //                   "Y to D",
+                      //                   style: TextStyle(color: Colors.white),
+                      //                 ),
+                      //               ),
+                      //             ),
+                      //           ),
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 2,
+                      //             child: Container(
+                      //               height: screenHeight * 0.07,
+                      //               padding: const EdgeInsets.symmetric(
+                      //                   horizontal: 2, vertical: 10),
+                      //               color: Colors.cyan,
+                      //               child: const Center(
+                      //                 child: Text(
+                      //                   "Y on Y",
+                      //                   style: TextStyle(color: Colors.white),
+                      //                 ),
+                      //               ),
+                      //             ),
+                      //           ),
+                      //         ],
+                      //       ),
+                      //       // Cilacap
+                      //       Row(
+                      //         children: [
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 3,
+                      //             child: Container(
+                      //               margin:
+                      //                   const EdgeInsets.symmetric(vertical: 8),
+                      //               child: const Center(
+                      //                 child: Text(
+                      //                   "Cilacap",
+                      //                   textAlign: TextAlign.center,
+                      //                   style: TextStyle(
+                      //                       color: Colors.cyan,
+                      //                       fontWeight: FontWeight.bold),
+                      //                 ),
+                      //               ),
+                      //             ),
+                      //           ),
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 2,
+                      //             child: Center(
+                      //               child: Text(
+                      //                 mtom1,
+                      //                 style: const TextStyle(
+                      //                     color: Colors.cyan,
+                      //                     fontWeight: FontWeight.bold),
+                      //               ),
+                      //             ),
+                      //           ),
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 2,
+                      //             child: Center(
+                      //               child: Text(
+                      //                 ytod1,
+                      //                 style: const TextStyle(
+                      //                     color: Colors.cyan,
+                      //                     fontWeight: FontWeight.bold),
+                      //               ),
+                      //             ),
+                      //           ),
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 2,
+                      //             child: Center(
+                      //               child: Text(
+                      //                 yony1,
+                      //                 style: const TextStyle(
+                      //                     color: Colors.cyan,
+                      //                     fontWeight: FontWeight.bold),
+                      //               ),
+                      //             ),
+                      //           ),
+                      //         ],
+                      //       ),
+                      //       // Purwokerto
+                      //       Row(
+                      //         children: [
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 3,
+                      //             child: Container(
+                      //               margin:
+                      //                   const EdgeInsets.symmetric(vertical: 8),
+                      //               child: const Center(
+                      //                 child: Text(
+                      //                   "Purwokerto",
+                      //                   textAlign: TextAlign.center,
+                      //                 ),
+                      //               ),
+                      //             ),
+                      //           ),
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 2,
+                      //             child: Center(
+                      //               child: Text(
+                      //                 mtom2,
+                      //               ),
+                      //             ),
+                      //           ),
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 2,
+                      //             child: Center(
+                      //               child: Text(
+                      //                 ytod2,
+                      //               ),
+                      //             ),
+                      //           ),
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 2,
+                      //             child: Center(
+                      //               child: Text(
+                      //                 yony2,
+                      //               ),
+                      //             ),
+                      //           ),
+                      //         ],
+                      //       ),
+                      //       // Kudus
+                      //       Row(
+                      //         children: [
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 3,
+                      //             child: Container(
+                      //               margin:
+                      //                   const EdgeInsets.symmetric(vertical: 8),
+                      //               child: const Center(
+                      //                 child: Text(
+                      //                   "Kudus",
+                      //                   textAlign: TextAlign.center,
+                      //                 ),
+                      //               ),
+                      //             ),
+                      //           ),
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 2,
+                      //             child: Center(
+                      //               child: Text(
+                      //                 mtom3,
+                      //               ),
+                      //             ),
+                      //           ),
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 2,
+                      //             child: Center(
+                      //               child: Text(
+                      //                 ytod3,
+                      //               ),
+                      //             ),
+                      //           ),
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 2,
+                      //             child: Center(
+                      //               child: Text(
+                      //                 yony3,
+                      //               ),
+                      //             ),
+                      //           ),
+                      //         ],
+                      //       ),
+                      //       // Surakarta
+                      //       Row(
+                      //         children: [
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 3,
+                      //             child: Container(
+                      //               margin:
+                      //                   const EdgeInsets.symmetric(vertical: 8),
+                      //               child: const Center(
+                      //                 child: Text(
+                      //                   "Surakarta",
+                      //                   textAlign: TextAlign.center,
+                      //                 ),
+                      //               ),
+                      //             ),
+                      //           ),
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 2,
+                      //             child: Center(
+                      //               child: Text(
+                      //                 mtom4,
+                      //               ),
+                      //             ),
+                      //           ),
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 2,
+                      //             child: Center(
+                      //               child: Text(
+                      //                 ytod4,
+                      //               ),
+                      //             ),
+                      //           ),
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 2,
+                      //             child: Center(
+                      //               child: Text(
+                      //                 yony4,
+                      //               ),
+                      //             ),
+                      //           ),
+                      //         ],
+                      //       ),
+                      //       // Semarang
+                      //       Row(
+                      //         children: [
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 3,
+                      //             child: Container(
+                      //               margin:
+                      //                   const EdgeInsets.symmetric(vertical: 8),
+                      //               child: const Center(
+                      //                 child: Text(
+                      //                   "Semarang",
+                      //                   textAlign: TextAlign.center,
+                      //                 ),
+                      //               ),
+                      //             ),
+                      //           ),
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 2,
+                      //             child: Center(
+                      //               child: Text(
+                      //                 mtom5,
+                      //               ),
+                      //             ),
+                      //           ),
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 2,
+                      //             child: Center(
+                      //               child: Text(
+                      //                 ytod5,
+                      //               ),
+                      //             ),
+                      //           ),
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 2,
+                      //             child: Center(
+                      //               child: Text(
+                      //                 yony5,
+                      //               ),
+                      //             ),
+                      //           ),
+                      //         ],
+                      //       ),
+                      //       // Tegal
+                      //       Row(
+                      //         children: [
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 3,
+                      //             child: Container(
+                      //               margin:
+                      //                   const EdgeInsets.symmetric(vertical: 8),
+                      //               child: const Center(
+                      //                 child: Text(
+                      //                   "Tegal",
+                      //                   textAlign: TextAlign.center,
+                      //                 ),
+                      //               ),
+                      //             ),
+                      //           ),
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 2,
+                      //             child: Center(
+                      //               child: Text(
+                      //                 mtom6,
+                      //               ),
+                      //             ),
+                      //           ),
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 2,
+                      //             child: Center(
+                      //               child: Text(
+                      //                 ytod6,
+                      //               ),
+                      //             ),
+                      //           ),
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 2,
+                      //             child: Center(
+                      //               child: Text(
+                      //                 yony6,
+                      //               ),
+                      //             ),
+                      //           ),
+                      //         ],
+                      //       ),
+                      //       // Nasional
+                      //       Row(
+                      //         children: [
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 3,
+                      //             child: Container(
+                      //               height: screenHeight * 0.05,
+                      //               color: Colors.cyan,
+                      //               margin:
+                      //                   const EdgeInsets.symmetric(vertical: 8),
+                      //               child: const Center(
+                      //                 child: Text(
+                      //                   "Nasional",
+                      //                   style: TextStyle(color: Colors.white),
+                      //                   textAlign: TextAlign.center,
+                      //                 ),
+                      //               ),
+                      //             ),
+                      //           ),
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 2,
+                      //             child: Container(
+                      //               height: screenHeight * 0.05,
+                      //               color: Colors.cyan,
+                      //               margin:
+                      //                   const EdgeInsets.symmetric(vertical: 8),
+                      //               child: Center(
+                      //                 child: Text(
+                      //                   mtom7,
+                      //                   style: const TextStyle(
+                      //                       color: Colors.white),
+                      //                 ),
+                      //               ),
+                      //             ),
+                      //           ),
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 2,
+                      //             child: Container(
+                      //               height: screenHeight * 0.05,
+                      //               color: Colors.cyan,
+                      //               margin:
+                      //                   const EdgeInsets.symmetric(vertical: 8),
+                      //               child: Center(
+                      //                 child: Text(
+                      //                   ytod7,
+                      //                   style: const TextStyle(
+                      //                       color: Colors.white),
+                      //                 ),
+                      //               ),
+                      //             ),
+                      //           ),
+                      //           Flexible(
+                      //             fit: FlexFit.tight,
+                      //             flex: 2,
+                      //             child: Container(
+                      //               height: screenHeight * 0.05,
+                      //               color: Colors.cyan,
+                      //               margin:
+                      //                   const EdgeInsets.symmetric(vertical: 8),
+                      //               child: Center(
+                      //                 child: Text(
+                      //                   yony7,
+                      //                   style: const TextStyle(
+                      //                       color: Colors.white),
+                      //                 ),
+                      //               ),
+                      //             ),
+                      //           ),
+                      //         ],
+                      //       ),
+                      //       const Divider(
+                      //         thickness: 3,
+                      //       ),
+                      //     ],
+                      //   ),
+                      // ),
                     ],
                   ),
                 );

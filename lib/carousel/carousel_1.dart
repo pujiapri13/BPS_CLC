@@ -1,6 +1,4 @@
-// ignore_for_file: prefer_interpolation_to_compose_strings
-
-import 'package:bps_cilacap/restAPI/repository_inflasi.dart';
+import 'package:bps_cilacap/restAPI/repository_inflasi_kota.dart';
 import 'package:flutter/material.dart';
 
 class carouselSlider1 extends StatefulWidget {
@@ -10,7 +8,7 @@ class carouselSlider1 extends StatefulWidget {
   State<carouselSlider1> createState() => _carouselSlider1State();
 }
 
-RepositoryInflasi repositoryinflasi = RepositoryInflasi();
+RepositoryInflasiKota repositoryinflasikota = RepositoryInflasiKota();
 
 class _carouselSlider1State extends State<carouselSlider1> {
   @override
@@ -20,16 +18,19 @@ class _carouselSlider1State extends State<carouselSlider1> {
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom;
     return FutureBuilder(
-      future: repositoryinflasi.getData(),
+      future: repositoryinflasikota.getData(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           List isiinflasi = snapshot.data as List;
           return PageView.builder(
             itemCount: 1,
             itemBuilder: (context, index) {
-              String tanggal = isiinflasi[index = 0].tanggal;
-              double mtom1 = 0.71;
-              double yony1 = 6.47;
+              String tanggal = isiinflasi[index = 0].updated_at[0] +
+                  isiinflasi[index = 0].updated_at[1] +
+                  isiinflasi[index = 0].updated_at[2] +
+                  isiinflasi[index = 0].updated_at[3];
+              String mtom1 = isiinflasi[index = 0].mtom;
+              String yony1 = isiinflasi[index = 0].ytoy;
               return Container(
                 decoration: BoxDecoration(
                   color: const Color.fromRGBO(136, 159, 176, 1),
@@ -62,7 +63,7 @@ class _carouselSlider1State extends State<carouselSlider1> {
                             Container(
                               margin: const EdgeInsets.only(left: 10),
                               child: const Text(
-                                "Inflasi Bulanan",
+                                "Inflasi",
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                             ),

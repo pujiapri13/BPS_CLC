@@ -1,9 +1,9 @@
 import 'dart:convert';
-import 'model_kemiskinan.dart';
+import 'package:bps_cilacap/restAPI/model_inflasi_kota.dart';
 import 'package:http/http.dart' as http;
 
-class RepositoryKemiskinan {
-  final _baseURL = 'https://bps-asap.my.id/api/kemiskinan';
+class RepositoryInflasiKota {
+  final _baseURL = 'https://bps-asap.my.id/api/inflasi-kota';
 
   Future getData() async {
     try {
@@ -12,12 +12,12 @@ class RepositoryKemiskinan {
       if (response.statusCode == 200) {
         var cokk = jsonDecode(response.body);
         return (cokk['data'] as List)
-            .map((isikemiskinan) => ModelKemiskinan.fromJson(isikemiskinan))
+            .map((isiinflasikota) => ModelInflasiKota.fromJson(isiinflasikota))
             .toList();
       }
-    } catch (isikemiskinan) {
+    } catch (isiinflasi) {
       // ignore: avoid_print
-      print(isikemiskinan.toString());
+      print(isiinflasi.toString());
     }
   }
 }

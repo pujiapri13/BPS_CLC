@@ -49,61 +49,61 @@ class _PerkembanganKemiskinanState extends State<PerkembanganKemiskinan> {
               return ListView.builder(
                 itemCount: 1,
                 itemBuilder: (context, index) {
-                  String th1 = (isikemiskinan[index = 0].tanggal[0] +
-                          isikemiskinan[index = 0].tanggal[1] +
-                          isikemiskinan[index = 0].tanggal[2] +
-                          isikemiskinan[index = 0].tanggal[3])
+                  String th1 = (isikemiskinan[index = 0].created_at[0] +
+                          isikemiskinan[index = 0].created_at[1] +
+                          isikemiskinan[index = 0].created_at[2] +
+                          isikemiskinan[index = 0].created_at[3])
                       .toString();
-                  String th2 = (isikemiskinan[index = 1].tanggal[0] +
-                          isikemiskinan[index = 1].tanggal[1] +
-                          isikemiskinan[index = 1].tanggal[2] +
-                          isikemiskinan[index = 1].tanggal[3])
+                  String th2 = (isikemiskinan[index = 1].created_at[0] +
+                          isikemiskinan[index = 1].created_at[1] +
+                          isikemiskinan[index = 1].created_at[2] +
+                          isikemiskinan[index = 1].created_at[3])
                       .toString();
-                  String th3 = (isikemiskinan[index = 2].tanggal[0] +
-                          isikemiskinan[index = 2].tanggal[1] +
-                          isikemiskinan[index = 2].tanggal[2] +
-                          isikemiskinan[index = 2].tanggal[3])
+                  String th3 = (isikemiskinan[index = 2].created_at[0] +
+                          isikemiskinan[index = 2].created_at[1] +
+                          isikemiskinan[index = 2].created_at[2] +
+                          isikemiskinan[index = 2].created_at[3])
                       .toString();
-                  String th4 = (isikemiskinan[index = 3].tanggal[0] +
-                          isikemiskinan[index = 3].tanggal[1] +
-                          isikemiskinan[index = 3].tanggal[2] +
-                          isikemiskinan[index = 3].tanggal[3])
+                  String th4 = (isikemiskinan[index = 3].created_at[0] +
+                          isikemiskinan[index = 3].created_at[1] +
+                          isikemiskinan[index = 3].created_at[2] +
+                          isikemiskinan[index = 3].created_at[3])
                       .toString();
-                  String th5 = (isikemiskinan[index = 4].tanggal[0] +
-                          isikemiskinan[index = 4].tanggal[1] +
-                          isikemiskinan[index = 4].tanggal[2] +
-                          isikemiskinan[index = 4].tanggal[3])
+                  String th5 = (isikemiskinan[index = 4].created_at[0] +
+                          isikemiskinan[index = 4].created_at[1] +
+                          isikemiskinan[index = 4].created_at[2] +
+                          isikemiskinan[index = 4].created_at[3])
                       .toString();
 
-                  double jpm1 = isikemiskinan[index = 0].pddk_miskin;
-                  double jpm2 = isikemiskinan[index = 1].pddk_miskin;
-                  double jpm3 = isikemiskinan[index = 2].pddk_miskin;
-                  double jpm4 = isikemiskinan[index = 3].pddk_miskin;
-                  double jpm5 = isikemiskinan[index = 4].pddk_miskin;
+                  String jpm1 = isikemiskinan[index = 0].pddk_mskn;
+                  String jpm2 = isikemiskinan[index = 1].pddk_mskn;
+                  String jpm3 = isikemiskinan[index = 2].pddk_mskn;
+                  String jpm4 = isikemiskinan[index = 3].pddk_mskn;
+                  String jpm5 = isikemiskinan[index = 4].pddk_mskn;
 
-                  double p0_1 = isikemiskinan[index = 0].p0;
-                  double p0_2 = isikemiskinan[index = 1].p0;
-                  double p0_3 = isikemiskinan[index = 2].p0;
-                  double p0_4 = isikemiskinan[index = 3].p0;
-                  double p0_5 = isikemiskinan[index = 4].p0;
+                  String p0_1 = isikemiskinan[index = 0].p0;
+                  String p0_2 = isikemiskinan[index = 1].p0;
+                  String p0_3 = isikemiskinan[index = 2].p0;
+                  String p0_4 = isikemiskinan[index = 3].p0;
+                  String p0_5 = isikemiskinan[index = 4].p0;
 
-                  double p1_1 = isikemiskinan[index = 0].p1;
-                  double p1_2 = isikemiskinan[index = 1].p1;
-                  double p1_3 = isikemiskinan[index = 2].p1;
-                  double p1_4 = isikemiskinan[index = 3].p1;
-                  double p1_5 = isikemiskinan[index = 4].p1;
+                  String p1_1 = isikemiskinan[index = 0].p1;
+                  String p1_2 = isikemiskinan[index = 1].p1;
+                  String p1_3 = isikemiskinan[index = 2].p1;
+                  String p1_4 = isikemiskinan[index = 3].p1;
+                  String p1_5 = isikemiskinan[index = 4].p1;
 
-                  double p2_1 = isikemiskinan[index = 0].p2;
-                  double p2_2 = isikemiskinan[index = 1].p2;
-                  double p2_3 = isikemiskinan[index = 2].p2;
-                  double p2_4 = isikemiskinan[index = 3].p2;
-                  double p2_5 = isikemiskinan[index = 4].p2;
+                  String p2_1 = isikemiskinan[index = 0].p2;
+                  String p2_2 = isikemiskinan[index = 1].p2;
+                  String p2_3 = isikemiskinan[index = 2].p2;
+                  String p2_4 = isikemiskinan[index = 3].p2;
+                  String p2_5 = isikemiskinan[index = 4].p2;
 
-                  double gk1 = isikemiskinan[index = 0].gk;
-                  double gk2 = isikemiskinan[index = 1].gk;
-                  double gk3 = isikemiskinan[index = 2].gk;
-                  double gk4 = isikemiskinan[index = 3].gk;
-                  double gk5 = isikemiskinan[index = 4].gk;
+                  String gk1 = isikemiskinan[index = 0].gk;
+                  String gk2 = isikemiskinan[index = 1].gk;
+                  String gk3 = isikemiskinan[index = 2].gk;
+                  String gk4 = isikemiskinan[index = 3].gk;
+                  String gk5 = isikemiskinan[index = 4].gk;
 
                   // diagram batang GK & JPM
                   BarChartGroupData makeGroupData(
@@ -122,11 +122,16 @@ class _PerkembanganKemiskinanState extends State<PerkembanganKemiskinan> {
                     ]);
                   }
 
-                  final barGroup1 = makeGroupData(0, gk1, jpm1);
-                  final barGroup2 = makeGroupData(1, gk2, jpm2);
-                  final barGroup3 = makeGroupData(2, gk3, jpm3);
-                  final barGroup4 = makeGroupData(3, gk4, jpm4);
-                  final barGroup5 = makeGroupData(4, gk5, jpm5);
+                  final barGroup1 =
+                      makeGroupData(0, double.parse(gk1), double.parse(jpm1));
+                  final barGroup2 =
+                      makeGroupData(1, double.parse(gk2), double.parse(jpm2));
+                  final barGroup3 =
+                      makeGroupData(2, double.parse(gk3), double.parse(jpm3));
+                  final barGroup4 =
+                      makeGroupData(3, double.parse(gk4), double.parse(jpm4));
+                  final barGroup5 =
+                      makeGroupData(4, double.parse(gk5), double.parse(jpm5));
 
                   final items = [
                     barGroup5,
@@ -570,8 +575,8 @@ class _PerkembanganKemiskinanState extends State<PerkembanganKemiskinan> {
                                     fit: FlexFit.tight,
                                     flex: 2,
                                     child: Container(
-                                      padding:
-                                          const EdgeInsets.symmetric(vertical: 10),
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 10),
                                       child: Text(
                                         gk1.toString(),
                                         textAlign: TextAlign.center,
@@ -582,8 +587,8 @@ class _PerkembanganKemiskinanState extends State<PerkembanganKemiskinan> {
                                     fit: FlexFit.tight,
                                     flex: 2,
                                     child: Container(
-                                      padding:
-                                          const EdgeInsets.symmetric(vertical: 10),
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 10),
                                       child: Text(
                                         gk2.toString(),
                                         textAlign: TextAlign.center,
@@ -594,8 +599,8 @@ class _PerkembanganKemiskinanState extends State<PerkembanganKemiskinan> {
                                     fit: FlexFit.tight,
                                     flex: 2,
                                     child: Container(
-                                      padding:
-                                          const EdgeInsets.symmetric(vertical: 10),
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 10),
                                       child: Text(
                                         gk3.toString(),
                                         textAlign: TextAlign.center,
@@ -606,8 +611,8 @@ class _PerkembanganKemiskinanState extends State<PerkembanganKemiskinan> {
                                     fit: FlexFit.tight,
                                     flex: 2,
                                     child: Container(
-                                      padding:
-                                          const EdgeInsets.symmetric(vertical: 10),
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 10),
                                       child: Text(
                                         gk4.toString(),
                                         textAlign: TextAlign.center,
@@ -618,8 +623,8 @@ class _PerkembanganKemiskinanState extends State<PerkembanganKemiskinan> {
                                     fit: FlexFit.tight,
                                     flex: 2,
                                     child: Container(
-                                      padding:
-                                          const EdgeInsets.symmetric(vertical: 10),
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 10),
                                       child: Text(
                                         gk5.toString(),
                                         textAlign: TextAlign.center,
@@ -643,7 +648,8 @@ class _PerkembanganKemiskinanState extends State<PerkembanganKemiskinan> {
                                   th5 +
                                   " - " +
                                   th1,
-                              style: const TextStyle(fontWeight: FontWeight.bold),
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.bold),
                               textAlign: TextAlign.center,
                             )),
                         SizedBox(
@@ -755,7 +761,8 @@ class _PerkembanganKemiskinanState extends State<PerkembanganKemiskinan> {
                                   th5.toString() +
                                   " - " +
                                   th1.toString(),
-                              style: const TextStyle(fontWeight: FontWeight.bold),
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.bold),
                               textAlign: TextAlign.center,
                             )),
                         SizedBox(
@@ -885,11 +892,11 @@ class _PerkembanganKemiskinanState extends State<PerkembanganKemiskinan> {
                                 lineBarsData: [
                                   LineChartBarData(
                                     spots: [
-                                      FlSpot(1, p0_1),
-                                      FlSpot(3, p0_2),
-                                      FlSpot(5, p0_3),
-                                      FlSpot(7, p0_4),
-                                      FlSpot(9, p0_5),
+                                      FlSpot(1, double.parse(p0_1)),
+                                      FlSpot(3, double.parse(p0_2)),
+                                      FlSpot(5, double.parse(p0_3)),
+                                      FlSpot(7, double.parse(p0_4)),
+                                      FlSpot(9, double.parse(p0_5)),
                                     ],
                                     isCurved: true,
                                     gradient: LinearGradient(
@@ -920,7 +927,8 @@ class _PerkembanganKemiskinanState extends State<PerkembanganKemiskinan> {
                                   th5.toString() +
                                   "-" +
                                   th1.toString(),
-                              style: const TextStyle(fontWeight: FontWeight.bold),
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.bold),
                               textAlign: TextAlign.center,
                             )),
                         SizedBox(
@@ -1047,11 +1055,11 @@ class _PerkembanganKemiskinanState extends State<PerkembanganKemiskinan> {
                                 lineBarsData: [
                                   LineChartBarData(
                                     spots: [
-                                      FlSpot(1, p1_1 / 100),
-                                      FlSpot(3, p1_2),
-                                      FlSpot(5, p1_3),
-                                      FlSpot(7, p1_4),
-                                      FlSpot(9, p1_5),
+                                      FlSpot(1, double.parse(p1_1) / 100),
+                                      FlSpot(3, double.parse(p1_2)),
+                                      FlSpot(5, double.parse(p1_3)),
+                                      FlSpot(7, double.parse(p1_4)),
+                                      FlSpot(9, double.parse(p1_5)),
                                     ],
                                     isCurved: true,
                                     gradient: LinearGradient(
@@ -1067,11 +1075,11 @@ class _PerkembanganKemiskinanState extends State<PerkembanganKemiskinan> {
                                   ),
                                   LineChartBarData(
                                     spots: [
-                                      FlSpot(1, p2_1),
-                                      FlSpot(3, p2_2),
-                                      FlSpot(5, p2_3),
-                                      FlSpot(7, p2_4),
-                                      FlSpot(9, p2_5),
+                                      FlSpot(1, double.parse(p2_1)),
+                                      FlSpot(3, double.parse(p2_2)),
+                                      FlSpot(5, double.parse(p2_3)),
+                                      FlSpot(7, double.parse(p2_4)),
+                                      FlSpot(9, double.parse(p2_5)),
                                     ],
                                     isCurved: true,
                                     gradient: LinearGradient(

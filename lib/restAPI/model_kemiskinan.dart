@@ -2,31 +2,35 @@
 
 class ModelKemiskinan {
   final int id;
-  final double pddk_miskin;
-  final double p0;
-  final double p1;
-  final double p2;
-  final double gk;
-  final String tanggal;
+  final String pddk_mskn;
+  final String p0;
+  final String p1;
+  final String p2;
+  final String gk;
+  final String created_at;
+  final String updated_at;
 
-  const ModelKemiskinan({
-    required this.id,
-    required this.pddk_miskin,
-    required this.p0,
-    required this.p1,
-    required this.p2,
-    required this.gk,
-    required this.tanggal,
-  });
+  const ModelKemiskinan( {
+      required this.id,
+      required this.pddk_mskn,
+      required this.p0,
+      required this.p1,
+      required this.p2,
+      required this.gk,
+      required this.created_at,
+      required this.updated_at,
+      });
 
   factory ModelKemiskinan.fromJson(Map<String, dynamic> json) {
     return ModelKemiskinan(
         id: json['id'],
-        pddk_miskin: json['ppdk_mskn'],
+        pddk_mskn: json['ppdk_mskn'],
         p0: json['p0'],
         p1: json['p1'],
         p2: json['p2'],
         gk: json['gk'],
-        tanggal: json['tanggal']);
+        created_at: json['created_at'],
+        updated_at: json['updated_at']
+        );
   }
 }

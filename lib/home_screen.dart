@@ -78,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 alignment: Alignment.center,
                 height: ScreenHeight * 0.10,
                 child: const Text(
-                  'PUSDACAP',
+                  'ASAP',
                   style: TextStyle(fontSize: 24, color: Colors.white),
                 ),
               ),

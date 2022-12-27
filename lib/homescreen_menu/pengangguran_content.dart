@@ -104,32 +104,68 @@ class _pengangguranContentState extends State<pengangguranContent> {
                   return PageView.builder(
                     itemCount: 1,
                     itemBuilder: (context, index) {
-                      String thA = "2017";
-                      String thB = "2018";
-                      String thC = "2019";
-                      String thD = "2020";
-                      String thE = isitenagakerja[index = 0].tanggal[0] +
-                          isitenagakerja[index = 0].tanggal[1] +
-                          isitenagakerja[index = 0].tanggal[2] +
-                          isitenagakerja[index = 0].tanggal[3];
+                      String thA = isitenagakerja[index = 0].created_at[0] +
+                          isitenagakerja[index = 0].created_at[1] +
+                          isitenagakerja[index = 0].created_at[2] +
+                          isitenagakerja[index = 0].created_at[3];
+                      String thB = isitenagakerja[index = 1].created_at[0] +
+                          isitenagakerja[index = 1].created_at[1] +
+                          isitenagakerja[index = 1].created_at[2] +
+                          isitenagakerja[index = 1].created_at[3];
+                      String thC = isitenagakerja[index = 2].created_at[0] +
+                          isitenagakerja[index = 2].created_at[1] +
+                          isitenagakerja[index = 2].created_at[2] +
+                          isitenagakerja[index = 2].created_at[3];
+                      String thD = isitenagakerja[index = 3].created_at[0] +
+                          isitenagakerja[index = 3].created_at[1] +
+                          isitenagakerja[index = 3].created_at[2] +
+                          isitenagakerja[index = 3].created_at[3];
+                      String thE = isitenagakerja[index = 4].created_at[0] +
+                          isitenagakerja[index = 4].created_at[1] +
+                          isitenagakerja[index = 4].created_at[2] +
+                          isitenagakerja[index = 4].created_at[3];
 
-                      String AkA = "-";
-                      String AkB = "-";
-                      String AkC = "-";
-                      String AkD = "-";
-                      double AkE = 830.043;
+                      double TpakA = (double.parse(
+                                  isitenagakerja[index = 0].tpak) +
+                              double.parse(isitenagakerja[index = 5].tpak)) /
+                          2;
+                      double TpakB = (double.parse(
+                                  isitenagakerja[index = 1].tpak) +
+                              double.parse(isitenagakerja[index = 6].tpak)) /
+                          2;
+                      double TpakC = (double.parse(
+                                  isitenagakerja[index = 2].tpak) +
+                              double.parse(isitenagakerja[index = 7].tpak)) /
+                          2;
+                      double TpakD = (double.parse(
+                                  isitenagakerja[index = 3].tpak) +
+                              double.parse(isitenagakerja[index = 8].tpak)) /
+                          2;
+                      double TpakE = (double.parse(
+                                  isitenagakerja[index = 4].tpak) +
+                              double.parse(isitenagakerja[index = 9].tpak)) /
+                          2;
 
-                      double TpakA = 66.22;
-                      double TpakB = 62.37;
-                      double TpakC = 65.11;
-                      double TpakD = 67.79;
-                      double TpakE = 66.91;
-
-                      double TptA = 6.30;
-                      double TptB = 7.48;
-                      double TptC = 7.31;
-                      double TptD = 9.10;
-                      double TptE = 9.97;
+                      double TptA =
+                          (double.parse(isitenagakerja[index = 0].tpt) +
+                                  double.parse(isitenagakerja[index = 5].tpt)) /
+                              2;
+                      double TptB =
+                          (double.parse(isitenagakerja[index = 1].tpt) +
+                                  double.parse(isitenagakerja[index = 6].tpt)) /
+                              2;
+                      double TptC =
+                          (double.parse(isitenagakerja[index = 2].tpt) +
+                                  double.parse(isitenagakerja[index = 7].tpt)) /
+                              2;
+                      double TptD =
+                          (double.parse(isitenagakerja[index = 3].tpt) +
+                                  double.parse(isitenagakerja[index = 8].tpt)) /
+                              2;
+                      double TptE =
+                          (double.parse(isitenagakerja[index = 4].tpt) +
+                                  double.parse(isitenagakerja[index = 9].tpt)) /
+                              2;
 
                       BarChartGroupData makeGroupData(
                           int x, double tpak, double tpt) {
@@ -186,12 +222,12 @@ class _pengangguranContentState extends State<pengangguranContent> {
                                           fit: FlexFit.tight,
                                           child: Container(
                                             height: screenHeight * 0.05,
-                                            color: Colors.grey,
+                                            color: Colors.cyan,
                                             child: const Center(
                                               child: Text(
                                                 "Tahun",
                                                 style: TextStyle(
-                                                    color: Colors.black,
+                                                    color: Colors.white,
                                                     fontWeight:
                                                         FontWeight.bold),
                                                 textAlign: TextAlign.center,
@@ -204,30 +240,12 @@ class _pengangguranContentState extends State<pengangguranContent> {
                                           fit: FlexFit.tight,
                                           child: Container(
                                             height: screenHeight * 0.05,
-                                            color: Colors.grey,
-                                            child: const Center(
-                                              child: Text(
-                                                "Angkatan Kerja",
-                                                style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                                textAlign: TextAlign.center,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Flexible(
-                                          flex: 1,
-                                          fit: FlexFit.tight,
-                                          child: Container(
-                                            height: screenHeight * 0.05,
-                                            color: Colors.grey,
+                                            color: Colors.cyan,
                                             child: const Center(
                                               child: Text(
                                                 "TPAK",
                                                 style: TextStyle(
-                                                    color: Colors.black,
+                                                    color: Colors.white,
                                                     fontWeight:
                                                         FontWeight.bold),
                                                 textAlign: TextAlign.center,
@@ -240,12 +258,12 @@ class _pengangguranContentState extends State<pengangguranContent> {
                                           fit: FlexFit.tight,
                                           child: Container(
                                             height: screenHeight * 0.05,
-                                            color: Colors.grey,
+                                            color: Colors.cyan,
                                             child: const Center(
                                               child: Text(
                                                 "TPT",
                                                 style: TextStyle(
-                                                    color: Colors.black,
+                                                    color: Colors.white,
                                                     fontWeight:
                                                         FontWeight.bold),
                                                 textAlign: TextAlign.center,
@@ -281,7 +299,7 @@ class _pengangguranContentState extends State<pengangguranContent> {
                                             height: screenHeight * 0.05,
                                             child: Center(
                                               child: Text(
-                                                AkA.toString(),
+                                                TpakA.toStringAsFixed(2),
                                                 textAlign: TextAlign.left,
                                               ),
                                             ),
@@ -296,22 +314,7 @@ class _pengangguranContentState extends State<pengangguranContent> {
                                             height: screenHeight * 0.05,
                                             child: Center(
                                               child: Text(
-                                                TpakA.toString(),
-                                                textAlign: TextAlign.left,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Flexible(
-                                          flex: 1,
-                                          fit: FlexFit.tight,
-                                          child: Container(
-                                            padding: const EdgeInsets.only(
-                                                top: 10, left: 5, right: 5),
-                                            height: screenHeight * 0.05,
-                                            child: Center(
-                                              child: Text(
-                                                TptA.toString(),
+                                                TptA.toStringAsFixed(2),
                                                 textAlign: TextAlign.left,
                                               ),
                                             ),
@@ -330,7 +333,7 @@ class _pengangguranContentState extends State<pengangguranContent> {
                                             height: screenHeight * 0.05,
                                             child: Center(
                                               child: Text(
-                                                thB.toString(),
+                                                thB,
                                                 textAlign: TextAlign.left,
                                               ),
                                             ),
@@ -345,7 +348,7 @@ class _pengangguranContentState extends State<pengangguranContent> {
                                             height: screenHeight * 0.05,
                                             child: Center(
                                               child: Text(
-                                                AkB.toString(),
+                                                TpakB.toStringAsFixed(2),
                                                 textAlign: TextAlign.left,
                                               ),
                                             ),
@@ -360,22 +363,7 @@ class _pengangguranContentState extends State<pengangguranContent> {
                                             height: screenHeight * 0.05,
                                             child: Center(
                                               child: Text(
-                                                TpakB.toString(),
-                                                textAlign: TextAlign.left,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Flexible(
-                                          flex: 1,
-                                          fit: FlexFit.tight,
-                                          child: Container(
-                                            padding: const EdgeInsets.only(
-                                                top: 10, left: 5, right: 5),
-                                            height: screenHeight * 0.05,
-                                            child: Center(
-                                              child: Text(
-                                                TptB.toString(),
+                                                TptB.toStringAsFixed(2),
                                                 textAlign: TextAlign.left,
                                               ),
                                             ),
@@ -394,7 +382,7 @@ class _pengangguranContentState extends State<pengangguranContent> {
                                             height: screenHeight * 0.05,
                                             child: Center(
                                               child: Text(
-                                                thC.toString(),
+                                                thC,
                                                 textAlign: TextAlign.left,
                                               ),
                                             ),
@@ -409,7 +397,7 @@ class _pengangguranContentState extends State<pengangguranContent> {
                                             height: screenHeight * 0.05,
                                             child: Center(
                                               child: Text(
-                                                AkC.toString(),
+                                                TpakC.toStringAsFixed(2),
                                                 textAlign: TextAlign.left,
                                               ),
                                             ),
@@ -424,22 +412,7 @@ class _pengangguranContentState extends State<pengangguranContent> {
                                             height: screenHeight * 0.05,
                                             child: Center(
                                               child: Text(
-                                                TpakC.toString(),
-                                                textAlign: TextAlign.left,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Flexible(
-                                          flex: 1,
-                                          fit: FlexFit.tight,
-                                          child: Container(
-                                            padding: const EdgeInsets.only(
-                                                top: 10, left: 5, right: 5),
-                                            height: screenHeight * 0.05,
-                                            child: Center(
-                                              child: Text(
-                                                TptC.toString(),
+                                                TptC.toStringAsFixed(2),
                                                 textAlign: TextAlign.left,
                                               ),
                                             ),
@@ -473,7 +446,7 @@ class _pengangguranContentState extends State<pengangguranContent> {
                                             height: screenHeight * 0.05,
                                             child: Center(
                                               child: Text(
-                                                AkD.toString(),
+                                                TpakD.toStringAsFixed(2),
                                                 textAlign: TextAlign.left,
                                               ),
                                             ),
@@ -488,22 +461,7 @@ class _pengangguranContentState extends State<pengangguranContent> {
                                             height: screenHeight * 0.05,
                                             child: Center(
                                               child: Text(
-                                                TpakD.toString(),
-                                                textAlign: TextAlign.left,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Flexible(
-                                          flex: 1,
-                                          fit: FlexFit.tight,
-                                          child: Container(
-                                            padding: const EdgeInsets.only(
-                                                top: 10, left: 5, right: 5),
-                                            height: screenHeight * 0.05,
-                                            child: Center(
-                                              child: Text(
-                                                TptD.toString(),
+                                                TptD.toStringAsFixed(2),
                                                 textAlign: TextAlign.left,
                                               ),
                                             ),
@@ -537,7 +495,7 @@ class _pengangguranContentState extends State<pengangguranContent> {
                                             height: screenHeight * 0.05,
                                             child: Center(
                                               child: Text(
-                                                AkE.toString(),
+                                                TpakE.toStringAsFixed(2),
                                                 textAlign: TextAlign.left,
                                               ),
                                             ),
@@ -552,22 +510,7 @@ class _pengangguranContentState extends State<pengangguranContent> {
                                             height: screenHeight * 0.05,
                                             child: Center(
                                               child: Text(
-                                                TpakE.toString(),
-                                                textAlign: TextAlign.left,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Flexible(
-                                          flex: 1,
-                                          fit: FlexFit.tight,
-                                          child: Container(
-                                            padding: const EdgeInsets.only(
-                                                top: 10, left: 5, right: 5),
-                                            height: screenHeight * 0.05,
-                                            child: Center(
-                                              child: Text(
-                                                TptE.toString(),
+                                                TptE.toStringAsFixed(2),
                                                 textAlign: TextAlign.left,
                                               ),
                                             ),

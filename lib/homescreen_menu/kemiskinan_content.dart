@@ -266,25 +266,25 @@ class _kemiskinanContentState extends State<kemiskinanContent> {
                                         ),
                                         child: Text(
                                           "Tahun " +
-                                              (isikemiskinan[index = 0]
-                                                          .tanggal[0] +
-                                                      isikemiskinan[index = 0]
-                                                          .tanggal[1] +
-                                                      isikemiskinan[index = 0]
-                                                          .tanggal[2] +
-                                                      isikemiskinan[index = 0]
-                                                          .tanggal[3])
+                                              (isikemiskinan[index = 4]
+                                                          .created_at[0] +
+                                                      isikemiskinan[index = 4]
+                                                          .created_at[1] +
+                                                      isikemiskinan[index = 4]
+                                                          .created_at[2] +
+                                                      isikemiskinan[index = 4]
+                                                          .created_at[3])
                                                   .toString() +
                                               ", penduduk miskin Kabupaten Cilacap tercatat sebanyak " +
-                                              isikemiskinan[index = 0]
-                                                  .pddk_miskin
+                                              isikemiskinan[index = 4]
+                                                  .pddk_mskn
                                                   .toString() +
                                               " ribu jiwa atau " +
-                                              isikemiskinan[index = 0]
+                                              isikemiskinan[index = 4]
                                                   .p0
                                                   .toString() +
                                               "% dari total penduduk, dengan Garis Kemiskinan sebesar " +
-                                              isikemiskinan[index = 0]
+                                              isikemiskinan[index = 4]
                                                   .gk
                                                   .toString() +
                                               " rupiah perkapita perbulan",

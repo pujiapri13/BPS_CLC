@@ -2,20 +2,21 @@
 
 class modelInflasi {
   final int id;
-  final double sembako;
-  final double sandang;
-  final double perumahan;
-  final double perlengkapan;
-  final double kesehatan;
-  final double transportasi;
-  final double informasi;
-  final double rekreasi;
-  final double pendidikan;
-  final double penyedia_pangan;
-  final double perawatan_pribadi;
-  final double total_inflasi;
-  final String tanggal;
-  final int kategori;
+  final String sembako;
+  final String sandang;
+  final String perumahan;
+  final String perlengkapan;
+  final String kesehatan;
+  final String transportasi;
+  final String informasi;
+  final String rekreasi;
+  final String pendidikan;
+  final String penyedia_pangan;
+  final String perawatan_pribadi;
+  final String total;
+  final String created_at;
+  final String updated_at;
+  final String kategori;
 
   const modelInflasi({
     required this.id,
@@ -30,28 +31,29 @@ class modelInflasi {
     required this.pendidikan,
     required this.penyedia_pangan,
     required this.perawatan_pribadi,
-    required this.total_inflasi,
-    required this.tanggal,
+    required this.total,
+    required this.created_at,
+    required this.updated_at,
     required this.kategori,
   });
 
   factory modelInflasi.fromJson(Map<String, dynamic> json) {
     return modelInflasi(
-      id: json['id'],
-      sembako: json['sembako'],
-      sandang: json['sandang'],
-      perumahan: json['perumahan'],
-      perlengkapan: json['perlengkapan'],
-      kesehatan: json['kesehatan'],
-      transportasi: json['transportasi'],
-      informasi: json['informasi'],
-      rekreasi: json['rekreasi'],
-      pendidikan: json['pendidikan'],
-      penyedia_pangan: json['penyedia_pangan'],
-      perawatan_pribadi: json['perawatan_pribadi'],
-      total_inflasi: json['total_inflasi'],
-      tanggal: json['tanggal'],
-      kategori: json['kategori']
-    );
+        id: json['id'],
+        kategori: json['kategori'],
+        sembako: json['sembako'],
+        sandang: json['sandang'],
+        perumahan: json['perumahan'],
+        perlengkapan: json['perlengkapan'],
+        kesehatan: json['kesehatan'],
+        transportasi: json['transportasi'],
+        informasi: json['informasi'],
+        rekreasi: json['rekreasi'],
+        pendidikan: json['pendidikan'],
+        penyedia_pangan: json['penyedia_pangan'],
+        perawatan_pribadi: json['perawatan_pribadi'],
+        total: json['total'],
+        created_at: json['created_at'],
+        updated_at: json['updated_at']);
   }
 }
