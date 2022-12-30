@@ -1,6 +1,5 @@
 // ignore_for_file: unused_local_variable, prefer_interpolation_to_compose_strings
-
-import 'package:bps_cilacap/restAPI/repository_penduduk_umur.dart';
+import 'package:bps_cilacap/restAPI/repository_sensus.dart';
 import 'package:flutter/material.dart';
 
 class SensusA extends StatefulWidget {
@@ -10,7 +9,7 @@ class SensusA extends StatefulWidget {
   State<SensusA> createState() => _SensusAState();
 }
 
-RepositoryPendudukUmur repositorypendudukumur = RepositoryPendudukUmur();
+RepositorySensus sensus = RepositorySensus();
 
 class _SensusAState extends State<SensusA> {
   @override
@@ -20,66 +19,45 @@ class _SensusAState extends State<SensusA> {
         MediaQuery.of(context).padding.bottom;
     final screenWeight = MediaQuery.of(context).size.width;
     return FutureBuilder(
-      future: repositorypendudukumur.getData(),
+      future: sensus.getData(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           List isipenduduk = snapshot.data as List;
           return ListView.builder(
             itemCount: 1,
             itemBuilder: (context, index) {
-              
               // isi data
-              String thn = isipenduduk[index = 0].tanggal[0] +
-                  isipenduduk[index = 0].tanggal[1] +
-                  isipenduduk[index = 0].tanggal[2] +
-                  isipenduduk[index = 0].tanggal[3];
-              int lk1 = isipenduduk[index = 0].a;
-              int lk2 = isipenduduk[index = 0].b;
-              int lk3 = isipenduduk[index = 0].c;
-              int lk4 = isipenduduk[index = 0].d;
-              int lk5 = isipenduduk[index = 0].e;
-              int lk6 = isipenduduk[index = 0].f;
-              int lk7 = isipenduduk[index = 0].g;
-              int lk8 = isipenduduk[index = 0].h;
-              int lk9 = isipenduduk[index = 0].i;
-              int lk10 = isipenduduk[index = 0].j;
-              int lk11 = isipenduduk[index = 0].k;
-              int lk12 = isipenduduk[index = 0].l;
-              int lk13 = isipenduduk[index = 0].m;
-              int lk14 = isipenduduk[index = 0].n;
-              int lk15 = isipenduduk[index = 0].o;
-              int lk16 = isipenduduk[index = 0].p;
-              int lkTotal = isipenduduk[index = 0].total;
-              int pr1 = isipenduduk[index = 1].a;
-              int pr2 = isipenduduk[index = 1].b;
-              int pr3 = isipenduduk[index = 1].c;
-              int pr4 = isipenduduk[index = 1].d;
-              int pr5 = isipenduduk[index = 1].e;
-              int pr6 = isipenduduk[index = 1].f;
-              int pr7 = isipenduduk[index = 1].g;
-              int pr8 = isipenduduk[index = 1].h;
-              int pr9 = isipenduduk[index = 1].i;
-              int pr10 = isipenduduk[index = 1].j;
-              int pr11 = isipenduduk[index = 1].k;
-              int pr12 = isipenduduk[index = 1].l;
-              int pr13 = isipenduduk[index = 1].m;
-              int pr14 = isipenduduk[index = 1].n;
-              int pr15 = isipenduduk[index = 1].o;
-              int pr16 = isipenduduk[index = 1].p;
-              int prTotal = isipenduduk[index = 1].total;
-              double persenPostGenZ = 11.61;
-              double totalPostGenZ = 225713;
-              double persenGenZ = 24.95;
-              double totalGenZ = 485335;
-              double persenMilenial = 25.16;
-              double totalMilenial = 489226;
-              double persenGenX = 21.72;
-              double totalGenX = 422338;
-              double persenBabyBoomer = 14.49;
-              double totalBabyBoomer = 281899;
-              double persenPreBoomer = 2.07;
-              double totalPreBoomer = 40306;
-              
+              String thn = isipenduduk[index = 0].created_at[0] +
+                  isipenduduk[index = 0].created_at[1] +
+                  isipenduduk[index = 0].created_at[2] +
+                  isipenduduk[index = 0].created_at[3];
+
+              int lkTotal = int.parse(isipenduduk[index = 0].lk);
+              int prTotal = int.parse(isipenduduk[index = 0].pr);
+
+              double totalPostGenZ =
+                  double.parse(isipenduduk[index = 0].post_gen_z);
+              double totalGenZ = double.parse(isipenduduk[index = 0].gen_z);
+              double totalMilenial =
+                  double.parse(isipenduduk[index = 0].milenial);
+              double totalGenX = double.parse(isipenduduk[index = 0].gen_x);
+              double totalBabyBoomer =
+                  double.parse(isipenduduk[index = 0].baby_boomer);
+              double totalPreBoomer =
+                  double.parse(isipenduduk[index = 0].pre_boomer);
+              double totalGen = totalPostGenZ +
+                  totalGenZ +
+                  totalMilenial +
+                  totalGenX +
+                  totalBabyBoomer +
+                  totalPreBoomer;
+              double persenPostGenZ = totalPostGenZ / totalGen * 100;
+              double persenGenZ = totalGenZ / totalGen * 100;
+              double persenMilenial = totalMilenial / totalGen * 100;
+              double persenGenX = totalGenX / totalGen * 100;
+              double persenBabyBoomer = totalBabyBoomer / totalGen * 100;
+              double persenPreBoomer = totalPreBoomer / totalGen * 100;
+
               return Container(
                 margin: const EdgeInsets.all(2),
                 child: Column(

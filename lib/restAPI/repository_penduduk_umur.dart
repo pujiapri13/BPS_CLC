@@ -3,7 +3,7 @@ import 'package:bps_cilacap/restAPI/model_penduduk_umur.dart';
 import 'package:http/http.dart' as http;
 
 class RepositoryPendudukUmur {
-  final _baseURL = 'https://bps-oss.herokuapp.com/bps-api/penduduk/';
+  final _baseURL = 'https://bps-asap.my.id/api/pddk-kerja-umur';
 
   Future getData() async {
     try {
@@ -11,7 +11,7 @@ class RepositoryPendudukUmur {
 
       if (response.statusCode == 200) {
         var cokk = jsonDecode(response.body);
-        return (cokk['Penduduk'] as List)
+        return (cokk['data'] as List)
             .map((isipendudukumur) => PendudukUmur.fromJson(isipendudukumur))
             .toList();
       }

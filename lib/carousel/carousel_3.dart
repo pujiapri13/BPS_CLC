@@ -27,18 +27,18 @@ class _carouselSlider3State extends State<carouselSlider3> {
           return PageView.builder(
             itemCount: 1,
             itemBuilder: (context, index) {
-              String tahun = isiipm[index = 0].tanggal[0] +
-                  isiipm[index = 0].tanggal[1] +
-                  isiipm[index = 0].tanggal[2] +
-                  isiipm[index = 0].tanggal[3];
-              String tahun2 = isiipm[index = 1].tanggal[0] +
-                  isiipm[index = 1].tanggal[1] +
-                  isiipm[index = 1].tanggal[2] +
-                  isiipm[index = 1].tanggal[3];
+              String tahun2 = isiipm[index = 0].created_at[0] +
+                  isiipm[index = 0].created_at[1] +
+                  isiipm[index = 0].created_at[2] +
+                  isiipm[index = 0].created_at[3];
+              String tahun = isiipm[index = 1].created_at[0] +
+                  isiipm[index = 1].created_at[1] +
+                  isiipm[index = 1].created_at[2] +
+                  isiipm[index = 1].created_at[3];
 
-              double ipmA = isiipm[index = 0].ipm;
-              double ipmB = isiipm[index = 1].ipm;
-              double pertumbuhan = isiipm[index = 0].pertumbuhan;
+              double ipmA = double.parse(isiipm[index = 1].ipm);
+              double ipmB = double.parse(isiipm[index = 0].ipm);
+              double pertumbuhan = ipmB - ipmA;
 
               return Container(
                 decoration: BoxDecoration(
@@ -72,7 +72,7 @@ class _carouselSlider3State extends State<carouselSlider3> {
                           SizedBox(
                             width: screenWidth * 0.9,
                             child: Text(
-                              "IPM Kabupaten Cilacap tahun $tahun",
+                              "IPM Kabupaten Cilacap tahun $tahun2",
                               style:
                                   const TextStyle(fontWeight: FontWeight.bold),
                             ),
@@ -81,7 +81,7 @@ class _carouselSlider3State extends State<carouselSlider3> {
                           SizedBox(
                             width: screenWidth * 0.9,
                             child: Text(
-                              "Tercatat poin IPM sebesar ${ipmA.toStringAsFixed(2)} atau naik ${pertumbuhan.toStringAsFixed(2)} poin dari $tahun2 yang tercatat sebesar ${ipmB.toStringAsFixed(2)}",
+                              "Tercatat poin IPM sebesar ${ipmB.toStringAsFixed(2)} atau naik ${pertumbuhan.toStringAsFixed(2)} poin dari $tahun yang tercatat sebesar ${ipmA.toStringAsFixed(2)}",
                             ),
                           ),
                         ],

@@ -26,27 +26,34 @@ class _IsiPukAState extends State<IsiPukA> {
           return PageView.builder(
             itemCount: 1,
             itemBuilder: (context, index) {
-              double akPr = isitenagakerja[index = 9].angkatan_kerja;
-              double bkjPr = isitenagakerja[index = 9].bekerja;
-              double pgrPr = isitenagakerja[index = 9].pengangguran;
-              double bakPr = isitenagakerja[index = 9].bkn_angkatan_kerja;
-              double sklPr = isitenagakerja[index = 9].sekolah;
-              double rutaPr = isitenagakerja[index = 9].urus_ruta;
-              double lainPr = isitenagakerja[index = 9].lainnya;
-              double tpakPr = isitenagakerja[index = 9].tpak;
-              double tkkPr = isitenagakerja[index = 9].tkk;
-              double tptPr = isitenagakerja[index = 9].tpt;
+              double akPr =
+                  double.parse(isitenagakerja[index = 9].angkatan_kerja);
+              double bkjPr = double.parse(isitenagakerja[index = 9].bekerja);
+              double pgrPr =
+                  double.parse(isitenagakerja[index = 9].pengangguran);
+              double bakPr =
+                  double.parse(isitenagakerja[index = 9].bkn_angkatan_kerja);
+              double sklPr = double.parse(isitenagakerja[index = 9].sekolah);
+              double rutaPr = double.parse(isitenagakerja[index = 9].urus_ruta);
+              double lainPr = double.parse(isitenagakerja[index = 9].lainnya);
+              double tpakPr = double.parse(isitenagakerja[index = 9].tpak);
+              double tkkPr = double.parse(isitenagakerja[index = 9].tkk);
+              double tptPr = double.parse(isitenagakerja[index = 9].tpt);
 
-              double akLk = isitenagakerja[index = 8].angkatan_kerja;
-              double bkjLk = isitenagakerja[index = 8].bekerja;
-              double pgrLk = isitenagakerja[index = 8].pengangguran;
-              double bakLk = isitenagakerja[index = 8].bkn_angkatan_kerja;
-              double sklLk = isitenagakerja[index = 8].sekolah;
-              double rutaLk = isitenagakerja[index = 8].urus_ruta;
-              double lainLk = isitenagakerja[index = 8].lainnya;
-              double tpakLk = isitenagakerja[index = 8].tpak;
-              double tkkLk = isitenagakerja[index = 8].tkk;
-              double tptLk = isitenagakerja[index = 8].tpt;
+              double akLk =
+                  double.parse(isitenagakerja[index = 8].angkatan_kerja);
+              double bkjLk = double.parse(isitenagakerja[index = 8].bekerja);
+              double pgrLk =
+                  double.parse(isitenagakerja[index = 8].pengangguran);
+              double bakLk =
+                  double.parse(isitenagakerja[index = 8].bkn_angkatan_kerja);
+              double sklLk = double.parse(isitenagakerja[index = 8].sekolah);
+              double rutaLk = double.parse(isitenagakerja[index = 8].urus_ruta);
+              double lainLk = double.parse(isitenagakerja[index = 8].lainnya);
+              double tpakLk = double.parse(isitenagakerja[index = 8].tpak);
+              double tkkLk = double.parse(isitenagakerja[index = 8].tkk);
+              double tptLk = double.parse(isitenagakerja[index = 8].tpt);
+
               return SizedBox(
                 height: 2000,
                 child: Column(

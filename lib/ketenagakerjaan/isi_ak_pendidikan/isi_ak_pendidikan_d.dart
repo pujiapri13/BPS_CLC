@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 
+import 'package:bps_cilacap/restAPI/repository_penduduk_pendidikan.dart';
 import 'package:bps_cilacap/restAPI/repository_tenaga_kerja.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
@@ -14,7 +15,8 @@ class IsiAkPendidikanD extends StatefulWidget {
 
 enum LegendShape { circle, rectangle }
 
-RepositoryTenagaKerja repositorytenagakerja = RepositoryTenagaKerja();
+RepositoryPendudukPendidikan repositoryPendudukPendidikan =
+    RepositoryPendudukPendidikan();
 
 class _IsiAkPendidikanDState extends State<IsiAkPendidikanD> {
   int key = 0;
@@ -26,14 +28,26 @@ class _IsiAkPendidikanDState extends State<IsiAkPendidikanD> {
     // ignore: unused_local_variable
     final screenWidth = MediaQuery.of(context).size.width;
     return FutureBuilder(
-      future: repositorytenagakerja.getData(),
+      future: repositoryPendudukPendidikan.getData(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           // ignore: unused_local_variable
-          List isitenagakerja = snapshot.data as List;
+          List isipddkpend = snapshot.data as List;
           return PageView.builder(
             itemCount: 1,
             itemBuilder: (context, index) {
+              double sdLK = double.parse(isipddkpend[index = 1].sd);
+              double smpLK = double.parse(isipddkpend[index = 1].smp);
+              double smaLK = double.parse(isipddkpend[index = 1].sma);
+              double ptLK =
+                  double.parse(isipddkpend[index = 1].perguruan_tinggi);
+
+              double sdPR = double.parse(isipddkpend[index = 6].sd);
+              double smpPR = double.parse(isipddkpend[index = 6].smp);
+              double smaPR = double.parse(isipddkpend[index = 6].sma);
+              double ptPR =
+                  double.parse(isipddkpend[index = 6].perguruan_tinggi);
+
               return Column(
                 children: [
                   Flexible(
@@ -48,12 +62,12 @@ class _IsiAkPendidikanDState extends State<IsiAkPendidikanD> {
                               fit: FlexFit.tight,
                               child: Container(
                                 height: screenHeight * 0.05,
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 child: const Center(
                                   child: Text(
                                     "Tingkat Pendidikan",
                                     style: TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.bold),
                                     textAlign: TextAlign.center,
                                   ),
@@ -64,13 +78,13 @@ class _IsiAkPendidikanDState extends State<IsiAkPendidikanD> {
                               flex: 2,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
                                 child: const Center(
                                   child: Text(
                                     "Laki-laki",
                                     style: TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
@@ -80,13 +94,13 @@ class _IsiAkPendidikanDState extends State<IsiAkPendidikanD> {
                               flex: 2,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
                                 child: const Center(
                                   child: Text(
                                     "Perempuan",
                                     style: TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
@@ -96,13 +110,13 @@ class _IsiAkPendidikanDState extends State<IsiAkPendidikanD> {
                               flex: 2,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
                                 child: const Center(
                                   child: Text(
                                     "Jumlah",
                                     style: TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
@@ -132,8 +146,8 @@ class _IsiAkPendidikanDState extends State<IsiAkPendidikanD> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
-                                  child: Text("49.34"),
+                                child: Center(
+                                  child: Text(sdLK.toStringAsFixed(2)),
                                 ),
                               ),
                             ),
@@ -142,9 +156,9 @@ class _IsiAkPendidikanDState extends State<IsiAkPendidikanD> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "54.61",
+                                    sdPR.toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -154,9 +168,9 @@ class _IsiAkPendidikanDState extends State<IsiAkPendidikanD> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "51.39",
+                                    ((sdLK + sdPR) / 2).toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -185,9 +199,9 @@ class _IsiAkPendidikanDState extends State<IsiAkPendidikanD> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "21.09",
+                                    smpLK.toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -197,9 +211,9 @@ class _IsiAkPendidikanDState extends State<IsiAkPendidikanD> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "19.21",
+                                    smpPR.toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -209,9 +223,9 @@ class _IsiAkPendidikanDState extends State<IsiAkPendidikanD> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "20.36",
+                                    ((smpLK + smpPR) / 2).toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -240,9 +254,9 @@ class _IsiAkPendidikanDState extends State<IsiAkPendidikanD> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "23.75",
+                                    smaLK.toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -252,9 +266,9 @@ class _IsiAkPendidikanDState extends State<IsiAkPendidikanD> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "17.11",
+                                    smaPR.toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -264,9 +278,9 @@ class _IsiAkPendidikanDState extends State<IsiAkPendidikanD> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "21.16",
+                                    ((smaLK + smaPR) / 2).toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -295,9 +309,9 @@ class _IsiAkPendidikanDState extends State<IsiAkPendidikanD> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "5.82",
+                                    ptLK.toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -307,9 +321,9 @@ class _IsiAkPendidikanDState extends State<IsiAkPendidikanD> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "9.07",
+                                    ptPR.toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -319,9 +333,9 @@ class _IsiAkPendidikanDState extends State<IsiAkPendidikanD> {
                               fit: FlexFit.tight,
                               child: SizedBox(
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "7.09",
+                                    ((ptLK + ptPR) / 2).toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -334,7 +348,7 @@ class _IsiAkPendidikanDState extends State<IsiAkPendidikanD> {
                               flex: 3,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 padding: const EdgeInsets.only(
                                     top: 10, left: 5, right: 5),
                                 height: screenHeight * 0.05,
@@ -350,11 +364,12 @@ class _IsiAkPendidikanDState extends State<IsiAkPendidikanD> {
                               flex: 2,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "100.00",
+                                    (sdLK + smpLK + smaLK + ptLK)
+                                        .toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -363,11 +378,12 @@ class _IsiAkPendidikanDState extends State<IsiAkPendidikanD> {
                               flex: 2,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "100.00",
+                                    (sdPR + smpPR + smaPR + ptPR)
+                                        .toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -376,11 +392,14 @@ class _IsiAkPendidikanDState extends State<IsiAkPendidikanD> {
                               flex: 2,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "100.00",
+                                    (((sdLK + smpLK + smaLK + ptLK) +
+                                                (sdPR + smpPR + smaPR + ptPR)) /
+                                            2)
+                                        .toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -395,11 +414,11 @@ class _IsiAkPendidikanDState extends State<IsiAkPendidikanD> {
                     fit: FlexFit.tight,
                     child: PieChart(
                       key: ValueKey(key),
-                      dataMap: const <String, double>{
-                        "SD ke bawah": 51.39,
-                        "SMP": 20.36,
-                        "SMA/SMK": 21.16,
-                        "Perguruan Tinggi": 7.09,
+                      dataMap: <String, double>{
+                        "SD ke bawah": (sdLK + sdPR) / 2,
+                        "SMP": (smpLK + smpPR) / 2,
+                        "SMA/SMK": (smaLK + smaPR) / 2,
+                        "Perguruan Tinggi": (ptLK + ptPR) / 2,
                       },
                       animationDuration: const Duration(milliseconds: 800),
                       chartLegendSpacing: 50,
@@ -433,7 +452,7 @@ class _IsiAkPendidikanDState extends State<IsiAkPendidikanD> {
                         showChartValuesOutside: true,
                       ),
                       ringStrokeWidth: 50,
-                      emptyColor: Colors.grey,
+                      emptyColor: Colors.cyan,
                       emptyColorGradient: const [
                         Color(0xff6c5ce7),
                         Colors.blue,

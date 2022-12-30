@@ -3,6 +3,7 @@
 import 'package:bps_cilacap/Icons/back_icons_icons.dart';
 import 'package:bps_cilacap/homescreen_menu/jumlah_penduduk/penduduk_kecamatan.dart';
 import 'package:bps_cilacap/homescreen_menu/jumlah_penduduk/penduduk_umur.dart';
+import 'package:bps_cilacap/restAPI/repository_penduduk.dart';
 import 'package:bps_cilacap/restAPI/repository_penduduk_umur.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class jumlahPenduduk extends StatefulWidget {
   State<jumlahPenduduk> createState() => _jumlahPendudukState();
 }
 
-RepositoryPendudukUmur repositorypendudukumur = RepositoryPendudukUmur();
+RepositoryJumlahPenduduk repositoryJumlahPenduduk = RepositoryJumlahPenduduk();
 
 class _jumlahPendudukState extends State<jumlahPenduduk> {
   @override
@@ -42,21 +43,21 @@ class _jumlahPendudukState extends State<jumlahPenduduk> {
           ),
         ),
         body: FutureBuilder(
-          future: repositorypendudukumur.getData(),
+          future: repositoryJumlahPenduduk.getData(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              List isipendudukumur = snapshot.data as List;
+              List isijumlahpenduduk = snapshot.data as List;
               return PageView.builder(
                 itemCount: 1,
                 itemBuilder: (context, index) {
-                  String thn = isipendudukumur[index = 1].tanggal[0] +
-                      isipendudukumur[index = 1].tanggal[1] +
-                      isipendudukumur[index = 1].tanggal[2] +
-                      isipendudukumur[index = 1].tanggal[3];
-                  int totalpenduduk = isipendudukumur[index = 0].total +
-                      isipendudukumur[index = 1].total;
-                  int totallaki = isipendudukumur[index = 0].total;
-                  int totalperempuan = isipendudukumur[index = 1].total;
+                  String thn = isijumlahpenduduk[index = 0].created_at[0] +
+                      isijumlahpenduduk[index = 0].created_at[1] +
+                      isijumlahpenduduk[index = 0].created_at[2] +
+                      isijumlahpenduduk[index = 0].created_at[3];
+                  int totallaki = int.parse(isijumlahpenduduk[index = 0].total);
+                  int totalperempuan =
+                      int.parse(isijumlahpenduduk[index = 0].total);
+                  int totalpenduduk = totallaki + totalperempuan;
                   return Container(
                     padding: const EdgeInsets.all(2),
                     child: Column(

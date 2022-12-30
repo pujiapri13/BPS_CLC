@@ -175,10 +175,11 @@ class _PerkembanganKemiskinanState extends State<PerkembanganKemiskinan> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       child: const Text(
                                         "Rincian",
                                         textAlign: TextAlign.center,
+                                        style: TextStyle(color: Colors.white),
                                       ),
                                     ),
                                   ),
@@ -188,10 +189,11 @@ class _PerkembanganKemiskinanState extends State<PerkembanganKemiskinan> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       child: Text(
                                         th1,
                                         textAlign: TextAlign.center,
+                                        style: TextStyle(color: Colors.white),
                                       ),
                                     ),
                                   ),
@@ -201,10 +203,11 @@ class _PerkembanganKemiskinanState extends State<PerkembanganKemiskinan> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       child: Text(
                                         th2,
                                         textAlign: TextAlign.center,
+                                        style: TextStyle(color: Colors.white),
                                       ),
                                     ),
                                   ),
@@ -214,10 +217,11 @@ class _PerkembanganKemiskinanState extends State<PerkembanganKemiskinan> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       child: Text(
                                         th3,
                                         textAlign: TextAlign.center,
+                                        style: TextStyle(color: Colors.white),
                                       ),
                                     ),
                                   ),
@@ -227,10 +231,11 @@ class _PerkembanganKemiskinanState extends State<PerkembanganKemiskinan> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       child: Text(
                                         th4,
                                         textAlign: TextAlign.center,
+                                        style: TextStyle(color: Colors.white),
                                       ),
                                     ),
                                   ),
@@ -240,10 +245,11 @@ class _PerkembanganKemiskinanState extends State<PerkembanganKemiskinan> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       child: Text(
                                         th5,
                                         textAlign: TextAlign.center,
+                                        style: TextStyle(color: Colors.white),
                                       ),
                                     ),
                                   ),

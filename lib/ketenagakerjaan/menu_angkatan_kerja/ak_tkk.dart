@@ -1,4 +1,5 @@
 import 'package:bps_cilacap/Icons/back_icons_icons.dart';
+import 'package:bps_cilacap/restAPI/repository_tkk.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +11,7 @@ class AkTKK extends StatefulWidget {
 }
 
 class _AkTKKState extends State<AkTKK> {
+  RepositoryTkk repositoryTkk = RepositoryTkk();
   final double width = 7;
 
   late List<BarChartGroupData> rawBarGroups;
@@ -17,50 +19,9 @@ class _AkTKKState extends State<AkTKK> {
 
   int touchedGroupIndex = -1;
 
-  int th2021 = 2021;
-  int th2020 = 2020;
-  int th2019 = 2019;
-  int th2018 = 2018;
-  int th2017 = 2017;
-
-  double lk2021 = 87.95;
-  double lk2020 = 89.41;
-  double lk2019 = 92.00;
-  double lk2018 = 92.25;
-  double lk2017 = 92.44;
-
-  double pr2021 = 93.52;
-  double pr2020 = 93.25;
-  double pr2019 = 93.91;
-  double pr2018 = 92.95;
-  double pr2017 = 95.75;
-
-  double jml2021 = 90.03;
-  double jml2020 = 90.90;
-  double jml2019 = 92.69;
-  double jml2018 = 92.52;
-  double jml2017 = 93.70;
-
   @override
   void initState() {
     super.initState();
-    final barGroup1 = makeGroupData(0, pr2017, lk2017, jml2017);
-    final barGroup2 = makeGroupData(1, pr2018, lk2018, jml2018);
-    final barGroup3 = makeGroupData(2, pr2019, lk2019, jml2019);
-    final barGroup4 = makeGroupData(3, pr2020, lk2020, jml2020);
-    final barGroup5 = makeGroupData(4, pr2021, lk2021, jml2021);
-
-    final items = [
-      barGroup1,
-      barGroup2,
-      barGroup3,
-      barGroup4,
-      barGroup5,
-    ];
-
-    rawBarGroups = items;
-
-    showingBarGroups = rawBarGroups;
   }
 
   @override
@@ -71,544 +32,644 @@ class _AkTKKState extends State<AkTKK> {
     // ignore: unused_local_variable
     final screenWeight = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Tingkat Kesempatan Kerja',
-          style: TextStyle(fontSize: 17),
-        ),
-        backgroundColor: Colors.black,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: const Center(
-            child: Icon(
-              BackIcons.circle_arrow,
-              size: 40,
+        appBar: AppBar(
+          title: const Text(
+            'Tingkat Kesempatan Kerja',
+            style: TextStyle(fontSize: 17),
+          ),
+          backgroundColor: Colors.black,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Center(
+              child: Icon(
+                BackIcons.circle_arrow,
+                size: 40,
+              ),
             ),
           ),
         ),
-      ),
-      body: Container(
-        padding: const EdgeInsets.all(2),
-        child: Column(children: [
-          Flexible(
-            flex: 2,
-            fit: FlexFit.tight,
-            child: Column(children: [
-              Flexible(
-                flex: 1,
-                fit: FlexFit.tight,
-                child: Container(
-                  height: 100,
-                  color: Colors.black,
-                  child: const Center(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 2,
-                        horizontal: 5,
-                      ),
-                      child: Text(
-                        "Tingkat Kesempatan Kerja (TKK) Kabupaten Cilacap Menurut Jenis Kelamin",
-                        style: TextStyle(color: Colors.white, fontSize: 17),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Flexible(
-                flex: 3,
-                fit: FlexFit.tight,
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Flexible(
-                          flex: 3,
-                          fit: FlexFit.tight,
-                          child: Container(
-                            height: screenHeight * 0.05,
-                            color: Colors.grey,
-                            child: const Center(
-                              child: Text(
-                                "Jenis Kelamin",
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 2,
-                          fit: FlexFit.tight,
-                          child: Container(
-                            color: Colors.grey,
-                            height: screenHeight * 0.05,
-                            child: Center(
-                              child: Text(
-                                th2021.toString(),
-                                style: const TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 2,
-                          fit: FlexFit.tight,
-                          child: Container(
-                            color: Colors.grey,
-                            height: screenHeight * 0.05,
-                            child: Center(
-                              child: Text(
-                                th2020.toString(),
-                                style: const TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 2,
-                          fit: FlexFit.tight,
-                          child: Container(
-                            color: Colors.grey,
-                            height: screenHeight * 0.05,
-                            child: Center(
-                              child: Text(
-                                th2019.toString(),
-                                style: const TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 2,
-                          fit: FlexFit.tight,
-                          child: Container(
-                            color: Colors.grey,
-                            height: screenHeight * 0.05,
-                            child: Center(
-                              child: Text(
-                                th2018.toString(),
-                                style: const TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 2,
-                          fit: FlexFit.tight,
-                          child: Container(
-                            color: Colors.grey,
-                            height: screenHeight * 0.05,
-                            child: Center(
-                              child: Text(
-                                th2017.toString(),
-                                style: const TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Flexible(
-                          flex: 3,
-                          fit: FlexFit.tight,
-                          child: Container(
-                            padding: const EdgeInsets.only(
-                                top: 10, left: 5, right: 5),
-                            height: screenHeight * 0.05,
-                            child: const Center(
-                              child: Text(
-                                "Laki-laki",
-                                textAlign: TextAlign.left,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 2,
-                          fit: FlexFit.tight,
-                          child: SizedBox(
-                            height: screenHeight * 0.05,
-                            child: Center(
-                              child: Text(lk2021.toString()),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 2,
-                          fit: FlexFit.tight,
-                          child: SizedBox(
-                            height: screenHeight * 0.05,
-                            child: Center(
-                              child: Text(lk2020.toString()),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 2,
-                          fit: FlexFit.tight,
-                          child: SizedBox(
-                            height: screenHeight * 0.05,
-                            child: Center(
-                              child: Text(lk2019.toString()),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 2,
-                          fit: FlexFit.tight,
-                          child: SizedBox(
-                            height: screenHeight * 0.05,
-                            child: Center(
-                              child: Text(lk2018.toString()),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 2,
-                          fit: FlexFit.tight,
-                          child: SizedBox(
-                            height: screenHeight * 0.05,
-                            child: Center(
-                              child: Text(lk2017.toString()),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Flexible(
-                          flex: 3,
-                          fit: FlexFit.tight,
-                          child: Container(
-                            padding: const EdgeInsets.only(
-                                top: 10, left: 5, right: 5),
-                            height: screenHeight * 0.05,
-                            child: const Center(
-                              child: Text(
-                                "Perempuan",
-                                textAlign: TextAlign.left,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 2,
-                          fit: FlexFit.tight,
-                          child: SizedBox(
-                            height: screenHeight * 0.05,
-                            child: Center(
-                              child: Text(pr2021.toString()),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 2,
-                          fit: FlexFit.tight,
-                          child: SizedBox(
-                            height: screenHeight * 0.05,
-                            child: Center(
-                              child: Text(pr2020.toString()),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 2,
-                          fit: FlexFit.tight,
-                          child: SizedBox(
-                            height: screenHeight * 0.05,
-                            child: Center(
-                              child: Text(pr2019.toString()),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 2,
-                          fit: FlexFit.tight,
-                          child: SizedBox(
-                            height: screenHeight * 0.05,
-                            child: Center(
-                              child: Text(pr2018.toString()),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 2,
-                          fit: FlexFit.tight,
-                          child: SizedBox(
-                            height: screenHeight * 0.05,
-                            child: Center(
-                              child: Text(pr2017.toString()),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Flexible(
-                          flex: 3,
-                          fit: FlexFit.tight,
-                          child: Container(
-                            color: Colors.grey,
-                            padding: const EdgeInsets.only(
-                                top: 10, left: 5, right: 5),
-                            height: screenHeight * 0.05,
-                            child: const Center(
-                              child: Text(
-                                "Jumlah",
-                              ),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 2,
-                          fit: FlexFit.tight,
-                          child: Container(
-                            color: Colors.grey,
-                            height: screenHeight * 0.05,
-                            child: Center(
-                              child: Text(jml2021.toString()),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 2,
-                          fit: FlexFit.tight,
-                          child: Container(
-                            color: Colors.grey,
-                            height: screenHeight * 0.05,
-                            child: Center(
-                              child: Text(jml2020.toString()),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 2,
-                          fit: FlexFit.tight,
-                          child: Container(
-                            color: Colors.grey,
-                            height: screenHeight * 0.05,
-                            child: Center(
-                              child: Text(jml2019.toString()),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 2,
-                          fit: FlexFit.tight,
-                          child: Container(
-                            color: Colors.grey,
-                            height: screenHeight * 0.05,
-                            child: Center(
-                              child: Text(jml2018.toString()),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 2,
-                          fit: FlexFit.tight,
-                          child: Container(
-                            color: Colors.grey,
-                            height: screenHeight * 0.05,
-                            child: Center(
-                              child: Text(
-                                jml2017.toString(),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Flexible(
-                        flex: 1,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Container(
-                              alignment: Alignment.centerLeft,
-                              child: const Text("Sumber Data :"),
-                            ),
-                            Container(
-                              alignment: Alignment.centerLeft,
-                              child: const Text(
-                                " - Survey Angkatan Kerja Nasional",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ],
-                        ))
-                  ],
-                ),
-              ),
-              Flexible(
-                flex: 6,
-                fit: FlexFit.tight,
-                child: Container(
-                  color: Colors.transparent,
-                  child: Card(
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4)),
-                    color: const Color(0xff2c4260),
-                    child: Padding(
-                      padding: const EdgeInsets.all(15),
-                      child: Expanded(
-                        child: BarChart(
-                          BarChartData(
-                            maxY: 120,
-                            titlesData: FlTitlesData(
-                              show: true,
-                              rightTitles: AxisTitles(
-                                sideTitles: SideTitles(showTitles: false),
-                              ),
-                              topTitles: AxisTitles(
-                                sideTitles: SideTitles(
-                                  showTitles: false,
+        body: FutureBuilder(
+          future: repositoryTkk.getData(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              List isitkk = snapshot.data as List;
+              return PageView.builder(
+                itemCount: 1,
+                itemBuilder: (context, index) {
+                  String th1 = isitkk[index = 4].created_at[0] +
+                      isitkk[index = 4].created_at[1] +
+                      isitkk[index = 4].created_at[2] +
+                      isitkk[index = 4].created_at[3];
+                  String th2 = isitkk[index = 3].created_at[0] +
+                      isitkk[index = 3].created_at[1] +
+                      isitkk[index = 3].created_at[2] +
+                      isitkk[index = 3].created_at[3];
+                  String th3 = isitkk[index = 2].created_at[0] +
+                      isitkk[index = 2].created_at[1] +
+                      isitkk[index = 2].created_at[2] +
+                      isitkk[index = 2].created_at[3];
+                  String th4 = isitkk[index = 1].created_at[0] +
+                      isitkk[index = 1].created_at[1] +
+                      isitkk[index = 1].created_at[2] +
+                      isitkk[index = 1].created_at[3];
+                  String th5 = isitkk[index = 0].created_at[0] +
+                      isitkk[index = 0].created_at[1] +
+                      isitkk[index = 0].created_at[2] +
+                      isitkk[index = 0].created_at[3];
+
+                  double lk1 = double.parse(isitkk[index = 4].lk);
+                  double lk2 = double.parse(isitkk[index = 3].lk);
+                  double lk3 = double.parse(isitkk[index = 2].lk);
+                  double lk4 = double.parse(isitkk[index = 1].lk);
+                  double lk5 = double.parse(isitkk[index = 0].lk);
+
+                  double pr1 = double.parse(isitkk[index = 4].pr);
+                  double pr2 = double.parse(isitkk[index = 3].pr);
+                  double pr3 = double.parse(isitkk[index = 2].pr);
+                  double pr4 = double.parse(isitkk[index = 1].pr);
+                  double pr5 = double.parse(isitkk[index = 0].pr);
+
+                  double jml1 = double.parse(isitkk[index = 4].jumlah);
+                  double jml2 = double.parse(isitkk[index = 3].jumlah);
+                  double jml3 = double.parse(isitkk[index = 2].jumlah);
+                  double jml4 = double.parse(isitkk[index = 1].jumlah);
+                  double jml5 = double.parse(isitkk[index = 0].jumlah);
+
+                  final barGroup1 = makeGroupData(0, pr5, lk5, jml5);
+                  final barGroup2 = makeGroupData(1, pr4, lk4, jml4);
+                  final barGroup3 = makeGroupData(2, pr3, lk3, jml3);
+                  final barGroup4 = makeGroupData(3, pr2, lk2, jml2);
+                  final barGroup5 = makeGroupData(4, pr1, lk1, jml1);
+
+                  final items = [
+                    barGroup5,
+                    barGroup4,
+                    barGroup3,
+                    barGroup2,
+                    barGroup1,
+                  ];
+
+                  rawBarGroups = items;
+
+                  showingBarGroups = rawBarGroups;
+
+                  return Container(
+                    padding: const EdgeInsets.all(2),
+                    child: Column(children: [
+                      Flexible(
+                        flex: 2,
+                        fit: FlexFit.tight,
+                        child: Column(children: [
+                          Flexible(
+                            flex: 1,
+                            fit: FlexFit.tight,
+                            child: Container(
+                              height: 100,
+                              color: Colors.black,
+                              child: const Center(
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: 2,
+                                    horizontal: 5,
+                                  ),
+                                  child: Text(
+                                    "Tingkat Kesempatan Kerja (TKK) Kabupaten Cilacap Menurut Jenis Kelamin",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 17),
+                                    textAlign: TextAlign.center,
+                                  ),
                                 ),
                               ),
-                              bottomTitles: AxisTitles(
-                                sideTitles: SideTitles(
-                                  showTitles: true,
-                                  getTitlesWidget:
-                                      (double value, TitleMeta meta) {
-                                    List<String> titles = [
-                                      th2017.toString(),
-                                      th2018.toString(),
-                                      th2019.toString(),
-                                      th2020.toString(),
-                                      th2021.toString()
-                                    ];
-
-                                    Widget text = Text(
-                                      titles[value.toInt()],
-                                      style: const TextStyle(
-                                        color: Color(0xff7589a2),
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14,
+                            ),
+                          ),
+                          Flexible(
+                            flex: 3,
+                            fit: FlexFit.tight,
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Flexible(
+                                      flex: 3,
+                                      fit: FlexFit.tight,
+                                      child: Container(
+                                        height: screenHeight * 0.05,
+                                        color: Colors.cyan,
+                                        child: const Center(
+                                          child: Text(
+                                            "Jenis Kelamin",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold),
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ),
                                       ),
-                                    );
-
-                                    return SideTitleWidget(
-                                        axisSide: meta.axisSide,
-                                        space: 5, //margin top
-                                        child: text);
-                                  },
-                                  reservedSize: 50,
+                                    ),
+                                    Flexible(
+                                      flex: 2,
+                                      fit: FlexFit.tight,
+                                      child: Container(
+                                        color: Colors.cyan,
+                                        height: screenHeight * 0.05,
+                                        child: Center(
+                                          child: Text(
+                                            th1.toString(),
+                                            style: const TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Flexible(
+                                      flex: 2,
+                                      fit: FlexFit.tight,
+                                      child: Container(
+                                        color: Colors.cyan,
+                                        height: screenHeight * 0.05,
+                                        child: Center(
+                                          child: Text(
+                                            th2.toString(),
+                                            style: const TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Flexible(
+                                      flex: 2,
+                                      fit: FlexFit.tight,
+                                      child: Container(
+                                        color: Colors.cyan,
+                                        height: screenHeight * 0.05,
+                                        child: Center(
+                                          child: Text(
+                                            th3.toString(),
+                                            style: const TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Flexible(
+                                      flex: 2,
+                                      fit: FlexFit.tight,
+                                      child: Container(
+                                        color: Colors.cyan,
+                                        height: screenHeight * 0.05,
+                                        child: Center(
+                                          child: Text(
+                                            th4.toString(),
+                                            style: const TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Flexible(
+                                      flex: 2,
+                                      fit: FlexFit.tight,
+                                      child: Container(
+                                        color: Colors.cyan,
+                                        height: screenHeight * 0.05,
+                                        child: Center(
+                                          child: Text(
+                                            th5.toString(),
+                                            style: const TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ),
-                              leftTitles: AxisTitles(
-                                sideTitles: SideTitles(
-                                  showTitles: true,
-                                  reservedSize: 28,
-                                  interval: 1,
-                                  getTitlesWidget:
-                                      (double value, TitleMeta meta) {
-                                    const style = TextStyle(
-                                      color: Color(0xff7589a2),
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 10,
-                                    );
-                                    String text;
-                                    if (value == 10) {
-                                      text = '10%';
-                                    } else if (value == 25) {
-                                      text = '25%';
-                                    } else if (value == 50) {
-                                      text = '50%';
-                                    } else if (value == 75) {
-                                      text = '75%';
-                                    } else if (value == 100) {
-                                      text = '100%';
-                                    } else {
-                                      return Container();
-                                    }
-                                    return SideTitleWidget(
-                                      axisSide: meta.axisSide,
-                                      space: 0,
-                                      child: Text(text, style: style),
-                                    );
-                                  },
+                                Row(
+                                  children: [
+                                    Flexible(
+                                      flex: 3,
+                                      fit: FlexFit.tight,
+                                      child: Container(
+                                        padding: const EdgeInsets.only(
+                                            top: 10, left: 5, right: 5),
+                                        height: screenHeight * 0.05,
+                                        child: const Center(
+                                          child: Text(
+                                            "Laki-laki",
+                                            textAlign: TextAlign.left,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Flexible(
+                                      flex: 2,
+                                      fit: FlexFit.tight,
+                                      child: SizedBox(
+                                        height: screenHeight * 0.05,
+                                        child: Center(
+                                          child: Text(lk1.toString()),
+                                        ),
+                                      ),
+                                    ),
+                                    Flexible(
+                                      flex: 2,
+                                      fit: FlexFit.tight,
+                                      child: SizedBox(
+                                        height: screenHeight * 0.05,
+                                        child: Center(
+                                          child: Text(lk2.toString()),
+                                        ),
+                                      ),
+                                    ),
+                                    Flexible(
+                                      flex: 2,
+                                      fit: FlexFit.tight,
+                                      child: SizedBox(
+                                        height: screenHeight * 0.05,
+                                        child: Center(
+                                          child: Text(lk3.toString()),
+                                        ),
+                                      ),
+                                    ),
+                                    Flexible(
+                                      flex: 2,
+                                      fit: FlexFit.tight,
+                                      child: SizedBox(
+                                        height: screenHeight * 0.05,
+                                        child: Center(
+                                          child: Text(lk4.toString()),
+                                        ),
+                                      ),
+                                    ),
+                                    Flexible(
+                                      flex: 2,
+                                      fit: FlexFit.tight,
+                                      child: SizedBox(
+                                        height: screenHeight * 0.05,
+                                        child: Center(
+                                          child: Text(lk5.toString()),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ),
+                                Row(
+                                  children: [
+                                    Flexible(
+                                      flex: 3,
+                                      fit: FlexFit.tight,
+                                      child: Container(
+                                        padding: const EdgeInsets.only(
+                                            top: 10, left: 5, right: 5),
+                                        height: screenHeight * 0.05,
+                                        child: const Center(
+                                          child: Text(
+                                            "Perempuan",
+                                            textAlign: TextAlign.left,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Flexible(
+                                      flex: 2,
+                                      fit: FlexFit.tight,
+                                      child: SizedBox(
+                                        height: screenHeight * 0.05,
+                                        child: Center(
+                                          child: Text(pr1.toString()),
+                                        ),
+                                      ),
+                                    ),
+                                    Flexible(
+                                      flex: 2,
+                                      fit: FlexFit.tight,
+                                      child: SizedBox(
+                                        height: screenHeight * 0.05,
+                                        child: Center(
+                                          child: Text(pr2.toString()),
+                                        ),
+                                      ),
+                                    ),
+                                    Flexible(
+                                      flex: 2,
+                                      fit: FlexFit.tight,
+                                      child: SizedBox(
+                                        height: screenHeight * 0.05,
+                                        child: Center(
+                                          child: Text(pr3.toString()),
+                                        ),
+                                      ),
+                                    ),
+                                    Flexible(
+                                      flex: 2,
+                                      fit: FlexFit.tight,
+                                      child: SizedBox(
+                                        height: screenHeight * 0.05,
+                                        child: Center(
+                                          child: Text(pr4.toString()),
+                                        ),
+                                      ),
+                                    ),
+                                    Flexible(
+                                      flex: 2,
+                                      fit: FlexFit.tight,
+                                      child: SizedBox(
+                                        height: screenHeight * 0.05,
+                                        child: Center(
+                                          child: Text(pr5.toString()),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    Flexible(
+                                      flex: 3,
+                                      fit: FlexFit.tight,
+                                      child: Container(
+                                        color: Colors.cyan,
+                                        padding: const EdgeInsets.only(
+                                            top: 10, left: 5, right: 5),
+                                        height: screenHeight * 0.05,
+                                        child: const Center(
+                                          child: Text(
+                                            "Jumlah",
+                                            style:
+                                                TextStyle(color: Colors.white),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Flexible(
+                                      flex: 2,
+                                      fit: FlexFit.tight,
+                                      child: Container(
+                                        color: Colors.cyan,
+                                        height: screenHeight * 0.05,
+                                        child: Center(
+                                          child: Text(
+                                            jml1.toString(),
+                                            style:
+                                                TextStyle(color: Colors.white),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Flexible(
+                                      flex: 2,
+                                      fit: FlexFit.tight,
+                                      child: Container(
+                                        color: Colors.cyan,
+                                        height: screenHeight * 0.05,
+                                        child: Center(
+                                          child: Text(
+                                            jml2.toString(),
+                                            style:
+                                                TextStyle(color: Colors.white),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Flexible(
+                                      flex: 2,
+                                      fit: FlexFit.tight,
+                                      child: Container(
+                                        color: Colors.cyan,
+                                        height: screenHeight * 0.05,
+                                        child: Center(
+                                          child: Text(
+                                            jml3.toString(),
+                                            style:
+                                                TextStyle(color: Colors.white),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Flexible(
+                                      flex: 2,
+                                      fit: FlexFit.tight,
+                                      child: Container(
+                                        color: Colors.cyan,
+                                        height: screenHeight * 0.05,
+                                        child: Center(
+                                          child: Text(
+                                            jml4.toString(),
+                                            style:
+                                                TextStyle(color: Colors.white),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Flexible(
+                                      flex: 2,
+                                      fit: FlexFit.tight,
+                                      child: Container(
+                                        color: Colors.cyan,
+                                        height: screenHeight * 0.05,
+                                        child: Center(
+                                          child: Text(
+                                            jml5.toString(),
+                                            style:
+                                                TextStyle(color: Colors.white),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Flexible(
+                                    flex: 1,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
+                                      children: [
+                                        Container(
+                                          alignment: Alignment.centerLeft,
+                                          child: const Text("Sumber Data :"),
+                                        ),
+                                        Container(
+                                          alignment: Alignment.centerLeft,
+                                          child: const Text(
+                                            " - Survey Angkatan Kerja Nasional",
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      ],
+                                    ))
+                              ],
                             ),
-                            borderData: FlBorderData(
-                              show: false,
-                            ),
-                            barGroups: showingBarGroups,
-                            gridData: FlGridData(show: false),
                           ),
-                        ),
+                          Flexible(
+                            flex: 6,
+                            fit: FlexFit.tight,
+                            child: Container(
+                              color: Colors.transparent,
+                              child: Card(
+                                elevation: 0,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(4)),
+                                color: const Color(0xff2c4260),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(15),
+                                  child: Expanded(
+                                    child: BarChart(
+                                      BarChartData(
+                                        maxY: 150,
+                                        titlesData: FlTitlesData(
+                                          show: true,
+                                          rightTitles: AxisTitles(
+                                            sideTitles:
+                                                SideTitles(showTitles: false),
+                                          ),
+                                          topTitles: AxisTitles(
+                                            sideTitles: SideTitles(
+                                              showTitles: false,
+                                            ),
+                                          ),
+                                          bottomTitles: AxisTitles(
+                                            sideTitles: SideTitles(
+                                              showTitles: true,
+                                              getTitlesWidget: (double value,
+                                                  TitleMeta meta) {
+                                                List<String> titles = [
+                                                  th5.toString(),
+                                                  th4.toString(),
+                                                  th3.toString(),
+                                                  th2.toString(),
+                                                  th1.toString()
+                                                ];
+
+                                                Widget text = Text(
+                                                  titles[value.toInt()],
+                                                  style: const TextStyle(
+                                                    color: Color(0xff7589a2),
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 14,
+                                                  ),
+                                                );
+
+                                                return SideTitleWidget(
+                                                    axisSide: meta.axisSide,
+                                                    space: 5, //margin top
+                                                    child: text);
+                                              },
+                                              reservedSize: 50,
+                                            ),
+                                          ),
+                                          leftTitles: AxisTitles(
+                                            sideTitles: SideTitles(
+                                              showTitles: true,
+                                              reservedSize: 28,
+                                              interval: 1,
+                                              getTitlesWidget: (double value,
+                                                  TitleMeta meta) {
+                                                const style = TextStyle(
+                                                  color: Color(0xff7589a2),
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 14,
+                                                );
+                                                String text;
+                                                if (value == 10) {
+                                                  text = '10%';
+                                                } else if (value == 25) {
+                                                  text = '25%';
+                                                } else if (value == 50) {
+                                                  text = '50%';
+                                                } else if (value == 100) {
+                                                  text = '100%';
+                                                } else {
+                                                  return Container();
+                                                }
+                                                return SideTitleWidget(
+                                                  axisSide: meta.axisSide,
+                                                  space: 0,
+                                                  child:
+                                                      Text(text, style: style),
+                                                );
+                                              },
+                                            ),
+                                          ),
+                                        ),
+                                        borderData: FlBorderData(
+                                          show: false,
+                                        ),
+                                        barGroups: showingBarGroups,
+                                        gridData: FlGridData(show: false),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Row(
+                                children: [
+                                  Container(
+                                    width: 15,
+                                    height: 15,
+                                    color: Colors.green,
+                                  ),
+                                  const Text(" Perempuan"),
+                                ],
+                              ),
+                              const Divider(
+                                indent: 20,
+                                color: Colors.transparent,
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                    width: 15,
+                                    height: 15,
+                                    color: Colors.amber,
+                                  ),
+                                  const Text(" Laki-laki"),
+                                ],
+                              ),
+                              const Divider(
+                                indent: 20,
+                                color: Colors.transparent,
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                    width: 15,
+                                    height: 15,
+                                    color: Colors.blue,
+                                  ),
+                                  const Text(" Jumlah"),
+                                ],
+                              ),
+                            ],
+                          )
+                        ]),
                       ),
-                    ),
-                  ),
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Row(
-                    children: [
-                      Container(
-                        width: 15,
-                        height: 15,
-                        color: Colors.green,
-                      ),
-                      const Text(" Perempuan"),
-                    ],
-                  ),
-                  const Divider(
-                    indent: 20,
-                    color: Colors.transparent,
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        width: 15,
-                        height: 15,
-                        color: Colors.amber,
-                      ),
-                      const Text(" Laki-laki"),
-                    ],
-                  ),
-                  const Divider(
-                    indent: 20,
-                    color: Colors.transparent,
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        width: 15,
-                        height: 15,
-                        color: Colors.blue,
-                      ),
-                      const Text(" Jumlah"),
-                    ],
-                  ),
-                ],
-              )
-            ]),
-          ),
-        ]),
-      ),
-    );
+                    ]),
+                  );
+                },
+              );
+            }
+            if (snapshot.hasError) {
+              return const Center(child: Text("Data Belum Tersedia"));
+            } else {
+              return const Center(
+                  child: CircularProgressIndicator(
+                strokeWidth: 1,
+              ));
+            }
+          },
+        ));
   }
 }
 

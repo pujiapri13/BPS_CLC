@@ -4,6 +4,7 @@ import 'package:bps_cilacap/ketenagakerjaan/isi_ak_lpu/isi_ak_lpu_b.dart';
 import 'package:bps_cilacap/ketenagakerjaan/isi_ak_lpu/isi_ak_lpu_c.dart';
 import 'package:bps_cilacap/ketenagakerjaan/isi_ak_lpu/isi_ak_lpu_d.dart';
 import 'package:bps_cilacap/ketenagakerjaan/isi_ak_lpu/isi_ak_lpu_e.dart';
+import 'package:bps_cilacap/restAPI/repository_penduduk_lpu.dart';
 import 'package:flutter/material.dart';
 
 class AKKerjaLPUKelamin extends StatefulWidget {
@@ -14,6 +15,7 @@ class AKKerjaLPUKelamin extends StatefulWidget {
 }
 
 class _AKKerjaLPUKelaminState extends State<AKKerjaLPUKelamin> {
+  RepositoryPendudukLpu repositoryPendudukLpu = RepositoryPendudukLpu();
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height -
@@ -74,46 +76,96 @@ class _AKKerjaLPUKelaminState extends State<AKKerjaLPUKelamin> {
                     child: Container(
                       height: 100,
                       color: Colors.transparent,
-                      child: DefaultTabController(
-                        length: 5,
-                        child: Scaffold(
-                          appBar: AppBar(
-                            backgroundColor: Colors.black,
-                            leading: const Text(
-                              " ",
-                              style: TextStyle(color: Colors.transparent),
-                            ),
-                            toolbarHeight: screenHeight * 0.01,
-                            bottom: const TabBar(
-                              indicatorColor: Colors.white,
-                              tabs: [
-                                Tab(text: "2022"),
-                                Tab(
-                                  text: "2021",
-                                ),
-                                Tab(
-                                  text: "2020",
-                                ),
-                                Tab(
-                                  text: "2019",
-                                ),
-                                Tab(
-                                  text: "2018",
-                                ),
-                              ],
-                            ),
-                          ),
-                          body: const TabBarView(children: [
-                            IsiAkLpuA(),
-                            IsiAkLpuB(),
-                            IsiAkLpuC(),
-                            IsiAkLpuD(),
-                            IsiAkLpuE(),
-                          ]),
-                        ),
+                      child: FutureBuilder(
+                        future: repositoryPendudukLpu.getData(),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+                            List isipenduduklpu = snapshot.data as List;
+                            return PageView.builder(
+                              itemCount: 1,
+                              itemBuilder: (context, index) {
+                                String th1 = isipenduduklpu[index = 4]
+                                        .created_at[0] +
+                                    isipenduduklpu[index = 4].created_at[1] +
+                                    isipenduduklpu[index = 4].created_at[2] +
+                                    isipenduduklpu[index = 4].created_at[3];
+                                String th2 = isipenduduklpu[index = 3]
+                                        .created_at[0] +
+                                    isipenduduklpu[index = 3].created_at[1] +
+                                    isipenduduklpu[index = 3].created_at[2] +
+                                    isipenduduklpu[index = 3].created_at[3];
+                                String th3 = isipenduduklpu[index = 2]
+                                        .created_at[0] +
+                                    isipenduduklpu[index = 2].created_at[1] +
+                                    isipenduduklpu[index = 2].created_at[2] +
+                                    isipenduduklpu[index = 2].created_at[3];
+                                String th4 = isipenduduklpu[index = 1]
+                                        .created_at[0] +
+                                    isipenduduklpu[index = 1].created_at[1] +
+                                    isipenduduklpu[index = 1].created_at[2] +
+                                    isipenduduklpu[index = 1].created_at[3];
+                                String th5 = isipenduduklpu[index = 0]
+                                        .created_at[0] +
+                                    isipenduduklpu[index = 0].created_at[1] +
+                                    isipenduduklpu[index = 0].created_at[2] +
+                                    isipenduduklpu[index = 0].created_at[3];
+                                return DefaultTabController(
+                                  length: 5,
+                                  child: Scaffold(
+                                    appBar: AppBar(
+                                      backgroundColor: Colors.black,
+                                      leading: const Text(
+                                        " ",
+                                        style: TextStyle(
+                                            color: Colors.transparent),
+                                      ),
+                                      toolbarHeight: screenHeight * 0.01,
+                                      bottom: TabBar(
+                                        indicatorColor: Colors.white,
+                                        tabs: [
+                                          Tab(
+                                            text: th1,
+                                          ),
+                                          Tab(
+                                            text: th2,
+                                          ),
+                                          Tab(
+                                            text: th3,
+                                          ),
+                                          Tab(
+                                            text: th4,
+                                          ),
+                                          Tab(
+                                            text: th5,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    body: const TabBarView(children: [
+                                      IsiAkLpuA(),
+                                      IsiAkLpuB(),
+                                      IsiAkLpuC(),
+                                      IsiAkLpuD(),
+                                      IsiAkLpuE(),
+                                    ]),
+                                  ),
+                                );
+                              },
+                            );
+                          }
+                          if (snapshot.hasError) {
+                            return const Text('error');
+                          } else {
+                            return const Center(
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2,
+                              ),
+                            );
+                          }
+                        },
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),

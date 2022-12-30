@@ -5,6 +5,7 @@ import 'package:bps_cilacap/ketenagakerjaan/isi_bak/isi_bak_b.dart';
 import 'package:bps_cilacap/ketenagakerjaan/isi_bak/isi_bak_c.dart';
 import 'package:bps_cilacap/ketenagakerjaan/isi_bak/isi_bak_d.dart';
 import 'package:bps_cilacap/ketenagakerjaan/isi_bak/isi_bak_e.dart';
+import 'package:bps_cilacap/restAPI/repository_bkn_angkatan_kerja.dart';
 import 'package:bps_cilacap/restAPI/repository_ipm.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,8 @@ class BukanAngkatanKerja extends StatefulWidget {
   State<BukanAngkatanKerja> createState() => _BukanAngkatanKerjaState();
 }
 
-RepositoryIpm repositorytenagakerja = RepositoryIpm();
+RepositoryBknAngkatanKerja repositoryBknAngkatanKerja =
+    RepositoryBknAngkatanKerja();
 
 class _BukanAngkatanKerjaState extends State<BukanAngkatanKerja> {
   @override
@@ -105,7 +107,7 @@ class _BukanAngkatanKerjaState extends State<BukanAngkatanKerja> {
           ],
         ),
         body: FutureBuilder(
-          future: repositorytenagakerja.getData(),
+          future: repositoryBknAngkatanKerja.getData(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               List isitenagakerja = snapshot.data as List;
@@ -126,34 +128,34 @@ class _BukanAngkatanKerjaState extends State<BukanAngkatanKerja> {
                           indicatorColor: Colors.white,
                           tabs: [
                             Tab(
-                              text: isitenagakerja[index = 4].tanggal[0] +
-                                  isitenagakerja[index = 4].tanggal[1] +
-                                  isitenagakerja[index = 4].tanggal[2] +
-                                  isitenagakerja[index = 4].tanggal[3],
+                              text: isitenagakerja[index = 4].created_at[0] +
+                                  isitenagakerja[index = 4].created_at[1] +
+                                  isitenagakerja[index = 4].created_at[2] +
+                                  isitenagakerja[index = 4].created_at[3],
                             ),
                             Tab(
-                              text: isitenagakerja[index = 3].tanggal[0] +
-                                  isitenagakerja[index = 3].tanggal[1] +
-                                  isitenagakerja[index = 3].tanggal[2] +
-                                  isitenagakerja[index = 3].tanggal[3],
+                              text: isitenagakerja[index = 3].created_at[0] +
+                                  isitenagakerja[index = 3].created_at[1] +
+                                  isitenagakerja[index = 3].created_at[2] +
+                                  isitenagakerja[index = 3].created_at[3],
                             ),
                             Tab(
-                              text: isitenagakerja[index = 2].tanggal[0] +
-                                  isitenagakerja[index = 2].tanggal[1] +
-                                  isitenagakerja[index = 2].tanggal[2] +
-                                  isitenagakerja[index = 2].tanggal[3],
+                              text: isitenagakerja[index = 2].created_at[0] +
+                                  isitenagakerja[index = 2].created_at[1] +
+                                  isitenagakerja[index = 2].created_at[2] +
+                                  isitenagakerja[index = 2].created_at[3],
                             ),
                             Tab(
-                              text: isitenagakerja[index = 1].tanggal[0] +
-                                  isitenagakerja[index = 1].tanggal[1] +
-                                  isitenagakerja[index = 1].tanggal[2] +
-                                  isitenagakerja[index = 1].tanggal[3],
+                              text: isitenagakerja[index = 1].created_at[0] +
+                                  isitenagakerja[index = 1].created_at[1] +
+                                  isitenagakerja[index = 1].created_at[2] +
+                                  isitenagakerja[index = 1].created_at[3],
                             ),
                             Tab(
-                              text: isitenagakerja[index = 0].tanggal[0] +
-                                  isitenagakerja[index = 0].tanggal[1] +
-                                  isitenagakerja[index = 0].tanggal[2] +
-                                  isitenagakerja[index = 0].tanggal[3],
+                              text: isitenagakerja[index = 0].created_at[0] +
+                                  isitenagakerja[index = 0].created_at[1] +
+                                  isitenagakerja[index = 0].created_at[2] +
+                                  isitenagakerja[index = 0].created_at[3],
                             ),
                           ],
                         ),

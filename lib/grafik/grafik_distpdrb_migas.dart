@@ -1,7 +1,5 @@
-
 // ignore_for_file: library_private_types_in_public_api
-
-import 'package:bps_cilacap/restAPI/repository_distribusi_pdrb.dart';
+import 'package:bps_cilacap/restAPI/repository_dist_pdrb_adhb.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +11,7 @@ class GrafikDistPdrbMigas extends StatefulWidget {
 }
 
 class _GrafikDistPdrbMigasState extends State<GrafikDistPdrbMigas> {
-  RepositoryDistPdrb repositorydistpdrb = RepositoryDistPdrb();
+  RepositoryDistPdrbAdhb repositorydistpdrb = RepositoryDistPdrbAdhb();
 
   List<Color> gradientColors = [
     const Color(0xff23b6e6),
@@ -29,6 +27,12 @@ class _GrafikDistPdrbMigasState extends State<GrafikDistPdrbMigas> {
           return PageView.builder(
             itemCount: 1,
             itemBuilder: (context, index) {
+              double total1 = double.parse(isipdrb[index = 4].total);
+              double total2 = double.parse(isipdrb[index = 3].total);
+              double total3 = double.parse(isipdrb[index = 2].total);
+              double total4 = double.parse(isipdrb[index = 1].total);
+              double total5 = double.parse(isipdrb[index = 0].total);
+
               return Container(
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(
@@ -84,42 +88,42 @@ class _GrafikDistPdrbMigasState extends State<GrafikDistPdrbMigas> {
                                 switch (value.toInt()) {
                                   case 1:
                                     text = Text(
-                                        isipdrb[index = 4].tanggal[0] +
-                                            isipdrb[index = 4].tanggal[1] +
-                                            isipdrb[index = 4].tanggal[2] +
-                                            isipdrb[index = 4].tanggal[3],
+                                        isipdrb[index = 4].created_at[0] +
+                                            isipdrb[index = 4].created_at[1] +
+                                            isipdrb[index = 4].created_at[2] +
+                                            isipdrb[index = 4].created_at[3],
                                         style: style);
                                     break;
                                   case 3:
                                     text = Text(
-                                        isipdrb[index = 3].tanggal[0] +
-                                            isipdrb[index = 3].tanggal[1] +
-                                            isipdrb[index = 3].tanggal[2] +
-                                            isipdrb[index = 3].tanggal[3],
+                                        isipdrb[index = 3].created_at[0] +
+                                            isipdrb[index = 3].created_at[1] +
+                                            isipdrb[index = 3].created_at[2] +
+                                            isipdrb[index = 3].created_at[3],
                                         style: style);
                                     break;
                                   case 5:
                                     text = Text(
-                                        isipdrb[index = 2].tanggal[0] +
-                                            isipdrb[index = 2].tanggal[1] +
-                                            isipdrb[index = 2].tanggal[2] +
-                                            isipdrb[index = 2].tanggal[3],
+                                        isipdrb[index = 2].created_at[0] +
+                                            isipdrb[index = 2].created_at[1] +
+                                            isipdrb[index = 2].created_at[2] +
+                                            isipdrb[index = 2].created_at[3],
                                         style: style);
                                     break;
                                   case 7:
                                     text = Text(
-                                        isipdrb[index = 1].tanggal[0] +
-                                            isipdrb[index = 1].tanggal[1] +
-                                            isipdrb[index = 1].tanggal[2] +
-                                            isipdrb[index = 1].tanggal[3],
+                                        isipdrb[index = 1].created_at[0] +
+                                            isipdrb[index = 1].created_at[1] +
+                                            isipdrb[index = 1].created_at[2] +
+                                            isipdrb[index = 1].created_at[3],
                                         style: style);
                                     break;
                                   case 9:
                                     text = Text(
-                                        isipdrb[index = 0].tanggal[0] +
-                                            isipdrb[index = 0].tanggal[1] +
-                                            isipdrb[index = 0].tanggal[2] +
-                                            isipdrb[index = 0].tanggal[3],
+                                        isipdrb[index = 0].created_at[0] +
+                                            isipdrb[index = 0].created_at[1] +
+                                            isipdrb[index = 0].created_at[2] +
+                                            isipdrb[index = 0].created_at[3],
                                         style: style);
                                     break;
                                   default:
@@ -178,11 +182,16 @@ class _GrafikDistPdrbMigasState extends State<GrafikDistPdrbMigas> {
                       lineBarsData: [
                         LineChartBarData(
                           spots: [
-                            FlSpot(1, isipdrb[index = 4].total_pdrb / 20),
-                            FlSpot(3, isipdrb[index = 3].total_pdrb / 20),
-                            FlSpot(5, isipdrb[index = 2].total_pdrb / 20),
-                            FlSpot(7, isipdrb[index = 1].total_pdrb / 20),
-                            FlSpot(9, isipdrb[index = 0].total_pdrb / 20),
+                            FlSpot(1,
+                                double.parse((total1 / 20).toStringAsFixed(2))),
+                            FlSpot(3,
+                                double.parse((total2 / 20).toStringAsFixed(2))),
+                            FlSpot(5,
+                                double.parse((total3 / 20).toStringAsFixed(2))),
+                            FlSpot(7,
+                                double.parse((total4 / 20).toStringAsFixed(2))),
+                            FlSpot(9,
+                                double.parse((total5 / 20).toStringAsFixed(2))),
                           ],
                           isCurved: false,
                           gradient: LinearGradient(
@@ -207,8 +216,10 @@ class _GrafikDistPdrbMigasState extends State<GrafikDistPdrbMigas> {
         if (snapshot.hasError) {
           return const Text("Database Error");
         }
-        return const Center(child: CircularProgressIndicator(
-            strokeWidth: 1,));
+        return const Center(
+            child: CircularProgressIndicator(
+          strokeWidth: 1,
+        ));
       },
     );
   }

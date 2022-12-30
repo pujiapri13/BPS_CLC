@@ -46,10 +46,10 @@ class _TabelPdrbLUTanpaMigasState extends State<TabelPdrbLUTanpaMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 9].tanggal[0] +
-                                  isipdrb[index = 9].tanggal[1] +
-                                  isipdrb[index = 9].tanggal[2] +
-                                  isipdrb[index = 9].tanggal[3],
+                              isipdrb[index = 9].created_at[0] +
+                                  isipdrb[index = 9].created_at[1] +
+                                  isipdrb[index = 9].created_at[2] +
+                                  isipdrb[index = 9].created_at[3],
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -57,10 +57,10 @@ class _TabelPdrbLUTanpaMigasState extends State<TabelPdrbLUTanpaMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 8].tanggal[0] +
-                                  isipdrb[index = 8].tanggal[1] +
-                                  isipdrb[index = 8].tanggal[2] +
-                                  isipdrb[index = 8].tanggal[3],
+                              isipdrb[index = 8].created_at[0] +
+                                  isipdrb[index = 8].created_at[1] +
+                                  isipdrb[index = 8].created_at[2] +
+                                  isipdrb[index = 8].created_at[3],
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -68,10 +68,10 @@ class _TabelPdrbLUTanpaMigasState extends State<TabelPdrbLUTanpaMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 7].tanggal[0] +
-                                  isipdrb[index = 7].tanggal[1] +
-                                  isipdrb[index = 7].tanggal[2] +
-                                  isipdrb[index = 7].tanggal[3],
+                              isipdrb[index = 7].created_at[0] +
+                                  isipdrb[index = 7].created_at[1] +
+                                  isipdrb[index = 7].created_at[2] +
+                                  isipdrb[index = 7].created_at[3],
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -79,10 +79,10 @@ class _TabelPdrbLUTanpaMigasState extends State<TabelPdrbLUTanpaMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 6].tanggal[0] +
-                                  isipdrb[index = 6].tanggal[1] +
-                                  isipdrb[index = 6].tanggal[2] +
-                                  isipdrb[index = 6].tanggal[3],
+                              isipdrb[index = 6].created_at[0] +
+                                  isipdrb[index = 6].created_at[1] +
+                                  isipdrb[index = 6].created_at[2] +
+                                  isipdrb[index = 6].created_at[3],
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -90,10 +90,10 @@ class _TabelPdrbLUTanpaMigasState extends State<TabelPdrbLUTanpaMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 5].tanggal[0] +
-                                  isipdrb[index = 5].tanggal[1] +
-                                  isipdrb[index = 5].tanggal[2] +
-                                  isipdrb[index = 5].tanggal[3],
+                              isipdrb[index = 5].created_at[0] +
+                                  isipdrb[index = 5].created_at[1] +
+                                  isipdrb[index = 5].created_at[2] +
+                                  isipdrb[index = 5].created_at[3],
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1106,7 +1106,7 @@ class _TabelPdrbLUTanpaMigasState extends State<TabelPdrbLUTanpaMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 9].total_pdrb.toString(),
+                              isipdrb[index = 9].total.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1114,7 +1114,7 @@ class _TabelPdrbLUTanpaMigasState extends State<TabelPdrbLUTanpaMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 8].total_pdrb.toString(),
+                              isipdrb[index = 8].total.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1122,7 +1122,7 @@ class _TabelPdrbLUTanpaMigasState extends State<TabelPdrbLUTanpaMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 7].total_pdrb.toString(),
+                              isipdrb[index = 7].total.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1130,7 +1130,7 @@ class _TabelPdrbLUTanpaMigasState extends State<TabelPdrbLUTanpaMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 6].total_pdrb.toString(),
+                              isipdrb[index = 6].total.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1138,7 +1138,7 @@ class _TabelPdrbLUTanpaMigasState extends State<TabelPdrbLUTanpaMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 5].total_pdrb.toString(),
+                              isipdrb[index = 5].total.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1153,8 +1153,10 @@ class _TabelPdrbLUTanpaMigasState extends State<TabelPdrbLUTanpaMigas> {
           if (snapshot.hasError) {
             return const Text('error');
           }
-          return const Center(child: CircularProgressIndicator(
-            strokeWidth: 1,));
+          return const Center(
+              child: CircularProgressIndicator(
+            strokeWidth: 1,
+          ));
         },
       ),
     );

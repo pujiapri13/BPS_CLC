@@ -1,6 +1,6 @@
 // ignore_for_file: file_names
 
-import 'package:bps_cilacap/restAPI/repository_tenaga_kerja.dart';
+import 'package:bps_cilacap/restAPI/repository_penduduk_umur.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'package:pie_chart/pie_chart.dart';
@@ -14,7 +14,7 @@ class IsiAkUmurC extends StatefulWidget {
 
 enum LegendShape { circle, rectangle }
 
-RepositoryTenagaKerja repositorytenagakerja = RepositoryTenagaKerja();
+RepositoryPendudukUmur repositoryPendudukUmur = RepositoryPendudukUmur();
 
 class _IsiAkUmurCState extends State<IsiAkUmurC> {
   int key = 0;
@@ -26,7 +26,7 @@ class _IsiAkUmurCState extends State<IsiAkUmurC> {
     // ignore: unused_local_variable
     final screenWidth = MediaQuery.of(context).size.width;
     return FutureBuilder(
-      future: repositorytenagakerja.getData(),
+      future: repositoryPendudukUmur.getData(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           // ignore: unused_local_variable
@@ -34,13 +34,13 @@ class _IsiAkUmurCState extends State<IsiAkUmurC> {
           return PageView.builder(
             itemCount: 1,
             itemBuilder: (context, index) {
-              double bocahLk = 8.48;
-              double mudaLk = 65.93;
-              double tuaLk = 25.59;
+              double bocahLk = double.parse(isitenagakerja[index = 2].a);
+              double mudaLk = double.parse(isitenagakerja[index = 2].b);
+              double tuaLk = double.parse(isitenagakerja[index = 2].c);
 
-              double bocahPr = 9.27;
-              double mudaPr = 63.89;
-              double tuaPr = 26.84;
+              double bocahPr = double.parse(isitenagakerja[index = 7].a);
+              double mudaPr = double.parse(isitenagakerja[index = 7].b);
+              double tuaPr = double.parse(isitenagakerja[index = 7].c);
               return Column(
                 children: [
                   Flexible(
@@ -218,8 +218,7 @@ class _IsiAkUmurCState extends State<IsiAkUmurC> {
                                 height: screenHeight * 0.05,
                                 child: Center(
                                   child: Text(
-                                    ((mudaPr + mudaLk) / 2)
-                                        .toStringAsFixed(2),
+                                    ((mudaPr + mudaLk) / 2).toStringAsFixed(2),
                                   ),
                                 ),
                               ),

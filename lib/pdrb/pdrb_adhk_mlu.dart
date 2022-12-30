@@ -1,8 +1,10 @@
 import 'package:bps_cilacap/Icons/back_icons_icons.dart';
-import 'package:bps_cilacap/grafik/grafik_pdrb_lu_migas.dart';
+import 'package:bps_cilacap/grafik/grafik_pdrb_adhk_mlu_migas.dart';
+import 'package:bps_cilacap/grafik/grafik_pdrb_adhk_mlu_tanpa_migas.dart';
 import 'package:bps_cilacap/grafik/grafik_pdrb_lu_tanpa_migas.dart';
-import 'package:bps_cilacap/tabel/tabel_pdrblu_migas.dart';
+import 'package:bps_cilacap/tabel/tabel_pdrb_adhk_mlu_tanpa_migas.dart';
 import 'package:bps_cilacap/tabel/tabel_pdrblu_tanpa_migas.dart';
+import 'package:bps_cilacap/tabel/tabel_pdrb_adhk_mlu_migas.dart';
 import 'package:flutter/material.dart';
 
 class PdrbAdhkLapUs extends StatefulWidget {
@@ -13,7 +15,6 @@ class PdrbAdhkLapUs extends StatefulWidget {
 }
 
 class _PdrbAdhkLapUsState extends State<PdrbAdhkLapUs> {
-
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height -
@@ -60,10 +61,10 @@ class _PdrbAdhkLapUsState extends State<PdrbAdhkLapUs> {
                   child: Column(
                     children: const [
                       Flexible(
-                        child: TabelPdrbLUMigas(),
+                        child: TabelPdrbAdhkMLUMigas(),
                       ),
                       Flexible(
-                        child: grafikPdrbLUMigas(),
+                        child: grafikPdrbAdhkMLUMigas(),
                       ),
                     ],
                   ),
@@ -84,10 +85,10 @@ class _PdrbAdhkLapUsState extends State<PdrbAdhkLapUs> {
                   child: Column(
                     children: const [
                       Flexible(
-                        child: TabelPdrbLUTanpaMigas(),
+                        child: TabelPdrbAdhkMLUTanpaMigas(),
                       ),
                       Flexible(
-                        child: grafikPdrbLUTanpaMigas(),
+                        child: grafikPdrbAdhkMLUTanpaMigas(),
                       ),
                     ],
                   ),

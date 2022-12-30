@@ -25,12 +25,13 @@ class _carouselSlider1State extends State<carouselSlider1> {
           return PageView.builder(
             itemCount: 1,
             itemBuilder: (context, index) {
-              String tanggal = isiinflasi[index = 0].updated_at[0] +
+              String tahun = isiinflasi[index = 0].updated_at[0] +
                   isiinflasi[index = 0].updated_at[1] +
                   isiinflasi[index = 0].updated_at[2] +
                   isiinflasi[index = 0].updated_at[3];
-              String mtom1 = isiinflasi[index = 0].mtom;
-              String yony1 = isiinflasi[index = 0].ytoy;
+              double mtom1 = double.parse(isiinflasi[index = 0].mtom);
+              double yony1 = double.parse(isiinflasi[index = 0].ytoy);
+              double ytod1 = double.parse(isiinflasi[index = 0].ytod);
               return Container(
                 decoration: BoxDecoration(
                   color: const Color.fromRGBO(136, 159, 176, 1),
@@ -62,8 +63,8 @@ class _carouselSlider1State extends State<carouselSlider1> {
                           children: [
                             Container(
                               margin: const EdgeInsets.only(left: 10),
-                              child: const Text(
-                                "Inflasi",
+                              child: Text(
+                                "Inflasi " + tahun,
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                             ),
@@ -71,20 +72,24 @@ class _carouselSlider1State extends State<carouselSlider1> {
                             Container(
                               margin: const EdgeInsets.only(left: 10),
                               child: Text(
-                                "Inflasi " +
-                                    tanggal +
-                                    " = " +
-                                    mtom1.toString() +
+                                "Inflasi Month to Month = " +
+                                    mtom1.toStringAsFixed(2) +
                                     "%",
                               ),
                             ),
                             Container(
                               margin: const EdgeInsets.only(left: 10),
                               child: Text(
-                                "Inflasi Year on Year " +
-                                    tanggal +
-                                    " = " +
-                                    yony1.toString() +
+                                "Inflasi Year to Date = " +
+                                    ytod1.toStringAsFixed(2) +
+                                    "%",
+                              ),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.only(left: 10),
+                              child: Text(
+                                "Inflasi Year on Year = " +
+                                    yony1.toStringAsFixed(2) +
                                     "%",
                               ),
                             ),

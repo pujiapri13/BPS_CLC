@@ -180,55 +180,56 @@ class _IpmContentState extends State<IpmContent> {
                   return PageView.builder(
                     itemCount: 1,
                     itemBuilder: (context, index) {
-                      String tahun1 = isiipm[index = 4].tanggal[0] +
-                          isiipm[index = 4].tanggal[1] +
-                          isiipm[index = 4].tanggal[2] +
-                          isiipm[index = 4].tanggal[3];
-                      String tahun2 = isiipm[index = 3].tanggal[0] +
-                          isiipm[index = 3].tanggal[1] +
-                          isiipm[index = 3].tanggal[2] +
-                          isiipm[index = 3].tanggal[3];
-                      String tahun3 = isiipm[index = 2].tanggal[0] +
-                          isiipm[index = 2].tanggal[1] +
-                          isiipm[index = 2].tanggal[2] +
-                          isiipm[index = 2].tanggal[3];
-                      String tahun4 = isiipm[index = 1].tanggal[0] +
-                          isiipm[index = 1].tanggal[1] +
-                          isiipm[index = 1].tanggal[2] +
-                          isiipm[index = 1].tanggal[3];
-                      String tahun5 = isiipm[index = 0].tanggal[0] +
-                          isiipm[index = 0].tanggal[1] +
-                          isiipm[index = 0].tanggal[2] +
-                          isiipm[index = 0].tanggal[3];
-                      double uhh1 = isiipm[index = 4].uhh;
-                      double uhh2 = isiipm[index = 3].uhh;
-                      double uhh3 = isiipm[index = 2].uhh;
-                      double uhh4 = isiipm[index = 1].uhh;
-                      double uhh5 = isiipm[index = 0].uhh;
+                      String tahun1 = isiipm[index = 4].created_at[0] +
+                          isiipm[index = 4].created_at[1] +
+                          isiipm[index = 4].created_at[2] +
+                          isiipm[index = 4].created_at[3];
+                      String tahun2 = isiipm[index = 3].created_at[0] +
+                          isiipm[index = 3].created_at[1] +
+                          isiipm[index = 3].created_at[2] +
+                          isiipm[index = 3].created_at[3];
+                      String tahun3 = isiipm[index = 2].created_at[0] +
+                          isiipm[index = 2].created_at[1] +
+                          isiipm[index = 2].created_at[2] +
+                          isiipm[index = 2].created_at[3];
+                      String tahun4 = isiipm[index = 1].created_at[0] +
+                          isiipm[index = 1].created_at[1] +
+                          isiipm[index = 1].created_at[2] +
+                          isiipm[index = 1].created_at[3];
+                      String tahun5 = isiipm[index = 0].created_at[0] +
+                          isiipm[index = 0].created_at[1] +
+                          isiipm[index = 0].created_at[2] +
+                          isiipm[index = 0].created_at[3];
 
-                      double rls1 = isiipm[index = 4].rls;
-                      double rls2 = isiipm[index = 3].rls;
-                      double rls3 = isiipm[index = 2].rls;
-                      double rls4 = isiipm[index = 1].rls;
-                      double rls5 = isiipm[index = 0].rls;
+                      double uhh1 = double.parse(isiipm[index = 4].uhh);
+                      double uhh2 = double.parse(isiipm[index = 3].uhh);
+                      double uhh3 = double.parse(isiipm[index = 2].uhh);
+                      double uhh4 = double.parse(isiipm[index = 1].uhh);
+                      double uhh5 = double.parse(isiipm[index = 0].uhh);
 
-                      double hls1 = isiipm[index = 4].hls;
-                      double hls2 = isiipm[index = 3].hls;
-                      double hls3 = isiipm[index = 2].hls;
-                      double hls4 = isiipm[index = 1].hls;
-                      double hls5 = isiipm[index = 0].hls;
+                      double rls1 = double.parse(isiipm[index = 4].rls);
+                      double rls2 = double.parse(isiipm[index = 3].rls);
+                      double rls3 = double.parse(isiipm[index = 2].rls);
+                      double rls4 = double.parse(isiipm[index = 1].rls);
+                      double rls5 = double.parse(isiipm[index = 0].rls);
 
-                      double ppp1 = isiipm[index = 4].ppp;
-                      double ppp2 = isiipm[index = 3].ppp;
-                      double ppp3 = isiipm[index = 2].ppp;
-                      double ppp4 = isiipm[index = 1].ppp;
-                      double ppp5 = isiipm[index = 0].ppp;
+                      double hls1 = double.parse(isiipm[index = 4].hls);
+                      double hls2 = double.parse(isiipm[index = 3].hls);
+                      double hls3 = double.parse(isiipm[index = 2].hls);
+                      double hls4 = double.parse(isiipm[index = 1].hls);
+                      double hls5 = double.parse(isiipm[index = 0].hls);
 
-                      double ipm1 = 70.42;
-                      double ipm2 = 69.95;
-                      double ipm3 = 86.21;
-                      double ipm4 = 75.43;
-                      double ipm5 = 92.64;
+                      double ppp1 = double.parse(isiipm[index = 4].ppp);
+                      double ppp2 = double.parse(isiipm[index = 3].ppp);
+                      double ppp3 = double.parse(isiipm[index = 2].ppp);
+                      double ppp4 = double.parse(isiipm[index = 1].ppp);
+                      double ppp5 = double.parse(isiipm[index = 0].ppp);
+
+                      double ipm1 = double.parse(isiipm[index = 4].ipm);
+                      double ipm2 = double.parse(isiipm[index = 3].ipm);
+                      double ipm3 = double.parse(isiipm[index = 2].ipm);
+                      double ipm4 = double.parse(isiipm[index = 1].ipm);
+                      double ipm5 = double.parse(isiipm[index = 0].ipm);
 
                       late List<BarChartGroupData> rawBarGroups;
                       late List<BarChartGroupData> showingBarGroups;
@@ -388,7 +389,7 @@ class _IpmContentState extends State<IpmContent> {
                                                       flex: 2,
                                                       fit: FlexFit.tight,
                                                       child: Text(
-                                                        "$uhh1",
+                                                        uhh1.toStringAsFixed(2),
                                                         textAlign:
                                                             TextAlign.center,
                                                       ),
@@ -397,7 +398,7 @@ class _IpmContentState extends State<IpmContent> {
                                                       flex: 2,
                                                       fit: FlexFit.tight,
                                                       child: Text(
-                                                        "$uhh2",
+                                                        uhh2.toStringAsFixed(2),
                                                         textAlign:
                                                             TextAlign.center,
                                                       ),
@@ -406,7 +407,7 @@ class _IpmContentState extends State<IpmContent> {
                                                       flex: 2,
                                                       fit: FlexFit.tight,
                                                       child: Text(
-                                                        "$uhh3",
+                                                        uhh3.toStringAsFixed(2),
                                                         textAlign:
                                                             TextAlign.center,
                                                       ),
@@ -415,7 +416,7 @@ class _IpmContentState extends State<IpmContent> {
                                                       flex: 2,
                                                       fit: FlexFit.tight,
                                                       child: Text(
-                                                        "$uhh4",
+                                                        uhh4.toStringAsFixed(2),
                                                         textAlign:
                                                             TextAlign.center,
                                                       ),
@@ -424,7 +425,7 @@ class _IpmContentState extends State<IpmContent> {
                                                       flex: 2,
                                                       fit: FlexFit.tight,
                                                       child: Text(
-                                                        "$uhh5",
+                                                        uhh5.toStringAsFixed(2),
                                                         textAlign:
                                                             TextAlign.center,
                                                       ),
@@ -452,7 +453,7 @@ class _IpmContentState extends State<IpmContent> {
                                                       flex: 2,
                                                       fit: FlexFit.tight,
                                                       child: Text(
-                                                        "$rls1",
+                                                        rls1.toStringAsFixed(2),
                                                         textAlign:
                                                             TextAlign.center,
                                                       ),
@@ -461,7 +462,7 @@ class _IpmContentState extends State<IpmContent> {
                                                       flex: 2,
                                                       fit: FlexFit.tight,
                                                       child: Text(
-                                                        "$rls2",
+                                                        rls2.toStringAsFixed(2),
                                                         textAlign:
                                                             TextAlign.center,
                                                       ),
@@ -470,7 +471,7 @@ class _IpmContentState extends State<IpmContent> {
                                                       flex: 2,
                                                       fit: FlexFit.tight,
                                                       child: Text(
-                                                        "$rls3",
+                                                        rls3.toStringAsFixed(2),
                                                         textAlign:
                                                             TextAlign.center,
                                                       ),
@@ -479,7 +480,7 @@ class _IpmContentState extends State<IpmContent> {
                                                       flex: 2,
                                                       fit: FlexFit.tight,
                                                       child: Text(
-                                                        "$rls4",
+                                                        rls4.toStringAsFixed(2),
                                                         textAlign:
                                                             TextAlign.center,
                                                       ),
@@ -488,7 +489,7 @@ class _IpmContentState extends State<IpmContent> {
                                                       flex: 2,
                                                       fit: FlexFit.tight,
                                                       child: Text(
-                                                        "$rls5",
+                                                        rls5.toStringAsFixed(2),
                                                         textAlign:
                                                             TextAlign.center,
                                                       ),
@@ -516,7 +517,7 @@ class _IpmContentState extends State<IpmContent> {
                                                       flex: 2,
                                                       fit: FlexFit.tight,
                                                       child: Text(
-                                                        "$hls1",
+                                                        hls1.toStringAsFixed(2),
                                                         textAlign:
                                                             TextAlign.center,
                                                       ),
@@ -525,7 +526,7 @@ class _IpmContentState extends State<IpmContent> {
                                                       flex: 2,
                                                       fit: FlexFit.tight,
                                                       child: Text(
-                                                        "$hls2",
+                                                        hls2.toStringAsFixed(2),
                                                         textAlign:
                                                             TextAlign.center,
                                                       ),
@@ -534,7 +535,7 @@ class _IpmContentState extends State<IpmContent> {
                                                       flex: 2,
                                                       fit: FlexFit.tight,
                                                       child: Text(
-                                                        "$hls3",
+                                                        hls3.toStringAsFixed(2),
                                                         textAlign:
                                                             TextAlign.center,
                                                       ),
@@ -543,7 +544,7 @@ class _IpmContentState extends State<IpmContent> {
                                                       flex: 2,
                                                       fit: FlexFit.tight,
                                                       child: Text(
-                                                        "$hls4",
+                                                        hls4.toStringAsFixed(2),
                                                         textAlign:
                                                             TextAlign.center,
                                                       ),
@@ -552,7 +553,7 @@ class _IpmContentState extends State<IpmContent> {
                                                       flex: 2,
                                                       fit: FlexFit.tight,
                                                       child: Text(
-                                                        "$hls5",
+                                                        hls5.toStringAsFixed(2),
                                                         textAlign:
                                                             TextAlign.center,
                                                       ),
@@ -580,7 +581,7 @@ class _IpmContentState extends State<IpmContent> {
                                                       flex: 2,
                                                       fit: FlexFit.tight,
                                                       child: Text(
-                                                        "$ppp1",
+                                                        ppp1.toStringAsFixed(2),
                                                         textAlign:
                                                             TextAlign.center,
                                                       ),
@@ -589,7 +590,7 @@ class _IpmContentState extends State<IpmContent> {
                                                       flex: 2,
                                                       fit: FlexFit.tight,
                                                       child: Text(
-                                                        "$ppp2",
+                                                        ppp2.toStringAsFixed(2),
                                                         textAlign:
                                                             TextAlign.center,
                                                       ),
@@ -598,7 +599,7 @@ class _IpmContentState extends State<IpmContent> {
                                                       flex: 2,
                                                       fit: FlexFit.tight,
                                                       child: Text(
-                                                        "$ppp3",
+                                                        ppp3.toStringAsFixed(2),
                                                         textAlign:
                                                             TextAlign.center,
                                                       ),
@@ -607,7 +608,7 @@ class _IpmContentState extends State<IpmContent> {
                                                       flex: 2,
                                                       fit: FlexFit.tight,
                                                       child: Text(
-                                                        "$ppp4",
+                                                        ppp4.toStringAsFixed(2),
                                                         textAlign:
                                                             TextAlign.center,
                                                       ),
@@ -616,7 +617,7 @@ class _IpmContentState extends State<IpmContent> {
                                                       flex: 2,
                                                       fit: FlexFit.tight,
                                                       child: Text(
-                                                        "$ppp5",
+                                                        ppp5.toStringAsFixed(2),
                                                         textAlign:
                                                             TextAlign.center,
                                                       ),

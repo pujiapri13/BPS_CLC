@@ -183,11 +183,26 @@ class _pengangguranContentState extends State<pengangguranContent> {
                         ]);
                       }
 
-                      final barGroup1 = makeGroupData(1, TpakA, TptA);
-                      final barGroup2 = makeGroupData(1, TpakB, TptB);
-                      final barGroup3 = makeGroupData(1, TpakC, TptC);
-                      final barGroup4 = makeGroupData(1, TpakD, TptD);
-                      final barGroup5 = makeGroupData(1, TpakE, TptE);
+                      final barGroup1 = makeGroupData(
+                          1,
+                          double.parse(TpakA.toStringAsFixed(2)),
+                          double.parse(TptA.toStringAsFixed(2)));
+                      final barGroup2 = makeGroupData(
+                          2,
+                          double.parse(TpakB.toStringAsFixed(2)),
+                          double.parse(TptB.toStringAsFixed(2)));
+                      final barGroup3 = makeGroupData(
+                          3,
+                          double.parse(TpakC.toStringAsFixed(2)),
+                          double.parse(TptC.toStringAsFixed(2)));
+                      final barGroup4 = makeGroupData(
+                          4,
+                          double.parse(TpakD.toStringAsFixed(2)),
+                          double.parse(TptD.toStringAsFixed(2)));
+                      final barGroup5 = makeGroupData(
+                          5,
+                          double.parse(TpakE.toStringAsFixed(2)),
+                          double.parse(TptE.toStringAsFixed(2)));
 
                       final items = [
                         barGroup1,
@@ -564,7 +579,7 @@ class _pengangguranContentState extends State<pengangguranContent> {
                                                               Color(0xff7589a2),
                                                           fontWeight:
                                                               FontWeight.bold,
-                                                          fontSize: 14,
+                                                          fontSize: 15,
                                                         ),
                                                       );
 
@@ -624,6 +639,13 @@ class _pengangguranContentState extends State<pengangguranContent> {
                                               ),
                                               borderData: FlBorderData(
                                                 show: false,
+                                              ),
+                                              barTouchData: BarTouchData(
+                                                enabled: true,
+                                                touchTooltipData:
+                                                    BarTouchTooltipData(
+                                                        tooltipBgColor:
+                                                            Colors.white),
                                               ),
                                               barGroups: showingBarGroups,
                                               gridData: FlGridData(show: false),

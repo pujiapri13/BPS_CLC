@@ -1,4 +1,4 @@
-import 'package:bps_cilacap/restAPI/repository_distribusi_pdrb.dart';
+import 'package:bps_cilacap/restAPI/repository_dist_pdrb_adhb.dart';
 import 'package:flutter/material.dart';
 
 class TabelDistPdrbMigas extends StatefulWidget {
@@ -8,7 +8,7 @@ class TabelDistPdrbMigas extends StatefulWidget {
   State<TabelDistPdrbMigas> createState() => _TabelDistPdrbMigasState();
 }
 
-RepositoryDistPdrb repositorydistpdrb = RepositoryDistPdrb();
+RepositoryDistPdrbAdhb repositorydistpdrb = RepositoryDistPdrbAdhb();
 
 class _TabelDistPdrbMigasState extends State<TabelDistPdrbMigas> {
   @override
@@ -29,7 +29,7 @@ class _TabelDistPdrbMigasState extends State<TabelDistPdrbMigas> {
                 return Column(
                   children: [
                     Container(
-                      color: Colors.blue[200],
+                      color: Colors.cyan,
                       width: screenWidth,
                       height: screenHeight * 0.1,
                       child: Row(
@@ -40,61 +40,67 @@ class _TabelDistPdrbMigasState extends State<TabelDistPdrbMigas> {
                             child: Text(
                               "Lapangan Usaha",
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].tanggal[0] +
-                                  isipdrb[index = 4].tanggal[1] +
-                                  isipdrb[index = 4].tanggal[2] +
-                                  isipdrb[index = 4].tanggal[3],
+                              isipdrb[index = 4].created_at[0] +
+                                  isipdrb[index = 4].created_at[1] +
+                                  isipdrb[index = 4].created_at[2] +
+                                  isipdrb[index = 4].created_at[3],
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].tanggal[0] +
-                                  isipdrb[index = 3].tanggal[1] +
-                                  isipdrb[index = 3].tanggal[2] +
-                                  isipdrb[index = 3].tanggal[3],
+                              isipdrb[index = 3].created_at[0] +
+                                  isipdrb[index = 3].created_at[1] +
+                                  isipdrb[index = 3].created_at[2] +
+                                  isipdrb[index = 3].created_at[3],
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].tanggal[0] +
-                                  isipdrb[index = 2].tanggal[1] +
-                                  isipdrb[index = 2].tanggal[2] +
-                                  isipdrb[index = 2].tanggal[3],
+                              isipdrb[index = 2].created_at[0] +
+                                  isipdrb[index = 2].created_at[1] +
+                                  isipdrb[index = 2].created_at[2] +
+                                  isipdrb[index = 2].created_at[3],
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].tanggal[0] +
-                                  isipdrb[index = 1].tanggal[1] +
-                                  isipdrb[index = 1].tanggal[2] +
-                                  isipdrb[index = 1].tanggal[3],
+                              isipdrb[index = 1].created_at[0] +
+                                  isipdrb[index = 1].created_at[1] +
+                                  isipdrb[index = 1].created_at[2] +
+                                  isipdrb[index = 1].created_at[3],
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].tanggal[0] +
-                                  isipdrb[index = 0].tanggal[1] +
-                                  isipdrb[index = 0].tanggal[2] +
-                                  isipdrb[index = 0].tanggal[3],
+                              isipdrb[index = 0].created_at[0] +
+                                  isipdrb[index = 0].created_at[1] +
+                                  isipdrb[index = 0].created_at[2] +
+                                  isipdrb[index = 0].created_at[3],
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                         ],
@@ -1089,7 +1095,7 @@ class _TabelDistPdrbMigasState extends State<TabelDistPdrbMigas> {
                     const Divider(),
                     // <-- Total PDRB
                     Container(
-                      color: Colors.grey.shade500,
+                      color: Colors.cyan,
                       width: screenWidth,
                       height: screenHeight * 0.05,
                       child: Row(
@@ -1100,46 +1106,52 @@ class _TabelDistPdrbMigasState extends State<TabelDistPdrbMigas> {
                             child: Text(
                               "Total PDRB",
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].total_pdrb.toString(),
+                              isipdrb[index = 4].total.toString(),
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].total_pdrb.toString(),
+                              isipdrb[index = 3].total.toString(),
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].total_pdrb.toString(),
+                              isipdrb[index = 2].total.toString(),
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].total_pdrb.toString(),
+                              isipdrb[index = 1].total.toString(),
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].total_pdrb.toString(),
+                              isipdrb[index = 0].total.toString(),
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                         ],
@@ -1153,7 +1165,8 @@ class _TabelDistPdrbMigasState extends State<TabelDistPdrbMigas> {
           if (snapshot.hasError) {
             return const Text('error');
           }
-          return const Center(child: CircularProgressIndicator(
+          return const Center(
+              child: CircularProgressIndicator(
             strokeWidth: 1,
           ));
         },

@@ -2,13 +2,13 @@
 
 class modelIpm {
   final int id;
-  final double uhh;
-  final double rls;
-  final double hls;
-  final double ppp;
-  final double ipm;
-  final double pertumbuhan;
-  final String tanggal;
+  final String uhh;
+  final String rls;
+  final String hls;
+  final String ppp;
+  final String ipm;
+  final String created_at;
+  final String updated_at;
 
   const modelIpm({
     required this.id,
@@ -17,8 +17,8 @@ class modelIpm {
     required this.hls,
     required this.ppp,
     required this.ipm,
-    required this.pertumbuhan,
-    required this.tanggal,
+    required this.created_at,
+    required this.updated_at,
   });
 
   factory modelIpm.fromJson(Map<String, dynamic> json) {
@@ -29,8 +29,8 @@ class modelIpm {
       hls: json['hls'],
       ppp: json['ppp'],
       ipm: json['ipm'],
-      pertumbuhan: json['pertumbuhan'],
-      tanggal: json['tanggal'],
+      created_at: json['created_at'],
+      updated_at: json['updated_at'],
     );
   }
 }

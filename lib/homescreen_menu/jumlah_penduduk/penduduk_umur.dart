@@ -1,7 +1,7 @@
 // ignore_for_file: camel_case_types, prefer_interpolation_to_compose_strings
 
 import 'package:bps_cilacap/Icons/back_icons_icons.dart';
-import 'package:bps_cilacap/restAPI/repository_penduduk_umur.dart';
+import 'package:bps_cilacap/restAPI/repository_penduduk.dart';
 import 'package:flutter/material.dart';
 
 class JumlahPendudukUmur extends StatefulWidget {
@@ -11,7 +11,7 @@ class JumlahPendudukUmur extends StatefulWidget {
   State<JumlahPendudukUmur> createState() => _JumlahPendudukUmurState();
 }
 
-RepositoryPendudukUmur repositorypendudukumur = RepositoryPendudukUmur();
+RepositoryJumlahPenduduk repositoryJumlahPenduduk = RepositoryJumlahPenduduk();
 
 class _JumlahPendudukUmurState extends State<JumlahPendudukUmur> {
   @override
@@ -41,54 +41,56 @@ class _JumlahPendudukUmurState extends State<JumlahPendudukUmur> {
           ),
         ),
         body: FutureBuilder(
-          future: repositorypendudukumur.getData(),
+          future: repositoryJumlahPenduduk.getData(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               List isipendudukumur = snapshot.data as List;
               return ListView.builder(
                 itemCount: 1,
                 itemBuilder: (context, index) {
-                  String thn = (isipendudukumur[index = 0].tanggal[0] +
-                          isipendudukumur[index = 0].tanggal[1] +
-                          isipendudukumur[index = 0].tanggal[2] +
-                          isipendudukumur[index = 0].tanggal[3])
+                  String thn = (isipendudukumur[index = 0].created_at[0] +
+                          isipendudukumur[index = 0].created_at[1] +
+                          isipendudukumur[index = 0].created_at[2] +
+                          isipendudukumur[index = 0].created_at[3])
                       .toString();
+                  String genderLAKI = isipendudukumur[index = 0].gender;
+                  String genderPEREMPUAN = isipendudukumur[index = 1].gender;
 
-                  int lk1 = isipendudukumur[index = 0].a;
-                  int lk2 = isipendudukumur[index = 0].b;
-                  int lk3 = isipendudukumur[index = 0].c;
-                  int lk4 = isipendudukumur[index = 0].d;
-                  int lk5 = isipendudukumur[index = 0].e;
-                  int lk6 = isipendudukumur[index = 0].f;
-                  int lk7 = isipendudukumur[index = 0].g;
-                  int lk8 = isipendudukumur[index = 0].h;
-                  int lk9 = isipendudukumur[index = 0].i;
-                  int lk10 = isipendudukumur[index = 0].j;
-                  int lk11 = isipendudukumur[index = 0].k;
-                  int lk12 = isipendudukumur[index = 0].l;
-                  int lk13 = isipendudukumur[index = 0].m;
-                  int lk14 = isipendudukumur[index = 0].n;
-                  int lk15 = isipendudukumur[index = 0].o;
-                  int lk16 = isipendudukumur[index = 0].p;
-                  int lkTotal = isipendudukumur[index = 0].total;
+                  int lk1 = int.parse(isipendudukumur[index = 0].a);
+                  int lk2 = int.parse(isipendudukumur[index = 0].b);
+                  int lk3 = int.parse(isipendudukumur[index = 0].c);
+                  int lk4 = int.parse(isipendudukumur[index = 0].d);
+                  int lk5 = int.parse(isipendudukumur[index = 0].e);
+                  int lk6 = int.parse(isipendudukumur[index = 0].f);
+                  int lk7 = int.parse(isipendudukumur[index = 0].g);
+                  int lk8 = int.parse(isipendudukumur[index = 0].h);
+                  int lk9 = int.parse(isipendudukumur[index = 0].i);
+                  int lk10 = int.parse(isipendudukumur[index = 0].j);
+                  int lk11 = int.parse(isipendudukumur[index = 0].k);
+                  int lk12 = int.parse(isipendudukumur[index = 0].l);
+                  int lk13 = int.parse(isipendudukumur[index = 0].m);
+                  int lk14 = int.parse(isipendudukumur[index = 0].n);
+                  int lk15 = int.parse(isipendudukumur[index = 0].o);
+                  int lk16 = int.parse(isipendudukumur[index = 0].p);
+                  int lkTotal = int.parse(isipendudukumur[index = 0].total);
 
-                  int pr1 = isipendudukumur[index = 1].a;
-                  int pr2 = isipendudukumur[index = 1].b;
-                  int pr3 = isipendudukumur[index = 1].c;
-                  int pr4 = isipendudukumur[index = 1].d;
-                  int pr5 = isipendudukumur[index = 1].e;
-                  int pr6 = isipendudukumur[index = 1].f;
-                  int pr7 = isipendudukumur[index = 1].g;
-                  int pr8 = isipendudukumur[index = 1].h;
-                  int pr9 = isipendudukumur[index = 1].i;
-                  int pr10 = isipendudukumur[index = 1].j;
-                  int pr11 = isipendudukumur[index = 1].k;
-                  int pr12 = isipendudukumur[index = 1].l;
-                  int pr13 = isipendudukumur[index = 1].m;
-                  int pr14 = isipendudukumur[index = 1].n;
-                  int pr15 = isipendudukumur[index = 1].o;
-                  int pr16 = isipendudukumur[index = 1].p;
-                  int prTotal = isipendudukumur[index = 1].total;
+                  int pr1 = int.parse(isipendudukumur[index = 1].a);
+                  int pr2 = int.parse(isipendudukumur[index = 1].b);
+                  int pr3 = int.parse(isipendudukumur[index = 1].c);
+                  int pr4 = int.parse(isipendudukumur[index = 1].d);
+                  int pr5 = int.parse(isipendudukumur[index = 1].e);
+                  int pr6 = int.parse(isipendudukumur[index = 1].f);
+                  int pr7 = int.parse(isipendudukumur[index = 1].g);
+                  int pr8 = int.parse(isipendudukumur[index = 1].h);
+                  int pr9 = int.parse(isipendudukumur[index = 1].i);
+                  int pr10 = int.parse(isipendudukumur[index = 1].j);
+                  int pr11 = int.parse(isipendudukumur[index = 1].k);
+                  int pr12 = int.parse(isipendudukumur[index = 1].l);
+                  int pr13 = int.parse(isipendudukumur[index = 1].m);
+                  int pr14 = int.parse(isipendudukumur[index = 1].n);
+                  int pr15 = int.parse(isipendudukumur[index = 1].o);
+                  int pr16 = int.parse(isipendudukumur[index = 1].p);
+                  int prTotal = int.parse(isipendudukumur[index = 1].total);
 
                   return Container(
                     padding: const EdgeInsets.all(2),
@@ -118,11 +120,12 @@ class _JumlahPendudukUmurState extends State<JumlahPendudukUmur> {
                                       height: screenHeight * 0.07,
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       child: const Center(
                                         child: Text(
                                           "Kelompok Umur",
                                           textAlign: TextAlign.center,
+                                          style: TextStyle(color: Colors.white),
                                         ),
                                       ),
                                     ),
@@ -134,10 +137,11 @@ class _JumlahPendudukUmurState extends State<JumlahPendudukUmur> {
                                       height: screenHeight * 0.07,
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
-                                      color: Colors.grey,
-                                      child: const Center(
+                                      color: Colors.cyan,
+                                      child: Center(
                                         child: Text(
-                                          "Laki-laki",
+                                          genderLAKI,
+                                          style: TextStyle(color: Colors.white),
                                         ),
                                       ),
                                     ),
@@ -149,10 +153,11 @@ class _JumlahPendudukUmurState extends State<JumlahPendudukUmur> {
                                       height: screenHeight * 0.07,
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
-                                      color: Colors.grey,
-                                      child: const Center(
+                                      color: Colors.cyan,
+                                      child: Center(
                                         child: Text(
-                                          "Perempuan",
+                                          genderPEREMPUAN,
+                                          style: TextStyle(color: Colors.white),
                                         ),
                                       ),
                                     ),
@@ -164,10 +169,11 @@ class _JumlahPendudukUmurState extends State<JumlahPendudukUmur> {
                                       height: screenHeight * 0.07,
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       child: const Center(
                                         child: Text(
                                           "Lk+Pr",
+                                          style: TextStyle(color: Colors.white),
                                         ),
                                       ),
                                     ),
@@ -917,13 +923,14 @@ class _JumlahPendudukUmurState extends State<JumlahPendudukUmur> {
                                     fit: FlexFit.tight,
                                     flex: 1,
                                     child: Container(
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       padding: const EdgeInsets.symmetric(
                                           vertical: 10),
                                       child: const Center(
                                         child: Text(
                                           "Total",
                                           textAlign: TextAlign.center,
+                                          style: TextStyle(color: Colors.white),
                                         ),
                                       ),
                                     ),
@@ -932,12 +939,13 @@ class _JumlahPendudukUmurState extends State<JumlahPendudukUmur> {
                                     fit: FlexFit.tight,
                                     flex: 1,
                                     child: Container(
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       padding: const EdgeInsets.symmetric(
                                           vertical: 10),
                                       child: Center(
                                         child: Text(
                                           lkTotal.toString(),
+                                          style: TextStyle(color: Colors.white),
                                         ),
                                       ),
                                     ),
@@ -946,12 +954,13 @@ class _JumlahPendudukUmurState extends State<JumlahPendudukUmur> {
                                     fit: FlexFit.tight,
                                     flex: 1,
                                     child: Container(
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       padding: const EdgeInsets.symmetric(
                                           vertical: 10),
                                       child: Center(
                                         child: Text(
                                           prTotal.toString(),
+                                          style: TextStyle(color: Colors.white),
                                         ),
                                       ),
                                     ),
@@ -960,12 +969,13 @@ class _JumlahPendudukUmurState extends State<JumlahPendudukUmur> {
                                     fit: FlexFit.tight,
                                     flex: 1,
                                     child: Container(
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       padding: const EdgeInsets.symmetric(
                                           vertical: 10),
                                       child: Center(
                                         child: Text(
                                           (lkTotal + prTotal).toString(),
+                                          style: TextStyle(color: Colors.white),
                                         ),
                                       ),
                                     ),

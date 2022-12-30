@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'model_ipm.dart';
 
 class RepositoryIpm {
-  final _baseURL = 'https://bps-oss.herokuapp.com/bps-api/ipm/';
+  final _baseURL = 'https://bps-asap.my.id/api/ipm';
 
   Future getData() async {
     try {
@@ -11,7 +11,7 @@ class RepositoryIpm {
 
       if (response.statusCode == 200) {
         var cokk = jsonDecode(response.body);
-        return (cokk['IPM'] as List)
+        return (cokk['data'] as List)
             .map((isiipm) => modelIpm.fromJson(isiipm))
             .toList();
       }

@@ -31,26 +31,26 @@ class _BodyPukState extends State<BodyPuk> {
           return PageView.builder(
             itemCount: 1,
             itemBuilder: (context, index) {
-              String th1 = isitenagakerja[index = 9].tanggal[0] +
-                  isitenagakerja[index = 9].tanggal[1] +
-                  isitenagakerja[index = 9].tanggal[2] +
-                  isitenagakerja[index = 9].tanggal[3];
-              String th2 = isitenagakerja[index = 7].tanggal[0] +
-                  isitenagakerja[index = 7].tanggal[1] +
-                  isitenagakerja[index = 7].tanggal[2] +
-                  isitenagakerja[index = 7].tanggal[3];
-              String th3 = isitenagakerja[index = 5].tanggal[0] +
-                  isitenagakerja[index = 5].tanggal[1] +
-                  isitenagakerja[index = 5].tanggal[2] +
-                  isitenagakerja[index = 5].tanggal[3];
-              String th4 = isitenagakerja[index = 3].tanggal[0] +
-                  isitenagakerja[index = 3].tanggal[1] +
-                  isitenagakerja[index = 3].tanggal[2] +
-                  isitenagakerja[index = 3].tanggal[3];
-              String th5 = isitenagakerja[index = 1].tanggal[0] +
-                  isitenagakerja[index = 1].tanggal[1] +
-                  isitenagakerja[index = 1].tanggal[2] +
-                  isitenagakerja[index = 1].tanggal[3];
+              String th1 = isitenagakerja[index = 4].created_at[0] +
+                  isitenagakerja[index = 4].created_at[1] +
+                  isitenagakerja[index = 4].created_at[2] +
+                  isitenagakerja[index = 4].created_at[3];
+              String th2 = isitenagakerja[index = 3].created_at[0] +
+                  isitenagakerja[index = 3].created_at[1] +
+                  isitenagakerja[index = 3].created_at[2] +
+                  isitenagakerja[index = 3].created_at[3];
+              String th3 = isitenagakerja[index = 2].created_at[0] +
+                  isitenagakerja[index = 2].created_at[1] +
+                  isitenagakerja[index = 2].created_at[2] +
+                  isitenagakerja[index = 2].created_at[3];
+              String th4 = isitenagakerja[index = 1].created_at[0] +
+                  isitenagakerja[index = 1].created_at[1] +
+                  isitenagakerja[index = 1].created_at[2] +
+                  isitenagakerja[index = 1].created_at[3];
+              String th5 = isitenagakerja[index = 0].created_at[0] +
+                  isitenagakerja[index = 0].created_at[1] +
+                  isitenagakerja[index = 0].created_at[2] +
+                  isitenagakerja[index = 0].created_at[3];
               return DefaultTabController(
                 length: 5,
                 child: Scaffold(

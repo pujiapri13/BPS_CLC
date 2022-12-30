@@ -41,7 +41,7 @@ class TenagaKerja {
         bkn_angkatan_kerja: json['bkn_angkatan_kerja'],
         sekolah: json['sekolah'],
         pengangguran: json['pengangguran'],
-        urus_ruta: json['urur_ruta'],
+        urus_ruta: json['urus_ruta'],
         lainnya: json['lainnya'],
         total: json['total'],
         gender: json['gender'],

@@ -1,6 +1,6 @@
 // ignore_for_file: non_constant_identifier_names
 
-import 'package:bps_cilacap/restAPI/repository_tenaga_kerja.dart';
+import 'package:bps_cilacap/restAPI/repository_bkn_angkatan_kerja.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'package:pie_chart/pie_chart.dart';
@@ -12,7 +12,8 @@ class IsiBakB extends StatefulWidget {
   State<IsiBakB> createState() => _IsiBakBState();
 }
 
-RepositoryTenagaKerja repositorytenagakerja = RepositoryTenagaKerja();
+RepositoryBknAngkatanKerja repositoryBknAngkatanKerja =
+    RepositoryBknAngkatanKerja();
 
 class _IsiBakBState extends State<IsiBakB> {
   int key = 0;
@@ -24,7 +25,7 @@ class _IsiBakBState extends State<IsiBakB> {
     // ignore: unused_local_variable
     final screenWidth = MediaQuery.of(context).size.width;
     return FutureBuilder(
-      future: repositorytenagakerja.getData(),
+      future: repositoryBknAngkatanKerja.getData(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           // ignore: unused_local_variable
@@ -33,28 +34,30 @@ class _IsiBakBState extends State<IsiBakB> {
             itemCount: 1,
             itemBuilder: (context, index) {
               // isi data
-              double LkSekolah = (isitenagakerja[index = 0].sekolah / 10000);
-              double PrSekolah = (isitenagakerja[index = 1].sekolah / 10000);
-              double JmlSekolah = ((isitenagakerja[index = 0].sekolah / 10000) +
-                  (isitenagakerja[index = 1].sekolah / 10000));
 
-              double LkRuta = (isitenagakerja[index = 0].urus_ruta / 10000);
-              double PrRuta = (isitenagakerja[index = 1].urus_ruta / 10000);
-              double JmlRuta = ((isitenagakerja[index = 0].urus_ruta / 10000) +
-                  (isitenagakerja[index = 1].urus_ruta / 10000));
+              double LkSekolah =
+                  double.parse((isitenagakerja[index = 3].sekolah));
+              double PrSekolah =
+                  double.parse((isitenagakerja[index = 8].sekolah));
+              double JmlSekolah = LkSekolah + PrSekolah;
 
-              double LkLainnya = (isitenagakerja[index = 0].lainnya / 10000);
-              double PrLainnya = (isitenagakerja[index = 1].lainnya / 10000);
-              double JmlLainnya = ((isitenagakerja[index = 0].lainnya / 10000) +
-                  (isitenagakerja[index = 1].lainnya / 10000));
+              double LkRuta =
+                  double.parse((isitenagakerja[index = 3].urus_ruta));
+              double PrRuta =
+                  double.parse((isitenagakerja[index = 8].urus_ruta));
+              double JmlRuta = LkRuta + PrRuta;
+
+              double LkLainnya =
+                  double.parse((isitenagakerja[index = 3].lainnya));
+              double PrLainnya =
+                  double.parse((isitenagakerja[index = 8].lainnya));
+              double JmlLainnya = LkLainnya + PrLainnya;
 
               double LkJumlah =
-                  (isitenagakerja[index = 0].bkn_angkatan_kerja / 10000);
+                  double.parse((isitenagakerja[index = 3].jumlah));
               double PrJumlah =
-                  (isitenagakerja[index = 1].bkn_angkatan_kerja / 10000);
-              double JmlJumlah =
-                  ((isitenagakerja[index = 0].bkn_angkatan_kerja / 10000) +
-                      (isitenagakerja[index = 1].bkn_angkatan_kerja / 10000));
+                  double.parse((isitenagakerja[index = 8].jumlah));
+              double JmlJumlah = LkJumlah + PrJumlah;
 
               return Column(
                 children: [
@@ -69,13 +72,15 @@ class _IsiBakBState extends State<IsiBakB> {
                               flex: 4,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 padding: const EdgeInsets.only(
                                     top: 10, left: 5, right: 5),
                                 height: screenHeight * 0.05,
                                 child: const Text(
                                   "Bukan Angkatan Kerja",
-                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white),
                                   textAlign: TextAlign.left,
                                 ),
                               ),
@@ -85,12 +90,12 @@ class _IsiBakBState extends State<IsiBakB> {
                               fit: FlexFit.tight,
                               child: Container(
                                 height: screenHeight * 0.05,
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 child: const Center(
                                   child: Text(
                                     "Lk",
                                     style: TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
@@ -100,13 +105,13 @@ class _IsiBakBState extends State<IsiBakB> {
                               flex: 1,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
                                 child: const Center(
                                   child: Text(
                                     "Pr",
                                     style: TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
@@ -116,13 +121,13 @@ class _IsiBakBState extends State<IsiBakB> {
                               flex: 1,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
                                 child: const Center(
                                   child: Text(
                                     "Jml",
                                     style: TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
@@ -293,13 +298,15 @@ class _IsiBakBState extends State<IsiBakB> {
                               flex: 4,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 padding: const EdgeInsets.only(
                                     top: 10, left: 5, right: 5),
                                 height: screenHeight * 0.05,
                                 child: const Text(
                                   "Jumlah",
-                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white),
                                   textAlign: TextAlign.left,
                                 ),
                               ),
@@ -309,12 +316,12 @@ class _IsiBakBState extends State<IsiBakB> {
                               fit: FlexFit.tight,
                               child: Container(
                                 height: screenHeight * 0.05,
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 child: Center(
                                   child: Text(
                                     LkJumlah.toString(),
                                     style: const TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
@@ -324,13 +331,13 @@ class _IsiBakBState extends State<IsiBakB> {
                               flex: 1,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
                                 child: Center(
                                   child: Text(
                                     PrJumlah.toString(),
                                     style: const TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
@@ -340,13 +347,13 @@ class _IsiBakBState extends State<IsiBakB> {
                               flex: 1,
                               fit: FlexFit.tight,
                               child: Container(
-                                color: Colors.grey,
+                                color: Colors.cyan,
                                 height: screenHeight * 0.05,
                                 child: Center(
                                   child: Text(
                                     JmlJumlah.toString(),
                                     style: const TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
@@ -409,7 +416,8 @@ class _IsiBakBState extends State<IsiBakB> {
         if (snapshot.hasError) {
           return const Center(child: Text("Data Belum Tersedia"));
         } else {
-          return const Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator(
+            strokeWidth: 2,));
         }
       },
     );

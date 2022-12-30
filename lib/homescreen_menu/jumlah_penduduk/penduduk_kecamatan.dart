@@ -1,7 +1,7 @@
 // ignore_for_file: camel_case_types, prefer_interpolation_to_compose_strings
 
 import 'package:bps_cilacap/Icons/back_icons_icons.dart';
-import 'package:bps_cilacap/restAPI/repository_penduduk_umur.dart';
+import 'package:bps_cilacap/restAPI/repository_penduduk_kecamatan.dart';
 import 'package:flutter/material.dart';
 
 class JumlahPendudukKecamatan extends StatefulWidget {
@@ -12,7 +12,8 @@ class JumlahPendudukKecamatan extends StatefulWidget {
       _JumlahPendudukKecamatanState();
 }
 
-RepositoryPendudukUmur repositorypendudukumur = RepositoryPendudukUmur();
+RepositoryJumlahPendudukKecamatan jumlahPendudukKecamatan =
+    RepositoryJumlahPendudukKecamatan();
 
 class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
   @override
@@ -42,19 +43,43 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
           ),
         ),
         body: FutureBuilder(
-          future: repositorypendudukumur.getData(),
+          future: jumlahPendudukKecamatan.getData(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               List isipendudukumur = snapshot.data as List;
               return ListView.builder(
                 itemCount: 1,
                 itemBuilder: (context, index) {
-                  String thn = (isipendudukumur[index = 0].tanggal[0] +
-                          isipendudukumur[index = 0].tanggal[1] +
-                          isipendudukumur[index = 0].tanggal[2] +
-                          isipendudukumur[index = 0].tanggal[3])
+                  String thn = (isipendudukumur[index = 0].created_at[0] +
+                          isipendudukumur[index = 0].created_at[1] +
+                          isipendudukumur[index = 0].created_at[2] +
+                          isipendudukumur[index = 0].created_at[3])
                       .toString();
 
+                  String kec1 = isipendudukumur[index = 0].kecamatan;
+                  String kec2 = isipendudukumur[index = 1].kecamatan;
+                  String kec3 = isipendudukumur[index = 2].kecamatan;
+                  String kec4 = isipendudukumur[index = 3].kecamatan;
+                  String kec5 = isipendudukumur[index = 4].kecamatan;
+                  String kec6 = isipendudukumur[index = 5].kecamatan;
+                  String kec7 = isipendudukumur[index = 6].kecamatan;
+                  String kec8 = isipendudukumur[index = 7].kecamatan;
+                  String kec9 = isipendudukumur[index = 8].kecamatan;
+                  String kec10 = isipendudukumur[index = 9].kecamatan;
+                  String kec11 = isipendudukumur[index = 10].kecamatan;
+                  String kec12 = isipendudukumur[index = 11].kecamatan;
+                  String kec13 = isipendudukumur[index = 12].kecamatan;
+                  String kec14 = isipendudukumur[index = 13].kecamatan;
+                  String kec15 = isipendudukumur[index = 14].kecamatan;
+                  String kec16 = isipendudukumur[index = 15].kecamatan;
+                  String kec17 = isipendudukumur[index = 16].kecamatan;
+                  String kec18 = isipendudukumur[index = 17].kecamatan;
+                  String kec19 = isipendudukumur[index = 18].kecamatan;
+                  String kec20 = isipendudukumur[index = 19].kecamatan;
+                  String kec21 = isipendudukumur[index = 20].kecamatan;
+                  String kec22 = isipendudukumur[index = 21].kecamatan;
+                  String kec23 = isipendudukumur[index = 22].kecamatan;
+                  String kec24 = isipendudukumur[index = 23].kecamatan;
                   int lk1 = 24409;
                   int lk2 = 52895;
                   int lk3 = 70712;
@@ -135,11 +160,12 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                       height: screenHeight * 0.07,
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       child: const Center(
                                         child: Text(
                                           "Kelompok Umur",
                                           textAlign: TextAlign.center,
+                                          style: TextStyle(color: Colors.white),
                                         ),
                                       ),
                                     ),
@@ -151,10 +177,11 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                       height: screenHeight * 0.07,
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       child: const Center(
                                         child: Text(
                                           "Laki-laki",
+                                          style: TextStyle(color: Colors.white),
                                         ),
                                       ),
                                     ),
@@ -166,10 +193,11 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                       height: screenHeight * 0.07,
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       child: const Center(
                                         child: Text(
                                           "Perempuan",
+                                          style: TextStyle(color: Colors.white),
                                         ),
                                       ),
                                     ),
@@ -181,10 +209,11 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                       height: screenHeight * 0.07,
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       child: const Center(
                                         child: Text(
                                           "Lk+Pr",
+                                          style: TextStyle(color: Colors.white),
                                         ),
                                       ),
                                     ),
@@ -200,9 +229,9 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     child: Container(
                                       margin: const EdgeInsets.symmetric(
                                           vertical: 8),
-                                      child: const Center(
+                                      child: Center(
                                         child: Text(
-                                          "Dayeuhluhur",
+                                          kec1,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -246,9 +275,9 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     child: Container(
                                       margin: const EdgeInsets.symmetric(
                                           vertical: 8),
-                                      child: const Center(
+                                      child: Center(
                                         child: Text(
-                                          "Wanareja",
+                                          kec2,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -292,9 +321,9 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     child: Container(
                                       margin: const EdgeInsets.symmetric(
                                           vertical: 8),
-                                      child: const Center(
+                                      child: Center(
                                         child: Text(
-                                          "Majenang",
+                                          kec3,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -338,9 +367,9 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     child: Container(
                                       margin: const EdgeInsets.symmetric(
                                           vertical: 8),
-                                      child: const Center(
+                                      child: Center(
                                         child: Text(
-                                          "Cimanggu",
+                                          kec4,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -384,9 +413,9 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     child: Container(
                                       margin: const EdgeInsets.symmetric(
                                           vertical: 8),
-                                      child: const Center(
+                                      child: Center(
                                         child: Text(
-                                          "Karangpucung",
+                                          kec5,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -430,9 +459,9 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     child: Container(
                                       margin: const EdgeInsets.symmetric(
                                           vertical: 8),
-                                      child: const Center(
+                                      child: Center(
                                         child: Text(
-                                          "Cipari",
+                                          kec6,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -476,9 +505,9 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     child: Container(
                                       margin: const EdgeInsets.symmetric(
                                           vertical: 8),
-                                      child: const Center(
+                                      child: Center(
                                         child: Text(
-                                          "Sidareja",
+                                          kec7,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -522,9 +551,9 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     child: Container(
                                       margin: const EdgeInsets.symmetric(
                                           vertical: 8),
-                                      child: const Center(
+                                      child: Center(
                                         child: Text(
-                                          "Kedungreja",
+                                          kec8,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -568,9 +597,9 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     child: Container(
                                       margin: const EdgeInsets.symmetric(
                                           vertical: 8),
-                                      child: const Center(
+                                      child: Center(
                                         child: Text(
-                                          "Patimuan",
+                                          kec9,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -614,9 +643,9 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     child: Container(
                                       margin: const EdgeInsets.symmetric(
                                           vertical: 8),
-                                      child: const Center(
+                                      child: Center(
                                         child: Text(
-                                          "Gandrungmangu",
+                                          kec10,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -660,9 +689,9 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     child: Container(
                                       margin: const EdgeInsets.symmetric(
                                           vertical: 8),
-                                      child: const Center(
+                                      child: Center(
                                         child: Text(
-                                          "Bantarsari",
+                                          kec11,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -706,9 +735,9 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     child: Container(
                                       margin: const EdgeInsets.symmetric(
                                           vertical: 8),
-                                      child: const Center(
+                                      child: Center(
                                         child: Text(
-                                          "Kawunganten",
+                                          kec12,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -752,9 +781,9 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     child: Container(
                                       margin: const EdgeInsets.symmetric(
                                           vertical: 8),
-                                      child: const Center(
+                                      child: Center(
                                         child: Text(
-                                          "Kampung Laut",
+                                          kec13,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -798,9 +827,9 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     child: Container(
                                       margin: const EdgeInsets.symmetric(
                                           vertical: 8),
-                                      child: const Center(
+                                      child: Center(
                                         child: Text(
-                                          "Jeruklegi",
+                                          kec14,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -844,9 +873,9 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     child: Container(
                                       margin: const EdgeInsets.symmetric(
                                           vertical: 8),
-                                      child: const Center(
+                                      child: Center(
                                         child: Text(
-                                          "Kesugihan",
+                                          kec15,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -890,9 +919,9 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     child: Container(
                                       margin: const EdgeInsets.symmetric(
                                           vertical: 8),
-                                      child: const Center(
+                                      child: Center(
                                         child: Text(
-                                          "Adipala",
+                                          kec16,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -936,9 +965,9 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     child: Container(
                                       margin: const EdgeInsets.symmetric(
                                           vertical: 8),
-                                      child: const Center(
+                                      child: Center(
                                         child: Text(
-                                          "Maos",
+                                          kec17,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -982,9 +1011,9 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     child: Container(
                                       margin: const EdgeInsets.symmetric(
                                           vertical: 8),
-                                      child: const Center(
+                                      child: Center(
                                         child: Text(
-                                          "Sampang",
+                                          kec18,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -1028,9 +1057,9 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     child: Container(
                                       margin: const EdgeInsets.symmetric(
                                           vertical: 8),
-                                      child: const Center(
+                                      child: Center(
                                         child: Text(
-                                          "Kroya",
+                                          kec19,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -1074,9 +1103,9 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     child: Container(
                                       margin: const EdgeInsets.symmetric(
                                           vertical: 8),
-                                      child: const Center(
+                                      child: Center(
                                         child: Text(
-                                          "Binangun",
+                                          kec20,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -1120,9 +1149,9 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     child: Container(
                                       margin: const EdgeInsets.symmetric(
                                           vertical: 8),
-                                      child: const Center(
+                                      child: Center(
                                         child: Text(
-                                          "Nusawungu",
+                                          kec21,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -1166,9 +1195,9 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     child: Container(
                                       margin: const EdgeInsets.symmetric(
                                           vertical: 8),
-                                      child: const Center(
+                                      child: Center(
                                         child: Text(
-                                          "Cilacap Selatan",
+                                          kec22,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -1212,9 +1241,9 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     child: Container(
                                       margin: const EdgeInsets.symmetric(
                                           vertical: 8),
-                                      child: const Center(
+                                      child: Center(
                                         child: Text(
-                                          "Cilacap Tengah",
+                                          kec23,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -1258,9 +1287,9 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     child: Container(
                                       margin: const EdgeInsets.symmetric(
                                           vertical: 8),
-                                      child: const Center(
+                                      child: Center(
                                         child: Text(
-                                          "Cilacap Utara",
+                                          kec24,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -1302,13 +1331,14 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     fit: FlexFit.tight,
                                     flex: 3,
                                     child: Container(
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       padding: const EdgeInsets.symmetric(
                                           vertical: 10),
                                       child: const Center(
                                         child: Text(
                                           "Total",
                                           textAlign: TextAlign.center,
+                                          style: TextStyle(color: Colors.white),
                                         ),
                                       ),
                                     ),
@@ -1317,12 +1347,13 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     fit: FlexFit.tight,
                                     flex: 2,
                                     child: Container(
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       padding: const EdgeInsets.symmetric(
                                           vertical: 10),
                                       child: Center(
                                         child: Text(
                                           lkTotal.toString(),
+                                          style: TextStyle(color: Colors.white),
                                         ),
                                       ),
                                     ),
@@ -1331,12 +1362,13 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     fit: FlexFit.tight,
                                     flex: 2,
                                     child: Container(
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       padding: const EdgeInsets.symmetric(
                                           vertical: 10),
                                       child: Center(
                                         child: Text(
                                           prTotal.toString(),
+                                          style: TextStyle(color: Colors.white),
                                         ),
                                       ),
                                     ),
@@ -1345,12 +1377,13 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                     fit: FlexFit.tight,
                                     flex: 2,
                                     child: Container(
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       padding: const EdgeInsets.symmetric(
                                           vertical: 10),
                                       child: Center(
                                         child: Text(
                                           (lkTotal + prTotal).toString(),
+                                          style: TextStyle(color: Colors.white),
                                         ),
                                       ),
                                     ),

@@ -91,47 +91,47 @@ class _pertumbuhanEkonomiState extends State<pertumbuhanEkonomi> {
                   return PageView.builder(
                     itemCount: 1,
                     itemBuilder: (context, index) {
-                      String thA = isipdrb[index = 4].tanggal[0] +
-                          isipdrb[index = 4].tanggal[1] +
-                          isipdrb[index = 4].tanggal[2] +
-                          isipdrb[index = 4].tanggal[3];
-                      String thB = isipdrb[index = 3].tanggal[0] +
-                          isipdrb[index = 3].tanggal[1] +
-                          isipdrb[index = 3].tanggal[2] +
-                          isipdrb[index = 3].tanggal[3];
-                      String thC = isipdrb[index = 2].tanggal[0] +
-                          isipdrb[index = 2].tanggal[1] +
-                          isipdrb[index = 2].tanggal[2] +
-                          isipdrb[index = 2].tanggal[3];
-                      String thD = isipdrb[index = 1].tanggal[0] +
-                          isipdrb[index = 1].tanggal[1] +
-                          isipdrb[index = 1].tanggal[2] +
-                          isipdrb[index = 1].tanggal[3];
-                      String thE = isipdrb[index = 0].tanggal[0] +
-                          isipdrb[index = 0].tanggal[1] +
-                          isipdrb[index = 0].tanggal[2] +
-                          isipdrb[index = 0].tanggal[3];
+                      String thA = isipdrb[index = 4].created_at[0] +
+                          isipdrb[index = 4].created_at[1] +
+                          isipdrb[index = 4].created_at[2] +
+                          isipdrb[index = 4].created_at[3];
+                      String thB = isipdrb[index = 3].created_at[0] +
+                          isipdrb[index = 3].created_at[1] +
+                          isipdrb[index = 3].created_at[2] +
+                          isipdrb[index = 3].created_at[3];
+                      String thC = isipdrb[index = 2].created_at[0] +
+                          isipdrb[index = 2].created_at[1] +
+                          isipdrb[index = 2].created_at[2] +
+                          isipdrb[index = 2].created_at[3];
+                      String thD = isipdrb[index = 1].created_at[0] +
+                          isipdrb[index = 1].created_at[1] +
+                          isipdrb[index = 1].created_at[2] +
+                          isipdrb[index = 1].created_at[3];
+                      String thE = isipdrb[index = 0].created_at[0] +
+                          isipdrb[index = 0].created_at[1] +
+                          isipdrb[index = 0].created_at[2] +
+                          isipdrb[index = 0].created_at[3];
 
-                      double PdrbA = isipdrb[index = 4].total_pdrb;
-                      double PdrbB = isipdrb[index = 3].total_pdrb;
-                      double PdrbC = isipdrb[index = 2].total_pdrb;
-                      double PdrbD = isipdrb[index = 1].total_pdrb;
-                      double PdrbE = isipdrb[index = 0].total_pdrb;
+                      double PdrbA = double.parse(isipdrb[index = 4].total);
+                      double PdrbB = double.parse(isipdrb[index = 3].total);
+                      double PdrbC = double.parse(isipdrb[index = 2].total);
+                      double PdrbD = double.parse(isipdrb[index = 1].total);
+                      double PdrbE = double.parse(isipdrb[index = 0].total);
 
-                      double PeA = isipdrb[index = 3].total_pdrb -
-                          isipdrb[index = 4].total_pdrb;
-                      double PeB = isipdrb[index = 2].total_pdrb -
-                          isipdrb[index = 3].total_pdrb;
-                      double PeC = isipdrb[index = 1].total_pdrb -
-                          isipdrb[index = 2].total_pdrb;
-                      double PeD = isipdrb[index = 0].total_pdrb -
-                          isipdrb[index = 1].total_pdrb;
+                      double PeA = double.parse(isipdrb[index = 3].total) -
+                          double.parse(isipdrb[index = 4].total);
+                      double PeB = double.parse(isipdrb[index = 2].total) -
+                          double.parse(isipdrb[index = 3].total);
+                      double PeC = double.parse(isipdrb[index = 1].total) -
+                          double.parse(isipdrb[index = 2].total);
+                      double PeD = double.parse(isipdrb[index = 0].total) -
+                          double.parse(isipdrb[index = 1].total);
 
                       BarChartGroupData makeGroupData(int x, double y1) {
                         return BarChartGroupData(barsSpace: 4, x: x, barRods: [
                           BarChartRodData(
                             toY: y1.toDouble(),
-                            color: Colors.green,
+                            color: Colors.cyan,
                             width: 10,
                           ),
                         ]);
@@ -176,12 +176,12 @@ class _pertumbuhanEkonomiState extends State<pertumbuhanEkonomi> {
                                           fit: FlexFit.tight,
                                           child: Container(
                                             height: screenHeight * 0.05,
-                                            color: Colors.grey,
+                                            color: Colors.cyan,
                                             child: const Center(
                                               child: Text(
                                                 "Tahun",
                                                 style: TextStyle(
-                                                    color: Colors.black,
+                                                    color: Colors.white,
                                                     fontWeight:
                                                         FontWeight.bold),
                                                 textAlign: TextAlign.center,
@@ -194,12 +194,12 @@ class _pertumbuhanEkonomiState extends State<pertumbuhanEkonomi> {
                                           fit: FlexFit.tight,
                                           child: Container(
                                             height: screenHeight * 0.05,
-                                            color: Colors.grey,
+                                            color: Colors.cyan,
                                             child: const Center(
                                               child: Text(
                                                 "Pertumbuhan Ekonomi",
                                                 style: TextStyle(
-                                                    color: Colors.black,
+                                                    color: Colors.white,
                                                     fontWeight:
                                                         FontWeight.bold),
                                                 textAlign: TextAlign.center,
@@ -212,12 +212,12 @@ class _pertumbuhanEkonomiState extends State<pertumbuhanEkonomi> {
                                           fit: FlexFit.tight,
                                           child: Container(
                                             height: screenHeight * 0.05,
-                                            color: Colors.grey,
+                                            color: Colors.cyan,
                                             child: const Center(
                                               child: Text(
                                                 "PDRB ADHB",
                                                 style: TextStyle(
-                                                    color: Colors.black,
+                                                    color: Colors.white,
                                                     fontWeight:
                                                         FontWeight.bold),
                                                 textAlign: TextAlign.center,
@@ -229,36 +229,6 @@ class _pertumbuhanEkonomiState extends State<pertumbuhanEkonomi> {
                                     ),
                                     Row(
                                       children: [
-                                        Flexible(
-                                          flex: 1,
-                                          fit: FlexFit.tight,
-                                          child: Container(
-                                            padding: const EdgeInsets.only(
-                                                top: 10, left: 5, right: 5),
-                                            height: screenHeight * 0.05,
-                                            child: const Center(
-                                              child: Text(
-                                                "2017",
-                                                textAlign: TextAlign.left,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Flexible(
-                                          flex: 1,
-                                          fit: FlexFit.tight,
-                                          child: Container(
-                                            padding: const EdgeInsets.only(
-                                                top: 10, left: 5, right: 5),
-                                            height: screenHeight * 0.05,
-                                            child: const Center(
-                                              child: Text(
-                                                " - ",
-                                                textAlign: TextAlign.left,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
                                         Flexible(
                                           flex: 1,
                                           fit: FlexFit.tight,
@@ -268,26 +238,7 @@ class _pertumbuhanEkonomiState extends State<pertumbuhanEkonomi> {
                                             height: screenHeight * 0.05,
                                             child: Center(
                                               child: Text(
-                                                PdrbA.toString(),
-                                                textAlign: TextAlign.left,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      children: [
-                                        Flexible(
-                                          flex: 1,
-                                          fit: FlexFit.tight,
-                                          child: Container(
-                                            padding: const EdgeInsets.only(
-                                                top: 10, left: 5, right: 5),
-                                            height: screenHeight * 0.05,
-                                            child: const Center(
-                                              child: Text(
-                                                "2018",
+                                                thB,
                                                 textAlign: TextAlign.left,
                                               ),
                                             ),
@@ -334,9 +285,9 @@ class _pertumbuhanEkonomiState extends State<pertumbuhanEkonomi> {
                                             padding: const EdgeInsets.only(
                                                 top: 10, left: 5, right: 5),
                                             height: screenHeight * 0.05,
-                                            child: const Center(
+                                            child: Center(
                                               child: Text(
-                                                "2019",
+                                                thC,
                                                 textAlign: TextAlign.left,
                                               ),
                                             ),
@@ -383,9 +334,9 @@ class _pertumbuhanEkonomiState extends State<pertumbuhanEkonomi> {
                                             padding: const EdgeInsets.only(
                                                 top: 10, left: 5, right: 5),
                                             height: screenHeight * 0.05,
-                                            child: const Center(
+                                            child: Center(
                                               child: Text(
-                                                "2020",
+                                                thD,
                                                 textAlign: TextAlign.left,
                                               ),
                                             ),
@@ -432,9 +383,9 @@ class _pertumbuhanEkonomiState extends State<pertumbuhanEkonomi> {
                                             padding: const EdgeInsets.only(
                                                 top: 10, left: 5, right: 5),
                                             height: screenHeight * 0.05,
-                                            child: const Center(
+                                            child: Center(
                                               child: Text(
-                                                "2021",
+                                                thE,
                                                 textAlign: TextAlign.left,
                                               ),
                                             ),
@@ -609,7 +560,7 @@ class _pertumbuhanEkonomiState extends State<pertumbuhanEkonomi> {
                                           Container(
                                             width: 10,
                                             height: 10,
-                                            color: Colors.green,
+                                            color: Colors.cyan,
                                           ),
                                           const Text(
                                             " PDRB Atas Dasar Harga Berlaku",

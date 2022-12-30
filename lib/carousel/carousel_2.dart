@@ -1,3 +1,4 @@
+import 'package:bps_cilacap/restAPI/repository_penduduk.dart';
 import 'package:bps_cilacap/restAPI/repository_penduduk_umur.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,7 @@ class carouselSlider2 extends StatefulWidget {
   State<carouselSlider2> createState() => _carouselSlider2State();
 }
 
-RepositoryPendudukUmur repositorypenduduk = RepositoryPendudukUmur();
+RepositoryJumlahPenduduk repositoryJumlahPenduduk = RepositoryJumlahPenduduk();
 
 class _carouselSlider2State extends State<carouselSlider2> {
   @override
@@ -18,19 +19,19 @@ class _carouselSlider2State extends State<carouselSlider2> {
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom;
     return FutureBuilder(
-      future: repositorypenduduk.getData(),
+      future: repositoryJumlahPenduduk.getData(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           List isipenduduk = snapshot.data as List;
           return PageView.builder(
             itemCount: 1,
             itemBuilder: (context, index) {
-              String tahun = isipenduduk[index = 0].tanggal[0] +
-                  isipenduduk[index = 0].tanggal[1] +
-                  isipenduduk[index = 0].tanggal[2] +
-                  isipenduduk[index = 0].tanggal[3];
-              int lkTotal = isipenduduk[index = 0].total;
-              int prTotal = isipenduduk[index = 1].total;
+              String tahun = isipenduduk[index = 0].created_at[0] +
+                  isipenduduk[index = 0].created_at[1] +
+                  isipenduduk[index = 0].created_at[2] +
+                  isipenduduk[index = 0].created_at[3];
+              int lkTotal = int.parse(isipenduduk[index = 0].total);
+              int prTotal = int.parse(isipenduduk[index = 1].total);
               int jmlTotal = lkTotal + prTotal;
               return Container(
                 decoration: BoxDecoration(
@@ -85,7 +86,7 @@ class _carouselSlider2State extends State<carouselSlider2> {
                           Container(
                             margin: const EdgeInsets.only(left: 10),
                             child: Text(
-                              "Jumlah Total = ${jmlTotal}Jiwa",
+                              "Jumlah Total = ${jmlTotal} Jiwa",
                             ),
                           ),
                         ],

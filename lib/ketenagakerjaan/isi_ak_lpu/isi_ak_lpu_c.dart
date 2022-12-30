@@ -1,6 +1,6 @@
 // ignore_for_file: file_names
 
-import 'package:bps_cilacap/restAPI/repository_tenaga_kerja.dart';
+import 'package:bps_cilacap/restAPI/repository_penduduk_lpu.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'package:pie_chart/pie_chart.dart';
@@ -14,7 +14,7 @@ class IsiAkLpuC extends StatefulWidget {
 
 enum LegendShape { circle, rectangle }
 
-RepositoryTenagaKerja repositorytenagakerja = RepositoryTenagaKerja();
+RepositoryPendudukLpu repositoryPendudukLpu = RepositoryPendudukLpu();
 
 class _IsiAkLpuCState extends State<IsiAkLpuC> {
   int key = 0;
@@ -26,21 +26,21 @@ class _IsiAkLpuCState extends State<IsiAkLpuC> {
     // ignore: unused_local_variable
     final screenWidth = MediaQuery.of(context).size.width;
     return FutureBuilder(
-      future: repositorytenagakerja.getData(),
+      future: repositoryPendudukLpu.getData(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           // ignore: unused_local_variable
-          List isitenagakerja = snapshot.data as List;
+          List isiaklpu = snapshot.data as List;
           return PageView.builder(
             itemCount: 1,
             itemBuilder: (context, index) {
-              double taniLk = 27.75;
-              double industriLk = 35.35;
-              double jaslainLk = 36.90;
+              double taniLK = double.parse(isiaklpu[index = 2].pertanian);
+              double industriLK = double.parse(isiaklpu[index = 2].industri);
+              double jasaLK = double.parse(isiaklpu[index = 2].jasa);
 
-              double taniPr = 21.60;
-              double industriPr = 23.44;
-              double jaslainPr = 54.96;
+              double taniPR = double.parse(isiaklpu[index = 7].pertanian);
+              double industriPR = double.parse(isiaklpu[index = 7].industri);
+              double jasPR = double.parse(isiaklpu[index = 7].jasa);
               return Column(
                 children: [
                   Flexible(
@@ -58,11 +58,10 @@ class _IsiAkLpuCState extends State<IsiAkLpuC> {
                                 color: Colors.cyan,
                                 child: const Center(
                                   child: Text(
-                                    "Lapangan Pekerjaan Utama",
+                                    "Kelompok Umur",
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontWeight: FontWeight.bold),
-                                    textAlign: TextAlign.center,
                                   ),
                                 ),
                               ),
@@ -99,6 +98,22 @@ class _IsiAkLpuCState extends State<IsiAkLpuC> {
                                 ),
                               ),
                             ),
+                            Flexible(
+                              flex: 2,
+                              fit: FlexFit.tight,
+                              child: Container(
+                                color: Colors.cyan,
+                                height: screenHeight * 0.05,
+                                child: const Center(
+                                  child: Text(
+                                    "Jumlah",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                         Row(
@@ -124,7 +139,7 @@ class _IsiAkLpuCState extends State<IsiAkLpuC> {
                               child: SizedBox(
                                 height: screenHeight * 0.05,
                                 child: Center(
-                                  child: Text(taniLk.toStringAsFixed(2)),
+                                  child: Text(taniLK.toStringAsFixed(2)),
                                 ),
                               ),
                             ),
@@ -135,7 +150,19 @@ class _IsiAkLpuCState extends State<IsiAkLpuC> {
                                 height: screenHeight * 0.05,
                                 child: Center(
                                   child: Text(
-                                    taniPr.toStringAsFixed(2),
+                                    taniPR.toStringAsFixed(2),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Flexible(
+                              flex: 2,
+                              fit: FlexFit.tight,
+                              child: SizedBox(
+                                height: screenHeight * 0.05,
+                                child: Center(
+                                  child: Text(
+                                    ((taniLK + taniPR) / 2).toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -166,7 +193,7 @@ class _IsiAkLpuCState extends State<IsiAkLpuC> {
                                 height: screenHeight * 0.05,
                                 child: Center(
                                   child: Text(
-                                    industriLk.toStringAsFixed(2),
+                                    industriLK.toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -178,7 +205,20 @@ class _IsiAkLpuCState extends State<IsiAkLpuC> {
                                 height: screenHeight * 0.05,
                                 child: Center(
                                   child: Text(
-                                    industriPr.toStringAsFixed(2),
+                                    industriPR.toStringAsFixed(2),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Flexible(
+                              flex: 2,
+                              fit: FlexFit.tight,
+                              child: SizedBox(
+                                height: screenHeight * 0.05,
+                                child: Center(
+                                  child: Text(
+                                    ((industriPR + industriLK) / 2)
+                                        .toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -209,7 +249,7 @@ class _IsiAkLpuCState extends State<IsiAkLpuC> {
                                 height: screenHeight * 0.05,
                                 child: Center(
                                   child: Text(
-                                    jaslainLk.toStringAsFixed(2),
+                                    jasaLK.toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -221,7 +261,19 @@ class _IsiAkLpuCState extends State<IsiAkLpuC> {
                                 height: screenHeight * 0.05,
                                 child: Center(
                                   child: Text(
-                                    jaslainPr.toStringAsFixed(2),
+                                    jasPR.toStringAsFixed(2),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Flexible(
+                              flex: 2,
+                              fit: FlexFit.tight,
+                              child: SizedBox(
+                                height: screenHeight * 0.05,
+                                child: Center(
+                                  child: Text(
+                                    ((jasaLK + jasPR) / 2).toStringAsFixed(2),
                                   ),
                                 ),
                               ),
@@ -244,7 +296,6 @@ class _IsiAkLpuCState extends State<IsiAkLpuC> {
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontWeight: FontWeight.bold),
-                                    textAlign: TextAlign.left,
                                   ),
                                 ),
                               ),
@@ -257,7 +308,7 @@ class _IsiAkLpuCState extends State<IsiAkLpuC> {
                                 height: screenHeight * 0.05,
                                 child: Center(
                                   child: Text(
-                                    (taniLk + industriLk + jaslainLk)
+                                    (taniLK + industriLK + jasaLK)
                                         .toStringAsFixed(2),
                                     style: const TextStyle(
                                         color: Colors.white,
@@ -274,7 +325,30 @@ class _IsiAkLpuCState extends State<IsiAkLpuC> {
                                 height: screenHeight * 0.05,
                                 child: Center(
                                   child: Text(
-                                    (taniPr + industriPr + jaslainPr)
+                                    (taniPR + industriPR + jasPR)
+                                        .toStringAsFixed(2),
+                                    style: const TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Flexible(
+                              flex: 2,
+                              fit: FlexFit.tight,
+                              child: Container(
+                                color: Colors.cyan,
+                                height: screenHeight * 0.05,
+                                child: Center(
+                                  child: Text(
+                                    ((taniPR +
+                                                industriPR +
+                                                jasPR +
+                                                taniLK +
+                                                industriLK +
+                                                jasaLK) /
+                                            2)
                                         .toStringAsFixed(2),
                                     style: const TextStyle(
                                         color: Colors.white,
@@ -294,25 +368,25 @@ class _IsiAkLpuCState extends State<IsiAkLpuC> {
                     child: PieChart(
                       key: ValueKey(key),
                       dataMap: <String, double>{
-                        "Pertanian": ((taniLk + taniPr) / 2),
-                        "Industri": ((industriLk + industriPr) / 2),
-                        "Jasa/Lainnya": ((jaslainLk + jaslainPr) / 2),
+                        "55 +": (jasaLK + jasPR),
+                        "25-54": (industriLK + industriPR),
+                        "15-24": (taniLK + taniPR),
                       },
                       animationDuration: const Duration(milliseconds: 800),
                       chartLegendSpacing: 50,
                       chartRadius: math.min(
                           MediaQuery.of(context).size.width / 2.5, 300),
                       colorList: const <Color>[
-                        Colors.grey,
                         Colors.orange,
                         Colors.cyan,
+                        Colors.grey,
                       ],
                       initialAngleInDegree: 90,
                       chartType: ChartType.ring,
                       legendLabels: const <String, String>{
-                        "Pertanian": "Pertanian",
-                        "Industri": "Industri",
-                        "Jasa/Lainnya": "Jasa/Lainnya",
+                        "55 +": "Jasa/Lainnya",
+                        "25-54": "Industri",
+                        "15-24": "Pertanian",
                       },
                       legendOptions: const LegendOptions(
                         legendPosition: LegendPosition.bottom,
@@ -329,11 +403,6 @@ class _IsiAkLpuCState extends State<IsiAkLpuC> {
                         showChartValuesOutside: true,
                       ),
                       ringStrokeWidth: 50,
-                      emptyColor: Colors.cyan,
-                      emptyColorGradient: const [
-                        Color(0xff6c5ce7),
-                        Colors.blue,
-                      ],
                       baseChartColor: Colors.transparent,
                     ),
                   ),
@@ -345,7 +414,8 @@ class _IsiAkLpuCState extends State<IsiAkLpuC> {
         if (snapshot.hasError) {
           return const Center(child: Text("Data Belum Tersedia"));
         } else {
-          return const Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator(
+            strokeWidth: 1,));
         }
       },
     );

@@ -1,7 +1,7 @@
 // ignore_for_file: camel_case_types, unused_local_variable, duplicate_ignore, prefer_interpolation_to_compose_strings
 
 import 'package:bps_cilacap/Icons/back_icons_icons.dart';
-import 'package:bps_cilacap/restAPI/repository_kemiskinan.dart';
+import 'package:bps_cilacap/restAPI/repository_kemiskinan_kota.dart';
 import 'package:flutter/material.dart';
 
 class KemiskinanKabupatenKota extends StatefulWidget {
@@ -12,7 +12,7 @@ class KemiskinanKabupatenKota extends StatefulWidget {
       _KemiskinanKabupatenKotaState();
 }
 
-RepositoryKemiskinan repositorykemiskinan = RepositoryKemiskinan();
+RepositoryKemiskinanKota repositoryKemiskinanKota = RepositoryKemiskinanKota();
 
 class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
   @override
@@ -42,203 +42,276 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
           ),
         ),
         body: FutureBuilder(
-          future: repositorykemiskinan.getData(),
+          future: repositoryKemiskinanKota.getData(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               List isikemiskinan = snapshot.data as List;
               return ListView.builder(
                 itemCount: 1,
                 itemBuilder: (context, index) {
-                  String th1 = 2021.toString();
-                  String th2 = 2020.toString();
-                  String th3 = 2019.toString();
-                  String th4 = 2018.toString();
-                  String th5 = 2017.toString();
+                  String th1 = isikemiskinan[index = 0].created_at[0] +
+                      isikemiskinan[index = 0].created_at[1] +
+                      isikemiskinan[index = 0].created_at[2] +
+                      isikemiskinan[index = 0].created_at[3];
 
-                  double pmk1 = 201.71;
-                  double pmk2 = 232.91;
-                  double pmk3 = 153.08;
-                  double pmk4 = 150.19;
-                  double pmk5 = 212.92;
-                  double pmk6 = 88.80;
-                  double pmk7 = 139.67;
-                  double pmk8 = 154.91;
-                  double pmk9 = 104.82;
-                  double pmk10 = 158.23;
-                  double pmk11 = 73.84;
-                  double pmk12 = 110.46;
-                  double pmk13 = 95.41;
-                  double pmk14 = 122.91;
-                  double pmk15 = 175.72;
-                  double pmk16 = 107.05;
-                  double pmk17 = 101.40;
-                  double pmk18 = 128.74;
-                  double pmk19 = 67.06;
-                  double pmk20 = 95.22;
-                  double pmk21 = 151.74;
-                  double pmk22 = 83.61;
-                  double pmk23 = 79.09;
-                  double pmk24 = 100.00;
-                  double pmk25 = 74.91;
-                  double pmk26 = 95.26;
-                  double pmk27 = 215.08;
-                  double pmk28 = 123.52;
-                  double pmk29 = 314.95;
-                  double pmk30 = 9.44;
-                  double pmk31 = 48.79;
-                  double pmk32 = 10.14;
-                  double pmk33 = 84.45;
-                  double pmk34 = 23.49;
-                  double pmk35 = 20.27;
-                  double pmk36 = 4109.75;
+                  String kabkota1 = isikemiskinan[index = 0].kabkota;
+                  String kabkota2 = isikemiskinan[index = 1].kabkota;
+                  String kabkota3 = isikemiskinan[index = 2].kabkota;
+                  String kabkota4 = isikemiskinan[index = 3].kabkota;
+                  String kabkota5 = isikemiskinan[index = 4].kabkota;
+                  String kabkota6 = isikemiskinan[index = 5].kabkota;
+                  String kabkota7 = isikemiskinan[index = 6].kabkota;
+                  String kabkota8 = isikemiskinan[index = 7].kabkota;
+                  String kabkota9 = isikemiskinan[index = 8].kabkota;
+                  String kabkota10 = isikemiskinan[index = 9].kabkota;
+                  String kabkota11 = isikemiskinan[index = 10].kabkota;
+                  String kabkota12 = isikemiskinan[index = 11].kabkota;
+                  String kabkota13 = isikemiskinan[index = 12].kabkota;
+                  String kabkota14 = isikemiskinan[index = 13].kabkota;
+                  String kabkota15 = isikemiskinan[index = 14].kabkota;
+                  String kabkota16 = isikemiskinan[index = 15].kabkota;
+                  String kabkota17 = isikemiskinan[index = 16].kabkota;
+                  String kabkota18 = isikemiskinan[index = 17].kabkota;
+                  String kabkota19 = isikemiskinan[index = 18].kabkota;
+                  String kabkota20 = isikemiskinan[index = 19].kabkota;
+                  String kabkota21 = isikemiskinan[index = 20].kabkota;
+                  String kabkota22 = isikemiskinan[index = 21].kabkota;
+                  String kabkota23 = isikemiskinan[index = 22].kabkota;
+                  String kabkota24 = isikemiskinan[index = 23].kabkota;
+                  String kabkota25 = isikemiskinan[index = 24].kabkota;
+                  String kabkota26 = isikemiskinan[index = 25].kabkota;
+                  String kabkota27 = isikemiskinan[index = 26].kabkota;
+                  String kabkota28 = isikemiskinan[index = 27].kabkota;
+                  String kabkota29 = isikemiskinan[index = 28].kabkota;
+                  String kabkota30 = isikemiskinan[index = 29].kabkota;
+                  String kabkota31 = isikemiskinan[index = 30].kabkota;
+                  String kabkota32 = isikemiskinan[index = 31].kabkota;
+                  String kabkota33 = isikemiskinan[index = 32].kabkota;
+                  String kabkota34 = isikemiskinan[index = 33].kabkota;
+                  String kabkota35 = isikemiskinan[index = 34].kabkota;
+                  String kabkota36 = isikemiskinan[index = 35].kabkota;
 
-                  double p0_1 = 11.67;
-                  double p0_2 = 13.66;
-                  double p0_3 = 16.24;
-                  double p0_4 = 16.23;
-                  double p0_5 = 17.83;
-                  double p0_6 = 12.40;
-                  double p0_7 = 17.67;
-                  double p0_8 = 11.91;
-                  double p0_9 = 10.62;
-                  double p0_10 = 13.49;
-                  double p0_11 = 8.23;
-                  double p0_12 = 11.55;
-                  double p0_13 = 10.68;
-                  double p0_14 = 13.83;
-                  double p0_15 = 12.74;
-                  double p0_16 = 12.39;
-                  double p0_17 = 15.80;
-                  double p0_18 = 10.21;
-                  double p0_19 = 7.60;
-                  double p0_20 = 7.44;
-                  double p0_21 = 12.92;
-                  double p0_22 = 7.82;
-                  double p0_23 = 10.17;
-                  double p0_24 = 10.24;
-                  double p0_25 = 9.68;
-                  double p0_26 = 10.57;
-                  double p0_27 = 16.56;
-                  double p0_28 = 8.60;
-                  double p0_29 = 17.43;
-                  double p0_30 = 7.75;
-                  double p0_31 = 9.4;
-                  double p0_32 = 5.14;
-                  double p0_33 = 4.56;
-                  double p0_34 = 7.59;
-                  double p0_35 = 8.12;
-                  double p0_36 = 11.79;
+                  double pmk1 =
+                      double.parse(isikemiskinan[index = 0].pddk_mskn);
+                  double pmk2 =
+                      double.parse(isikemiskinan[index = 1].pddk_mskn);
+                  double pmk3 =
+                      double.parse(isikemiskinan[index = 2].pddk_mskn);
+                  double pmk4 =
+                      double.parse(isikemiskinan[index = 3].pddk_mskn);
+                  double pmk5 =
+                      double.parse(isikemiskinan[index = 4].pddk_mskn);
+                  double pmk6 =
+                      double.parse(isikemiskinan[index = 5].pddk_mskn);
+                  double pmk7 =
+                      double.parse(isikemiskinan[index = 6].pddk_mskn);
+                  double pmk8 =
+                      double.parse(isikemiskinan[index = 7].pddk_mskn);
+                  double pmk9 =
+                      double.parse(isikemiskinan[index = 8].pddk_mskn);
+                  double pmk10 =
+                      double.parse(isikemiskinan[index = 9].pddk_mskn);
+                  double pmk11 =
+                      double.parse(isikemiskinan[index = 10].pddk_mskn);
+                  double pmk12 =
+                      double.parse(isikemiskinan[index = 11].pddk_mskn);
+                  double pmk13 =
+                      double.parse(isikemiskinan[index = 12].pddk_mskn);
+                  double pmk14 =
+                      double.parse(isikemiskinan[index = 13].pddk_mskn);
+                  double pmk15 =
+                      double.parse(isikemiskinan[index = 14].pddk_mskn);
+                  double pmk16 =
+                      double.parse(isikemiskinan[index = 15].pddk_mskn);
+                  double pmk17 =
+                      double.parse(isikemiskinan[index = 16].pddk_mskn);
+                  double pmk18 =
+                      double.parse(isikemiskinan[index = 17].pddk_mskn);
+                  double pmk19 =
+                      double.parse(isikemiskinan[index = 17].pddk_mskn);
+                  double pmk20 =
+                      double.parse(isikemiskinan[index = 18].pddk_mskn);
+                  double pmk21 =
+                      double.parse(isikemiskinan[index = 19].pddk_mskn);
+                  double pmk22 =
+                      double.parse(isikemiskinan[index = 20].pddk_mskn);
+                  double pmk23 =
+                      double.parse(isikemiskinan[index = 21].pddk_mskn);
+                  double pmk24 =
+                      double.parse(isikemiskinan[index = 23].pddk_mskn);
+                  double pmk25 =
+                      double.parse(isikemiskinan[index = 24].pddk_mskn);
+                  double pmk26 =
+                      double.parse(isikemiskinan[index = 25].pddk_mskn);
+                  double pmk27 =
+                      double.parse(isikemiskinan[index = 26].pddk_mskn);
+                  double pmk28 =
+                      double.parse(isikemiskinan[index = 27].pddk_mskn);
+                  double pmk29 =
+                      double.parse(isikemiskinan[index = 28].pddk_mskn);
+                  double pmk30 =
+                      double.parse(isikemiskinan[index = 29].pddk_mskn);
+                  double pmk31 =
+                      double.parse(isikemiskinan[index = 30].pddk_mskn);
+                  double pmk32 =
+                      double.parse(isikemiskinan[index = 31].pddk_mskn);
+                  double pmk33 =
+                      double.parse(isikemiskinan[index = 32].pddk_mskn);
+                  double pmk34 =
+                      double.parse(isikemiskinan[index = 33].pddk_mskn);
+                  double pmk35 =
+                      double.parse(isikemiskinan[index = 34].pddk_mskn);
+                  double pmk36 =
+                      double.parse(isikemiskinan[index = 35].pddk_mskn);
 
-                  double gk1 = 363.367;
-                  double gk2 = 417.086;
-                  double gk3 = 384.183;
-                  double gk4 = 328.679;
-                  double gk5 = 390.599;
-                  double gk6 = 376.127;
-                  double gk7 = 373.474;
-                  double gk8 = 353.608;
-                  double gk9 = 361.922;
-                  double gk10 = 436.896;
-                  double gk11 = 410.273;
-                  double gk12 = 356.728;
-                  double gk13 = 401.542;
-                  double gk14 = 363.349;
-                  double gk15 = 404.456;
-                  double gk16 = 363.649;
-                  double gk17 = 414.977;
-                  double gk18 = 458.616;
-                  double gk19 = 450.992;
-                  double gk20 = 419.028;
-                  double gk21 = 445.176;
-                  double gk22 = 416.395;
-                  double gk23 = 336.034;
-                  double gk24 = 407.387;
-                  double gk25 = 318.330;
-                  double gk26 = 416.779;
-                  double gk27 = 401.857;
-                  double gk28 = 404.655;
-                  double gk29 = 445.853;
-                  double gk30 = 537.783;
-                  double gk31 = 511.216;
-                  double gk32 = 480.903;
-                  double gk33 = 543.929;
-                  double gk34 = 480.415;
-                  double gk35 = 523.413;
-                  double gk36 = 409.193;
+                  double p0_1 = double.parse(isikemiskinan[index = 0].p0);
+                  double p0_2 = double.parse(isikemiskinan[index = 1].p0);
+                  double p0_3 = double.parse(isikemiskinan[index = 2].p0);
+                  double p0_4 = double.parse(isikemiskinan[index = 3].p0);
+                  double p0_5 = double.parse(isikemiskinan[index = 4].p0);
+                  double p0_6 = double.parse(isikemiskinan[index = 5].p0);
+                  double p0_7 = double.parse(isikemiskinan[index = 6].p0);
+                  double p0_8 = double.parse(isikemiskinan[index = 7].p0);
+                  double p0_9 = double.parse(isikemiskinan[index = 8].p0);
+                  double p0_10 = double.parse(isikemiskinan[index = 9].p0);
+                  double p0_11 = double.parse(isikemiskinan[index = 10].p0);
+                  double p0_12 = double.parse(isikemiskinan[index = 11].p0);
+                  double p0_13 = double.parse(isikemiskinan[index = 12].p0);
+                  double p0_14 = double.parse(isikemiskinan[index = 13].p0);
+                  double p0_15 = double.parse(isikemiskinan[index = 14].p0);
+                  double p0_16 = double.parse(isikemiskinan[index = 15].p0);
+                  double p0_17 = double.parse(isikemiskinan[index = 16].p0);
+                  double p0_18 = double.parse(isikemiskinan[index = 17].p0);
+                  double p0_19 = double.parse(isikemiskinan[index = 18].p0);
+                  double p0_20 = double.parse(isikemiskinan[index = 19].p0);
+                  double p0_21 = double.parse(isikemiskinan[index = 20].p0);
+                  double p0_22 = double.parse(isikemiskinan[index = 21].p0);
+                  double p0_23 = double.parse(isikemiskinan[index = 22].p0);
+                  double p0_24 = double.parse(isikemiskinan[index = 23].p0);
+                  double p0_25 = double.parse(isikemiskinan[index = 24].p0);
+                  double p0_26 = double.parse(isikemiskinan[index = 25].p0);
+                  double p0_27 = double.parse(isikemiskinan[index = 26].p0);
+                  double p0_28 = double.parse(isikemiskinan[index = 27].p0);
+                  double p0_29 = double.parse(isikemiskinan[index = 28].p0);
+                  double p0_30 = double.parse(isikemiskinan[index = 29].p0);
+                  double p0_31 = double.parse(isikemiskinan[index = 30].p0);
+                  double p0_32 = double.parse(isikemiskinan[index = 31].p0);
+                  double p0_33 = double.parse(isikemiskinan[index = 32].p0);
+                  double p0_34 = double.parse(isikemiskinan[index = 33].p0);
+                  double p0_35 = double.parse(isikemiskinan[index = 34].p0);
+                  double p0_36 = double.parse(isikemiskinan[index = 35].p0);
 
-                  double p1_1 = 1.48;
-                  double p1_2 = 2.36;
-                  double p1_3 = 2.10;
-                  double p1_4 = 2.97;
-                  double p1_5 = 3.24;
-                  double p1_6 = 1.36;
-                  double p1_7 = 2.75;
-                  double p1_8 = 1.63;
-                  double p1_9 = 1.76;
-                  double p1_10 = 1.79;
-                  double p1_11 = 0.91;
-                  double p1_12 = 1.58;
-                  double p1_13 = 1.61;
-                  double p1_14 = 2.39;
-                  double p1_15 = 1.66;
-                  double p1_16 = 1.82;
-                  double p1_17 = 2.77;
-                  double p1_18 = 1.69;
-                  double p1_19 = 1.23;
-                  double p1_20 = 0.88;
-                  double p1_21 = 2.32;
-                  double p1_22 = 0.95;
-                  double p1_23 = 1.57;
-                  double p1_24 = 1.52;
-                  double p1_25 = 1.76;
-                  double p1_26 = 1.75;
-                  double p1_27 = 2.92;
-                  double p1_28 = 1.00;
-                  double p1_29 = 3.04;
-                  double p1_30 = 0.85;
-                  double p1_31 = 1.83;
-                  double p1_32 = 0.80;
-                  double p1_33 = 0.67;
-                  double p1_34 = 1.51;
-                  double p1_35 = 1.04;
-                  double p1_36 = 1.91;
+                  double gk1 = double.parse(isikemiskinan[index = 0].gk);
+                  double gk2 = double.parse(isikemiskinan[index = 1].gk);
+                  double gk3 = double.parse(isikemiskinan[index = 2].gk);
+                  double gk4 = double.parse(isikemiskinan[index = 3].gk);
+                  double gk5 = double.parse(isikemiskinan[index = 4].gk);
+                  double gk6 = double.parse(isikemiskinan[index = 5].gk);
+                  double gk7 = double.parse(isikemiskinan[index = 6].gk);
+                  double gk8 = double.parse(isikemiskinan[index = 7].gk);
+                  double gk9 = double.parse(isikemiskinan[index = 8].gk);
+                  double gk10 = double.parse(isikemiskinan[index = 9].gk);
+                  double gk11 = double.parse(isikemiskinan[index = 10].gk);
+                  double gk12 = double.parse(isikemiskinan[index = 11].gk);
+                  double gk13 = double.parse(isikemiskinan[index = 12].gk);
+                  double gk14 = double.parse(isikemiskinan[index = 13].gk);
+                  double gk15 = double.parse(isikemiskinan[index = 14].gk);
+                  double gk16 = double.parse(isikemiskinan[index = 15].gk);
+                  double gk17 = double.parse(isikemiskinan[index = 16].gk);
+                  double gk18 = double.parse(isikemiskinan[index = 17].gk);
+                  double gk19 = double.parse(isikemiskinan[index = 18].gk);
+                  double gk20 = double.parse(isikemiskinan[index = 19].gk);
+                  double gk21 = double.parse(isikemiskinan[index = 20].gk);
+                  double gk22 = double.parse(isikemiskinan[index = 21].gk);
+                  double gk23 = double.parse(isikemiskinan[index = 22].gk);
+                  double gk24 = double.parse(isikemiskinan[index = 23].gk);
+                  double gk25 = double.parse(isikemiskinan[index = 24].gk);
+                  double gk26 = double.parse(isikemiskinan[index = 25].gk);
+                  double gk27 = double.parse(isikemiskinan[index = 26].gk);
+                  double gk28 = double.parse(isikemiskinan[index = 27].gk);
+                  double gk29 = double.parse(isikemiskinan[index = 28].gk);
+                  double gk30 = double.parse(isikemiskinan[index = 29].gk);
+                  double gk31 = double.parse(isikemiskinan[index = 30].gk);
+                  double gk32 = double.parse(isikemiskinan[index = 31].gk);
+                  double gk33 = double.parse(isikemiskinan[index = 32].gk);
+                  double gk34 = double.parse(isikemiskinan[index = 33].gk);
+                  double gk35 = double.parse(isikemiskinan[index = 34].gk);
+                  double gk36 = double.parse(isikemiskinan[index = 35].gk);
 
-                  double p2_1 = 0.30;
-                  double p2_2 = 0.57;
-                  double p2_3 = 0.41;
-                  double p2_4 = 0.79;
-                  double p2_5 = 0.88;
-                  double p2_6 = 0.28;
-                  double p2_7 = 0.65;
-                  double p2_8 = 0.35;
-                  double p2_9 = 0.38;
-                  double p2_10 = 0.38;
-                  double p2_11 = 0.21;
-                  double p2_12 = 0.34;
-                  double p2_13 = 0.37;
-                  double p2_14 = 0.60;
-                  double p2_15 = 0.37;
-                  double p2_16 = 0.40;
-                  double p2_17 = 0.68;
-                  double p2_18 = 0.42;
-                  double p2_19 = 0.27;
-                  double p2_20 = 0.17;
-                  double p2_21 = 0.62;
-                  double p2_22 = 0.18;
-                  double p2_23 = 0.39;
-                  double p2_24 = 0.33;
-                  double p2_25 = 0.48;
-                  double p2_26 = 0.39;
-                  double p2_27 = 0.77;
-                  double p2_28 = 0.19;
-                  double p2_29 = 0.74;
-                  double p2_30 = 0.15;
-                  double p2_31 = 0.54;
-                  double p2_32 = 0.19;
-                  double p2_33 = 0.14;
-                  double p2_34 = 0.41;
-                  double p2_35 = 0.24;
-                  double p2_36 = 0.45;
+                  double p1_1 = double.parse(isikemiskinan[index = 0].p1);
+                  double p1_2 = double.parse(isikemiskinan[index = 1].p1);
+                  double p1_3 = double.parse(isikemiskinan[index = 2].p1);
+                  double p1_4 = double.parse(isikemiskinan[index = 3].p1);
+                  double p1_5 = double.parse(isikemiskinan[index = 4].p1);
+                  double p1_6 = double.parse(isikemiskinan[index = 5].p1);
+                  double p1_7 = double.parse(isikemiskinan[index = 6].p1);
+                  double p1_8 = double.parse(isikemiskinan[index = 7].p1);
+                  double p1_9 = double.parse(isikemiskinan[index = 8].p1);
+                  double p1_10 = double.parse(isikemiskinan[index = 9].p1);
+                  double p1_11 = double.parse(isikemiskinan[index = 10].p1);
+                  double p1_12 = double.parse(isikemiskinan[index = 11].p1);
+                  double p1_13 = double.parse(isikemiskinan[index = 12].p1);
+                  double p1_14 = double.parse(isikemiskinan[index = 13].p1);
+                  double p1_15 = double.parse(isikemiskinan[index = 14].p1);
+                  double p1_16 = double.parse(isikemiskinan[index = 15].p1);
+                  double p1_17 = double.parse(isikemiskinan[index = 16].p1);
+                  double p1_18 = double.parse(isikemiskinan[index = 17].p1);
+                  double p1_19 = double.parse(isikemiskinan[index = 18].p1);
+                  double p1_20 = double.parse(isikemiskinan[index = 19].p1);
+                  double p1_21 = double.parse(isikemiskinan[index = 20].p1);
+                  double p1_22 = double.parse(isikemiskinan[index = 21].p1);
+                  double p1_23 = double.parse(isikemiskinan[index = 22].p1);
+                  double p1_24 = double.parse(isikemiskinan[index = 23].p1);
+                  double p1_25 = double.parse(isikemiskinan[index = 24].p1);
+                  double p1_26 = double.parse(isikemiskinan[index = 25].p1);
+                  double p1_27 = double.parse(isikemiskinan[index = 26].p1);
+                  double p1_28 = double.parse(isikemiskinan[index = 27].p1);
+                  double p1_29 = double.parse(isikemiskinan[index = 28].p1);
+                  double p1_30 = double.parse(isikemiskinan[index = 29].p1);
+                  double p1_31 = double.parse(isikemiskinan[index = 30].p1);
+                  double p1_32 = double.parse(isikemiskinan[index = 31].p1);
+                  double p1_33 = double.parse(isikemiskinan[index = 32].p1);
+                  double p1_34 = double.parse(isikemiskinan[index = 33].p1);
+                  double p1_35 = double.parse(isikemiskinan[index = 34].p1);
+                  double p1_36 = double.parse(isikemiskinan[index = 35].p1);
+
+                  
+                  double p2_1 = double.parse(isikemiskinan[index = 0].p2);
+                  double p2_2 = double.parse(isikemiskinan[index = 1].p2);
+                  double p2_3 = double.parse(isikemiskinan[index = 2].p2);
+                  double p2_4 = double.parse(isikemiskinan[index = 3].p2);
+                  double p2_5 = double.parse(isikemiskinan[index = 4].p2);
+                  double p2_6 = double.parse(isikemiskinan[index = 5].p2);
+                  double p2_7 = double.parse(isikemiskinan[index = 6].p2);
+                  double p2_8 = double.parse(isikemiskinan[index = 7].p2);
+                  double p2_9 = double.parse(isikemiskinan[index = 8].p2);
+                  double p2_10 = double.parse(isikemiskinan[index = 9].p2);
+                  double p2_11 = double.parse(isikemiskinan[index = 10].p2);
+                  double p2_12 = double.parse(isikemiskinan[index = 11].p2);
+                  double p2_13 = double.parse(isikemiskinan[index = 12].p2);
+                  double p2_14 = double.parse(isikemiskinan[index = 13].p2);
+                  double p2_15 = double.parse(isikemiskinan[index = 14].p2);
+                  double p2_16 = double.parse(isikemiskinan[index = 15].p2);
+                  double p2_17 = double.parse(isikemiskinan[index = 16].p2);
+                  double p2_18 = double.parse(isikemiskinan[index = 17].p2);
+                  double p2_19 = double.parse(isikemiskinan[index = 18].p2);
+                  double p2_20 = double.parse(isikemiskinan[index = 19].p2);
+                  double p2_21 = double.parse(isikemiskinan[index = 20].p2);
+                  double p2_22 = double.parse(isikemiskinan[index = 21].p2);
+                  double p2_23 = double.parse(isikemiskinan[index = 22].p2);
+                  double p2_24 = double.parse(isikemiskinan[index = 23].p2);
+                  double p2_25 = double.parse(isikemiskinan[index = 24].p2);
+                  double p2_26 = double.parse(isikemiskinan[index = 25].p2);
+                  double p2_27 = double.parse(isikemiskinan[index = 26].p2);
+                  double p2_28 = double.parse(isikemiskinan[index = 27].p2);
+                  double p2_29 = double.parse(isikemiskinan[index = 28].p2);
+                  double p2_30 = double.parse(isikemiskinan[index = 29].p2);
+                  double p2_31 = double.parse(isikemiskinan[index = 30].p2);
+                  double p2_32 = double.parse(isikemiskinan[index = 31].p2);
+                  double p2_33 = double.parse(isikemiskinan[index = 32].p2);
+                  double p2_34 = double.parse(isikemiskinan[index = 33].p2);
+                  double p2_35 = double.parse(isikemiskinan[index = 34].p2);
+                  double p2_36 = double.parse(isikemiskinan[index = 35].p2);
 
                   return Container(
                     padding: const EdgeInsets.all(2),
@@ -266,10 +339,11 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                       height: screenHeight * 0.1,
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       child: const Text(
                                         "Kabupaten/Kota",
                                         textAlign: TextAlign.center,
+                                        style: TextStyle(color: Colors.white),
                                       ),
                                     ),
                                   ),
@@ -280,9 +354,10 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                       height: screenHeight * 0.1,
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       child: const Text(
                                         "Pddk Miskin",
+                                        style: TextStyle(color: Colors.white),
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -294,9 +369,10 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                       height: screenHeight * 0.1,
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       child: const Text(
                                         "P0",
+                                        style: TextStyle(color: Colors.white),
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -308,10 +384,11 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                       height: screenHeight * 0.1,
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       child: const Text(
                                         "GK",
                                         textAlign: TextAlign.center,
+                                        style: TextStyle(color: Colors.white),
                                       ),
                                     ),
                                   ),
@@ -322,10 +399,11 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                       height: screenHeight * 0.1,
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       child: const Text(
                                         "P1",
                                         textAlign: TextAlign.center,
+                                        style: TextStyle(color: Colors.white),
                                       ),
                                     ),
                                   ),
@@ -336,10 +414,11 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                       height: screenHeight * 0.1,
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       child: const Text(
                                         "P2",
                                         textAlign: TextAlign.center,
+                                        style: TextStyle(color: Colors.white),
                                       ),
                                     ),
                                   ),
@@ -353,9 +432,9 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Cilacap",
-                                        style: TextStyle(color: Colors.cyan),
+                                      child: Text(
+                                        kabkota1,
+                                        style: const TextStyle(color: Colors.cyan),
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -443,8 +522,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Banyumas",
+                                      child: Text(
+                                        kabkota2,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -524,8 +603,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Purbalingga",
+                                      child: Text(
+                                        kabkota3,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -604,9 +683,9 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Banjarnegara",
-                                        style: TextStyle(fontSize: 13),
+                                      child: Text(
+                                        kabkota4,
+                                        style: const TextStyle(fontSize: 13),
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -683,8 +762,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Kebumen",
+                                      child: Text(
+                                        kabkota5,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -759,8 +838,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Purworejo",
+                                      child: Text(
+                                        kabkota6,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -835,8 +914,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Wonosobo",
+                                      child: Text(
+                                        kabkota7,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -913,8 +992,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Magelang",
+                                      child: Text(
+                                        kabkota8,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -989,8 +1068,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Boyolali",
+                                      child: Text(
+                                        kabkota9,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -1065,8 +1144,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Klaten",
+                                      child: Text(
+                                        kabkota10,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -1141,8 +1220,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Sukoharjo",
+                                      child: Text(
+                                        kabkota11,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -1217,8 +1296,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Wonogiri",
+                                      child: Text(
+                                        kabkota12,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -1293,8 +1372,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Karanganyar",
+                                      child: Text(
+                                        kabkota13,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -1369,8 +1448,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Sragen",
+                                      child: Text(
+                                        kabkota14,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -1445,8 +1524,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Grobogan",
+                                      child: Text(
+                                        kabkota15,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -1521,8 +1600,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Blora",
+                                      child: Text(
+                                        kabkota16,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -1597,8 +1676,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Rembang",
+                                      child: Text(
+                                        kabkota17,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -1673,8 +1752,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Pati",
+                                      child: Text(
+                                        kabkota18,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -1749,8 +1828,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Kudus",
+                                      child: Text(
+                                        kabkota19,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -1825,8 +1904,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Jepara",
+                                      child: Text(
+                                        kabkota20,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -1901,8 +1980,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Demak",
+                                      child: Text(
+                                        kabkota21,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -1977,8 +2056,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Semarang",
+                                      child: Text(
+                                        kabkota22,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -2053,10 +2132,10 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Temanggung",
+                                      child: Text(
+                                        kabkota23,
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(fontSize: 13),
+                                        style: const TextStyle(fontSize: 13),
                                       ),
                                     ),
                                   ),
@@ -2130,8 +2209,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Kendal",
+                                      child: Text(
+                                        kabkota24,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -2206,8 +2285,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Batang",
+                                      child: Text(
+                                        kabkota25,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -2282,8 +2361,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Pekalongan",
+                                      child: Text(
+                                        kabkota26,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -2358,8 +2437,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Pemalang",
+                                      child: Text(
+                                        kabkota27,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -2434,8 +2513,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Tegal",
+                                      child: Text(
+                                        kabkota28,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -2510,8 +2589,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Brebes",
+                                      child: Text(
+                                        kabkota29,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -2586,8 +2665,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Kota Magelang",
+                                      child: Text(
+                                        kabkota30,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -2662,8 +2741,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Kota Surakarta",
+                                      child: Text(
+                                        kabkota31,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -2738,8 +2817,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Kota Salatiga",
+                                      child: Text(
+                                        kabkota32,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -2814,8 +2893,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Kota Semarang",
+                                      child: Text(
+                                        kabkota33,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -2890,8 +2969,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Kota Pekalongan",
+                                      child: Text(
+                                        kabkota34,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -2966,8 +3045,8 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Kota Tegal",
+                                      child: Text(
+                                        kabkota35,
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -3040,12 +3119,13 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     fit: FlexFit.tight,
                                     flex: 3,
                                     child: Container(
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 1, vertical: 10),
-                                      child: const Text(
-                                        "Jateng",
+                                      child: Text(
+                                        kabkota36,
                                         textAlign: TextAlign.center,
+                                        style: const TextStyle(color: Colors.white),
                                       ),
                                     ),
                                   ),
@@ -3053,24 +3133,27 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     fit: FlexFit.tight,
                                     flex: 2,
                                     child: Container(
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
                                       child: Text(pmk36.toStringAsFixed(2),
                                           textAlign: TextAlign.center,
-                                          style: const TextStyle(fontSize: 13)),
+                                          style: const TextStyle(
+                                              fontSize: 13,
+                                              color: Colors.white)),
                                     ),
                                   ),
                                   Flexible(
                                     fit: FlexFit.tight,
                                     flex: 2,
                                     child: Container(
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
                                       child: Text(
                                         p0_36.toStringAsFixed(2),
                                         textAlign: TextAlign.center,
+                                        style: const TextStyle(color: Colors.white),
                                       ),
                                     ),
                                   ),
@@ -3078,23 +3161,26 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     fit: FlexFit.tight,
                                     flex: 2,
                                     child: Container(
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
                                       child: Text(gk36.toStringAsFixed(3),
                                           textAlign: TextAlign.center,
-                                          style: const TextStyle(fontSize: 13)),
+                                          style: const TextStyle(
+                                              fontSize: 13,
+                                              color: Colors.white)),
                                     ),
                                   ),
                                   Flexible(
                                     fit: FlexFit.tight,
                                     flex: 2,
                                     child: Container(
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
                                       child: Text(
                                         p1_36.toStringAsFixed(2),
+                                        style: const TextStyle(color: Colors.white),
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -3103,12 +3189,13 @@ class _KemiskinanKabupatenKotaState extends State<KemiskinanKabupatenKota> {
                                     fit: FlexFit.tight,
                                     flex: 2,
                                     child: Container(
-                                      color: Colors.grey,
+                                      color: Colors.cyan,
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 2, vertical: 10),
                                       child: Text(
                                         p2_36.toStringAsFixed(2),
                                         textAlign: TextAlign.center,
+                                        style: const TextStyle(color: Colors.white),
                                       ),
                                     ),
                                   ),

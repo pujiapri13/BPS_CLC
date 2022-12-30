@@ -26,10 +26,139 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
             return ListView.builder(
               itemCount: 1,
               itemBuilder: (context, index) {
+                String th1 = isipdrb[index = 4].created_at[0] +
+                    isipdrb[index = 4].created_at[1] +
+                    isipdrb[index = 4].created_at[2] +
+                    isipdrb[index = 4].created_at[3];
+                String th2 = isipdrb[index = 3].created_at[0] +
+                    isipdrb[index = 3].created_at[1] +
+                    isipdrb[index = 3].created_at[2] +
+                    isipdrb[index = 3].created_at[3];
+                String th3 = isipdrb[index = 2].created_at[0] +
+                    isipdrb[index = 2].created_at[1] +
+                    isipdrb[index = 2].created_at[2] +
+                    isipdrb[index = 2].created_at[3];
+                String th4 = isipdrb[index = 1].created_at[0] +
+                    isipdrb[index = 1].created_at[1] +
+                    isipdrb[index = 1].created_at[2] +
+                    isipdrb[index = 1].created_at[3];
+                String th5 = isipdrb[index = 0].created_at[0] +
+                    isipdrb[index = 0].created_at[1] +
+                    isipdrb[index = 0].created_at[2] +
+                    isipdrb[index = 0].created_at[3];
+
+                double a1 = double.parse(isipdrb[index = 4].a);
+                double a2 = double.parse(isipdrb[index = 3].a);
+                double a3 = double.parse(isipdrb[index = 2].a);
+                double a4 = double.parse(isipdrb[index = 1].a);
+                double a5 = double.parse(isipdrb[index = 0].a);
+
+                double b1 = double.parse(isipdrb[index = 4].b);
+                double b2 = double.parse(isipdrb[index = 3].b);
+                double b3 = double.parse(isipdrb[index = 2].b);
+                double b4 = double.parse(isipdrb[index = 1].b);
+                double b5 = double.parse(isipdrb[index = 0].b);
+
+                double c1 = double.parse(isipdrb[index = 4].c);
+                double c2 = double.parse(isipdrb[index = 3].c);
+                double c3 = double.parse(isipdrb[index = 2].c);
+                double c4 = double.parse(isipdrb[index = 1].c);
+                double c5 = double.parse(isipdrb[index = 0].c);
+
+                double d1 = double.parse(isipdrb[index = 4].d);
+                double d2 = double.parse(isipdrb[index = 3].d);
+                double d3 = double.parse(isipdrb[index = 2].d);
+                double d4 = double.parse(isipdrb[index = 1].d);
+                double d5 = double.parse(isipdrb[index = 0].d);
+
+                double e1 = double.parse(isipdrb[index = 4].e);
+                double e2 = double.parse(isipdrb[index = 3].e);
+                double e3 = double.parse(isipdrb[index = 2].e);
+                double e4 = double.parse(isipdrb[index = 1].e);
+                double e5 = double.parse(isipdrb[index = 0].e);
+
+                double f1 = double.parse(isipdrb[index = 4].f);
+                double f2 = double.parse(isipdrb[index = 3].f);
+                double f3 = double.parse(isipdrb[index = 2].f);
+                double f4 = double.parse(isipdrb[index = 1].f);
+                double f5 = double.parse(isipdrb[index = 0].f);
+
+                double g1 = double.parse(isipdrb[index = 4].g);
+                double g2 = double.parse(isipdrb[index = 3].g);
+                double g3 = double.parse(isipdrb[index = 2].g);
+                double g4 = double.parse(isipdrb[index = 1].g);
+                double g5 = double.parse(isipdrb[index = 0].g);
+
+                double h1 = double.parse(isipdrb[index = 4].h);
+                double h2 = double.parse(isipdrb[index = 3].h);
+                double h3 = double.parse(isipdrb[index = 2].h);
+                double h4 = double.parse(isipdrb[index = 1].h);
+                double h5 = double.parse(isipdrb[index = 0].h);
+
+                double i1 = double.parse(isipdrb[index = 4].i);
+                double i2 = double.parse(isipdrb[index = 3].i);
+                double i3 = double.parse(isipdrb[index = 2].i);
+                double i4 = double.parse(isipdrb[index = 1].i);
+                double i5 = double.parse(isipdrb[index = 0].i);
+
+                double j1 = double.parse(isipdrb[index = 4].j);
+                double j2 = double.parse(isipdrb[index = 3].j);
+                double j3 = double.parse(isipdrb[index = 2].j);
+                double j4 = double.parse(isipdrb[index = 1].j);
+                double j5 = double.parse(isipdrb[index = 0].j);
+
+                double k1 = double.parse(isipdrb[index = 4].k);
+                double k2 = double.parse(isipdrb[index = 3].k);
+                double k3 = double.parse(isipdrb[index = 2].k);
+                double k4 = double.parse(isipdrb[index = 1].k);
+                double k5 = double.parse(isipdrb[index = 0].k);
+
+                double l1 = double.parse(isipdrb[index = 4].l);
+                double l2 = double.parse(isipdrb[index = 3].l);
+                double l3 = double.parse(isipdrb[index = 2].l);
+                double l4 = double.parse(isipdrb[index = 1].l);
+                double l5 = double.parse(isipdrb[index = 0].l);
+
+                double mN1 = double.parse(isipdrb[index = 4].m_n);
+                double mN2 = double.parse(isipdrb[index = 3].m_n);
+                double mN3 = double.parse(isipdrb[index = 2].m_n);
+                double mN4 = double.parse(isipdrb[index = 1].m_n);
+                double mN5 = double.parse(isipdrb[index = 0].m_n);
+
+                double o1 = double.parse(isipdrb[index = 4].o);
+                double o2 = double.parse(isipdrb[index = 3].o);
+                double o3 = double.parse(isipdrb[index = 2].o);
+                double o4 = double.parse(isipdrb[index = 1].o);
+                double o5 = double.parse(isipdrb[index = 0].o);
+
+                double p1 = double.parse(isipdrb[index = 4].p);
+                double p2 = double.parse(isipdrb[index = 3].p);
+                double p3 = double.parse(isipdrb[index = 2].p);
+                double p4 = double.parse(isipdrb[index = 1].p);
+                double p5 = double.parse(isipdrb[index = 0].p);
+
+                double q1 = double.parse(isipdrb[index = 4].q);
+                double q2 = double.parse(isipdrb[index = 3].q);
+                double q3 = double.parse(isipdrb[index = 2].q);
+                double q4 = double.parse(isipdrb[index = 1].q);
+                double q5 = double.parse(isipdrb[index = 0].q);
+
+                double rSTU1 = double.parse(isipdrb[index = 4].r_s_t_u);
+                double rSTU2 = double.parse(isipdrb[index = 3].r_s_t_u);
+                double rSTU3 = double.parse(isipdrb[index = 2].r_s_t_u);
+                double rSTU4 = double.parse(isipdrb[index = 1].r_s_t_u);
+                double rSTU5 = double.parse(isipdrb[index = 0].r_s_t_u);
+
+                double total1 = double.parse(isipdrb[index = 4].total);
+                double total2 = double.parse(isipdrb[index = 3].total);
+                double total3 = double.parse(isipdrb[index = 2].total);
+                double total4 = double.parse(isipdrb[index = 1].total);
+                double total5 = double.parse(isipdrb[index = 0].total);
+
                 return Column(
                   children: [
                     Container(
-                      color: Colors.blue[200],
+                      color: Colors.cyan,
                       width: screenWidth,
                       height: screenHeight * 0.1,
                       child: Row(
@@ -40,61 +169,52 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             child: Text(
                               "Lapangan Usaha",
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].tanggal[0] +
-                                  isipdrb[index = 4].tanggal[1] +
-                                  isipdrb[index = 4].tanggal[2] +
-                                  isipdrb[index = 4].tanggal[3],
+                              th1,
                               textAlign: TextAlign.center,
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].tanggal[0] +
-                                  isipdrb[index = 3].tanggal[1] +
-                                  isipdrb[index = 3].tanggal[2] +
-                                  isipdrb[index = 3].tanggal[3],
+                              th2,
                               textAlign: TextAlign.center,
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].tanggal[0] +
-                                  isipdrb[index = 2].tanggal[1] +
-                                  isipdrb[index = 2].tanggal[2] +
-                                  isipdrb[index = 2].tanggal[3],
+                              th3,
                               textAlign: TextAlign.center,
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].tanggal[0] +
-                                  isipdrb[index = 1].tanggal[1] +
-                                  isipdrb[index = 1].tanggal[2] +
-                                  isipdrb[index = 1].tanggal[3],
+                              th4,
                               textAlign: TextAlign.center,
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].tanggal[0] +
-                                  isipdrb[index = 0].tanggal[1] +
-                                  isipdrb[index = 0].tanggal[2] +
-                                  isipdrb[index = 0].tanggal[3],
+                              th5,
                               textAlign: TextAlign.center,
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                         ],
@@ -119,7 +239,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].a.toString(),
+                              a1.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -127,7 +247,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].a.toString(),
+                              a2.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -135,7 +255,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].a.toString(),
+                              a3.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -143,7 +263,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].a.toString(),
+                              a4.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -151,7 +271,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].a.toString(),
+                              a5.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -177,7 +297,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].b.toString(),
+                              b1.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -185,7 +305,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].b.toString(),
+                              b2.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -193,7 +313,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].b.toString(),
+                              b3.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -201,7 +321,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].b.toString(),
+                              b4.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -209,7 +329,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].b.toString(),
+                              b5.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -235,7 +355,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].c.toString(),
+                              c1.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -243,7 +363,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].c.toString(),
+                              c2.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -251,7 +371,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].c.toString(),
+                              c3.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -259,7 +379,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].c.toString(),
+                              c4.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -267,7 +387,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].c.toString(),
+                              c5.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -293,7 +413,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].d.toString(),
+                              d1.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -301,7 +421,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].d.toString(),
+                              d2.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -309,7 +429,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].d.toString(),
+                              d3.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -317,7 +437,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].d.toString(),
+                              d4.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -325,7 +445,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].d.toString(),
+                              d5.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -351,7 +471,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].e.toString(),
+                              e1.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -359,7 +479,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].e.toString(),
+                              e2.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -367,7 +487,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].e.toString(),
+                              e3.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -375,7 +495,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].e.toString(),
+                              e4.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -383,7 +503,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].e.toString(),
+                              e5.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -409,7 +529,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].f.toString(),
+                              f1.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -417,7 +537,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].f.toString(),
+                              f2.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -425,7 +545,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].f.toString(),
+                              f3.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -433,7 +553,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].f.toString(),
+                              f4.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -441,7 +561,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].f.toString(),
+                              f5.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -467,7 +587,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].g.toString(),
+                              g1.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -475,7 +595,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].g.toString(),
+                              g2.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -483,7 +603,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].g.toString(),
+                              g3.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -491,7 +611,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].g.toString(),
+                              g4.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -499,7 +619,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].g.toString(),
+                              g5.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -525,7 +645,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].h.toString(),
+                              h1.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -533,7 +653,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].h.toString(),
+                              h2.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -541,7 +661,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].h.toString(),
+                              h3.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -549,7 +669,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].h.toString(),
+                              h4.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -557,7 +677,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].h.toString(),
+                              h5.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -583,7 +703,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].i.toString(),
+                              i1.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -591,7 +711,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].i.toString(),
+                              i2.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -599,7 +719,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].i.toString(),
+                              i3.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -607,7 +727,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].i.toString(),
+                              i4.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -615,7 +735,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].i.toString(),
+                              i5.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -641,7 +761,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].j.toString(),
+                              j1.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -649,7 +769,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].j.toString(),
+                              j2.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -657,7 +777,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].j.toString(),
+                              j3.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -665,7 +785,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].j.toString(),
+                              j4.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -673,7 +793,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].j.toString(),
+                              j5.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -699,7 +819,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].k.toString(),
+                              k1.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -707,7 +827,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].k.toString(),
+                              k2.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -715,7 +835,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].k.toString(),
+                              k3.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -723,7 +843,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].k.toString(),
+                              k4.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -731,7 +851,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].k.toString(),
+                              k5.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -757,7 +877,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].l.toString(),
+                              l1.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -765,7 +885,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].l.toString(),
+                              l2.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -773,7 +893,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].l.toString(),
+                              l3.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -781,7 +901,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].l.toString(),
+                              l4.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -789,7 +909,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].l.toString(),
+                              l5.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -815,7 +935,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].m_n.toString(),
+                              mN1.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -823,7 +943,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].m_n.toString(),
+                              mN2.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -831,7 +951,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].m_n.toString(),
+                              mN3.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -839,7 +959,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].m_n.toString(),
+                              mN4.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -847,7 +967,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].m_n.toString(),
+                              mN5.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -873,7 +993,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].o.toString(),
+                              o1.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -881,7 +1001,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].o.toString(),
+                              o2.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -889,7 +1009,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].o.toString(),
+                              o3.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -897,7 +1017,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].o.toString(),
+                              o4.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -905,7 +1025,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].o.toString(),
+                              o5.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -931,7 +1051,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].p.toString(),
+                              p1.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -939,7 +1059,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].p.toString(),
+                              p2.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -947,7 +1067,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].p.toString(),
+                              p3.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -955,7 +1075,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].p.toString(),
+                              p4.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -963,7 +1083,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].p.toString(),
+                              p5.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -989,7 +1109,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].q.toString(),
+                              q1.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -997,7 +1117,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].q.toString(),
+                              q2.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1005,7 +1125,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].q.toString(),
+                              q3.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1013,7 +1133,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].q.toString(),
+                              q4.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1021,7 +1141,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].q.toString(),
+                              q5.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1047,7 +1167,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].r_s_t_u.toString(),
+                              rSTU1.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1055,7 +1175,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].r_s_t_u.toString(),
+                              rSTU2.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1063,7 +1183,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].r_s_t_u.toString(),
+                              rSTU3.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1071,7 +1191,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].r_s_t_u.toString(),
+                              rSTU4.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1079,7 +1199,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].r_s_t_u.toString(),
+                              rSTU5.toStringAsFixed(2),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1089,7 +1209,7 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                     const Divider(),
                     // <-- Total PDRB
                     Container(
-                      color: Colors.grey.shade500,
+                      color: Colors.cyan,
                       width: screenWidth,
                       height: screenHeight * 0.05,
                       child: Row(
@@ -1100,46 +1220,52 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
                             child: Text(
                               "Total PDRB",
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].total_pdrb.toString(),
+                              total1.toStringAsFixed(2),
                               textAlign: TextAlign.center,
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].total_pdrb.toString(),
+                              total2.toStringAsFixed(2),
                               textAlign: TextAlign.center,
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].total_pdrb.toString(),
+                              total3.toStringAsFixed(2),
                               textAlign: TextAlign.center,
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].total_pdrb.toString(),
+                              total4.toStringAsFixed(2),
                               textAlign: TextAlign.center,
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].total_pdrb.toString(),
+                              total5.toStringAsFixed(2),
                               textAlign: TextAlign.center,
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                         ],
@@ -1153,8 +1279,10 @@ class _TabelPdrbLUMigasState extends State<TabelPdrbLUMigas> {
           if (snapshot.hasError) {
             return const Text('error');
           }
-          return const Center(child: CircularProgressIndicator(
-            strokeWidth: 1,));
+          return const Center(
+              child: CircularProgressIndicator(
+            strokeWidth: 1,
+          ));
         },
       ),
     );
