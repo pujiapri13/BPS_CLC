@@ -47,10 +47,15 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
           height: screenHeight,
           child: Column(
             children: <Widget>[
+              Image.asset(
+                "assets/images/logo.png",
+                width: 200,
+                height: 200,
+              ),
               Container(
                 margin: const EdgeInsets.only(top: 30),
                 child: const Text(
-                  'PUSDACAP',
+                  'ASAP',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 42,
@@ -58,61 +63,71 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(top: 30),
-                width: screenWidth * 0.39,
-                child: Row(
-                  children: <Widget>[
-                    const Flexible(
-                      fit: FlexFit.loose,
-                      flex: 3,
-                      child: Text(
-                        'Made with',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
-                      ),
-                    ),
-                    const Flexible(
-                      fit: FlexFit.tight,
-                      flex: 1,
-                      child: Icon(
-                        Icons.favorite,
-                        size: 22,
-                        color: Colors.white,
-                      ),
-                    ),
-                    Flexible(
-                      fit: FlexFit.tight,
-                      flex: 1,
-                      child: Container(
-                        alignment: Alignment.centerLeft,
-                        child: const Text(
-                          'in',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.only(bottom: 30),
+                margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
                 child: const Text(
-                  'MAJENANG',
-                  textAlign: TextAlign.center,
+                  '<-Aplikasi Statistik Cilacap->',
                   style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w800,
-                    fontSize: 30,
-                  ),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      color: Colors.white),
                 ),
               ),
+              // Container(
+              //   margin: const EdgeInsets.only(top: 30),
+              //   width: screenWidth * 0.39,
+              //   child: Row(
+              //     children: <Widget>[
+              //       const Flexible(
+              //         fit: FlexFit.loose,
+              //         flex: 3,
+              //         child: Text(
+              //           'Made with',
+              //           style: TextStyle(
+              //             color: Colors.white,
+              //             fontWeight: FontWeight.bold,
+              //             fontSize: 18,
+              //           ),
+              //         ),
+              //       ),
+              //       const Flexible(
+              //         fit: FlexFit.tight,
+              //         flex: 1,
+              //         child: Icon(
+              //           Icons.favorite,
+              //           size: 22,
+              //           color: Colors.white,
+              //         ),
+              //       ),
+              //       Flexible(
+              //         fit: FlexFit.tight,
+              //         flex: 1,
+              //         child: Container(
+              //           alignment: Alignment.centerLeft,
+              //           child: const Text(
+              //             'in',
+              //             style: TextStyle(
+              //               color: Colors.white,
+              //               fontWeight: FontWeight.bold,
+              //               fontSize: 18,
+              //             ),
+              //           ),
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
+              // Container(
+              //   margin: const EdgeInsets.only(bottom: 30),
+              //   child: const Text(
+              //     'MAJENANG',
+              //     textAlign: TextAlign.center,
+              //     style: TextStyle(
+              //       color: Colors.white,
+              //       fontWeight: FontWeight.w800,
+              //       fontSize: 30,
+              //     ),
+              //   ),
+              // ),
               SizedBox(
                 height: screenHeight * 0.15,
                 width: screenWidth * 0.6,
@@ -212,6 +227,105 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
                       ),
                     ),
                   ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.fromLTRB(0, 20, 0, 20),
+                child: const Text(
+                  'Our Team :',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      color: Colors.white),
+                ),
+              ),
+              Flexible(
+                child: SizedBox(
+                  height: screenHeight * 0.25,
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: screenHeight * 0.05,
+                        width: screenWidth,
+                        child: Row(
+                          children: <Widget>[
+                            Text(
+                              "     Isnaini, S.ST, M.M",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            Text(
+                              "           BPS Cilacap",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: screenHeight * 0.05,
+                        width: screenWidth,
+                        child: Row(
+                          children: <Widget>[
+                            Text(
+                              "     Achmad Rifai, S.ST",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            Text(
+                              "         BPS Cilacap",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: screenHeight * 0.05,
+                        width: screenWidth,
+                        child: Row(
+                          children: <Widget>[
+                            Text(
+                              "     Imam Fahrudin",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            Text(
+                              "                UI/UX Designer",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: screenHeight * 0.05,
+                        width: screenWidth,
+                        child: Row(
+                          children: <Widget>[
+                            Text(
+                              "     Amarulloh M.K",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            Text(
+                              "                Backend Develop",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: screenHeight * 0.05,
+                        width: screenWidth,
+                        child: Row(
+                          children: <Widget>[
+                            Text(
+                              "     Puji Apriyanto",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            Text(
+                              "                  Frontend Develop",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],

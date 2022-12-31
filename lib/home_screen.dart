@@ -65,21 +65,27 @@ class _HomeScreenState extends State<HomeScreen> {
           title: Row(
             children: <Widget>[
               // icon
-              SizedBox(
-                width: 50,
-                height: 41.45,
-                child: Image.asset(
-                  'assets/images/logo.png',
-                  alignment: Alignment.center,
+              Flexible(
+                flex: 1,
+                child: SizedBox(
+                  width: 50,
+                  height: 41.45,
+                  child: Image.asset(
+                    'assets/images/logo.png',
+                    alignment: Alignment.center,
+                  ),
                 ),
               ),
               //text
-              Container(
-                alignment: Alignment.center,
-                height: ScreenHeight * 0.10,
-                child: const Text(
-                  'ASAP',
-                  style: TextStyle(fontSize: 24, color: Colors.white),
+              Flexible(
+                flex: 6,
+                child: Container(
+                  alignment: Alignment.centerLeft,
+                  height: ScreenHeight * 0.10,
+                  child: const Text(
+                    '  Aplikasi Statistik Cilacap',
+                    style: TextStyle(fontSize: 18, color: Colors.white),
+                  ),
                 ),
               ),
             ],
