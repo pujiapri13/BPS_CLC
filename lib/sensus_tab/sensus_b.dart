@@ -68,7 +68,7 @@ class _SensusBState extends State<SensusB> {
                       color: Colors.transparent,
                       child: Center(
                         child: Text(
-                          'Sensus Penduduk $thn (SP$thn) mencatat jumlah penduduk Kabupaten Cilacap sebanyak : ',
+                          'Sensus Penduduk $thn (SP$thn) mencatat jumlah penduduk Provinsi Jawa Tengah sebanyak : ',
                           textAlign: TextAlign.center,
                           style: const TextStyle(
                               fontSize: 16, fontWeight: FontWeight.bold),
@@ -79,7 +79,7 @@ class _SensusBState extends State<SensusB> {
                       color: Colors.transparent,
                       child: Center(
                           child: Text(
-                        (lkTotal + prTotal).toString(),
+                        (lkTotal + prTotal).toString() + " juta jiwa",
                         style: const TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.w800,
@@ -104,7 +104,10 @@ class _SensusBState extends State<SensusB> {
                                     color: Color.fromRGBO(47, 182, 224, 1),
                                   ),
                                 ),
-                                const Text("jiwa LAKI-LAKI")
+                                const Text(
+                                  "juta jiwa LAKI-LAKI",
+                                  style: TextStyle(fontSize: 12),
+                                )
                               ],
                             ),
                           ),
@@ -140,7 +143,10 @@ class _SensusBState extends State<SensusB> {
                                     color: Color.fromRGBO(47, 182, 224, 1),
                                   ),
                                 ),
-                                const Text("jiwa PEREMPUAN")
+                                const Text(
+                                  "juta jiwa PEREMPUAN",
+                                  style: TextStyle(fontSize: 12),
+                                )
                               ],
                             ),
                           ),

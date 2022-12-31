@@ -1,9 +1,9 @@
 import 'dart:convert';
-import 'package:bps_cilacap/restAPI/model_laju_pertumbuhan_pdrb.dart';
+import 'model_dist_pdrb_adhk.dart';
 import 'package:http/http.dart' as http;
 
-class RepositoryLPPdrb {
-  final _baseURL = 'https://bps-oss.herokuapp.com/bps-api/lajupdrb/';
+class RepositoryDistPdrbAdhk {
+  final _baseURL = 'https://bps-asap.my.id/api/dist-pdrb-adhk';
 
   Future getData() async {
     try {
@@ -11,8 +11,8 @@ class RepositoryLPPdrb {
 
       if (response.statusCode == 200) {
         var cokk = jsonDecode(response.body);
-        return (cokk['PDRB'] as List)
-            .map((isipdrb) => LajuPdrb.fromJson(isipdrb))
+        return (cokk['data'] as List)
+            .map((isipdrb) => DistPdrbAdhk.fromJson(isipdrb))
             .toList();
       }
     } catch (isipdrb) {

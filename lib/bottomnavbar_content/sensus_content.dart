@@ -110,7 +110,7 @@ class _SensusState extends State<Sensus> {
             ],
           ));
         } else {
-          return Text("Gagal Memuat Data");
+          return const Text("Gagal Memuat Data");
         }
       },
     );

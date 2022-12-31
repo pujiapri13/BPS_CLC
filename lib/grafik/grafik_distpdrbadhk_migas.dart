@@ -1,18 +1,17 @@
-// ignore_for_file: camel_case_types, library_private_types_in_public_api
-
-import 'package:bps_cilacap/restAPI/repository_pdrb.dart';
+// ignore_for_file: library_private_types_in_public_api
+import 'package:bps_cilacap/restAPI/repository_dist_pdrb_adhk.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
-class grafikPdrbLUMigas extends StatefulWidget {
-  const grafikPdrbLUMigas({Key? key}) : super(key: key);
+class GrafikDistPdrbAdhkMigas extends StatefulWidget {
+  const GrafikDistPdrbAdhkMigas({Key? key}) : super(key: key);
 
   @override
-  _grafikPdrbLUMigasState createState() => _grafikPdrbLUMigasState();
+  _GrafikDistPdrbAdhkMigasState createState() => _GrafikDistPdrbAdhkMigasState();
 }
 
-class _grafikPdrbLUMigasState extends State<grafikPdrbLUMigas> {
-  RepositoryPdrb repositorypdrb = RepositoryPdrb();
+class _GrafikDistPdrbAdhkMigasState extends State<GrafikDistPdrbAdhkMigas> {
+  RepositoryDistPdrbAdhk repositoryDistPdrbAdhk = RepositoryDistPdrbAdhk();
 
   List<Color> gradientColors = [
     const Color(0xff23b6e6),
@@ -21,39 +20,19 @@ class _grafikPdrbLUMigasState extends State<grafikPdrbLUMigas> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: repositorypdrb.getData(),
+      future: repositoryDistPdrbAdhk.getData(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           List isipdrb = snapshot.data as List;
           return PageView.builder(
             itemCount: 1,
             itemBuilder: (context, index) {
-              String th1 = isipdrb[index = 4].created_at[0] +
-                  isipdrb[index = 4].created_at[1] +
-                  isipdrb[index = 4].created_at[2] +
-                  isipdrb[index = 4].created_at[3];
-              String th2 = isipdrb[index = 3].created_at[0] +
-                  isipdrb[index = 3].created_at[1] +
-                  isipdrb[index = 3].created_at[2] +
-                  isipdrb[index = 3].created_at[3];
-              String th3 = isipdrb[index = 2].created_at[0] +
-                  isipdrb[index = 2].created_at[1] +
-                  isipdrb[index = 2].created_at[2] +
-                  isipdrb[index = 2].created_at[3];
-              String th4 = isipdrb[index = 1].created_at[0] +
-                  isipdrb[index = 1].created_at[1] +
-                  isipdrb[index = 1].created_at[2] +
-                  isipdrb[index = 1].created_at[3];
-              String th5 = isipdrb[index = 0].created_at[0] +
-                  isipdrb[index = 0].created_at[1] +
-                  isipdrb[index = 0].created_at[2] +
-                  isipdrb[index = 0].created_at[3];
-
               double total1 = double.parse(isipdrb[index = 4].total);
               double total2 = double.parse(isipdrb[index = 3].total);
               double total3 = double.parse(isipdrb[index = 2].total);
               double total4 = double.parse(isipdrb[index = 1].total);
               double total5 = double.parse(isipdrb[index = 0].total);
+
               return Container(
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(
@@ -108,19 +87,44 @@ class _grafikPdrbLUMigasState extends State<grafikPdrbLUMigas> {
                                 Widget text;
                                 switch (value.toInt()) {
                                   case 1:
-                                    text = Text(th1, style: style);
+                                    text = Text(
+                                        isipdrb[index = 4].created_at[0] +
+                                            isipdrb[index = 4].created_at[1] +
+                                            isipdrb[index = 4].created_at[2] +
+                                            isipdrb[index = 4].created_at[3],
+                                        style: style);
                                     break;
                                   case 3:
-                                    text = Text(th2, style: style);
+                                    text = Text(
+                                        isipdrb[index = 3].created_at[0] +
+                                            isipdrb[index = 3].created_at[1] +
+                                            isipdrb[index = 3].created_at[2] +
+                                            isipdrb[index = 3].created_at[3],
+                                        style: style);
                                     break;
                                   case 5:
-                                    text = Text(th3, style: style);
+                                    text = Text(
+                                        isipdrb[index = 2].created_at[0] +
+                                            isipdrb[index = 2].created_at[1] +
+                                            isipdrb[index = 2].created_at[2] +
+                                            isipdrb[index = 2].created_at[3],
+                                        style: style);
                                     break;
                                   case 7:
-                                    text = Text(th4, style: style);
+                                    text = Text(
+                                        isipdrb[index = 1].created_at[0] +
+                                            isipdrb[index = 1].created_at[1] +
+                                            isipdrb[index = 1].created_at[2] +
+                                            isipdrb[index = 1].created_at[3],
+                                        style: style);
                                     break;
                                   case 9:
-                                    text = Text(th5, style: style);
+                                    text = Text(
+                                        isipdrb[index = 0].created_at[0] +
+                                            isipdrb[index = 0].created_at[1] +
+                                            isipdrb[index = 0].created_at[2] +
+                                            isipdrb[index = 0].created_at[3],
+                                        style: style);
                                     break;
                                   default:
                                     text = const Text('', style: style);

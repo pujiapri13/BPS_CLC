@@ -417,7 +417,7 @@ class _AkTPTState extends State<AkTPT> {
                                           child: Text(
                                             jml1.toString(),
                                             style:
-                                                TextStyle(color: Colors.white),
+                                                const TextStyle(color: Colors.white),
                                           ),
                                         ),
                                       ),
@@ -432,7 +432,7 @@ class _AkTPTState extends State<AkTPT> {
                                           child: Text(
                                             jml2.toString(),
                                             style:
-                                                TextStyle(color: Colors.white),
+                                                const TextStyle(color: Colors.white),
                                           ),
                                         ),
                                       ),
@@ -447,7 +447,7 @@ class _AkTPTState extends State<AkTPT> {
                                           child: Text(
                                             jml3.toString(),
                                             style:
-                                                TextStyle(color: Colors.white),
+                                                const TextStyle(color: Colors.white),
                                           ),
                                         ),
                                       ),
@@ -462,7 +462,7 @@ class _AkTPTState extends State<AkTPT> {
                                           child: Text(
                                             jml4.toString(),
                                             style:
-                                                TextStyle(color: Colors.white),
+                                                const TextStyle(color: Colors.white),
                                           ),
                                         ),
                                       ),
@@ -477,7 +477,7 @@ class _AkTPTState extends State<AkTPT> {
                                           child: Text(
                                             jml5.toString(),
                                             style:
-                                                TextStyle(color: Colors.white),
+                                                const TextStyle(color: Colors.white),
                                           ),
                                         ),
                                       ),

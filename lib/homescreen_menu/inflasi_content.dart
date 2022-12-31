@@ -181,30 +181,6 @@ class _inflasiContentState extends State<inflasiContent> {
                 String anif11 = isiinflasi[index = 0].perawatan_pribadi;
                 String totalandil = isiinflasi[index = 0].total;
 
-                String mtom1 = "0.71";
-                String mtom2 = "0.59";
-                String mtom3 = "0.66";
-                String mtom4 = "0.89";
-                String mtom5 = "0.93";
-                String mtom6 = "0.63";
-                String mtom7 = "0.61";
-
-                String ytod1 = "5.00";
-                String ytod2 = "4.46";
-                String ytod3 = "4.02";
-                String ytod4 = "4.82";
-                String ytod5 = "3.24";
-                String ytod6 = "4.43";
-                String ytod7 = "3.19";
-
-                String yony1 = "6.47";
-                String yony2 = "6.11";
-                String yony3 = "5.03";
-                String yony4 = "6.51";
-                String yony5 = "4.30";
-                String yony6 = "6.01";
-                String yony7 = "4.35";
-
                 return Container(
                   padding: const EdgeInsets.all(2),
                   child: Column(
@@ -716,7 +692,7 @@ class _inflasiContentState extends State<inflasiContent> {
                                     child: Center(
                                       child: Text(
                                         totaltingkat,
-                                        style: TextStyle(color: Colors.white),
+                                        style: const TextStyle(color: Colors.white),
                                       ),
                                     ),
                                   ),
@@ -732,7 +708,7 @@ class _inflasiContentState extends State<inflasiContent> {
                                     child: Center(
                                       child: Text(
                                         totalandil,
-                                        style: TextStyle(color: Colors.white),
+                                        style: const TextStyle(color: Colors.white),
                                       ),
                                     ),
                                   ),
@@ -765,7 +741,7 @@ class _inflasiContentState extends State<inflasiContent> {
                           height: 400,
                           width: screenWidth,
                           color: Colors.amber,
-                          child: InflasiKota(),
+                          child: const InflasiKota(),
                         ),
                       )
                       // SizedBox(

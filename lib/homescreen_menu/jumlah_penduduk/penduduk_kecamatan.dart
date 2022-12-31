@@ -1353,7 +1353,7 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                       child: Center(
                                         child: Text(
                                           lkTotal.toString(),
-                                          style: TextStyle(color: Colors.white),
+                                          style: const TextStyle(color: Colors.white),
                                         ),
                                       ),
                                     ),
@@ -1368,7 +1368,7 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                       child: Center(
                                         child: Text(
                                           prTotal.toString(),
-                                          style: TextStyle(color: Colors.white),
+                                          style: const TextStyle(color: Colors.white),
                                         ),
                                       ),
                                     ),
@@ -1383,7 +1383,7 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                       child: Center(
                                         child: Text(
                                           (lkTotal + prTotal).toString(),
-                                          style: TextStyle(color: Colors.white),
+                                          style: const TextStyle(color: Colors.white),
                                         ),
                                       ),
                                     ),

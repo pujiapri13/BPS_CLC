@@ -1,8 +1,8 @@
 import 'package:bps_cilacap/Icons/back_icons_icons.dart';
-import 'package:bps_cilacap/grafik/grafik_distpdrb_migas.dart';
-import 'package:bps_cilacap/grafik/grafik_distpdrb_tanpa_migas.dart';
-import 'package:bps_cilacap/tabel/tabel_distpdrb_migas.dart';
-import 'package:bps_cilacap/tabel/tabel_distpdrb_tanpa_migas.dart';
+import 'package:bps_cilacap/grafik/grafik_distpdrbadhk_migas.dart';
+import 'package:bps_cilacap/grafik/grafik_distpdrbadhk_tanpa_migas.dart';
+import 'package:bps_cilacap/tabel/tabel_distpdrbadhk_migas.dart';
+import 'package:bps_cilacap/tabel/tabel_distpdrbadhk_tanpa_migas.dart';
 import 'package:flutter/material.dart';
 
 class DistribusiPdrbAdhk extends StatefulWidget {
@@ -160,7 +160,7 @@ class _DistribusiPdrbAdhkState extends State<DistribusiPdrbAdhk> {
               },
               icon: const Icon(Icons.info_outlined),
             ),
-            ],
+          ],
           leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
@@ -173,7 +173,6 @@ class _DistribusiPdrbAdhkState extends State<DistribusiPdrbAdhk> {
             ),
           ),
         ),
-        
         body: ListView(
           children: [
             Column(
@@ -194,9 +193,9 @@ class _DistribusiPdrbAdhkState extends State<DistribusiPdrbAdhk> {
                   child: Column(
                     children: const [
                       Flexible(
-                        child: TabelDistPdrbMigas(),
+                        child: TabelDistPdrbAdhkMigas(),
                       ),
-                      Flexible(child: GrafikDistPdrbMigas()),
+                      Flexible(child: GrafikDistPdrbAdhkMigas()),
                     ],
                   ),
                 ),
@@ -216,10 +215,10 @@ class _DistribusiPdrbAdhkState extends State<DistribusiPdrbAdhk> {
                   child: Column(
                     children: const [
                       Flexible(
-                        child: TabelDistPdrbTanpaMigas(),
+                        child: TabelDistPdrbAdhkTanpaMigas(),
                       ),
                       Flexible(
-                        child: GrafikDistPdrbTanpaMigas(),
+                        child: GrafikDistPdrbAdhkTanpaMigas(),
                       ),
                     ],
                   ),

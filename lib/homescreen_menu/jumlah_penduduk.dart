@@ -4,7 +4,6 @@ import 'package:bps_cilacap/Icons/back_icons_icons.dart';
 import 'package:bps_cilacap/homescreen_menu/jumlah_penduduk/penduduk_kecamatan.dart';
 import 'package:bps_cilacap/homescreen_menu/jumlah_penduduk/penduduk_umur.dart';
 import 'package:bps_cilacap/restAPI/repository_penduduk.dart';
-import 'package:bps_cilacap/restAPI/repository_penduduk_umur.dart';
 import 'package:flutter/material.dart';
 
 class jumlahPenduduk extends StatefulWidget {

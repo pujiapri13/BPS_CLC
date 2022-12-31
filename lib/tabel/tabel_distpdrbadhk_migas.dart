@@ -1,16 +1,16 @@
-import 'package:bps_cilacap/restAPI/repository_laju_pdrb_adhk.dart';
+import 'package:bps_cilacap/restAPI/repository_dist_pdrb_adhk.dart';
 import 'package:flutter/material.dart';
 
-class TabelLPPdrbMigas extends StatefulWidget {
-  const TabelLPPdrbMigas({super.key});
+class TabelDistPdrbAdhkMigas extends StatefulWidget {
+  const TabelDistPdrbAdhkMigas({super.key});
 
   @override
-  State<TabelLPPdrbMigas> createState() => _TabelLPPdrbMigasState();
+  State<TabelDistPdrbAdhkMigas> createState() => _TabelDistPdrbAdhkMigasState();
 }
 
-RepositoryLajuPdrbAdhk repositoryLajuPdrbAdhk = RepositoryLajuPdrbAdhk();
+RepositoryDistPdrbAdhk repositoryDistPdrbAdhk = RepositoryDistPdrbAdhk();
 
-class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
+class _TabelDistPdrbAdhkMigasState extends State<TabelDistPdrbAdhkMigas> {
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height -
@@ -19,7 +19,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: FutureBuilder(
-        future: repositoryLajuPdrbAdhk.getData(),
+        future: repositoryDistPdrbAdhk.getData(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             List isipdrb = snapshot.data as List;
@@ -52,7 +52,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                                   isipdrb[index = 4].created_at[2] +
                                   isipdrb[index = 4].created_at[3],
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
@@ -64,7 +64,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                                   isipdrb[index = 3].created_at[2] +
                                   isipdrb[index = 3].created_at[3],
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
@@ -76,7 +76,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                                   isipdrb[index = 2].created_at[2] +
                                   isipdrb[index = 2].created_at[3],
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
@@ -88,7 +88,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                                   isipdrb[index = 1].created_at[2] +
                                   isipdrb[index = 1].created_at[3],
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
@@ -100,7 +100,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                                   isipdrb[index = 0].created_at[2] +
                                   isipdrb[index = 0].created_at[3],
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                         ],
@@ -1114,8 +1114,8 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             fit: FlexFit.tight,
                             child: Text(
                               isipdrb[index = 4].total.toString(),
-                              style: TextStyle(color: Colors.white),
                               textAlign: TextAlign.center,
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
@@ -1124,7 +1124,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             child: Text(
                               isipdrb[index = 3].total.toString(),
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
@@ -1133,7 +1133,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             child: Text(
                               isipdrb[index = 2].total.toString(),
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
@@ -1142,7 +1142,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             child: Text(
                               isipdrb[index = 1].total.toString(),
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
@@ -1151,7 +1151,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             child: Text(
                               isipdrb[index = 0].total.toString(),
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                         ],

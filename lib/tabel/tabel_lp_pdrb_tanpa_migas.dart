@@ -1,4 +1,4 @@
-import 'package:bps_cilacap/restAPI/repository_laju_pertunbuhan_pdrb.dart';
+import 'package:bps_cilacap/restAPI/repository_laju_pdrb_adhk.dart';
 import 'package:flutter/material.dart';
 
 class TabelLPPdrbTanpaMigas extends StatefulWidget {
@@ -8,7 +8,7 @@ class TabelLPPdrbTanpaMigas extends StatefulWidget {
   State<TabelLPPdrbTanpaMigas> createState() => _TabelLPPdrbTanpaMigasState();
 }
 
-RepositoryLPPdrb repositorypdrb = RepositoryLPPdrb();
+RepositoryLajuPdrbAdhk repositoryLajuPdrbAdhk = RepositoryLajuPdrbAdhk();
 
 class _TabelLPPdrbTanpaMigasState extends State<TabelLPPdrbTanpaMigas> {
   @override
@@ -19,7 +19,7 @@ class _TabelLPPdrbTanpaMigasState extends State<TabelLPPdrbTanpaMigas> {
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: FutureBuilder(
-        future: repositorypdrb.getData(),
+        future: repositoryLajuPdrbAdhk.getData(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             List isipdrb = snapshot.data as List;
@@ -29,7 +29,7 @@ class _TabelLPPdrbTanpaMigasState extends State<TabelLPPdrbTanpaMigas> {
                 return Column(
                   children: [
                     Container(
-                      color: Colors.blue[200],
+                      color: Colors.cyan,
                       width: screenWidth,
                       height: screenHeight * 0.1,
                       child: Row(
@@ -40,61 +40,67 @@ class _TabelLPPdrbTanpaMigasState extends State<TabelLPPdrbTanpaMigas> {
                             child: Text(
                               "Lapangan Usaha",
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 9].tanggal[0] +
-                                  isipdrb[index = 9].tanggal[1] +
-                                  isipdrb[index = 9].tanggal[2] +
-                                  isipdrb[index = 9].tanggal[3],
+                              isipdrb[index = 9].created_at[0] +
+                                  isipdrb[index = 9].created_at[1] +
+                                  isipdrb[index = 9].created_at[2] +
+                                  isipdrb[index = 9].created_at[3],
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 8].tanggal[0] +
-                                  isipdrb[index = 8].tanggal[1] +
-                                  isipdrb[index = 8].tanggal[2] +
-                                  isipdrb[index = 8].tanggal[3],
+                              isipdrb[index = 8].created_at[0] +
+                                  isipdrb[index = 8].created_at[1] +
+                                  isipdrb[index = 8].created_at[2] +
+                                  isipdrb[index = 8].created_at[3],
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 7].tanggal[0] +
-                                  isipdrb[index = 7].tanggal[1] +
-                                  isipdrb[index = 7].tanggal[2] +
-                                  isipdrb[index = 7].tanggal[3],
+                              isipdrb[index = 7].created_at[0] +
+                                  isipdrb[index = 7].created_at[1] +
+                                  isipdrb[index = 7].created_at[2] +
+                                  isipdrb[index = 7].created_at[3],
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 6].tanggal[0] +
-                                  isipdrb[index = 6].tanggal[1] +
-                                  isipdrb[index = 6].tanggal[2] +
-                                  isipdrb[index = 6].tanggal[3],
+                              isipdrb[index = 6].created_at[0] +
+                                  isipdrb[index = 6].created_at[1] +
+                                  isipdrb[index = 6].created_at[2] +
+                                  isipdrb[index = 6].created_at[3],
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 5].tanggal[0] +
-                                  isipdrb[index = 5].tanggal[1] +
-                                  isipdrb[index = 5].tanggal[2] +
-                                  isipdrb[index = 5].tanggal[3],
+                              isipdrb[index = 5].created_at[0] +
+                                  isipdrb[index = 5].created_at[1] +
+                                  isipdrb[index = 5].created_at[2] +
+                                  isipdrb[index = 5].created_at[3],
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                         ],
@@ -1089,7 +1095,7 @@ class _TabelLPPdrbTanpaMigasState extends State<TabelLPPdrbTanpaMigas> {
                     const Divider(),
                     // <-- Total PDRB
                     Container(
-                      color: Colors.grey.shade500,
+                      color: Colors.cyan,
                       width: screenWidth,
                       height: screenHeight * 0.05,
                       child: Row(
@@ -1100,46 +1106,52 @@ class _TabelLPPdrbTanpaMigasState extends State<TabelLPPdrbTanpaMigas> {
                             child: Text(
                               "Total PDRB",
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 9].total_pdrb.toString(),
+                              isipdrb[index = 9].total.toString(),
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 8].total_pdrb.toString(),
+                              isipdrb[index = 8].total.toString(),
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 7].total_pdrb.toString(),
+                              isipdrb[index = 7].total.toString(),
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 6].total_pdrb.toString(),
+                              isipdrb[index = 6].total.toString(),
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 5].total_pdrb.toString(),
+                              isipdrb[index = 5].total.toString(),
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                         ],
@@ -1153,8 +1165,10 @@ class _TabelLPPdrbTanpaMigasState extends State<TabelLPPdrbTanpaMigas> {
           if (snapshot.hasError) {
             return const Text('error');
           }
-          return const Center(child: CircularProgressIndicator(
-            strokeWidth: 1,));
+          return const Center(
+              child: CircularProgressIndicator(
+            strokeWidth: 1,
+          ));
         },
       ),
     );

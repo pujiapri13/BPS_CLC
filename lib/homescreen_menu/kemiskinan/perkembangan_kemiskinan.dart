@@ -193,7 +193,7 @@ class _PerkembanganKemiskinanState extends State<PerkembanganKemiskinan> {
                                       child: Text(
                                         th1,
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(color: Colors.white),
+                                        style: const TextStyle(color: Colors.white),
                                       ),
                                     ),
                                   ),
@@ -207,7 +207,7 @@ class _PerkembanganKemiskinanState extends State<PerkembanganKemiskinan> {
                                       child: Text(
                                         th2,
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(color: Colors.white),
+                                        style: const TextStyle(color: Colors.white),
                                       ),
                                     ),
                                   ),
@@ -221,7 +221,7 @@ class _PerkembanganKemiskinanState extends State<PerkembanganKemiskinan> {
                                       child: Text(
                                         th3,
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(color: Colors.white),
+                                        style: const TextStyle(color: Colors.white),
                                       ),
                                     ),
                                   ),
@@ -235,7 +235,7 @@ class _PerkembanganKemiskinanState extends State<PerkembanganKemiskinan> {
                                       child: Text(
                                         th4,
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(color: Colors.white),
+                                        style: const TextStyle(color: Colors.white),
                                       ),
                                     ),
                                   ),
@@ -249,7 +249,7 @@ class _PerkembanganKemiskinanState extends State<PerkembanganKemiskinan> {
                                       child: Text(
                                         th5,
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(color: Colors.white),
+                                        style: const TextStyle(color: Colors.white),
                                       ),
                                     ),
                                   ),

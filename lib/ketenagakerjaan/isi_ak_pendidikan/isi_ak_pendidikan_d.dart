@@ -1,7 +1,6 @@
 // ignore_for_file: file_names
 
 import 'package:bps_cilacap/restAPI/repository_penduduk_pendidikan.dart';
-import 'package:bps_cilacap/restAPI/repository_tenaga_kerja.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'package:pie_chart/pie_chart.dart';

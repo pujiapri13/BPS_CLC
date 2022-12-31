@@ -64,33 +64,27 @@ class _carouselSlider1State extends State<carouselSlider1> {
                             Container(
                               margin: const EdgeInsets.only(left: 10),
                               child: Text(
-                                "Inflasi " + tahun,
-                                style: TextStyle(fontWeight: FontWeight.bold),
+                                "Inflasi $tahun",
+                                style: const TextStyle(fontWeight: FontWeight.bold),
                               ),
                             ),
                             const Divider(),
                             Container(
                               margin: const EdgeInsets.only(left: 10),
                               child: Text(
-                                "Inflasi Month to Month = " +
-                                    mtom1.toStringAsFixed(2) +
-                                    "%",
+                                "Inflasi Month to Month = ${mtom1.toStringAsFixed(2)}%",
                               ),
                             ),
                             Container(
                               margin: const EdgeInsets.only(left: 10),
                               child: Text(
-                                "Inflasi Year to Date = " +
-                                    ytod1.toStringAsFixed(2) +
-                                    "%",
+                                "Inflasi Year to Date = ${ytod1.toStringAsFixed(2)}%",
                               ),
                             ),
                             Container(
                               margin: const EdgeInsets.only(left: 10),
                               child: Text(
-                                "Inflasi Year on Year = " +
-                                    yony1.toStringAsFixed(2) +
-                                    "%",
+                                "Inflasi Year on Year = ${yony1.toStringAsFixed(2)}%",
                               ),
                             ),
                           ],

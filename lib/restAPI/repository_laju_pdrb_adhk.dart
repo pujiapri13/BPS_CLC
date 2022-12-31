@@ -1,11 +1,9 @@
-// ignore_for_file: empty_catches
-
 import 'dart:convert';
-import 'model_tenaga_kerja.dart';
+import 'model_laju_pdrb_adhk.dart';
 import 'package:http/http.dart' as http;
 
-class RepositoryTenagaKerja {
-  final _baseURL = 'https://bps-asap.my.id/api/tenaga-kerja';
+class RepositoryLajuPdrbAdhk {
+  final _baseURL = 'https://bps-asap.my.id/api/laju-pdrb-adhk';
 
   Future getData() async {
     try {
@@ -14,9 +12,12 @@ class RepositoryTenagaKerja {
       if (response.statusCode == 200) {
         var cokk = jsonDecode(response.body);
         return (cokk['data'] as List)
-            .map((isitenagakerja) => TenagaKerja.fromJson(isitenagakerja))
+            .map((isipdrb) => LajuPdrbAdhk.fromJson(isipdrb))
             .toList();
       }
-    } catch (isitenagakerja) {}
+    } catch (isipdrb) {
+      // ignore: avoid_print
+      print(isipdrb.toString());
+    }
   }
 }

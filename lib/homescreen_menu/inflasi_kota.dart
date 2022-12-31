@@ -1,7 +1,5 @@
 import 'package:bps_cilacap/restAPI/repository_inflasi_kota.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class InflasiKota extends StatefulWidget {
   const InflasiKota({super.key});
@@ -150,7 +148,7 @@ class _InflasiKotaState extends State<InflasiKota> {
                                       child: Text(
                                         nama1.capitalize(),
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             color: Colors.cyan,
                                             fontWeight: FontWeight.bold),
                                       ),
@@ -439,7 +437,7 @@ class _InflasiKotaState extends State<InflasiKota> {
                                     child: Center(
                                       child: Text(
                                         nama7.capitalize(),
-                                        style: TextStyle(color: Colors.white),
+                                        style: const TextStyle(color: Colors.white),
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -524,6 +522,6 @@ class _InflasiKotaState extends State<InflasiKota> {
 
 extension MyExtension on String {
   String capitalize() {
-    return "${this[0].toUpperCase()}${this.substring(1).toLowerCase()}";
+    return "${this[0].toUpperCase()}${substring(1).toLowerCase()}";
   }
 }

@@ -79,7 +79,7 @@ class _SensusAState extends State<SensusA> {
                       color: Colors.transparent,
                       child: Center(
                           child: Text(
-                        (lkTotal + prTotal).toString(),
+                        (lkTotal + prTotal).toString() + " jiwa",
                         style: const TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.w800,

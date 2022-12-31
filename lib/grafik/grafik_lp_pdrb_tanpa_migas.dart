@@ -1,6 +1,5 @@
 // ignore_for_file: library_private_types_in_public_api
-
-import 'package:bps_cilacap/restAPI/repository_laju_pertunbuhan_pdrb.dart';
+import 'package:bps_cilacap/restAPI/repository_laju_pdrb_adhk.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -8,12 +7,11 @@ class GrafikLPPdrbTanpaMigas extends StatefulWidget {
   const GrafikLPPdrbTanpaMigas({Key? key}) : super(key: key);
 
   @override
-  _GrafikLPPdrbTanpaMigasState createState() =>
-      _GrafikLPPdrbTanpaMigasState();
+  _GrafikLPPdrbTanpaMigasState createState() => _GrafikLPPdrbTanpaMigasState();
 }
 
 class _GrafikLPPdrbTanpaMigasState extends State<GrafikLPPdrbTanpaMigas> {
-  RepositoryLPPdrb repositorydistpdrb = RepositoryLPPdrb();
+  RepositoryLajuPdrbAdhk repositoryLajuPdrbAdhk = RepositoryLajuPdrbAdhk();
 
   List<Color> gradientColors = [
     const Color(0xff23b6e6),
@@ -22,7 +20,7 @@ class _GrafikLPPdrbTanpaMigasState extends State<GrafikLPPdrbTanpaMigas> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: repositorydistpdrb.getData(),
+      future: repositoryLajuPdrbAdhk.getData(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           List isipdrb = snapshot.data as List;
@@ -84,42 +82,42 @@ class _GrafikLPPdrbTanpaMigasState extends State<GrafikLPPdrbTanpaMigas> {
                                 switch (value.toInt()) {
                                   case 1:
                                     text = Text(
-                                        isipdrb[index = 9].tanggal[0] +
-                                            isipdrb[index = 9].tanggal[1] +
-                                            isipdrb[index = 9].tanggal[2] +
-                                            isipdrb[index = 9].tanggal[3],
+                                        isipdrb[index = 9].created_at[0] +
+                                            isipdrb[index = 9].created_at[1] +
+                                            isipdrb[index = 9].created_at[2] +
+                                            isipdrb[index = 9].created_at[3],
                                         style: style);
                                     break;
                                   case 3:
                                     text = Text(
-                                        isipdrb[index = 8].tanggal[0] +
-                                            isipdrb[index = 8].tanggal[1] +
-                                            isipdrb[index = 8].tanggal[2] +
-                                            isipdrb[index = 8].tanggal[3],
+                                        isipdrb[index = 8].created_at[0] +
+                                            isipdrb[index = 8].created_at[1] +
+                                            isipdrb[index = 8].created_at[2] +
+                                            isipdrb[index = 8].created_at[3],
                                         style: style);
                                     break;
                                   case 5:
                                     text = Text(
-                                        isipdrb[index = 7].tanggal[0] +
-                                            isipdrb[index = 7].tanggal[1] +
-                                            isipdrb[index = 7].tanggal[2] +
-                                            isipdrb[index = 7].tanggal[3],
+                                        isipdrb[index = 7].created_at[0] +
+                                            isipdrb[index = 7].created_at[1] +
+                                            isipdrb[index = 7].created_at[2] +
+                                            isipdrb[index = 7].created_at[3],
                                         style: style);
                                     break;
                                   case 7:
                                     text = Text(
-                                        isipdrb[index = 6].tanggal[0] +
-                                            isipdrb[index = 6].tanggal[1] +
-                                            isipdrb[index = 6].tanggal[2] +
-                                            isipdrb[index = 6].tanggal[3],
+                                        isipdrb[index = 6].created_at[0] +
+                                            isipdrb[index = 6].created_at[1] +
+                                            isipdrb[index = 6].created_at[2] +
+                                            isipdrb[index = 6].created_at[3],
                                         style: style);
                                     break;
                                   case 9:
                                     text = Text(
-                                        isipdrb[index = 5].tanggal[0] +
-                                            isipdrb[index = 5].tanggal[1] +
-                                            isipdrb[index = 5].tanggal[2] +
-                                            isipdrb[index = 5].tanggal[3],
+                                        isipdrb[index = 5].created_at[0] +
+                                            isipdrb[index = 5].created_at[1] +
+                                            isipdrb[index = 5].created_at[2] +
+                                            isipdrb[index = 5].created_at[3],
                                         style: style);
                                     break;
                                   default:
@@ -178,11 +176,16 @@ class _GrafikLPPdrbTanpaMigasState extends State<GrafikLPPdrbTanpaMigas> {
                       lineBarsData: [
                         LineChartBarData(
                           spots: [
-                            FlSpot(1, isipdrb[index = 9].total_pdrb / 20),
-                            FlSpot(3, isipdrb[index = 8].total_pdrb / 20),
-                            FlSpot(5, isipdrb[index = 7].total_pdrb / 20),
-                            FlSpot(7, isipdrb[index = 6].total_pdrb / 20),
-                            FlSpot(9, isipdrb[index = 5].total_pdrb / 20),
+                            FlSpot(1,
+                                (double.parse(isipdrb[index = 9].total)) / 20),
+                            FlSpot(3,
+                                (double.parse(isipdrb[index = 8].total)) / 20),
+                            FlSpot(5,
+                                (double.parse(isipdrb[index = 7].total)) / 20),
+                            FlSpot(7,
+                                (double.parse(isipdrb[index = 6].total)) / 20),
+                            FlSpot(9,
+                                (double.parse(isipdrb[index = 5].total)) / 20),
                           ],
                           isCurved: false,
                           gradient: LinearGradient(
@@ -207,8 +210,10 @@ class _GrafikLPPdrbTanpaMigasState extends State<GrafikLPPdrbTanpaMigas> {
         if (snapshot.hasError) {
           return const Text("Database Error");
         }
-        return const Center(child: CircularProgressIndicator(
-            strokeWidth: 1,));
+        return const Center(
+            child: CircularProgressIndicator(
+          strokeWidth: 1,
+        ));
       },
     );
   }

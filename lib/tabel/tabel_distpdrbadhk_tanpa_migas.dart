@@ -1,16 +1,17 @@
-import 'package:bps_cilacap/restAPI/repository_laju_pdrb_adhk.dart';
+import 'package:bps_cilacap/restAPI/repository_dist_pdrb_adhk.dart';
 import 'package:flutter/material.dart';
 
-class TabelLPPdrbMigas extends StatefulWidget {
-  const TabelLPPdrbMigas({super.key});
+class TabelDistPdrbAdhkTanpaMigas extends StatefulWidget {
+  const TabelDistPdrbAdhkTanpaMigas({super.key});
 
   @override
-  State<TabelLPPdrbMigas> createState() => _TabelLPPdrbMigasState();
+  State<TabelDistPdrbAdhkTanpaMigas> createState() =>
+      _TabelDistPdrbAdhkTanpaMigasState();
 }
 
-RepositoryLajuPdrbAdhk repositoryLajuPdrbAdhk = RepositoryLajuPdrbAdhk();
+RepositoryDistPdrbAdhk repositoryDistPdrbAdhk = RepositoryDistPdrbAdhk();
 
-class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
+class _TabelDistPdrbAdhkTanpaMigasState extends State<TabelDistPdrbAdhkTanpaMigas> {
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height -
@@ -19,7 +20,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: FutureBuilder(
-        future: repositoryLajuPdrbAdhk.getData(),
+        future: repositoryDistPdrbAdhk.getData(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             List isipdrb = snapshot.data as List;
@@ -47,60 +48,60 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].created_at[0] +
-                                  isipdrb[index = 4].created_at[1] +
-                                  isipdrb[index = 4].created_at[2] +
-                                  isipdrb[index = 4].created_at[3],
+                              isipdrb[index = 9].created_at[0] +
+                                  isipdrb[index = 9].created_at[1] +
+                                  isipdrb[index = 9].created_at[2] +
+                                  isipdrb[index = 9].created_at[3],
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].created_at[0] +
-                                  isipdrb[index = 3].created_at[1] +
-                                  isipdrb[index = 3].created_at[2] +
-                                  isipdrb[index = 3].created_at[3],
+                              isipdrb[index = 8].created_at[0] +
+                                  isipdrb[index = 8].created_at[1] +
+                                  isipdrb[index = 8].created_at[2] +
+                                  isipdrb[index = 8].created_at[3],
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].created_at[0] +
-                                  isipdrb[index = 2].created_at[1] +
-                                  isipdrb[index = 2].created_at[2] +
-                                  isipdrb[index = 2].created_at[3],
+                              isipdrb[index = 7].created_at[0] +
+                                  isipdrb[index = 7].created_at[1] +
+                                  isipdrb[index = 7].created_at[2] +
+                                  isipdrb[index = 7].created_at[3],
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].created_at[0] +
-                                  isipdrb[index = 1].created_at[1] +
-                                  isipdrb[index = 1].created_at[2] +
-                                  isipdrb[index = 1].created_at[3],
+                              isipdrb[index = 6].created_at[0] +
+                                  isipdrb[index = 6].created_at[1] +
+                                  isipdrb[index = 6].created_at[2] +
+                                  isipdrb[index = 6].created_at[3],
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].created_at[0] +
-                                  isipdrb[index = 0].created_at[1] +
-                                  isipdrb[index = 0].created_at[2] +
-                                  isipdrb[index = 0].created_at[3],
+                              isipdrb[index = 5].created_at[0] +
+                                  isipdrb[index = 5].created_at[1] +
+                                  isipdrb[index = 5].created_at[2] +
+                                  isipdrb[index = 5].created_at[3],
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                         ],
@@ -125,7 +126,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].a.toString(),
+                              isipdrb[index = 9].a.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -133,7 +134,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].a.toString(),
+                              isipdrb[index = 8].a.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -141,7 +142,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].a.toString(),
+                              isipdrb[index = 7].a.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -149,7 +150,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].a.toString(),
+                              isipdrb[index = 6].a.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -157,7 +158,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].a.toString(),
+                              isipdrb[index = 5].a.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -183,7 +184,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].b.toString(),
+                              isipdrb[index = 9].b.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -191,7 +192,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].b.toString(),
+                              isipdrb[index = 8].b.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -199,7 +200,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].b.toString(),
+                              isipdrb[index = 7].b.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -207,7 +208,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].b.toString(),
+                              isipdrb[index = 6].b.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -215,7 +216,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].b.toString(),
+                              isipdrb[index = 5].b.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -241,7 +242,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].c.toString(),
+                              isipdrb[index = 9].c.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -249,7 +250,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].c.toString(),
+                              isipdrb[index = 8].c.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -257,7 +258,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].c.toString(),
+                              isipdrb[index = 7].c.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -265,7 +266,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].c.toString(),
+                              isipdrb[index = 6].c.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -273,7 +274,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].c.toString(),
+                              isipdrb[index = 5].c.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -299,7 +300,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].d.toString(),
+                              isipdrb[index = 9].d.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -307,7 +308,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].d.toString(),
+                              isipdrb[index = 8].d.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -315,7 +316,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].d.toString(),
+                              isipdrb[index = 7].d.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -323,7 +324,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].d.toString(),
+                              isipdrb[index = 6].d.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -331,7 +332,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].d.toString(),
+                              isipdrb[index = 5].d.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -357,7 +358,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].e.toString(),
+                              isipdrb[index = 9].e.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -365,7 +366,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].e.toString(),
+                              isipdrb[index = 8].e.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -373,7 +374,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].e.toString(),
+                              isipdrb[index = 7].e.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -381,7 +382,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].e.toString(),
+                              isipdrb[index = 6].e.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -389,7 +390,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].e.toString(),
+                              isipdrb[index = 5].e.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -415,7 +416,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].f.toString(),
+                              isipdrb[index = 9].f.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -423,7 +424,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].f.toString(),
+                              isipdrb[index = 8].f.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -431,7 +432,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].f.toString(),
+                              isipdrb[index = 7].f.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -439,7 +440,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].f.toString(),
+                              isipdrb[index = 6].f.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -447,7 +448,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].f.toString(),
+                              isipdrb[index = 5].f.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -473,7 +474,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].g.toString(),
+                              isipdrb[index = 9].g.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -481,7 +482,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].g.toString(),
+                              isipdrb[index = 8].g.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -489,7 +490,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].g.toString(),
+                              isipdrb[index = 7].g.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -497,7 +498,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].g.toString(),
+                              isipdrb[index = 6].g.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -505,7 +506,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].g.toString(),
+                              isipdrb[index = 5].g.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -531,7 +532,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].h.toString(),
+                              isipdrb[index = 9].h.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -539,7 +540,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].h.toString(),
+                              isipdrb[index = 8].h.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -547,7 +548,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].h.toString(),
+                              isipdrb[index = 7].h.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -555,7 +556,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].h.toString(),
+                              isipdrb[index = 6].h.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -563,7 +564,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].h.toString(),
+                              isipdrb[index = 5].h.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -589,7 +590,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].i.toString(),
+                              isipdrb[index = 9].i.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -597,7 +598,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].i.toString(),
+                              isipdrb[index = 8].i.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -605,7 +606,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].i.toString(),
+                              isipdrb[index = 7].i.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -613,7 +614,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].i.toString(),
+                              isipdrb[index = 6].i.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -621,7 +622,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].i.toString(),
+                              isipdrb[index = 5].i.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -647,7 +648,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].j.toString(),
+                              isipdrb[index = 9].j.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -655,7 +656,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].j.toString(),
+                              isipdrb[index = 8].j.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -663,7 +664,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].j.toString(),
+                              isipdrb[index = 7].j.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -671,7 +672,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].j.toString(),
+                              isipdrb[index = 6].j.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -679,7 +680,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].j.toString(),
+                              isipdrb[index = 5].j.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -705,7 +706,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].k.toString(),
+                              isipdrb[index = 9].k.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -713,7 +714,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].k.toString(),
+                              isipdrb[index = 8].k.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -721,7 +722,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].k.toString(),
+                              isipdrb[index = 7].k.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -729,7 +730,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].k.toString(),
+                              isipdrb[index = 6].k.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -737,7 +738,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].k.toString(),
+                              isipdrb[index = 5].k.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -763,7 +764,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].l.toString(),
+                              isipdrb[index = 9].l.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -771,7 +772,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].l.toString(),
+                              isipdrb[index = 8].l.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -779,7 +780,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].l.toString(),
+                              isipdrb[index = 7].l.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -787,7 +788,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].l.toString(),
+                              isipdrb[index = 6].l.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -795,7 +796,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].l.toString(),
+                              isipdrb[index = 5].l.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -821,7 +822,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].m_n.toString(),
+                              isipdrb[index = 9].m_n.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -829,7 +830,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].m_n.toString(),
+                              isipdrb[index = 8].m_n.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -837,7 +838,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].m_n.toString(),
+                              isipdrb[index = 7].m_n.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -845,7 +846,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].m_n.toString(),
+                              isipdrb[index = 6].m_n.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -853,7 +854,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].m_n.toString(),
+                              isipdrb[index = 5].m_n.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -879,7 +880,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].o.toString(),
+                              isipdrb[index = 9].o.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -887,7 +888,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].o.toString(),
+                              isipdrb[index = 8].o.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -895,7 +896,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].o.toString(),
+                              isipdrb[index = 7].o.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -903,7 +904,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].o.toString(),
+                              isipdrb[index = 6].o.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -911,7 +912,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].o.toString(),
+                              isipdrb[index = 5].o.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -937,7 +938,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].p.toString(),
+                              isipdrb[index = 9].p.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -945,7 +946,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].p.toString(),
+                              isipdrb[index = 8].p.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -953,7 +954,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].p.toString(),
+                              isipdrb[index = 7].p.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -961,7 +962,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].p.toString(),
+                              isipdrb[index = 6].p.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -969,7 +970,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].p.toString(),
+                              isipdrb[index = 5].p.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -995,7 +996,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].q.toString(),
+                              isipdrb[index = 9].q.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1003,7 +1004,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].q.toString(),
+                              isipdrb[index = 8].q.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1011,7 +1012,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].q.toString(),
+                              isipdrb[index = 7].q.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1019,7 +1020,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].q.toString(),
+                              isipdrb[index = 6].q.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1027,7 +1028,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].q.toString(),
+                              isipdrb[index = 5].q.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1053,7 +1054,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].r_s_t_u.toString(),
+                              isipdrb[index = 9].r_s_t_u.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1061,7 +1062,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].r_s_t_u.toString(),
+                              isipdrb[index = 8].r_s_t_u.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1069,7 +1070,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].r_s_t_u.toString(),
+                              isipdrb[index = 7].r_s_t_u.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1077,7 +1078,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].r_s_t_u.toString(),
+                              isipdrb[index = 6].r_s_t_u.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1085,7 +1086,7 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].r_s_t_u.toString(),
+                              isipdrb[index = 5].r_s_t_u.toString(),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -1113,45 +1114,45 @@ class _TabelLPPdrbMigasState extends State<TabelLPPdrbMigas> {
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 4].total.toString(),
-                              style: TextStyle(color: Colors.white),
+                              isipdrb[index = 9].total.toString(),
                               textAlign: TextAlign.center,
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 3].total.toString(),
+                              isipdrb[index = 8].total.toString(),
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 2].total.toString(),
+                              isipdrb[index = 7].total.toString(),
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 1].total.toString(),
+                              isipdrb[index = 6].total.toString(),
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
                             flex: 2,
                             fit: FlexFit.tight,
                             child: Text(
-                              isipdrb[index = 0].total.toString(),
+                              isipdrb[index = 5].total.toString(),
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                         ],

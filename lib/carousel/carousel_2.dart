@@ -1,5 +1,4 @@
 import 'package:bps_cilacap/restAPI/repository_penduduk.dart';
-import 'package:bps_cilacap/restAPI/repository_penduduk_umur.dart';
 import 'package:flutter/material.dart';
 
 class carouselSlider2 extends StatefulWidget {
@@ -86,7 +85,7 @@ class _carouselSlider2State extends State<carouselSlider2> {
                           Container(
                             margin: const EdgeInsets.only(left: 10),
                             child: Text(
-                              "Jumlah Total = ${jmlTotal} Jiwa",
+                              "Jumlah Total = $jmlTotal Jiwa",
                             ),
                           ),
                         ],
