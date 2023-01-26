@@ -143,7 +143,7 @@ class _SensusCState extends State<SensusC> {
                                     color: Color.fromRGBO(47, 182, 224, 1),
                                   ),
                                 ),
-                                Text(
+                                const Text(
                                   "juta jiwa PEREMPUAN",
                                   style: TextStyle(fontSize: 12),
                                 )

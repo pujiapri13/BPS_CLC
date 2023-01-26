@@ -52,7 +52,7 @@ class _TabelLPPdrbTanpaMigasState extends State<TabelLPPdrbTanpaMigas> {
                                   isipdrb[index = 9].created_at[2] +
                                   isipdrb[index = 9].created_at[3],
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
@@ -64,7 +64,7 @@ class _TabelLPPdrbTanpaMigasState extends State<TabelLPPdrbTanpaMigas> {
                                   isipdrb[index = 8].created_at[2] +
                                   isipdrb[index = 8].created_at[3],
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
@@ -76,7 +76,7 @@ class _TabelLPPdrbTanpaMigasState extends State<TabelLPPdrbTanpaMigas> {
                                   isipdrb[index = 7].created_at[2] +
                                   isipdrb[index = 7].created_at[3],
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
@@ -88,7 +88,7 @@ class _TabelLPPdrbTanpaMigasState extends State<TabelLPPdrbTanpaMigas> {
                                   isipdrb[index = 6].created_at[2] +
                                   isipdrb[index = 6].created_at[3],
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
@@ -100,7 +100,7 @@ class _TabelLPPdrbTanpaMigasState extends State<TabelLPPdrbTanpaMigas> {
                                   isipdrb[index = 5].created_at[2] +
                                   isipdrb[index = 5].created_at[3],
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                         ],
@@ -1115,7 +1115,7 @@ class _TabelLPPdrbTanpaMigasState extends State<TabelLPPdrbTanpaMigas> {
                             child: Text(
                               isipdrb[index = 9].total.toString(),
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
@@ -1124,7 +1124,7 @@ class _TabelLPPdrbTanpaMigasState extends State<TabelLPPdrbTanpaMigas> {
                             child: Text(
                               isipdrb[index = 8].total.toString(),
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
@@ -1133,7 +1133,7 @@ class _TabelLPPdrbTanpaMigasState extends State<TabelLPPdrbTanpaMigas> {
                             child: Text(
                               isipdrb[index = 7].total.toString(),
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
@@ -1142,7 +1142,7 @@ class _TabelLPPdrbTanpaMigasState extends State<TabelLPPdrbTanpaMigas> {
                             child: Text(
                               isipdrb[index = 6].total.toString(),
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
@@ -1151,7 +1151,7 @@ class _TabelLPPdrbTanpaMigasState extends State<TabelLPPdrbTanpaMigas> {
                             child: Text(
                               isipdrb[index = 5].total.toString(),
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                         ],

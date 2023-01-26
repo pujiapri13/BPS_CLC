@@ -141,7 +141,8 @@ class _JumlahPendudukUmurState extends State<JumlahPendudukUmur> {
                                       child: Center(
                                         child: Text(
                                           genderLAKI,
-                                          style: const TextStyle(color: Colors.white),
+                                          style: const TextStyle(
+                                              color: Colors.white),
                                         ),
                                       ),
                                     ),
@@ -157,7 +158,8 @@ class _JumlahPendudukUmurState extends State<JumlahPendudukUmur> {
                                       child: Center(
                                         child: Text(
                                           genderPEREMPUAN,
-                                          style: const TextStyle(color: Colors.white),
+                                          style: const TextStyle(
+                                              color: Colors.white),
                                         ),
                                       ),
                                     ),
@@ -945,7 +947,8 @@ class _JumlahPendudukUmurState extends State<JumlahPendudukUmur> {
                                       child: Center(
                                         child: Text(
                                           lkTotal.toString(),
-                                          style: const TextStyle(color: Colors.white),
+                                          style: const TextStyle(
+                                              color: Colors.white),
                                         ),
                                       ),
                                     ),
@@ -960,7 +963,8 @@ class _JumlahPendudukUmurState extends State<JumlahPendudukUmur> {
                                       child: Center(
                                         child: Text(
                                           prTotal.toString(),
-                                          style: const TextStyle(color: Colors.white),
+                                          style: const TextStyle(
+                                              color: Colors.white),
                                         ),
                                       ),
                                     ),
@@ -975,7 +979,8 @@ class _JumlahPendudukUmurState extends State<JumlahPendudukUmur> {
                                       child: Center(
                                         child: Text(
                                           (lkTotal + prTotal).toString(),
-                                          style: const TextStyle(color: Colors.white),
+                                          style: const TextStyle(
+                                              color: Colors.white),
                                         ),
                                       ),
                                     ),

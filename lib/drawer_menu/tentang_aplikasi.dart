@@ -63,7 +63,7 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
+                margin: const EdgeInsets.fromLTRB(0, 0, 0, 20),
                 child: const Text(
                   '<-Aplikasi Statistik Cilacap->',
                   style: TextStyle(
@@ -230,7 +230,7 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.fromLTRB(0, 20, 0, 20),
+                margin: const EdgeInsets.fromLTRB(0, 20, 0, 20),
                 child: const Text(
                   'Our Team :',
                   style: TextStyle(
@@ -248,7 +248,7 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
                         height: screenHeight * 0.05,
                         width: screenWidth,
                         child: Row(
-                          children: <Widget>[
+                          children: const <Widget>[
                             Text(
                               "     Isnaini, S.ST, M.M",
                               style: TextStyle(color: Colors.white),
@@ -264,7 +264,7 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
                         height: screenHeight * 0.05,
                         width: screenWidth,
                         child: Row(
-                          children: <Widget>[
+                          children: const <Widget>[
                             Text(
                               "     Achmad Rifai, S.ST",
                               style: TextStyle(color: Colors.white),
@@ -280,7 +280,7 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
                         height: screenHeight * 0.05,
                         width: screenWidth,
                         child: Row(
-                          children: <Widget>[
+                          children: const <Widget>[
                             Text(
                               "     Imam Fahrudin",
                               style: TextStyle(color: Colors.white),
@@ -296,7 +296,7 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
                         height: screenHeight * 0.05,
                         width: screenWidth,
                         child: Row(
-                          children: <Widget>[
+                          children: const <Widget>[
                             Text(
                               "     Amarulloh M.K",
                               style: TextStyle(color: Colors.white),
@@ -312,7 +312,7 @@ class _TentangAplikasiState extends State<TentangAplikasi> {
                         height: screenHeight * 0.05,
                         width: screenWidth,
                         child: Row(
-                          children: <Widget>[
+                          children: const <Widget>[
                             Text(
                               "     Puji Apriyanto",
                               style: TextStyle(color: Colors.white),
