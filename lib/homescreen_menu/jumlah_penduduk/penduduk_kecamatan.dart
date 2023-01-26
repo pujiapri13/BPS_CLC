@@ -46,91 +46,138 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
           future: jumlahPendudukKecamatan.getData(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              List isipendudukumur = snapshot.data as List;
+              List isipendudukkecamatan = snapshot.data as List;
               return ListView.builder(
                 itemCount: 1,
                 itemBuilder: (context, index) {
-                  String thn = (isipendudukumur[index = 0].created_at[0] +
-                          isipendudukumur[index = 0].created_at[1] +
-                          isipendudukumur[index = 0].created_at[2] +
-                          isipendudukumur[index = 0].created_at[3])
+                  String thn = (isipendudukkecamatan[index = 0].created_at[0] +
+                          isipendudukkecamatan[index = 0].created_at[1] +
+                          isipendudukkecamatan[index = 0].created_at[2] +
+                          isipendudukkecamatan[index = 0].created_at[3])
                       .toString();
 
-                  String kec1 = isipendudukumur[index = 0].kecamatan;
-                  String kec2 = isipendudukumur[index = 1].kecamatan;
-                  String kec3 = isipendudukumur[index = 2].kecamatan;
-                  String kec4 = isipendudukumur[index = 3].kecamatan;
-                  String kec5 = isipendudukumur[index = 4].kecamatan;
-                  String kec6 = isipendudukumur[index = 5].kecamatan;
-                  String kec7 = isipendudukumur[index = 6].kecamatan;
-                  String kec8 = isipendudukumur[index = 7].kecamatan;
-                  String kec9 = isipendudukumur[index = 8].kecamatan;
-                  String kec10 = isipendudukumur[index = 9].kecamatan;
-                  String kec11 = isipendudukumur[index = 10].kecamatan;
-                  String kec12 = isipendudukumur[index = 11].kecamatan;
-                  String kec13 = isipendudukumur[index = 12].kecamatan;
-                  String kec14 = isipendudukumur[index = 13].kecamatan;
-                  String kec15 = isipendudukumur[index = 14].kecamatan;
-                  String kec16 = isipendudukumur[index = 15].kecamatan;
-                  String kec17 = isipendudukumur[index = 16].kecamatan;
-                  String kec18 = isipendudukumur[index = 17].kecamatan;
-                  String kec19 = isipendudukumur[index = 18].kecamatan;
-                  String kec20 = isipendudukumur[index = 19].kecamatan;
-                  String kec21 = isipendudukumur[index = 20].kecamatan;
-                  String kec22 = isipendudukumur[index = 21].kecamatan;
-                  String kec23 = isipendudukumur[index = 22].kecamatan;
-                  String kec24 = isipendudukumur[index = 23].kecamatan;
-                  int lk1 = 24409;
-                  int lk2 = 52895;
-                  int lk3 = 70712;
-                  int lk4 = 51736;
-                  int lk5 = 39913;
-                  int lk6 = 33410;
-                  int lk7 = 31043;
-                  int lk8 = 44381;
-                  int lk9 = 24883;
-                  int lk10 = 55149;
-                  int lk11 = 37799;
-                  int lk12 = 42737;
-                  int lk13 = 8049;
-                  int lk14 = 38795;
-                  int lk15 = 67445;
-                  int lk16 = 47623;
-                  int lk17 = 23026;
-                  int lk18 = 21755;
-                  int lk19 = 57803;
-                  int lk20 = 34649;
-                  int lk21 = 43332;
-                  int lk22 = 42328;
-                  int lk23 = 45651;
-                  int lk24 = 41476;
-                  int lkTotal = 980999;
+                  String kec1 = isipendudukkecamatan[index = 0].kecamatan;
+                  String kec2 = isipendudukkecamatan[index = 1].kecamatan;
+                  String kec3 = isipendudukkecamatan[index = 2].kecamatan;
+                  String kec4 = isipendudukkecamatan[index = 3].kecamatan;
+                  String kec5 = isipendudukkecamatan[index = 4].kecamatan;
+                  String kec6 = isipendudukkecamatan[index = 5].kecamatan;
+                  String kec7 = isipendudukkecamatan[index = 6].kecamatan;
+                  String kec8 = isipendudukkecamatan[index = 7].kecamatan;
+                  String kec9 = isipendudukkecamatan[index = 8].kecamatan;
+                  String kec10 = isipendudukkecamatan[index = 9].kecamatan;
+                  String kec11 = isipendudukkecamatan[index = 10].kecamatan;
+                  String kec12 = isipendudukkecamatan[index = 11].kecamatan;
+                  String kec13 = isipendudukkecamatan[index = 12].kecamatan;
+                  String kec14 = isipendudukkecamatan[index = 13].kecamatan;
+                  String kec15 = isipendudukkecamatan[index = 14].kecamatan;
+                  String kec16 = isipendudukkecamatan[index = 15].kecamatan;
+                  String kec17 = isipendudukkecamatan[index = 16].kecamatan;
+                  String kec18 = isipendudukkecamatan[index = 17].kecamatan;
+                  String kec19 = isipendudukkecamatan[index = 18].kecamatan;
+                  String kec20 = isipendudukkecamatan[index = 19].kecamatan;
+                  String kec21 = isipendudukkecamatan[index = 20].kecamatan;
+                  String kec22 = isipendudukkecamatan[index = 21].kecamatan;
+                  String kec23 = isipendudukkecamatan[index = 22].kecamatan;
+                  String kec24 = isipendudukkecamatan[index = 23].kecamatan;
 
-                  int pr1 = 24686;
-                  int pr2 = 52685;
-                  int pr3 = 69617;
-                  int pr4 = 50865;
-                  int pr5 = 39183;
-                  int pr6 = 32674;
-                  int pr7 = 30897;
-                  int pr8 = 43554;
-                  int pr9 = 24601;
-                  int pr10 = 53702;
-                  int pr11 = 36756;
-                  int pr12 = 41617;
-                  int pr13 = 7474;
-                  int pr14 = 37863;
-                  int pr15 = 65816;
-                  int pr16 = 46376;
-                  int pr17 = 23162;
-                  int pr18 = 21671;
-                  int pr19 = 56628;
-                  int pr20 = 34035;
-                  int pr21 = 42455;
-                  int pr22 = 41620;
-                  int pr23 = 44767;
-                  int pr24 = 41154;
-                  int prTotal = 963858;
+                  int lk1 = int.parse(isipendudukkecamatan[index = 0].lk);
+                  int lk2 = int.parse(isipendudukkecamatan[index = 1].lk);
+                  int lk3 = int.parse(isipendudukkecamatan[index = 2].lk);
+                  int lk4 = int.parse(isipendudukkecamatan[index = 3].lk);
+                  int lk5 = int.parse(isipendudukkecamatan[index = 4].lk);
+                  int lk6 = int.parse(isipendudukkecamatan[index = 5].lk);
+                  int lk7 = int.parse(isipendudukkecamatan[index = 6].lk);
+                  int lk8 = int.parse(isipendudukkecamatan[index = 7].lk);
+                  int lk9 = int.parse(isipendudukkecamatan[index = 8].lk);
+                  int lk10 = int.parse(isipendudukkecamatan[index = 9].lk);
+                  int lk11 = int.parse(isipendudukkecamatan[index = 10].lk);
+                  int lk12 = int.parse(isipendudukkecamatan[index = 11].lk);
+                  int lk13 = int.parse(isipendudukkecamatan[index = 12].lk);
+                  int lk14 = int.parse(isipendudukkecamatan[index = 13].lk);
+                  int lk15 = int.parse(isipendudukkecamatan[index = 14].lk);
+                  int lk16 = int.parse(isipendudukkecamatan[index = 15].lk);
+                  int lk17 = int.parse(isipendudukkecamatan[index = 16].lk);
+                  int lk18 = int.parse(isipendudukkecamatan[index = 17].lk);
+                  int lk19 = int.parse(isipendudukkecamatan[index = 18].lk);
+                  int lk20 = int.parse(isipendudukkecamatan[index = 19].lk);
+                  int lk21 = int.parse(isipendudukkecamatan[index = 20].lk);
+                  int lk22 = int.parse(isipendudukkecamatan[index = 21].lk);
+                  int lk23 = int.parse(isipendudukkecamatan[index = 22].lk);
+                  int lk24 = int.parse(isipendudukkecamatan[index = 23].lk);
+                  int lkTotal = lk1 +
+                      lk2 +
+                      lk3 +
+                      lk4 +
+                      lk5 +
+                      lk6 +
+                      lk7 +
+                      lk8 +
+                      lk9 +
+                      lk10 +
+                      lk11 +
+                      lk12 +
+                      lk13 +
+                      lk14 +
+                      lk15 +
+                      lk16 +
+                      lk17 +
+                      lk18 +
+                      lk19 +
+                      lk20 +
+                      lk21 +
+                      lk22 +
+                      lk23 +
+                      lk24;
+
+                  int pr1 = int.parse(isipendudukkecamatan[index = 0].pr);
+                  int pr2 = int.parse(isipendudukkecamatan[index = 1].pr);
+                  int pr3 = int.parse(isipendudukkecamatan[index = 2].pr);
+                  int pr4 = int.parse(isipendudukkecamatan[index = 3].pr);
+                  int pr5 = int.parse(isipendudukkecamatan[index = 4].pr);
+                  int pr6 = int.parse(isipendudukkecamatan[index = 5].pr);
+                  int pr7 = int.parse(isipendudukkecamatan[index = 6].pr);
+                  int pr8 = int.parse(isipendudukkecamatan[index = 7].pr);
+                  int pr9 = int.parse(isipendudukkecamatan[index = 8].pr);
+                  int pr10 = int.parse(isipendudukkecamatan[index = 9].pr);
+                  int pr11 = int.parse(isipendudukkecamatan[index = 10].pr);
+                  int pr12 = int.parse(isipendudukkecamatan[index = 11].pr);
+                  int pr13 = int.parse(isipendudukkecamatan[index = 12].pr);
+                  int pr14 = int.parse(isipendudukkecamatan[index = 13].pr);
+                  int pr15 = int.parse(isipendudukkecamatan[index = 14].pr);
+                  int pr16 = int.parse(isipendudukkecamatan[index = 15].pr);
+                  int pr17 = int.parse(isipendudukkecamatan[index = 16].pr);
+                  int pr18 = int.parse(isipendudukkecamatan[index = 17].pr);
+                  int pr19 = int.parse(isipendudukkecamatan[index = 18].pr);
+                  int pr20 = int.parse(isipendudukkecamatan[index = 19].pr);
+                  int pr21 = int.parse(isipendudukkecamatan[index = 20].pr);
+                  int pr22 = int.parse(isipendudukkecamatan[index = 21].pr);
+                  int pr23 = int.parse(isipendudukkecamatan[index = 22].pr);
+                  int pr24 = int.parse(isipendudukkecamatan[index = 23].pr);
+                  int prTotal = pr1 +
+                      pr2 +
+                      pr3 +
+                      pr4 +
+                      pr5 +
+                      pr6 +
+                      pr7 +
+                      pr8 +
+                      pr9 +
+                      pr10 +
+                      pr11 +
+                      pr12 +
+                      pr13 +
+                      pr14 +
+                      pr15 +
+                      pr16 +
+                      pr17 +
+                      pr18 +
+                      pr19 +
+                      pr20 +
+                      pr21 +
+                      pr22 +
+                      pr23 +
+                      pr24;
 
                   return Container(
                     padding: const EdgeInsets.all(2),
@@ -1353,7 +1400,8 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                       child: Center(
                                         child: Text(
                                           lkTotal.toString(),
-                                          style: const TextStyle(color: Colors.white),
+                                          style: const TextStyle(
+                                              color: Colors.white),
                                         ),
                                       ),
                                     ),
@@ -1368,7 +1416,8 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                       child: Center(
                                         child: Text(
                                           prTotal.toString(),
-                                          style: const TextStyle(color: Colors.white),
+                                          style: const TextStyle(
+                                              color: Colors.white),
                                         ),
                                       ),
                                     ),
@@ -1383,7 +1432,8 @@ class _JumlahPendudukKecamatanState extends State<JumlahPendudukKecamatan> {
                                       child: Center(
                                         child: Text(
                                           (lkTotal + prTotal).toString(),
-                                          style: const TextStyle(color: Colors.white),
+                                          style: const TextStyle(
+                                              color: Colors.white),
                                         ),
                                       ),
                                     ),

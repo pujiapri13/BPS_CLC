@@ -12,12 +12,13 @@ class RepositoryJumlahPendudukKecamatan {
       if (response.statusCode == 200) {
         var cokk = jsonDecode(response.body);
         return (cokk['data'] as List)
-            .map((isipendudukumur) => JumlahPendudukKecamatan.fromJson(isipendudukumur))
+            .map((isipendudukkecamatan) =>
+                JumlahPendudukKecamatan.fromJson(isipendudukkecamatan))
             .toList();
       }
-    } catch (isipendudukumur) {
+    } catch (isipendudukkecamatan) {
       // ignore: avoid_print
-      print(isipendudukumur.toString());
+      print(isipendudukkecamatan.toString());
     }
   }
 }
