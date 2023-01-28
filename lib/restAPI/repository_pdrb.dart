@@ -3,7 +3,7 @@ import 'model_pdrb.dart';
 import 'package:http/http.dart' as http;
 
 class RepositoryPdrb {
-  final _baseURL = 'https://bps-asap.my.id/api/pdrb';
+  final _baseURL = 'https://bps-3301-asap.my.id/api/pdrb';
 
   Future getData() async {
     try {

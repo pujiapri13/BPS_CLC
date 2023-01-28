@@ -3,7 +3,7 @@ import 'package:bps_cilacap/restAPI/model_tkk.dart';
 import 'package:http/http.dart' as http;
 
 class RepositoryTkk {
-  final _baseURL = 'https://bps-asap.my.id/api/tkk';
+  final _baseURL = 'https://bps-3301-asap.my.id/api/tkk';
 
   Future getData() async {
     try {

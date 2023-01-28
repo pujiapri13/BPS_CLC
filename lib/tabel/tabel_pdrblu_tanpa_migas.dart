@@ -29,7 +29,7 @@ class _TabelPdrbLUTanpaMigasState extends State<TabelPdrbLUTanpaMigas> {
                 return Column(
                   children: [
                     Container(
-                      color: Colors.blue[200],
+                      color: Colors.cyan,
                       width: screenWidth,
                       height: screenHeight * 0.1,
                       child: Row(
@@ -40,6 +40,7 @@ class _TabelPdrbLUTanpaMigasState extends State<TabelPdrbLUTanpaMigas> {
                             child: Text(
                               "Lapangan Usaha",
                               textAlign: TextAlign.center,
+                              style: TextStyle(color:Colors.white),
                             ),
                           ),
                           Flexible(
@@ -51,6 +52,7 @@ class _TabelPdrbLUTanpaMigasState extends State<TabelPdrbLUTanpaMigas> {
                                   isipdrb[index = 9].created_at[2] +
                                   isipdrb[index = 9].created_at[3],
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
@@ -62,6 +64,7 @@ class _TabelPdrbLUTanpaMigasState extends State<TabelPdrbLUTanpaMigas> {
                                   isipdrb[index = 8].created_at[2] +
                                   isipdrb[index = 8].created_at[3],
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
@@ -73,6 +76,7 @@ class _TabelPdrbLUTanpaMigasState extends State<TabelPdrbLUTanpaMigas> {
                                   isipdrb[index = 7].created_at[2] +
                                   isipdrb[index = 7].created_at[3],
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
@@ -84,6 +88,7 @@ class _TabelPdrbLUTanpaMigasState extends State<TabelPdrbLUTanpaMigas> {
                                   isipdrb[index = 6].created_at[2] +
                                   isipdrb[index = 6].created_at[3],
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
@@ -95,6 +100,7 @@ class _TabelPdrbLUTanpaMigasState extends State<TabelPdrbLUTanpaMigas> {
                                   isipdrb[index = 5].created_at[2] +
                                   isipdrb[index = 5].created_at[3],
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                         ],

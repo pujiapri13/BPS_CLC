@@ -3,7 +3,7 @@ import 'package:bps_cilacap/restAPI/model_inflasi_kota.dart';
 import 'package:http/http.dart' as http;
 
 class RepositoryInflasiKota {
-  final _baseURL = 'https://bps-asap.my.id/api/inflasi-kota';
+  final _baseURL = 'https://bps-3301-asap.my.id/api/inflasi-kota';
 
   Future getData() async {
     try {

@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'model_ipm.dart';
 
 class RepositoryIpm {
-  final _baseURL = 'https://bps-asap.my.id/api/ipm';
+  final _baseURL = 'https://bps-3301-asap.my.id/api/ipm';
 
   Future getData() async {
     try {

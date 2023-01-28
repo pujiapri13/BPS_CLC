@@ -5,7 +5,7 @@ import 'model_tenaga_kerja.dart';
 import 'package:http/http.dart' as http;
 
 class RepositoryTenagaKerja {
-  final _baseURL = 'https://bps-asap.my.id/api/tenaga-kerja';
+  final _baseURL = 'https://bps-3301-asap.my.id/api/tenaga-kerja';
 
   Future getData() async {
     try {

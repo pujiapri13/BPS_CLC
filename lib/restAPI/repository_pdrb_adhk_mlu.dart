@@ -3,7 +3,7 @@ import 'package:bps_cilacap/restAPI/model_pdrb_adhk_mlu.dart';
 import 'package:http/http.dart' as http;
 
 class RepositoryPdrbAdhkMLU {
-  final _baseURL = 'https://bps-asap.my.id/api/pdrb-adhk';
+  final _baseURL = 'https://bps-3301-asap.my.id/api/pdrb-adhk';
 
   Future getData() async {
     try {

@@ -179,7 +179,7 @@ class _SensusCState extends State<SensusC> {
                             SizedBox(
                               width: screenWeight * 0.7,
                               child: Text(
-                                "Post Generasi Z : ${totalPostGenZ.toStringAsFixed(0)}%",
+                                "Post Generasi Z : ${totalPostGenZ.toStringAsFixed(2)}%",
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
                                 textAlign: TextAlign.left,
@@ -207,7 +207,7 @@ class _SensusCState extends State<SensusC> {
                             SizedBox(
                               width: screenWeight * 0.7,
                               child: Text(
-                                "Generasi Z : ${totalGenZ.toStringAsFixed(0)}%",
+                                "Generasi Z : ${totalGenZ.toStringAsFixed(2)}%",
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
                                 textAlign: TextAlign.left,
@@ -235,7 +235,7 @@ class _SensusCState extends State<SensusC> {
                             SizedBox(
                               width: screenWeight * 0.7,
                               child: Text(
-                                "Milenial : ${totalMilenial.toStringAsFixed(0)}%",
+                                "Milenial : ${totalMilenial.toStringAsFixed(2)}%",
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
                                 textAlign: TextAlign.left,
@@ -263,7 +263,7 @@ class _SensusCState extends State<SensusC> {
                             SizedBox(
                               width: screenWeight * 0.7,
                               child: Text(
-                                "Generasi X : ${totalGenX.toStringAsFixed(0)}%",
+                                "Generasi X : ${totalGenX.toStringAsFixed(2)}%",
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
                                 textAlign: TextAlign.left,
@@ -291,7 +291,7 @@ class _SensusCState extends State<SensusC> {
                             SizedBox(
                               width: screenWeight * 0.7,
                               child: Text(
-                                "Baby Boomer : ${totalBabyBoomer.toStringAsFixed(0)}%",
+                                "Baby Boomer : ${totalBabyBoomer.toStringAsFixed(2)}%",
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
                                 textAlign: TextAlign.left,
@@ -319,7 +319,7 @@ class _SensusCState extends State<SensusC> {
                             SizedBox(
                               width: screenWeight * 0.7,
                               child: Text(
-                                "Pre-Boomer : ${totalPreBoomer.toStringAsFixed(0)}%",
+                                "Pre-Boomer : ${totalPreBoomer.toStringAsFixed(2)}%",
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
                                 textAlign: TextAlign.left,

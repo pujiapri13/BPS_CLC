@@ -3,7 +3,7 @@ import 'model_sensus.dart';
 import 'package:http/http.dart' as http;
 
 class RepositorySensus {
-  final _baseURL = 'https://bps-asap.my.id/api/sensus';
+  final _baseURL = 'https://bps-3301-asap.my.id/api/sensus';
 
   Future getData() async {
     try {

@@ -3,7 +3,7 @@ import 'package:bps_cilacap/restAPI/model_kemiskinan_kota.dart';
 import 'package:http/http.dart' as http;
 
 class RepositoryKemiskinanKota {
-  final _baseURL = 'https://bps-asap.my.id/api/kemiskinan-kota';
+  final _baseURL = 'https://bps-3301-asap.my.id/api/kemiskinan-kota';
 
   Future getData() async {
     try {

@@ -3,7 +3,7 @@ import 'package:bps_cilacap/restAPI/model_tpt.dart';
 import 'package:http/http.dart' as http;
 
 class RepositoryTpt {
-  final _baseURL = 'https://bps-asap.my.id/api/tpt';
+  final _baseURL = 'https://bps-3301-asap.my.id/api/tpt';
 
   Future getData() async {
     try {

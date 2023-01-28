@@ -3,7 +3,7 @@ import 'package:bps_cilacap/restAPI/model_penduduk_kecamatan.dart';
 import 'package:http/http.dart' as http;
 
 class RepositoryJumlahPendudukKecamatan {
-  final _baseURL = 'https://bps-asap.my.id/api/penduduk-kecamatan';
+  final _baseURL = 'https://bps-3301-asap.my.id/api/penduduk-kecamatan';
 
   Future getData() async {
     try {

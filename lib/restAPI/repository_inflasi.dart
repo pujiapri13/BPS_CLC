@@ -3,7 +3,7 @@ import 'package:bps_cilacap/restAPI/model_inflasi.dart';
 import 'package:http/http.dart' as http;
 
 class RepositoryInflasi {
-  final _baseURL = 'https://bps-asap.my.id/api/inflasi';
+  final _baseURL = 'https://bps-3301-asap.my.id/api/inflasi';
 
   Future getData() async {
     try {

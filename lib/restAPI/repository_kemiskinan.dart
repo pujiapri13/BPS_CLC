@@ -3,7 +3,7 @@ import 'model_kemiskinan.dart';
 import 'package:http/http.dart' as http;
 
 class RepositoryKemiskinan {
-  final _baseURL = 'https://bps-asap.my.id/api/kemiskinan';
+  final _baseURL = 'https://bps-3301-asap.my.id/api/kemiskinan';
 
   Future getData() async {
     try {
