@@ -250,10 +250,11 @@ class _IpmContentState extends State<IpmContent> {
                       rawBarGroups = items;
                       showingBarGroups = rawBarGroups;
 
-                      return Column(
+                      return ListView(
                         children: [
                           Container(
                             padding: const EdgeInsets.all(10),
+                            color: Colors.black,
                             child: Center(
                               child: Text(
                                 "Perkembangan IPM beserta Komponennya Kabupaten Cilacap, $tahun1 - $tahun5",
@@ -267,560 +268,502 @@ class _IpmContentState extends State<IpmContent> {
                           ),
                           const Divider(
                             color: Colors.white,
-                            height: 5,
-                            thickness: 5,
+                            height: 10,
+                            thickness: 10,
                           ),
-                          Flexible(
-                            fit: FlexFit.tight,
-                            flex: 4,
-                            child: SizedBox(
-                              height: screenHeight * 0.7,
-                              child: Column(
-                                children: <Widget>[
-                                  Flexible(
-                                    fit: FlexFit.tight,
-                                    flex: 6,
-                                    child: Container(
-                                      width: screenWidth,
-                                      color: Colors.white,
-                                      child: Flexible(
-                                        child: Container(
-                                          color: Colors.transparent,
-                                          child: Column(
+                          Wrap(
+                            children: <Widget>[
+                              Container(
+                                width: screenWidth,
+                                color: Colors.white,
+                                child: Flexible(
+                                  child: Container(
+                                    color: Colors.transparent,
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          color: const Color.fromRGBO(
+                                              47, 182, 224, 0.9),
+                                          width: screenWidth,
+                                          height: screenHeight * 0.06,
+                                          child: Row(
                                             children: [
-                                              Container(
-                                                color: const Color.fromRGBO(
-                                                    47, 182, 224, 0.9),
-                                                width: screenWidth,
-                                                height: screenHeight * 0.06,
-                                                child: Row(
-                                                  children: [
-                                                    const Flexible(
-                                                      flex: 3,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        "IPM & Komponen",
-                                                        style: TextStyle(
-                                                            color:
-                                                                Colors.white),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        tahun1,
-                                                        style: const TextStyle(
-                                                            color:
-                                                                Colors.white),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        tahun2,
-                                                        style: const TextStyle(
-                                                            color:
-                                                                Colors.white),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        tahun3,
-                                                        style: const TextStyle(
-                                                            color:
-                                                                Colors.white),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        tahun4,
-                                                        style: const TextStyle(
-                                                            color:
-                                                                Colors.white),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        tahun5,
-                                                        style: const TextStyle(
-                                                            color:
-                                                                Colors.white),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                  ],
+                                              const Flexible(
+                                                flex: 3,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  "IPM & Komponen",
+                                                  style: TextStyle(
+                                                      color: Colors.white),
+                                                  textAlign: TextAlign.center,
                                                 ),
                                               ),
-                                              Container(
-                                                color: Colors.transparent,
-                                                width: screenWidth,
-                                                height: screenHeight * 0.04,
-                                                child: Row(
-                                                  children: [
-                                                    const Flexible(
-                                                      flex: 3,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        "UHH",
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        uhh1.toStringAsFixed(2),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        uhh2.toStringAsFixed(2),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        uhh3.toStringAsFixed(2),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        uhh4.toStringAsFixed(2),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        uhh5.toStringAsFixed(2),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                  ],
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  tahun1,
+                                                  style: const TextStyle(
+                                                      color: Colors.white),
+                                                  textAlign: TextAlign.center,
                                                 ),
                                               ),
-                                              const Divider(),
-                                              Container(
-                                                color: Colors.transparent,
-                                                width: screenWidth,
-                                                height: screenHeight * 0.04,
-                                                child: Row(
-                                                  children: [
-                                                    const Flexible(
-                                                      flex: 3,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        "RLS",
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        rls1.toStringAsFixed(2),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        rls2.toStringAsFixed(2),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        rls3.toStringAsFixed(2),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        rls4.toStringAsFixed(2),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        rls5.toStringAsFixed(2),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                  ],
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  tahun2,
+                                                  style: const TextStyle(
+                                                      color: Colors.white),
+                                                  textAlign: TextAlign.center,
                                                 ),
                                               ),
-                                              const Divider(),
-                                              Container(
-                                                color: Colors.transparent,
-                                                width: screenWidth,
-                                                height: screenHeight * 0.04,
-                                                child: Row(
-                                                  children: [
-                                                    const Flexible(
-                                                      flex: 3,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        "HLS",
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        hls1.toStringAsFixed(2),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        hls2.toStringAsFixed(2),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        hls3.toStringAsFixed(2),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        hls4.toStringAsFixed(2),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        hls5.toStringAsFixed(2),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                  ],
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  tahun3,
+                                                  style: const TextStyle(
+                                                      color: Colors.white),
+                                                  textAlign: TextAlign.center,
                                                 ),
                                               ),
-                                              const Divider(),
-                                              Container(
-                                                color: Colors.transparent,
-                                                width: screenWidth,
-                                                height: screenHeight * 0.04,
-                                                child: Row(
-                                                  children: [
-                                                    const Flexible(
-                                                      flex: 3,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        "PPP",
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        ppp1.toStringAsFixed(2),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        ppp2.toStringAsFixed(2),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        ppp3.toStringAsFixed(2),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        ppp4.toStringAsFixed(2),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        ppp5.toStringAsFixed(2),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                  ],
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  tahun4,
+                                                  style: const TextStyle(
+                                                      color: Colors.white),
+                                                  textAlign: TextAlign.center,
                                                 ),
                                               ),
-                                              const Divider(
-                                                color: Colors.transparent,
-                                              ),
-                                              Container(
-                                                color: const Color.fromRGBO(
-                                                    47, 182, 224, 0.9),
-                                                width: screenWidth,
-                                                height: screenHeight * 0.04,
-                                                child: Row(
-                                                  children: [
-                                                    const Flexible(
-                                                      flex: 3,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        "IPM",
-                                                        style: TextStyle(
-                                                            color:
-                                                                Colors.white),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        "$ipm1",
-                                                        style: const TextStyle(
-                                                            color:
-                                                                Colors.white),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        "$ipm2",
-                                                        style: const TextStyle(
-                                                            color:
-                                                                Colors.white),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        "$ipm3",
-                                                        style: const TextStyle(
-                                                            color:
-                                                                Colors.white),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        "$ipm4",
-                                                        style: const TextStyle(
-                                                            color:
-                                                                Colors.white),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      flex: 2,
-                                                      fit: FlexFit.tight,
-                                                      child: Text(
-                                                        "$ipm5",
-                                                        style: const TextStyle(
-                                                            color:
-                                                                Colors.white),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                  ],
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  tahun5,
+                                                  style: const TextStyle(
+                                                      color: Colors.white),
+                                                  textAlign: TextAlign.center,
                                                 ),
                                               ),
                                             ],
                                           ),
                                         ),
-                                      ),
+                                        Container(
+                                          color: Colors.transparent,
+                                          width: screenWidth,
+                                          height: screenHeight * 0.04,
+                                          child: Row(
+                                            children: [
+                                              const Flexible(
+                                                flex: 3,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  "UHH",
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  uhh1.toStringAsFixed(2),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  uhh2.toStringAsFixed(2),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  uhh3.toStringAsFixed(2),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  uhh4.toStringAsFixed(2),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  uhh5.toStringAsFixed(2),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        const Divider(),
+                                        Container(
+                                          color: Colors.transparent,
+                                          width: screenWidth,
+                                          height: screenHeight * 0.04,
+                                          child: Row(
+                                            children: [
+                                              const Flexible(
+                                                flex: 3,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  "RLS",
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  rls1.toStringAsFixed(2),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  rls2.toStringAsFixed(2),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  rls3.toStringAsFixed(2),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  rls4.toStringAsFixed(2),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  rls5.toStringAsFixed(2),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        const Divider(),
+                                        Container(
+                                          color: Colors.transparent,
+                                          width: screenWidth,
+                                          height: screenHeight * 0.04,
+                                          child: Row(
+                                            children: [
+                                              const Flexible(
+                                                flex: 3,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  "HLS",
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  hls1.toStringAsFixed(2),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  hls2.toStringAsFixed(2),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  hls3.toStringAsFixed(2),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  hls4.toStringAsFixed(2),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  hls5.toStringAsFixed(2),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        const Divider(),
+                                        Container(
+                                          color: Colors.transparent,
+                                          width: screenWidth,
+                                          height: screenHeight * 0.04,
+                                          child: Row(
+                                            children: [
+                                              const Flexible(
+                                                flex: 3,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  "PPP",
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  ppp1.toStringAsFixed(2),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  ppp2.toStringAsFixed(2),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  ppp3.toStringAsFixed(2),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  ppp4.toStringAsFixed(2),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  ppp5.toStringAsFixed(2),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        const Divider(
+                                          color: Colors.transparent,
+                                        ),
+                                        Container(
+                                          color: const Color.fromRGBO(
+                                              47, 182, 224, 0.9),
+                                          width: screenWidth,
+                                          height: screenHeight * 0.04,
+                                          child: Row(
+                                            children: [
+                                              const Flexible(
+                                                flex: 3,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  "IPM",
+                                                  style: TextStyle(
+                                                      color: Colors.white),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  "$ipm1",
+                                                  style: const TextStyle(
+                                                      color: Colors.white),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  "$ipm2",
+                                                  style: const TextStyle(
+                                                      color: Colors.white),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  "$ipm3",
+                                                  style: const TextStyle(
+                                                      color: Colors.white),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  "$ipm4",
+                                                  style: const TextStyle(
+                                                      color: Colors.white),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: 2,
+                                                fit: FlexFit.tight,
+                                                child: Text(
+                                                  "$ipm5",
+                                                  style: const TextStyle(
+                                                      color: Colors.white),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
-                                ],
+                                ),
                               ),
-                            ),
+                            ],
                           ),
-                          Flexible(
-                            flex: 3,
-                            fit: FlexFit.tight,
-                            child: Container(
-                              color: const Color.fromRGBO(47, 182, 224, 0.9),
-                              child: Card(
-                                elevation: 0,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(4)),
-                                color: const Color(0xff2c4260),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(15),
-                                  child: Expanded(
-                                    child: BarChart(
-                                      BarChartData(
-                                        maxY: 130,
-                                        minY: 25,
-                                        titlesData: FlTitlesData(
-                                          show: true,
-                                          rightTitles: AxisTitles(
-                                            sideTitles:
-                                                SideTitles(showTitles: false),
+                          const Divider(
+                            color: Colors.white,
+                            height: 10,
+                            thickness: 10,
+                          ),
+                          Container(
+                            color: Colors.white,
+                            height: screenHeight * 0.4,
+                            child: Card(
+                              elevation: 0,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(4)),
+                              color: const Color(0xff2c4260),
+                              child: Padding(
+                                padding: const EdgeInsets.all(15),
+                                child: Expanded(
+                                  child: BarChart(
+                                    BarChartData(
+                                      maxY: 100,
+                                      minY: 25,
+                                      titlesData: FlTitlesData(
+                                        show: true,
+                                        rightTitles: AxisTitles(
+                                          sideTitles:
+                                              SideTitles(showTitles: false),
+                                        ),
+                                        topTitles: AxisTitles(
+                                          sideTitles: SideTitles(
+                                            showTitles: false,
                                           ),
-                                          topTitles: AxisTitles(
-                                            sideTitles: SideTitles(
-                                              showTitles: false,
-                                            ),
-                                          ),
-                                          bottomTitles: AxisTitles(
-                                            sideTitles: SideTitles(
-                                              showTitles: true,
-                                              getTitlesWidget: (double value,
-                                                  TitleMeta meta) {
-                                                List<String> titles = [
-                                                  "",
-                                                  tahun1,
-                                                  tahun2,
-                                                  tahun3,
-                                                  tahun4,
-                                                  tahun5,
-                                                ];
+                                        ),
+                                        bottomTitles: AxisTitles(
+                                          sideTitles: SideTitles(
+                                            showTitles: true,
+                                            getTitlesWidget:
+                                                (double value, TitleMeta meta) {
+                                              List<String> titles = [
+                                                "",
+                                                tahun1,
+                                                tahun2,
+                                                tahun3,
+                                                tahun4,
+                                                tahun5,
+                                              ];
 
-                                                Widget text = Text(
-                                                  titles[value.toInt()],
-                                                  style: const TextStyle(
-                                                    color: Color(0xff7589a2),
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 14,
-                                                  ),
-                                                );
-
-                                                return SideTitleWidget(
-                                                    axisSide: meta.axisSide,
-                                                    space: 5, //margin top
-                                                    child: text);
-                                              },
-                                              reservedSize: 50,
-                                            ),
-                                          ),
-                                          leftTitles: AxisTitles(
-                                            sideTitles: SideTitles(
-                                              showTitles: true,
-                                              reservedSize: 28,
-                                              interval: 1,
-                                              getTitlesWidget: (double value,
-                                                  TitleMeta meta) {
-                                                const style = TextStyle(
+                                              Widget text = Text(
+                                                titles[value.toInt()],
+                                                style: const TextStyle(
                                                   color: Color(0xff7589a2),
                                                   fontWeight: FontWeight.bold,
                                                   fontSize: 14,
-                                                );
-                                                String text;
-                                                if (value == 25) {
-                                                  text = '25';
-                                                } else if (value == 50) {
-                                                  text = '50';
-                                                } else if (value == 75) {
-                                                  text = '75';
-                                                } else if (value == 100) {
-                                                  text = '100';
-                                                } else if (value == 125) {
-                                                  text = '125';
-                                                } else {
-                                                  return Container();
-                                                }
-                                                return SideTitleWidget(
+                                                ),
+                                              );
+
+                                              return SideTitleWidget(
                                                   axisSide: meta.axisSide,
-                                                  space: 0,
-                                                  child:
-                                                      Text(text, style: style),
-                                                );
-                                              },
-                                            ),
+                                                  space: 5, //margin top
+                                                  child: text);
+                                            },
+                                            reservedSize: 50,
                                           ),
                                         ),
-                                        borderData: FlBorderData(
-                                          show: false,
+                                        leftTitles: AxisTitles(
+                                          sideTitles: SideTitles(
+                                            showTitles: true,
+                                            reservedSize: 28,
+                                            interval: 1,
+                                            getTitlesWidget:
+                                                (double value, TitleMeta meta) {
+                                              const style = TextStyle(
+                                                color: Color(0xff7589a2),
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 14,
+                                              );
+                                              String text;
+                                              if (value == 25) {
+                                                text = '25';
+                                              } else if (value == 50) {
+                                                text = '50';
+                                              } else if (value == 75) {
+                                                text = '75';
+                                              } else if (value == 100) {
+                                                text = '100';
+                                              } else if (value == 125) {
+                                                text = '125';
+                                              } else {
+                                                return Container();
+                                              }
+                                              return SideTitleWidget(
+                                                axisSide: meta.axisSide,
+                                                space: 0,
+                                                child: Text(text, style: style),
+                                              );
+                                            },
+                                          ),
                                         ),
-                                        barGroups: showingBarGroups,
-                                        gridData: FlGridData(show: false),
                                       ),
+                                      borderData: FlBorderData(
+                                        show: false,
+                                      ),
+                                      barGroups: showingBarGroups,
+                                      gridData: FlGridData(show: false),
                                     ),
                                   ),
                                 ),
@@ -833,15 +776,16 @@ class _IpmContentState extends State<IpmContent> {
                   );
                 }
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return Column(
+                  return ListView(
                     children: [
                       Container(
                         padding: const EdgeInsets.all(10),
-                        child: const Center(
+                        color: Colors.black,
+                        child: Center(
                           child: Text(
                             "Perkembangan IPM beserta Komponennya Kabupaten Cilacap,  - ",
                             textAlign: TextAlign.center,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold),
@@ -850,425 +794,415 @@ class _IpmContentState extends State<IpmContent> {
                       ),
                       const Divider(
                         color: Colors.white,
-                        height: 5,
-                        thickness: 5,
+                        height: 10,
+                        thickness: 10,
                       ),
-                      Flexible(
-                        flex: 4,
-                        fit: FlexFit.tight,
-                        child: SizedBox(
-                          height: screenHeight * 0.7,
-                          child: Column(
-                            children: <Widget>[
-                              Flexible(
-                                fit: FlexFit.tight,
-                                flex: 6,
-                                child: Container(
-                                  width: screenWidth,
-                                  color: Colors.white,
-                                  child: Flexible(
-                                    child: Container(
-                                      color: Colors.transparent,
-                                      child: Column(
+                      Wrap(
+                        children: <Widget>[
+                          Container(
+                            width: screenWidth,
+                            color: Colors.white,
+                            child: Flexible(
+                              child: Container(
+                                color: Colors.transparent,
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      color: const Color.fromRGBO(
+                                          47, 182, 224, 0.9),
+                                      width: screenWidth,
+                                      height: screenHeight * 0.06,
+                                      child: Row(
                                         children: [
-                                          Container(
-                                            color: const Color.fromRGBO(
-                                                47, 182, 224, 0.9),
-                                            width: screenWidth,
-                                            height: screenHeight * 0.06,
-                                            child: Row(
-                                              children: const [
-                                                Flexible(
-                                                  flex: 3,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "IPM & Komponen",
-                                                    style: TextStyle(
-                                                        color: Colors.white),
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    style: TextStyle(
-                                                        color: Colors.white),
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    style: TextStyle(
-                                                        color: Colors.white),
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    style: TextStyle(
-                                                        color: Colors.white),
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    style: TextStyle(
-                                                        color: Colors.white),
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    style: TextStyle(
-                                                        color: Colors.white),
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                              ],
+                                          const Flexible(
+                                            flex: 3,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              "IPM & Komponen",
+                                              style: TextStyle(
+                                                  color: Colors.white),
+                                              textAlign: TextAlign.center,
                                             ),
                                           ),
-                                          Container(
-                                            color: Colors.transparent,
-                                            width: screenWidth,
-                                            height: screenHeight * 0.04,
-                                            child: Row(
-                                              children: const [
-                                                Flexible(
-                                                  flex: 3,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "UHH",
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                              ],
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              style: const TextStyle(
+                                                  color: Colors.white),
+                                              textAlign: TextAlign.center,
                                             ),
                                           ),
-                                          const Divider(),
-                                          Container(
-                                            color: Colors.transparent,
-                                            width: screenWidth,
-                                            height: screenHeight * 0.04,
-                                            child: Row(
-                                              children: const [
-                                                Flexible(
-                                                  flex: 3,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "RLS",
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                              ],
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              "",
+                                              style: const TextStyle(
+                                                  color: Colors.white),
+                                              textAlign: TextAlign.center,
                                             ),
                                           ),
-                                          const Divider(),
-                                          Container(
-                                            color: Colors.transparent,
-                                            width: screenWidth,
-                                            height: screenHeight * 0.04,
-                                            child: Row(
-                                              children: const [
-                                                Flexible(
-                                                  flex: 3,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "HLS",
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                              ],
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              style: const TextStyle(
+                                                  color: Colors.white),
+                                              textAlign: TextAlign.center,
                                             ),
                                           ),
-                                          const Divider(),
-                                          Container(
-                                            color: Colors.transparent,
-                                            width: screenWidth,
-                                            height: screenHeight * 0.04,
-                                            child: Row(
-                                              children: const [
-                                                Flexible(
-                                                  flex: 3,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "PPP",
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                              ],
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              style: const TextStyle(
+                                                  color: Colors.white),
+                                              textAlign: TextAlign.center,
                                             ),
                                           ),
-                                          const Divider(
-                                            color: Colors.transparent,
-                                          ),
-                                          Container(
-                                            color: const Color.fromRGBO(
-                                                47, 182, 224, 0.9),
-                                            width: screenWidth,
-                                            height: screenHeight * 0.04,
-                                            child: Row(
-                                              children: const [
-                                                Flexible(
-                                                  flex: 3,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "IPM",
-                                                    style: TextStyle(
-                                                        color: Colors.white),
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    style: TextStyle(
-                                                        color: Colors.white),
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    style: TextStyle(
-                                                        color: Colors.white),
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    style: TextStyle(
-                                                        color: Colors.white),
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    style: TextStyle(
-                                                        color: Colors.white),
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  flex: 2,
-                                                  fit: FlexFit.tight,
-                                                  child: Text(
-                                                    "",
-                                                    style: TextStyle(
-                                                        color: Colors.white),
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ),
-                                              ],
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              style: const TextStyle(
+                                                  color: Colors.white),
+                                              textAlign: TextAlign.center,
                                             ),
                                           ),
                                         ],
                                       ),
                                     ),
-                                  ),
+                                    Container(
+                                      color: Colors.transparent,
+                                      width: screenWidth,
+                                      height: screenHeight * 0.04,
+                                      child: Row(
+                                        children: [
+                                          const Flexible(
+                                            flex: 3,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              "UHH",
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    const Divider(),
+                                    Container(
+                                      color: Colors.transparent,
+                                      width: screenWidth,
+                                      height: screenHeight * 0.04,
+                                      child: Row(
+                                        children: [
+                                          const Flexible(
+                                            flex: 3,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              "RLS",
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    const Divider(),
+                                    Container(
+                                      color: Colors.transparent,
+                                      width: screenWidth,
+                                      height: screenHeight * 0.04,
+                                      child: Row(
+                                        children: [
+                                          const Flexible(
+                                            flex: 3,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              "HLS",
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    const Divider(),
+                                    Container(
+                                      color: Colors.transparent,
+                                      width: screenWidth,
+                                      height: screenHeight * 0.04,
+                                      child: Row(
+                                        children: [
+                                          const Flexible(
+                                            flex: 3,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              "PPP",
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              ' ',
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    const Divider(
+                                      color: Colors.transparent,
+                                    ),
+                                    Container(
+                                      color: const Color.fromRGBO(
+                                          47, 182, 224, 0.9),
+                                      width: screenWidth,
+                                      height: screenHeight * 0.04,
+                                      child: Row(
+                                        children: [
+                                          const Flexible(
+                                            flex: 3,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              "IPM",
+                                              style: TextStyle(
+                                                  color: Colors.white),
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              style: const TextStyle(
+                                                  color: Colors.white),
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              style: const TextStyle(
+                                                  color: Colors.white),
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              style: const TextStyle(
+                                                  color: Colors.white),
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              style: const TextStyle(
+                                                  color: Colors.white),
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 2,
+                                            fit: FlexFit.tight,
+                                            child: Text(
+                                              " ",
+                                              style: const TextStyle(
+                                                  color: Colors.white),
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Flexible(
-                        flex: 3,
-                        fit: FlexFit.tight,
-                        child: Container(
-                          color: const Color.fromRGBO(47, 182, 224, 0.9),
-                          width: screenWidth,
-                          child: Card(
-                            elevation: 0,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4)),
-                            color: const Color(0xff2c4260),
-                            child: const Padding(
-                              padding: EdgeInsets.all(15),
                             ),
+                          ),
+                        ],
+                      ),
+                      const Divider(
+                        color: Colors.white,
+                        height: 10,
+                        thickness: 10,
+                      ),
+                      Container(
+                        color: Colors.white,
+                        height: screenHeight * 0.4,
+                        child: Card(
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(4)),
+                          color: const Color(0xff2c4260),
+                          child: Padding(
+                            padding: const EdgeInsets.all(15),
                           ),
                         ),
                       ),
