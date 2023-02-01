@@ -32,8 +32,10 @@ class _SensusCState extends State<SensusC> {
                   isipenduduk[index = 2].created_at[2] +
                   isipenduduk[index = 2].created_at[3];
 
-              int lkTotal = int.parse(isipenduduk[index = 2].lk);
-              int prTotal = int.parse(isipenduduk[index = 2].pr);
+              String lkTotal = isipenduduk[index = 2].lk;
+              String prTotal = isipenduduk[index = 2].pr;
+              String totalPddk = isipenduduk[index = 2].jumlah;
+              String sexRatio = isipenduduk[index = 2].sex_rasio;
 
               double totalPostGenZ =
                   double.parse(isipenduduk[index = 2].post_gen_z);
@@ -79,7 +81,7 @@ class _SensusCState extends State<SensusC> {
                       color: Colors.transparent,
                       child: Center(
                           child: Text(
-                        (lkTotal + prTotal).toString() + " juta jiwa",
+                        "$totalPddk juta jiwa",
                         style: const TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.w800,
@@ -123,7 +125,7 @@ class _SensusCState extends State<SensusC> {
                               ),
                             ),
                             Text(
-                              "Rasio ${(lkTotal / prTotal * 100).toStringAsFixed(2)}",
+                              "Rasio $sexRatio",
                               style: const TextStyle(fontSize: 16),
                             )
                           ],

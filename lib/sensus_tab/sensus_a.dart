@@ -32,8 +32,10 @@ class _SensusAState extends State<SensusA> {
                   isipenduduk[index = 0].created_at[2] +
                   isipenduduk[index = 0].created_at[3];
 
-              int lkTotal = int.parse(isipenduduk[index = 0].lk);
-              int prTotal = int.parse(isipenduduk[index = 0].pr);
+              String lkTotal = isipenduduk[index = 0].lk;
+              String prTotal = isipenduduk[index = 0].pr;
+              String totalPddk = isipenduduk[index = 0].jumlah;
+              String sexRatio = isipenduduk[index = 0].sex_rasio;
 
               double totalPostGenZ =
                   double.parse(isipenduduk[index = 0].post_gen_z);
@@ -79,7 +81,7 @@ class _SensusAState extends State<SensusA> {
                       color: Colors.transparent,
                       child: Center(
                           child: Text(
-                        (lkTotal + prTotal).toString() + " jiwa",
+                        totalPddk + " jiwa",
                         style: const TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.w800,
@@ -97,7 +99,7 @@ class _SensusAState extends State<SensusA> {
                             child: Column(
                               children: [
                                 Text(
-                                  "$lkTotal",
+                                  lkTotal,
                                   style: const TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.w800,
@@ -120,7 +122,7 @@ class _SensusAState extends State<SensusA> {
                               ),
                             ),
                             Text(
-                              "Rasio ${(lkTotal / prTotal * 100).toStringAsFixed(2)}",
+                              "Rasio $sexRatio",
                               style: const TextStyle(fontSize: 16),
                             )
                           ],
@@ -133,7 +135,7 @@ class _SensusAState extends State<SensusA> {
                             child: Column(
                               children: [
                                 Text(
-                                  "$prTotal",
+                                  prTotal,
                                   style: const TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.w800,

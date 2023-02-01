@@ -29,6 +29,8 @@ class _carouselSlider1State extends State<carouselSlider1> {
                   isiinflasi[index = 0].updated_at[1] +
                   isiinflasi[index = 0].updated_at[2] +
                   isiinflasi[index = 0].updated_at[3];
+              String kab = isiinflasi[index = 0].nama;
+              String bulan = isiinflasi[index = 0].bulan;
               double mtom1 = double.parse(isiinflasi[index = 0].mtom);
               double yony1 = double.parse(isiinflasi[index = 0].ytoy);
               double ytod1 = double.parse(isiinflasi[index = 0].ytod);
@@ -64,8 +66,9 @@ class _carouselSlider1State extends State<carouselSlider1> {
                             Container(
                               margin: const EdgeInsets.only(left: 10),
                               child: Text(
-                                "Inflasi $tahun",
-                                style: const TextStyle(fontWeight: FontWeight.bold),
+                                "Inflasi $bulan $tahun Kabupaten $kab",
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold),
                               ),
                             ),
                             const Divider(),

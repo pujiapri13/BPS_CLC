@@ -6,6 +6,7 @@ class Sensus {
   final String lk;
   final String pr;
   final String jumlah;
+  final String sex_rasio;
   final String post_gen_z;
   final String gen_z;
   final String milenial;
@@ -21,6 +22,7 @@ class Sensus {
     required this.lk,
     required this.pr,
     required this.jumlah,
+    required this.sex_rasio,
     required this.post_gen_z,
     required this.gen_z,
     required this.milenial,
@@ -38,6 +40,7 @@ class Sensus {
       lk: json['lk'],
       pr: json['pr'],
       jumlah: json['jumlah'],
+      sex_rasio: json['sex_rasio'],
       post_gen_z: json['post_gen_z'],
       gen_z: json['gen_z'],
       milenial: json['milenial'],
