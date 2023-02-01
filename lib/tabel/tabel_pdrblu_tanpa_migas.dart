@@ -52,7 +52,7 @@ class _TabelPdrbLUTanpaMigasState extends State<TabelPdrbLUTanpaMigas> {
                                   isipdrb[index = 9].created_at[2] +
                                   isipdrb[index = 9].created_at[3],
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
@@ -64,7 +64,7 @@ class _TabelPdrbLUTanpaMigasState extends State<TabelPdrbLUTanpaMigas> {
                                   isipdrb[index = 8].created_at[2] +
                                   isipdrb[index = 8].created_at[3],
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
@@ -76,7 +76,7 @@ class _TabelPdrbLUTanpaMigasState extends State<TabelPdrbLUTanpaMigas> {
                                   isipdrb[index = 7].created_at[2] +
                                   isipdrb[index = 7].created_at[3],
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
@@ -88,7 +88,7 @@ class _TabelPdrbLUTanpaMigasState extends State<TabelPdrbLUTanpaMigas> {
                                   isipdrb[index = 6].created_at[2] +
                                   isipdrb[index = 6].created_at[3],
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                           Flexible(
@@ -100,7 +100,7 @@ class _TabelPdrbLUTanpaMigasState extends State<TabelPdrbLUTanpaMigas> {
                                   isipdrb[index = 5].created_at[2] +
                                   isipdrb[index = 5].created_at[3],
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                         ],

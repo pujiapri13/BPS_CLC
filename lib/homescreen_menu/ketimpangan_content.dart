@@ -234,7 +234,7 @@ class _ketimpanganContentState extends State<ketimpanganContent> {
                   rawBarGroups = items;
                   showingBarGroups = rawBarGroups;
                   return SingleChildScrollView(
-                    padding: EdgeInsets.all(5),
+                    padding: const EdgeInsets.all(5),
                     child: Wrap(
                       children: [
                         Flexible(
@@ -259,7 +259,7 @@ class _ketimpanganContentState extends State<ketimpanganContent> {
                             ),
                           ),
                         ),
-                        Divider(
+                        const Divider(
                           color: Colors.white,
                           height: 10,
                           thickness: 10,

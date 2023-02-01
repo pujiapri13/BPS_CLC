@@ -781,11 +781,11 @@ class _IpmContentState extends State<IpmContent> {
                       Container(
                         padding: const EdgeInsets.all(10),
                         color: Colors.black,
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             "Perkembangan IPM beserta Komponennya Kabupaten Cilacap,  - ",
                             textAlign: TextAlign.center,
-                            style: const TextStyle(
+                            style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold),
@@ -813,8 +813,8 @@ class _IpmContentState extends State<IpmContent> {
                                       width: screenWidth,
                                       height: screenHeight * 0.06,
                                       child: Row(
-                                        children: [
-                                          const Flexible(
+                                        children: const [
+                                          Flexible(
                                             flex: 3,
                                             fit: FlexFit.tight,
                                             child: Text(
@@ -829,7 +829,7 @@ class _IpmContentState extends State<IpmContent> {
                                             fit: FlexFit.tight,
                                             child: Text(
                                               " ",
-                                              style: const TextStyle(
+                                              style: TextStyle(
                                                   color: Colors.white),
                                               textAlign: TextAlign.center,
                                             ),
@@ -839,7 +839,7 @@ class _IpmContentState extends State<IpmContent> {
                                             fit: FlexFit.tight,
                                             child: Text(
                                               "",
-                                              style: const TextStyle(
+                                              style: TextStyle(
                                                   color: Colors.white),
                                               textAlign: TextAlign.center,
                                             ),
@@ -849,7 +849,7 @@ class _IpmContentState extends State<IpmContent> {
                                             fit: FlexFit.tight,
                                             child: Text(
                                               " ",
-                                              style: const TextStyle(
+                                              style: TextStyle(
                                                   color: Colors.white),
                                               textAlign: TextAlign.center,
                                             ),
@@ -859,7 +859,7 @@ class _IpmContentState extends State<IpmContent> {
                                             fit: FlexFit.tight,
                                             child: Text(
                                               " ",
-                                              style: const TextStyle(
+                                              style: TextStyle(
                                                   color: Colors.white),
                                               textAlign: TextAlign.center,
                                             ),
@@ -869,7 +869,7 @@ class _IpmContentState extends State<IpmContent> {
                                             fit: FlexFit.tight,
                                             child: Text(
                                               " ",
-                                              style: const TextStyle(
+                                              style: TextStyle(
                                                   color: Colors.white),
                                               textAlign: TextAlign.center,
                                             ),
@@ -882,8 +882,8 @@ class _IpmContentState extends State<IpmContent> {
                                       width: screenWidth,
                                       height: screenHeight * 0.04,
                                       child: Row(
-                                        children: [
-                                          const Flexible(
+                                        children: const [
+                                          Flexible(
                                             flex: 3,
                                             fit: FlexFit.tight,
                                             child: Text(
@@ -940,8 +940,8 @@ class _IpmContentState extends State<IpmContent> {
                                       width: screenWidth,
                                       height: screenHeight * 0.04,
                                       child: Row(
-                                        children: [
-                                          const Flexible(
+                                        children: const [
+                                          Flexible(
                                             flex: 3,
                                             fit: FlexFit.tight,
                                             child: Text(
@@ -998,8 +998,8 @@ class _IpmContentState extends State<IpmContent> {
                                       width: screenWidth,
                                       height: screenHeight * 0.04,
                                       child: Row(
-                                        children: [
-                                          const Flexible(
+                                        children: const [
+                                          Flexible(
                                             flex: 3,
                                             fit: FlexFit.tight,
                                             child: Text(
@@ -1056,8 +1056,8 @@ class _IpmContentState extends State<IpmContent> {
                                       width: screenWidth,
                                       height: screenHeight * 0.04,
                                       child: Row(
-                                        children: [
-                                          const Flexible(
+                                        children: const [
+                                          Flexible(
                                             flex: 3,
                                             fit: FlexFit.tight,
                                             child: Text(
@@ -1117,8 +1117,8 @@ class _IpmContentState extends State<IpmContent> {
                                       width: screenWidth,
                                       height: screenHeight * 0.04,
                                       child: Row(
-                                        children: [
-                                          const Flexible(
+                                        children: const [
+                                          Flexible(
                                             flex: 3,
                                             fit: FlexFit.tight,
                                             child: Text(
@@ -1133,7 +1133,7 @@ class _IpmContentState extends State<IpmContent> {
                                             fit: FlexFit.tight,
                                             child: Text(
                                               " ",
-                                              style: const TextStyle(
+                                              style: TextStyle(
                                                   color: Colors.white),
                                               textAlign: TextAlign.center,
                                             ),
@@ -1143,7 +1143,7 @@ class _IpmContentState extends State<IpmContent> {
                                             fit: FlexFit.tight,
                                             child: Text(
                                               " ",
-                                              style: const TextStyle(
+                                              style: TextStyle(
                                                   color: Colors.white),
                                               textAlign: TextAlign.center,
                                             ),
@@ -1153,7 +1153,7 @@ class _IpmContentState extends State<IpmContent> {
                                             fit: FlexFit.tight,
                                             child: Text(
                                               " ",
-                                              style: const TextStyle(
+                                              style: TextStyle(
                                                   color: Colors.white),
                                               textAlign: TextAlign.center,
                                             ),
@@ -1163,7 +1163,7 @@ class _IpmContentState extends State<IpmContent> {
                                             fit: FlexFit.tight,
                                             child: Text(
                                               " ",
-                                              style: const TextStyle(
+                                              style: TextStyle(
                                                   color: Colors.white),
                                               textAlign: TextAlign.center,
                                             ),
@@ -1173,7 +1173,7 @@ class _IpmContentState extends State<IpmContent> {
                                             fit: FlexFit.tight,
                                             child: Text(
                                               " ",
-                                              style: const TextStyle(
+                                              style: TextStyle(
                                                   color: Colors.white),
                                               textAlign: TextAlign.center,
                                             ),
@@ -1201,8 +1201,8 @@ class _IpmContentState extends State<IpmContent> {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(4)),
                           color: const Color(0xff2c4260),
-                          child: Padding(
-                            padding: const EdgeInsets.all(15),
+                          child: const Padding(
+                            padding: EdgeInsets.all(15),
                           ),
                         ),
                       ),
