@@ -99,7 +99,7 @@ class _SensusBState extends State<SensusB> {
                             child: Column(
                               children: [
                                 Text(
-                                  "$lkTotal",
+                                  lkTotal,
                                   style: const TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.w800,
@@ -138,7 +138,7 @@ class _SensusBState extends State<SensusB> {
                             child: Column(
                               children: [
                                 Text(
-                                  "$prTotal",
+                                  prTotal,
                                   style: const TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.w800,

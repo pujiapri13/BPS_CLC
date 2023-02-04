@@ -739,7 +739,7 @@ class _inflasiContentState extends State<inflasiContent> {
                         ),
                       ),
                       SizedBox(
-                        child: Container(
+                        child: SizedBox(
                           height: 400,
                           width: screenWidth,
                           child: const InflasiKota(),
